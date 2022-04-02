@@ -5,6 +5,7 @@ block vars
 
 block content
   - let className = "colors-and-type"
-  .div(class=$className)
-    .logo
-    .main
+  div(class=className)
+    a(class=`${className}__logo`, href="/")
+      img(width="48px", height="48px", alt="toxin logo", src=require("../../assets/images/logoUIKit.svg"))
+    div(class=`${className}__main`)

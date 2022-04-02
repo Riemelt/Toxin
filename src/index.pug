@@ -1,9 +1,11 @@
 extends ./layout/layout
+include components/color-example/color-example
 
 block vars
   - var title = "Test Page"
 
+
 block content
-  h1.test = hi
-  p Hello World
+  +color-example("green", "aaaaa", "pomogite")
+  +color-example("purple", "aaaaa", "pomogite")
 
