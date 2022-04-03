@@ -5,4 +5,45 @@ $className: 'colors-and-type';
 		img {
 		}
 	}
+
+	&__main {
+		display: flex;
+		margin: 5% 7% 0 7%;
+	}
+
+	&__color-palette {
+		list-style-type: none;
+	}
+
+	&__color-palette-item {
+		margin-bottom: toRem(20);
+	}
+
+
+	&__text-examples {
+		list-style-type: none;
+		margin-left: auto;
+	}
+
+	&__text-examples-item {
+		display: flex;
+		margin: 0 0 toRem(30) 0;
+	}
+
+	&__text-examples-title {
+		color: $dark_shade_25;
+		text-align: right;
+		font-weight: 400;
+		min-width: toRem(50);	
+
+		&_header {
+			text-transform: uppercase;
+		}
+	}
+
+	&__text-examples-description {
+		margin-left: toRem(30);
+		white-space: pre;
+	}
+
 }

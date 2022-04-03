@@ -1,11 +1,45 @@
 extends ../../layout/layout
+include ../../components/color-example/color-example
 
 block vars
-  - var title = "Colors-And-Type"
+  -
+    var title = "Colors-And-Type"
+
 
 block content
-  - let className = "colors-and-type"
+  - 
+    let className = "colors-and-type"
+    var colors = [
+      {color: "dark-shade-100", title: "Dark Shade 100%", code: "#1F2041"},
+      {color: "dark-shade-75", title: "Dark Shade 75%", code: "#1F2041"},
+      {color: "dark-shade-50", title: "Dark Shade 50%", code: "#1F2041"},
+      {color: "dark-shade-25", title: "Dark Shade 25%", code: "#1F2041"},
+      {color: "dark-shade-5", title: "Dark Shade 5%", code: "#1F2041"},
+      {color: "purple", title: "Purple", code: "#BC9CFF"},
+      {color: "green", title: "Green", code: "#6FCF97"}
+    ]
+
+    var texts = [
+      {type: "h1", description: "This one is the sub-section or\nwidget title"},
+      {type: "h2", description: "Next one is the item title inside\nwidgets"},
+      {type: "h3", description: "This is a label or CTA text"},
+      {type: "Body", description: "This is the body text which is used for most\nof the design, like paragraphs, lists, etc."},
+    ]
+
   div(class=className)
     a(class=`${className}__logo`, href="/")
       img(width="48px", height="48px", alt="toxin logo", src=require("../../assets/images/logoUIKit.svg"))
     div(class=`${className}__main`)
+      ul(class=`${className}__color-palette`)
+        each val in colors
+          li(class=`${className}__color-palette-item`)
+            +color-example(val.color, val.title, val.code)
+      ul(class=`${className}__text-examples`)
+        each val in texts
+          li(class=`${className}__text-examples-item`)
+            if val.type == "Body"
+              div(class=`${className}__text-examples-title`)= val.type
+              div(class=`${className}__text-examples-description`)= val.description
+            else
+              #{val.type}(class=`${className}__text-examples-title ${className}__text-examples-title_header`)= val.type
+              #{val.type}(class=`${className}__text-examples-description`)= val.description
