@@ -1,4 +1,4 @@
-extends ../../layout/layout
+extends ../../layouts/layout-ui-kit/layout-ui-kit
 include ../../components/color-example/color-example
 
 block vars
@@ -27,8 +27,6 @@ block content
     ]
 
   div(class=className)
-    a(class=`${className}__logo`, href="/")
-      img(width="48px", height="48px", alt="toxin logo", src=require("../../assets/images/logoUIKit.svg"))
     div(class=`${className}__main`)
       ul(class=`${className}__color-palette`)
         each val in colors
