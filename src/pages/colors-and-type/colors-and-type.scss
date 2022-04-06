@@ -1,34 +1,57 @@
 $className: 'colors-and-type';
 
 .#{$className} {
-	&__logo {
-		img {
-		}
-	}
-
+	padding: 0 toRem(20) 0;
+	margin: toRem(67) 0 0 toRem(20);
 	&__main {
 		display: flex;
-		margin: 5% 7% 0 7%;
 	}
 
 	&__color-palette {
+		margin-top: toRem(1);
 		list-style-type: none;
 	}
 
 	&__color-palette-item {
 		margin-bottom: toRem(20);
+
+		&:last-child {
+			margin-bottom: 0;
+		}
 	}
 
 
 	&__text-examples {
 		list-style-type: none;
 		margin-left: auto;
+		margin-right: toRem(28);
 	}
 
 	&__text-examples-item {
 		display: flex;
-		margin: 0 0 toRem(30) 0;
+		margin-bottom: toRem(51);
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+		&_h1-sample {
+			line-height: toRem(29.26);
+		}
+
+		&_h2-sample {
+			line-height: toRem(23.16);
+		}
+
+		&_h3-sample {
+			line-height: toRem(14.63);
+		}
+
+		&_body-sample {
+			line-height: toRem(24);
+		}
 	}
+
 
 	&__text-examples-title {
 		color: $dark_shade_25;
