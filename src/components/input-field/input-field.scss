@@ -1,0 +1,33 @@
+$className: 'input-field';
+
+.#{$className} {
+  width: toRem(320);
+
+	&__header {
+		line-height: toRem(14.63);
+		font-size: toRem(12);
+		text-transform: uppercase;
+		display: flex;
+		margin-bottom: toRem(5);
+	}
+
+	&__description {
+		margin-left: auto;
+		color: $dark-shade-50;
+	}
+
+	&__input {
+		border: 1px solid $dark-shade-25;
+		box-sizing: border-box;
+		border-radius: toRem(4);
+		height: toRem(42);
+		width: toRem(320);
+		padding-left: toRem(15);
+
+		&::placeholder {
+			color: $dark-shade-25;
+			font-size: toRem(14);
+			line-height: toRem(18);
+		}
+	}
+}

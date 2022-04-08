@@ -20,7 +20,6 @@ $className: 'colors-and-type';
 		}
 	}
 
-
 	&__text-examples {
 		list-style-type: none;
 		margin-left: auto;
@@ -34,24 +33,7 @@ $className: 'colors-and-type';
 		&:last-child {
 			margin-bottom: 0;
 		}
-
-		&_h1-sample {
-			line-height: toRem(29.26);
-		}
-
-		&_h2-sample {
-			line-height: toRem(23.16);
-		}
-
-		&_h3-sample {
-			line-height: toRem(14.63);
-		}
-
-		&_body-sample {
-			line-height: toRem(24);
-		}
 	}
-
 
 	&__text-examples-title {
 		color: $dark_shade_25;

@@ -1,6 +1,7 @@
 extends ../layout-base/layout-base
+include ../../components/logo-ui-kit/logo-ui-kit
 
 block main
 	div(class="ui-kit")
-		include ../../components/logo-ui-kit/logo-ui-kit
+		+logo-ui-kit
 		block content

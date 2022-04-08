@@ -1,0 +1,14 @@
+extends ../../layouts/layout-ui-kit/layout-ui-kit
+include ../../components/input-field/input-field
+include ../../components/container/container
+
+block vars
+  -
+    var title = "Form Elements"
+
+block content
+  - 
+    let className = "form-elements"
+  div(class=className)
+    +container
+      +input-field({label: "text field", description: "default", placeholder: "Email"})

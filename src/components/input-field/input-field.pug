@@ -1,0 +1,11 @@
+mixin input-field(params)
+  -
+    var {label = "", description, placeholder = ""} = params
+    var className = "input-field"
+  div(class=className)
+    label(class=`${className}__label`)
+      div(class=`${className}__header`)
+        h3(class=`${className}__title`)= label
+        if description
+          div(class=`${className}__description`)= description
+      input(class=`${className}__input` type="text" placeholder=placeholder)

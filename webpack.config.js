@@ -93,7 +93,10 @@ module.exports = {
             {
                 test: /\.pug$/,
                 loader: "pug-loader",
-                exclude: /(node_modules|bower_components)/
+                exclude: /(node_modules|bower_components)/,
+                options: {
+                    basedir: path.resolve(__dirname, './src')
+                }
             },
             {
                 test: /\.m?js$/,

@@ -9,6 +9,7 @@ html {
   font-family: 'Montserrat', Arial, sans-serif;
   font-size: 14px;
   font-weight: 400;
+  line-height: toRem(24);
   background: #FFFFFF;
   color: $dark-shade-75;
 }
@@ -20,13 +21,16 @@ h1, h2, h3 {
 
 h1 {
   font-size: toRem(24);
+  line-height: toRem(29.26);
 }
 
 h2 {
   font-size: toRem(19);
+  line-height: toRem(23.16);
 }
 
 h3 {
   font-size: toRem(12);
   text-transform: uppercase;
+  line-height: toRem(14.63);
 }
