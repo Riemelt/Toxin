@@ -1,0 +1,12 @@
+include ../input-field/input-field
+
+mixin dropdown-base(vars)
+  -
+    var {label = "", description, placeholder = "", hovered} = vars
+    var className = "dropdown-base"
+    var classNames = className + ` js-${className}`
+
+  div(class=classNames)
+    div(class=`${className}__input-wrapper`)
+      +input-field({label: label, description: description, placeholder: placeholder, hover: hover, expandable: true})
+    div(class=`${className}__menu`) Dropdown Content

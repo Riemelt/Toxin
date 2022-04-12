@@ -1,7 +1,9 @@
 $className: 'input-field';
 
 .#{$className} {
-  width: toRem(320);
+	max-width: toRem(320);
+	min-width: toRem(150);
+	width: 100%;
 
 	&__header {
 		line-height: toRem(14.63);
@@ -16,18 +18,58 @@ $className: 'input-field';
 		color: $dark-shade-50;
 	}
 
+	&__main-field {
+		position: relative;
+		display: flex;
+	}
+
 	&__input {
 		border: 1px solid $dark-shade-25;
 		box-sizing: border-box;
 		border-radius: toRem(4);
 		height: toRem(42);
-		width: toRem(320);
+		width: 100%;
 		padding-left: toRem(15);
 
+		&:hover, &:focus {
+			border-color: $dark-shade-50;
+			outline: none;
+
+			&::placeholder {
+				color: $dark-shade-75;
+			}
+		}
+
 		&::placeholder {
+			font-family: Montserrat, Arial, sans-serif;
+			font-weight: 400;
 			color: $dark-shade-25;
 			font-size: toRem(14);
 			line-height: toRem(18);
+		 }
+	}
+
+	&__expand-button {
+		border: none;
+		background: none;
+		position: absolute;
+		right: toRem(10);
+		align-self: center;
+		color: $dark-shade-50;
+		width: toRem(24);
+		height: toRem(24);
+	}
+
+	&_hovered, &_expandable {
+		.#{$className}__input::placeholder {
+			color: $dark-shade-75;
+		}
+	}
+
+	&_hovered {
+		.#{$className}__input {
+			border-color: $dark-shade-50;
 		}
 	}
 }
+

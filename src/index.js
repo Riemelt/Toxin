@@ -3,3 +3,4 @@ function requireAll(requireContext) {
   }
   
 requireAll(require.context('./', true, /\.(js|scss|png|svg|jpg)$/));
+

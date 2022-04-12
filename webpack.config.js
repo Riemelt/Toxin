@@ -1,6 +1,7 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const fs = require('fs');
+const webpack = require('webpack');
 
 const path = require('path');
 const srcPath = path.resolve(__dirname, "./src");
@@ -30,6 +31,10 @@ module.exports = {
     plugins: [
         new MiniCssExtractPlugin({
             filename: "[name].[contenthash].css"
+        }),
+        new webpack.ProvidePlugin({
+          $: "jquery",
+          jQuery: "jquery",
         }),
         require('autoprefixer'),
         new HtmlWebpackPlugin({

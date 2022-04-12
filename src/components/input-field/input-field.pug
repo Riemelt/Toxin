@@ -1,11 +1,20 @@
-mixin input-field(params)
+mixin input-field(vars)
   -
-    var {label = "", description, placeholder = ""} = params
+    var {label = "", description, placeholder = "", hovered, expandable} = vars
     var className = "input-field"
-  div(class=className)
+    var classNames = className
+  if hovered
+    - classNames += ` ${className}_hovered`
+  if expandable
+    - classNames += ` ${className}_expandable`
+  div(class=classNames)
     label(class=`${className}__label`)
       div(class=`${className}__header`)
         h3(class=`${className}__title`)= label
         if description
           div(class=`${className}__description`)= description
-      input(class=`${className}__input` type="text" placeholder=placeholder)
+      div(class=`${className}__main-field`)
+        input(class=`${className}__input` type="text" placeholder=placeholder)
+        if expandable
+          button(class=`${className}__expand-button`)
+            span(class="material-icons") expand_more

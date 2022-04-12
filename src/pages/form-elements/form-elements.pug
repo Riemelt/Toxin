@@ -1,5 +1,6 @@
 extends ../../layouts/layout-ui-kit/layout-ui-kit
 include ../../components/input-field/input-field
+include ../../components/dropdown-base/dropdown-base
 include ../../components/container/container
 
 block vars
@@ -11,4 +12,8 @@ block content
     let className = "form-elements"
   div(class=className)
     +container
+      //+input-field({label: "text field", description: "default", placeholder: "Email"})
+      //+input-field({label: "text field", description: "hover / focus", placeholder: "This is pretty awesome", hovered: true})
+      //+input-field({label: "dropdown", placeholder: "Сколько гостей", expandable: true})
+      +dropdown-base({label: "dropdown", placeholder: "Сколько гостей"})
       +input-field({label: "text field", description: "default", placeholder: "Email"})
