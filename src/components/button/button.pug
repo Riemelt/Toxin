@@ -1,0 +1,16 @@
+mixin button(vars)
+  -
+    var {bordered, filled, withIcon} = vars
+    var className = "button"
+    var classNames = className + ` js-${className}`
+  if bordered
+    - classNames += ` ${className}_bordered`
+	if filled
+    - classNames += ` ${className}_filled`
+  if withIcon
+    - classNames += ` ${className}_withIcon`
+    
+  button(class=classNames)
+    if withIcon
+      span(class=`${className}__icon`)
+			  
