@@ -4,7 +4,7 @@ mixin input-field(vars)
   -
     var {title = "", description, placeholder = "", hovered, expandable, isReadonly} = vars
     var className = "input-field"
-    var classNames = className + " js-input-field"
+    var classNames = className + ` js-${className}`
   if hovered
     - classNames += ` ${className}_hovered`
   if expandable

@@ -12,7 +12,7 @@ $dropdown.on("click", function(e) {
 	var $currentDropdownMenu = $currentDropdown.find(`div.${classDropdownMenu}`)
 
 	if (!$currentDropdownMenu.is(e.target)
-	   && $currentDropdownMenu.has(e.target).length === 0) {
+      && $currentDropdownMenu.has(e.target).length === 0) {
 			toggleDropdown($currentDropdown);
 	}
 
@@ -26,18 +26,18 @@ $dropdown.on("click", function(e) {
 
 $(document).on("click", function(e) {
 	if (!$dropdown.is(e.target)
-		 && $dropdown.has(e.target).length === 0)
-		 {
-			closeDropdown($dropdown);
-		 }
+    && $dropdown.has(e.target).length === 0)
+    {
+      closeDropdown($dropdown);
+    }
 });
 
 function closeDropdown(target) {
 	target.removeClass(`${className}_opened`);
 	closeExpand(target);
-};
+}
 
 function toggleDropdown(target) {
 	target.toggleClass(`${className}_opened`);
 	toggleExpand(target);
-};
+}

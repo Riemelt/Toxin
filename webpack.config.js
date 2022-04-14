@@ -1,5 +1,6 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const ESLintPlugin = require('eslint-webpack-plugin');
 const fs = require('fs');
 const webpack = require('webpack');
 
@@ -29,6 +30,8 @@ module.exports = {
     context: srcPath,
     mode: mode,
     plugins: [
+        new ESLintPlugin({
+        }),
         new MiniCssExtractPlugin({
             filename: "[name].[contenthash].css"
         }),
