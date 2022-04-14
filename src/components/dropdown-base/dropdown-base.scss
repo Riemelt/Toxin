@@ -9,7 +9,7 @@ $className: 'dropdown-base';
 	&__menu {
 		position: absolute;
 		width: 100%;
-		border: 1px solid $dark-shade-25;
+		border: 1px solid $dark-shade-50;
 		border-top-width: 0;
 		box-sizing: border-box;
 		border-radius: 0 0 toRem(4) toRem(4);
@@ -19,7 +19,7 @@ $className: 'dropdown-base';
 		background-color: white;
 	}
 
-	&_active {
+	&_opened {
 		.#{$className}__menu {
 			display: block;
 		}

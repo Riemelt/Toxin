@@ -1,12 +1,13 @@
 mixin input-field(vars)
   -
-    var {label = "", description, placeholder = "", hovered, expandable} = vars
+    var {label = "", description, placeholder = "", hovered, expandable, isReadonly} = vars
     var className = "input-field"
-    var classNames = className
+    var classNames = className + " js-input-field"
   if hovered
     - classNames += ` ${className}_hovered`
   if expandable
     - classNames += ` ${className}_expandable`
+    
   div(class=classNames)
     label(class=`${className}__label`)
       div(class=`${className}__header`)
@@ -14,7 +15,7 @@ mixin input-field(vars)
         if description
           div(class=`${className}__description`)= description
       div(class=`${className}__main-field`)
-        input(class=`${className}__input` type="text" placeholder=placeholder)
+        input(class=`${className}__input` type="text" placeholder=placeholder readonly=isReadonly)
         if expandable
           button(class=`${className}__expand-button`)
             span(class="material-icons") expand_more
