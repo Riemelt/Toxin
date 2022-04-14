@@ -1,0 +1,9 @@
+mixin label(vars)
+  -
+    var {title = "", description} = vars
+    var className = "label"
+
+  div(class=className)
+    h3(class=`${className}__title`)= title
+    if description
+      div(class=`${className}__description`)= description
