@@ -1,16 +1,20 @@
 mixin button(vars)
   -
-    var {bordered, filled, withIcon} = vars
+    var {text = "", bordered, filled, withIcon} = vars
     var className = "button"
     var classNames = className + ` js-${className}`
   if bordered
     - classNames += ` ${className}_bordered`
-	if filled
+  if filled
     - classNames += ` ${className}_filled`
   if withIcon
     - classNames += ` ${className}_withIcon`
+    - classNames += ` ${className}_filled`
     
   button(class=classNames)
-    if withIcon
-      span(class=`${className}__icon`)
-			  
+      div(class=`${className}__body`)
+        span(class=`${className}__text`)= text
+        if withIcon
+          span(class=`${className}__icon`)
+            span(class="material-icons") arrow_forward
+          

@@ -3,6 +3,7 @@ include ../../components/input-field/input-field
 include ../../components/dropdown-base/dropdown-base
 include ../../components/container/container
 include ../../components/label/label
+include ../../components/button/button
 
 block vars
   -
@@ -19,3 +20,7 @@ block content
       +dropdown-base({title: "dropdown", placeholder: "Сколько гостей"})
       +input-field({title: "text field", description: "default", placeholder: "Email"})
       +dropdown-base({title: "dropdown", placeholder: "Сколько гостей"})
+      +button({text: "принять"})
+      +button({text: "принять", filled: true})
+      +button({text: "принять", bordered: true})
+      +button({text: "принять", withIcon: true})
