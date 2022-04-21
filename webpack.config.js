@@ -30,8 +30,8 @@ module.exports = {
     context: srcPath,
     mode: mode,
     plugins: [
-        new ESLintPlugin({
-        }),
+       // new ESLintPlugin({
+       // }),
         new MiniCssExtractPlugin({
             filename: "[name].[contenthash].css"
         }),

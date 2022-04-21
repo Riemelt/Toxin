@@ -1,9 +1,10 @@
 extends ../../layouts/layout-ui-kit/layout-ui-kit
 include ../../components/input-field/input-field
-include ../../components/dropdown-base/dropdown-base
+include ../../components/dropdown-counter/dropdown-counter
 include ../../components/container/container
 include ../../components/label/label
 include ../../components/button/button
+include ../../components/control-panel/control-panel
 
 block vars
   -
@@ -17,10 +18,14 @@ block content
       //+input-field({label: "text field", description: "default", placeholder: "Email"})
       //+input-field({label: "text field", description: "hover / focus", placeholder: "This is pretty awesome", hovered: true})
       //+input-field({label: "dropdown", placeholder: "Сколько гостей", expandable: true})
-      +dropdown-base({title: "dropdown", placeholder: "Сколько гостей"})
+      +dropdown-counter({title: "dropdown", placeholder: "Сколько гостей"})
       +input-field({title: "text field", description: "default", placeholder: "Email"})
-      +dropdown-base({title: "dropdown", placeholder: "Сколько гостей"})
-      +button({text: "принять"})
-      +button({text: "принять", filled: true})
-      +button({text: "принять", bordered: true})
-      +button({text: "принять", withIcon: true})
+      +dropdown-counter({
+        title: "dropdown",
+        placeholder: "Сколько гостей",
+        type: "guest",
+        items: [
+          {title: "взрослые", value: 1, type: "guest"},
+          {title: "дети", value: 3, type: "guest"},
+          {title: "младенцы", value: 2, type: "baby"}
+        ]})

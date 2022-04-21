@@ -1,0 +1,10 @@
+include ../button/button
+
+mixin control-panel
+  - var className = "control-panel"
+
+  div(class=className)
+    div(class=`${className}__reset`)
+      +button({text: "очистить"})
+    div(class=`${className}__apply`)
+      +button({text: "применить"})

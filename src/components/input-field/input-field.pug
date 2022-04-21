@@ -15,7 +15,7 @@ mixin input-field(vars)
       div(class=`${className}__header`)
         +label({title, description})
       div(class=`${className}__main-field`)
-        input(class=`${className}__input` type="text" placeholder=placeholder readonly=isReadonly)
+        input(class=`${className}__input js-${className}__input` type="text" placeholder=placeholder readonly=isReadonly)
         if expandable
           button(class=`${className}__expand-button`)
             span(class="material-icons") expand_more

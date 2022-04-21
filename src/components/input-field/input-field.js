@@ -1,6 +1,8 @@
 const classNameJs = "js-input-field";
 const className = "input-field";
 
+const classInputJs = `js-${className}__input`;
+
 var target = $(`div.${classNameJs}`);
 
 export function toggleExpand(parent) {
@@ -9,4 +11,8 @@ export function toggleExpand(parent) {
 
 export function closeExpand(parent) {
 	parent.find(target).removeClass(`${className}_opened`);
+}
+
+export function setInputText(parent, text) {
+	parent.find(`.${classInputJs}`).prop("placeholder", text);
 }

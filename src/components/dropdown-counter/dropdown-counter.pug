@@ -1,0 +1,32 @@
+include ../input-field/input-field
+include ../control-panel/control-panel
+
+mixin dropdown-counter(vars)
+  -
+    var {title = "", description, placeholder = "", hovered, type = "guest", items = []} = vars
+    var className = "dropdown-counter"
+    var classNames = className + ` js-${className}`
+
+  each item in items
+    if item.value <= 0
+      - item.value = 0
+      - item.decrementDisabled = true
+    if item.value >= 999
+      - item.value = 999
+      - item.incrementDisabled = true
+
+
+  div(class=classNames data-type=type)
+    div(class=`${className}__input-wrapper`)
+      +input-field({title, description, placeholder, hovered, expandable: true, isReadonly: true})
+    div(class=`${className}__menu js-${className}__menu`)
+      ul(class=`${className}__items`)
+        each item in items
+          li(class=`${className}__item`) 
+            h3(class=`${className}__item-title`)= item.title
+            div(class=`${className}__item-counter`)
+              button(class=`${className}__decrement js-${className}__decrement` disabled=item.decrementDisabled) -
+              span(class=`${className}__value js-${className}__value` data-type=item.type)= item.value
+              button(class=`${className}__increment js-${className}__increment` disabled=item.incrementDisabled) +
+      div(class=`${className}__control-panel-wrapper`) 
+        +control-panel

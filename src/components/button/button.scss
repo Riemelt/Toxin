@@ -1,8 +1,6 @@
 $button: 'button';
 
 .#{$button} {
-  border: none;
-  background-color: initial;
   font-family: Montserrat, Arial, sans-serif;
   font-weight: 700;
   font-size: toRem(12);
@@ -33,12 +31,12 @@ $button: 'button';
 
   &_bordered {
     border: solid 2px transparent;
-    background-image: linear-gradient(white, white), linear-gradient(180deg, $purple 0%, #8BA4F9 100%);
+    background-image: linear-gradient(white, white), $purple-blue-gradient;
     background-origin: border-box;
     background-clip: content-box, border-box;
       
     &:hover {
-      background-image: linear-gradient(white, white), linear-gradient(180deg, #BC9CFF50 0%, #8BA4F950 100%);
+      background-image: linear-gradient(white, white), $purple-blue-gradient-50;
 
       .#{$button}__text {
         color: $purple;
@@ -47,7 +45,7 @@ $button: 'button';
   }
 
   &_filled {
-    background: linear-gradient(180deg, $purple 0%, #8BA4F9 100%);
+    background: $purple-blue-gradient;
 
     .#{$button}__text {
       color: white;
