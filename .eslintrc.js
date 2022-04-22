@@ -12,5 +12,26 @@ module.exports = {
         "sourceType": "module"
     },
     "rules": {
+      "prefer-const": ["error", {
+        "destructuring": "any",
+        "ignoreReadBeforeAssign": false
+      }],
+      "no-new-object": "error",
+      "no-array-constructor": "error",
+      "object-shorthand": ["error", "always"],
+      "quote-props": ["error", "as-needed"],
+      "prefer-object-spread": "error",
+      "prefer-destructuring": ["error", {
+        "VariableDeclarator": {
+          "array": false,
+          "object": true
+        },
+        "AssignmentExpression": {
+          "array": true,
+          "object": true
+        }
+      }, {
+        "enforceForRenamedProperties": false
+      }]
     }
 }

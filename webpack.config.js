@@ -10,7 +10,7 @@ const srcPath = path.resolve(__dirname, "./src");
 const pagesPath = path.resolve(__dirname, "./src/pages");
 const pages = fs.readdirSync(pagesPath);
 
-let multipleHtmlPlugins = pages.map(name => {
+const multipleHtmlPlugins = pages.map(name => {
     return new HtmlWebpackPlugin({
       template: `./pages/${name}/${name}.pug`, // relative path to the HTML files
       filename: `${name}.html`, // output HTML files

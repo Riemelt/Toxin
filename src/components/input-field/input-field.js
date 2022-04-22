@@ -3,7 +3,7 @@ const className = "input-field";
 
 const classInputJs = `js-${className}__input`;
 
-var target = $(`div.${classNameJs}`);
+const target = $(`div.${classNameJs}`);
 
 export function toggleExpand(parent) {
 	parent.find(target).toggleClass(`${className}_opened`);

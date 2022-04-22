@@ -11,7 +11,8 @@ const classValue = `js-${className}__value`;
 const minValue = 0;
 const maxValue = 999;
 
-var $dropdowns = $(`.${classNameJs}`);
+const $dropdowns = $(`.${classNameJs}`);
+
 
 const dictionary = {
   guest: {
@@ -26,17 +27,17 @@ const dictionary = {
 }
 
 jQuery(function() {
-  $dropdowns.each(function() {
-    var $currentDropdown = $(this);
-    var $currentDecrementType = $currentDropdown.data("type");
-    var $values = $currentDropdown.find(`.${classValue}`);
-    var itemList = initItemList($currentDecrementType);
+  $dropdowns.each(function(_, element) {
+    const $currentDropdown = $(element);
+    const $currentDecrementType = $currentDropdown.data("type");
+    const $values = $currentDropdown.find(`.${classValue}`);
+    const itemList = initItemList($currentDecrementType);
 
 
-    $values.each(function() {
-      var $currentValue = $(this);
-      var $currentValueType = $currentValue.data("type");
-      var guestCount = $currentValue.html();
+    $values.each(function(_, element) {
+      const $currentValue = $(element);
+      const $currentValueType = $currentValue.data("type");
+      const guestCount = $currentValue.html();
       itemList[$currentValueType] += Number(guestCount);
     });
 
@@ -48,18 +49,19 @@ jQuery(function() {
 
 $dropdowns.on("click", function(e) {
 	//e.preventDefault();
-	var $currentDropdown = $(this);
-	var $currentDropdownMenu = $currentDropdown.find(`.${classDropdownMenu}`)
+	const $currentDropdown = $(e.currentTarget);
+	const $currentDropdownMenu = $currentDropdown.find(`.${classDropdownMenu}`)
 
 	if (!$currentDropdownMenu.is(e.target)
       && $currentDropdownMenu.has(e.target).length === 0) {
 			toggleDropdown($currentDropdown);
 	}
 
-	$dropdowns.each(function() {
-		if (!$currentDropdown.is($(this)))
+	$dropdowns.each(function(_, element) {
+    const $element = $(element);
+		if (!$currentDropdown.is($element))
 			{
-				closeDropdown($(this));
+				closeDropdown($element);
 			}
 	});
 });
@@ -72,12 +74,12 @@ $(document).on("click", function(e) {
     }
 });
 
-$(`.${classDecrement}`).on ("click", function() {
-  var $currentDecrement = $(this);
-  var $currentValue = $currentDecrement.parent().find(`.${classValue}`);
-  var $currentIncrement = $currentDecrement.parent().find(`.${classIncrement}`);
+$(`.${classDecrement}`).on ("click", function(e) {
+  const $currentDecrement = $(e.currentTarget);
+  const $currentValue = $currentDecrement.parent().find(`.${classValue}`);
+  const $currentIncrement = $currentDecrement.parent().find(`.${classIncrement}`);
 
-  let count = $currentValue.html();
+  const count = $currentValue.html();
   let newCount = Number(count) - 1;
 
   if (newCount <= minValue) {
@@ -91,12 +93,12 @@ $(`.${classDecrement}`).on ("click", function() {
     $currentValue.html(newCount);
 });
 
-$(`.${classIncrement}`).on ("click", function() {
-  var $currentIncrement = $(this);
-  var $currentValue = $currentIncrement.parent().find(`.${classValue}`);
-  var $currentDecrement = $currentIncrement.parent().find(`.${classDecrement}`);
+$(`.${classIncrement}`).on ("click", function(e) {
+  const $currentIncrement = $(e.currentTarget);
+  const $currentValue = $currentIncrement.parent().find(`.${classValue}`);
+  const $currentDecrement = $currentIncrement.parent().find(`.${classDecrement}`);
 
-  let count = $currentValue.html();
+  const count = $currentValue.html();
   let newCount = Number(count) + 1;
 
   if (newCount >= maxValue) {
@@ -111,8 +113,8 @@ $(`.${classIncrement}`).on ("click", function() {
 });
 
 function buildString(itemList, type) {
-  var resultString = "";
-  var dictionaryMap = dictionary[type];
+  let resultString = "";
+  const dictionaryMap = dictionary[type];
 
   Object.keys(itemList).forEach(function(item) {
     if (itemList[item] > 0) {
