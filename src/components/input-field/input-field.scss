@@ -12,6 +12,12 @@ $className: 'input-field';
 	&__main-field {
 		position: relative;
 		display: flex;
+
+    &:hover {
+      .#{$className}__input {
+        border-color: $dark-shade-50;
+      }
+    }
 	}
 
 	&__input {

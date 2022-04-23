@@ -1,150 +1,176 @@
-import { toggleExpand, closeExpand, setInputText } from "../input-field/input-field.js";
+import InputField from "../input-field/input-field.js";
 
-const classNameJs = "js-dropdown-counter";
-const className = "dropdown-counter";
-const classDropdownMenu = `js-${className}__menu`;
+class DropdownCounter {
+  #className = "dropdown-counter";
 
-const classDecrement = `js-${className}__decrement`;
-const classIncrement = `js-${className}__increment`;
-const classValue = `js-${className}__value`;
+  #increment = `js-${this.#className}__increment`;
+  #decrement = `js-${this.#className}__decrement`;
+  #counterValue = `js-${this.#className}__value`;
 
-const minValue = 0;
-const maxValue = 999;
+  #$component;
+  #$menu;
+  #$decrements;
+  #$increments;
+  #$counterValues;
 
-const $dropdowns = $(`.${classNameJs}`);
+  #inputField;
+  #dropdownType;
+  #itemList;
 
+  static #MIN = 0;
+  static #MAX = 999;
 
-const dictionary = {
-  guest: {
-    guest: "гость",
-    baby: "младенец"
-  },
-  room: {
-    room: "спальня",
-    bathroom: "ванная комната",
-    bed: "кровать"
+  static #DICTIONARY = {
+    guest: {
+      guest: "гость",
+      baby: "младенец"
+    },
+    room: {
+      room: "спальня",
+      bathroom: "ванная комната",
+      bed: "кровать"
+    },
   }
-}
 
-jQuery(function() {
-  $dropdowns.each(function(_, element) {
-    const $currentDropdown = $(element);
-    const $currentDecrementType = $currentDropdown.data("type");
-    const $values = $currentDropdown.find(`.${classValue}`);
-    const itemList = initItemList($currentDecrementType);
+  constructor($parent) {
+    this.#init($parent);
+    this.#render();
+  }
 
+  #init($parent) {
+    this.#$component = $parent.find(`.js-${this.#className}`);
+    this.#$menu = $parent.find(`.js-${this.#className}__menu`);
+    this.#$decrements = $parent.find(`.js-${this.#className}__decrement`);
+    this.#$increments = $parent.find(`.js-${this.#className}__increment`);
+    this.#$counterValues = $parent.find(`.js-${this.#className}__value`);
 
-    $values.each(function(_, element) {
-      const $currentValue = $(element);
-      const $currentValueType = $currentValue.data("type");
-      const guestCount = $currentValue.html();
-      itemList[$currentValueType] += Number(guestCount);
+    this.#dropdownType = this.#$component.data("type");
+    this.#itemList = this.#initItemList(this.#dropdownType);
+
+    this.#inputField = new InputField(this.#$component);
+  }
+
+  #setHandlers() {
+    jQuery(this.#handleInputInit.bind(this));
+    $(document).on("click.dropdown", this.#handleDocumentClick.bind(this));
+    this.#$component.on("click.dropdown", this.#handleDropdownClick.bind(this));
+    this.#$increments.on("click.dropdown", this.#handleIncrementClick.bind(this));
+    this.#$decrements.on("click.dropdown", this.#handleDecrementClick.bind(this));
+  }
+
+  #render() {
+    this.#setHandlers();
+  }
+
+  #closeDropdown() {
+    this.#$component.removeClass(`${this.#className}_opened`);
+    this.#inputField.closeExpand();
+  }
+
+  #toggleDropdown() {
+    this.#$component.toggleClass(`${this.#className}_opened`);
+    this.#inputField.toggleExpand();
+  }
+
+  #handleDropdownClick(e) {
+    e.preventDefault();
+    console.log("CLICL");
+    if (!this.#isMenu(e.target))
+      this.#toggleDropdown();
+  }
+
+  #handleIncrementClick(e) {
+    const $increment = $(e.currentTarget);
+    const $counterValue = $increment.parent().find(`.${this.#counterValue}`);
+    const $decrement = $increment.parent().find(`.${this.#decrement}`);
+  
+    const value = $counterValue.html();
+    const newValue = Number(value) + 1;
+
+    this.#updateCounterItem({ $decrement, $counterValue, $increment, newValue });
+  }
+
+  #handleDecrementClick(e) {
+    const $decrement = $(e.currentTarget);
+    const $counterValue = $decrement.parent().find(`.${this.#counterValue}`);
+    const $increment = $decrement.parent().find(`.${this.#increment}`);
+  
+    const value = $counterValue.html();
+    const newValue = Number(value) - 1;
+
+    this.#updateCounterItem({ $decrement, $counterValue, $increment, newValue });
+  }
+
+  #handleDocumentClick(e) {
+    if (!this.#isDropdown(e.target))
+      this.#closeDropdown();
+  }
+
+  #isMenu(target) {
+    return this.#$menu.is(target) || this.#$menu.has(target).length !== 0;
+  }
+
+  #isDropdown(target) {
+    return this.#$component.is(target) || this.#$component.has(target).length !== 0;
+  }
+
+  #handleInputInit() {
+    this.#$counterValues.each(this.#renderCounterValue.bind(this));
+    const text = this.#buildString(this.#itemList, this.#dropdownType);
+    this.#inputField.setInputText(text);
+  }
+
+  #renderCounterValue(_, element) {
+    const $value = $(element);
+    const type = $value.data("type");
+    const guestCount = $value.html();
+    this.#itemList[type] += Number(guestCount);
+  }
+
+  #updateCounterItem(item) {
+    const { $decrement, $counterValue, $increment } = item;
+    let { newValue } = item;
+
+    if (newValue <= DropdownCounter.#MIN) {
+      newValue = DropdownCounter.#MIN;
+      $decrement.prop("disabled", true);
+    }
+    else if (newValue >= DropdownCounter.#MAX) {
+      newValue = DropdownCounter.#MAX;
+      $increment.prop("disabled", true);
+    }
+    else {
+      $decrement.prop("disabled", false);
+      $increment.prop("disabled", false);
+    }
+    $counterValue.html(newValue);
+  }
+
+  #buildString(itemList, type) {
+    let text = "";
+    const dictionaryMap = DropdownCounter.#DICTIONARY[type];
+  
+    Object.keys(itemList).forEach(function(item) {
+      if (itemList[item] > 0) {
+        if (text !== "")
+          text += ", ";
+        text += itemList[item] + " " + dictionaryMap[item];
+      }
     });
+    return text;
+  }
 
-    $currentDropdown.data("itemList", itemList);
-
-    setInputText($currentDropdown, buildString(itemList, $currentDecrementType));
-  });
-});
-
-$dropdowns.on("click", function(e) {
-	//e.preventDefault();
-	const $currentDropdown = $(e.currentTarget);
-	const $currentDropdownMenu = $currentDropdown.find(`.${classDropdownMenu}`)
-
-	if (!$currentDropdownMenu.is(e.target)
-      && $currentDropdownMenu.has(e.target).length === 0) {
-			toggleDropdown($currentDropdown);
-	}
-
-	$dropdowns.each(function(_, element) {
-    const $element = $(element);
-		if (!$currentDropdown.is($element))
-			{
-				closeDropdown($element);
-			}
-	});
-});
-
-$(document).on("click", function(e) {
-	if (!$dropdowns.is(e.target)
-    && $dropdowns.has(e.target).length === 0)
-    {
-      closeDropdown($dropdowns);
+  #initItemList(type) {
+    switch (type) {
+      case "guest":
+        return {guest: 0, baby: 0};
+      case "room":
+        return {room: 0, bed: 0, bathroom: 0};
+      default:
+        console.log("Wrong dropdown type")
+        return {};
     }
-});
-
-$(`.${classDecrement}`).on ("click", function(e) {
-  const $currentDecrement = $(e.currentTarget);
-  const $currentValue = $currentDecrement.parent().find(`.${classValue}`);
-  const $currentIncrement = $currentDecrement.parent().find(`.${classIncrement}`);
-
-  const count = $currentValue.html();
-  let newCount = Number(count) - 1;
-
-  if (newCount <= minValue) {
-    newCount = minValue;
-    $currentDecrement.prop("disabled", true);
-  }
-
-  if (newCount < maxValue)
-    $currentIncrement.prop("disabled", false);
-
-    $currentValue.html(newCount);
-});
-
-$(`.${classIncrement}`).on ("click", function(e) {
-  const $currentIncrement = $(e.currentTarget);
-  const $currentValue = $currentIncrement.parent().find(`.${classValue}`);
-  const $currentDecrement = $currentIncrement.parent().find(`.${classDecrement}`);
-
-  const count = $currentValue.html();
-  let newCount = Number(count) + 1;
-
-  if (newCount >= maxValue) {
-    newCount = maxValue;
-    $currentIncrement.prop("disabled", true);
-  }
-
-  if (newCount > minValue)
-    $currentDecrement.prop("disabled", false);
-    
-  $currentValue.html(newCount);
-});
-
-function buildString(itemList, type) {
-  let resultString = "";
-  const dictionaryMap = dictionary[type];
-
-  Object.keys(itemList).forEach(function(item) {
-    if (itemList[item] > 0) {
-      if (resultString !== "")
-        resultString += ", ";
-      resultString += itemList[item] + " " + dictionaryMap[item];
-    }
-  });
-
-  return resultString;
-}
-
-function initItemList(type) {
-  switch (type) {
-    case "guest":
-      return {guest: 0, baby: 0};
-    case "room":
-      return {room: 0, bed: 0, bathroom: 0};
-    default:
-      console.log("Wrong dropdown type")
-      return {};
   }
 }
 
-function closeDropdown(target) {
-	target.removeClass(`${className}_opened`);
-	closeExpand(target);
-}
-
-function toggleDropdown(target) {
-	target.toggleClass(`${className}_opened`);
-	toggleExpand(target);
-}
+export default DropdownCounter;
