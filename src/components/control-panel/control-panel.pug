@@ -1,10 +1,12 @@
 include ../button/button
 
 mixin control-panel
-  - var className = "control-panel"
+  -
+    var className = "control-panel"
+    var classNames = `${className} js-${className}`
 
-  div(class=className)
-    div(class=`${className}__reset`)
+  div(class=classNames)
+    div(class=`${className}__reset js-${className}__reset`)
       +button({text: "очистить"})
-    div(class=`${className}__apply`)
+    div(class=`${className}__apply js-${className}__apply`)
       +button({text: "применить"})

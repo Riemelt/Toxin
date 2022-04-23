@@ -1,4 +1,5 @@
 import InputField from "../input-field/input-field.js";
+import ControlPanel from "../control-panel/control-panel.js";
 
 class DropdownCounter {
   #className = "dropdown-counter";
@@ -14,6 +15,7 @@ class DropdownCounter {
   #$counterValues;
 
   #inputField;
+  #controlPanel;
   #dropdownType;
   #itemList;
 
@@ -39,15 +41,19 @@ class DropdownCounter {
 
   #init($parent) {
     this.#$component = $parent.find(`.js-${this.#className}`);
-    this.#$menu = $parent.find(`.js-${this.#className}__menu`);
-    this.#$decrements = $parent.find(`.js-${this.#className}__decrement`);
-    this.#$increments = $parent.find(`.js-${this.#className}__increment`);
-    this.#$counterValues = $parent.find(`.js-${this.#className}__value`);
+
+    this.#$menu = this.#$component.find(`.js-${this.#className}__menu`);
+    this.#$decrements = this.#$component.find(`.js-${this.#className}__decrement`);
+    this.#$increments = this.#$component.find(`.js-${this.#className}__increment`);
+    this.#$counterValues = this.#$component.find(`.js-${this.#className}__value`);
 
     this.#dropdownType = this.#$component.data("type");
     this.#itemList = this.#initItemList(this.#dropdownType);
 
     this.#inputField = new InputField(this.#$component);
+    this.#controlPanel = new ControlPanel(this.#$component, {
+      handleButtonClick: this.#handleControlPanelClick.bind(this)
+    });
   }
 
   #setHandlers() {
@@ -74,7 +80,6 @@ class DropdownCounter {
 
   #handleDropdownClick(e) {
     e.preventDefault();
-    console.log("CLICL");
     if (!this.#isMenu(e.target))
       this.#toggleDropdown();
   }
@@ -112,6 +117,24 @@ class DropdownCounter {
 
   #isDropdown(target) {
     return this.#$component.is(target) || this.#$component.has(target).length !== 0;
+  }
+  
+  #handleControlPanelClick(type) {
+    if (type === ControlPanel.APPLY)
+    {
+      this.#handleApplyButtonClick();
+    }
+    else if (type === ControlPanel.RESET)
+      this.#handleResetButtonClick();
+    else console.log("Wrong control panel type");
+  }
+
+  #handleApplyButtonClick() {
+    console.log("Apply button has been clicked!");
+  }
+
+  #handleResetButtonClick() {
+    console.log("Reset button has been clicked!");
   }
 
   #handleInputInit() {
