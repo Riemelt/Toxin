@@ -19,13 +19,25 @@ block content
       //+input-field({label: "text field", description: "hover / focus", placeholder: "This is pretty awesome", hovered: true})
       //+input-field({label: "dropdown", placeholder: "Сколько гостей", expandable: true})
       div(class=`${className}__dropdown-counter js-${className}__dropdown-counter`)
-        +dropdown-counter({title: "dropdown", placeholder: "Сколько гостей"})
+        +dropdown-counter({
+          type: "room",
+          input: {
+            title: "dropdown2",
+            placeholder: "Сколько комнат",
+          },
+          items: [
+            {title: "спальни", value: 2, type: "room"},
+            {title: "кровати", value: 2, type: "bed"},
+            {title: "ванные комнаты", value: 1, type: "bathroom"}
+          ]})
       +input-field({title: "text field", description: "default", placeholder: "Email", expandable: true})
       div(class=`${className}__dropdown-counter js-${className}__dropdown-counter`)
         +dropdown-counter({
-          title: "dropdown",
-          placeholder: "Сколько гостей",
           type: "guest",
+          input: {
+            title: "dropdown",
+            placeholder: "Сколько гостей",
+          },
           items: [
             {title: "взрослые", value: 1, type: "guest"},
             {title: "дети", value: 3, type: "guest"},
