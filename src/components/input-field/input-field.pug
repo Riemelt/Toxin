@@ -2,7 +2,7 @@ include ../label/label
 
 mixin input-field(vars)
   -
-    var {title = "", description, placeholder = "", hovered, expandable, isReadonly} = vars
+    var {label, placeholder = "", hovered, expandable, isReadonly, isMasked = false} = vars
     var className = "input-field"
     var classNames = className + ` js-${className}`
   if hovered
@@ -10,10 +10,10 @@ mixin input-field(vars)
   if expandable
     - classNames += ` ${className}_expandable`
 
-  div(class=classNames)
+  div(class=classNames data-mask=isMasked)
     label(class=`${className}__label`)
       div(class=`${className}__header`)
-        +label({title, description})
+        +label(label)
       div(class=`${className}__main-field`)
         input(class=`${className}__input js-${className}__input` type="text" placeholder=placeholder readonly=isReadonly)
         if expandable

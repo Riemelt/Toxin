@@ -15,14 +15,31 @@ block content
     let className = "form-elements"
   div(class=className)
     +container
-      //+input-field({label: "text field", description: "default", placeholder: "Email"})
+      div(class=`${className}__input-field js-${className}__input-field`)
+        +input-field({
+          label: {
+            title: "text field",
+            description: "default",
+          },
+          placeholder: "Email"
+          })
+      div(class=`${className}__input-field js-${className}__input-field`)
+        +input-field({
+          label: {
+            title: "masked text field"
+          },
+          placeholder: "ДД.ММ.ГГГГ",
+          isMasked: true
+          })
       //+input-field({label: "text field", description: "hover / focus", placeholder: "This is pretty awesome", hovered: true})
       //+input-field({label: "dropdown", placeholder: "Сколько гостей", expandable: true})
       div(class=`${className}__dropdown-counter js-${className}__dropdown-counter`)
         +dropdown-counter({
           type: "room",
           input: {
-            title: "dropdown2",
+            label: {
+              title: "dropdown2",
+            },
             placeholder: "Сколько комнат",
           },
           items: [
@@ -35,7 +52,9 @@ block content
         +dropdown-counter({
           type: "guest",
           input: {
-            title: "dropdown",
+            label: {
+              title: "dropdown"
+            },
             placeholder: "Сколько гостей",
           },
           items: [

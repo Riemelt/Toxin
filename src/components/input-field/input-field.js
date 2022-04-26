@@ -1,3 +1,5 @@
+import IMask from "imask";
+
 class InputField {
   #className = "input-field";
 
@@ -23,6 +25,23 @@ class InputField {
   #init($parent) {
     this.#$inputField = $parent.find(`.js-${this.#className}`);
     this.#$input = $parent.find(`.js-${this.#className}__input`);
+
+    if (this.#isMasked(this.#$inputField.data())) {
+      this.#setMask();
+    }
+  }
+
+  #setMask() {
+    const maskOptions = {
+      mask: Date,
+      min: new Date(),
+      max: new Date(new Date().setFullYear(new Date().getFullYear() + 1)),
+    };
+    const mask = IMask(this.#$input.get(0), maskOptions);
+  }
+
+  #isMasked(data) {
+    return data.hasOwnProperty("mask");
   }
 }
 
