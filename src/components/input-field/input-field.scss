@@ -27,6 +27,10 @@ $className: 'input-field';
 		height: toRem(42);
 		width: 100%;
 		padding-left: toRem(15);
+    padding-right: toRem(91);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 
 		&:hover, &:focus {
 			border-color: $dark-shade-50;

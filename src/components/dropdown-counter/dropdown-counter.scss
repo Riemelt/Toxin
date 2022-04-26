@@ -22,39 +22,12 @@ $className: 'dropdown-counter';
     padding-bottom: toRem(7);
 	}
 
+  &__items {
+    list-style-type: none;
+  }
+
   &__item {
-    display: flex;
-    align-items: center;
     margin-top: toRem(6);
-  }
-
-  &__item-counter {
-    display: flex;
-    align-items: center;
-    margin-left: auto;
-    max-width: toRem(92);
-    width: 100%;
-    justify-content: space-between;
-  }
-
-  &__value {
-    font-size: toRem(12);
-    font-weight: 700;
-    line-height: toRem(14.63);
-    color: $dark-shade-100;
-  }
-
-  &__decrement, &__increment {
-    width: toRem(30);
-    height: toRem(30);
-    border: 1px solid $dark-shade-25;
-    border-radius: 50%;
-    color: $dark-shade-50;
-    font-size: toRem(18);
-  }
-
-  &__decrement:disabled, &__increment:disabled {
-    opacity: 0.5;
   }
 
   &__control-panel-wrapper {
