@@ -1,0 +1,23 @@
+@import 'air-datepicker/air-datepicker.css';
+
+$className: 'datepicker';
+
+$airDatepicker: 'air-datepicker';
+
+.#{$className} {
+
+  .#{$airDatepicker} {
+    max-width: $medium;
+    width: 100%;
+    border: 1px solid $dark-shade-50;
+		box-sizing: border-box;
+		border-radius: toRem(4);
+		box-shadow: 0 toRem(10) toRem(20) 0 $dark-shade-5;
+
+    &--pointer {
+      display: none;
+    }
+  }
+
+
+}

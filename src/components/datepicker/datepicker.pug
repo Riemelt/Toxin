@@ -1,0 +1,12 @@
+include ../input-field/input-field
+
+mixin datepicker(vars)
+  -
+    var { input, hasTwoInputs = false, startDate, endDate } = vars
+    var className = "datepicker"
+    var classNames = `${className} js-${className}`
+
+  div(class=classNames data-start-date=startDate data-end-date=endDate)
+    div(class=`${className}__input`)
+      if input
+        +input-field({ ...input, size: "medium", expandable: true, isReadonly: true })

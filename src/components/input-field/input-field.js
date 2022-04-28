@@ -22,6 +22,10 @@ class InputField {
     this.#$input.prop("placeholder", text);
   }
 
+  getInput() {
+    return this.#$input;
+  }
+
   #init($parent) {
     this.#$inputField = $parent.find(`.js-${this.#className}`);
     this.#$input = $parent.find(`.js-${this.#className}__input`);

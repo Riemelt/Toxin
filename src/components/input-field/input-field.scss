@@ -31,6 +31,11 @@ $className: 'input-field';
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
+    font-family: Montserrat, Arial, sans-serif;
+    font-weight: 400;
+    color: $dark-shade-75;
+    font-size: toRem(14);
+    line-height: toRem(18);
 
 		&:hover, &:focus {
 			border-color: $dark-shade-50;
@@ -42,11 +47,7 @@ $className: 'input-field';
 		}
 
 		&::placeholder {
-			font-family: Montserrat, Arial, sans-serif;
-			font-weight: 400;
 			color: $dark-shade-25;
-			font-size: toRem(14);
-			line-height: toRem(18);
 		 }
 	}
 
@@ -78,5 +79,17 @@ $className: 'input-field';
 			border-color: $dark-shade-50;
 		}
 	}
+
+  &_big {
+    max-width: toRem(320);
+  }
+
+  &_medium {
+    max-width: toRem(266);
+  }
+
+  &_small {
+    max-width: toRem(150);
+  }
 }
 

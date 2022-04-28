@@ -2,13 +2,14 @@ include ../label/label
 
 mixin input-field(vars)
   -
-    var {label, placeholder = "", hovered, expandable, isReadonly, isMasked = false} = vars
+    var {label, placeholder = "", hovered, expandable, isReadonly, isMasked = false, size = "big"} = vars
     var className = "input-field"
-    var classNames = className + ` js-${className}`
+    var classNames = className + ` js-${className} + ${className}_${size}`
   if hovered
     - classNames += ` ${className}_hovered`
   if expandable
     - classNames += ` ${className}_expandable`
+
 
   div(class=classNames data-mask=isMasked)
     label(class=`${className}__label`)

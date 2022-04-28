@@ -2,8 +2,8 @@ $className: 'dropdown-counter';
 
 .#{$className} {
 	position: relative;
-	max-width: toRem(320);
-	min-width: toRem(150);
+	max-width: $big;
+	min-width: $small;
 	width: 100%;
 
 	&__menu {
