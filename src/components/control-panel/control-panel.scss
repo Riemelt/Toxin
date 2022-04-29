@@ -3,4 +3,14 @@ $className: 'control-panel';
 .#{$className} {
   display: flex;
   justify-content: space-between;
+
+  &__reset {
+    &_hidden {
+      display: none;
+    }
+  }
+
+  &__apply {
+    margin-left: auto;
+  }
 }

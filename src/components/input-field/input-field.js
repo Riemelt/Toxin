@@ -6,6 +6,9 @@ class InputField {
   #$inputField;
   #$input;
 
+  #minDate;
+  #maxDate;
+
   constructor($parent) {
     this.#init($parent);
   }
@@ -31,6 +34,8 @@ class InputField {
     this.#$input = $parent.find(`.js-${this.#className}__input`);
 
     if (this.#isMasked(this.#$inputField.data())) {
+      this.#minDate = new Date();
+      this.#maxDate = new Date(new Date().setFullYear(new Date().getFullYear() + 1))
       this.#setMask();
     }
   }
@@ -38,8 +43,8 @@ class InputField {
   #setMask() {
     const maskOptions = {
       mask: Date,
-      min: new Date(),
-      max: new Date(new Date().setFullYear(new Date().getFullYear() + 1)),
+      min: this.#minDate,
+      max: this.#maxDate,
     };
     const mask = IMask(this.#$input.get(0), maskOptions);
   }

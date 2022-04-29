@@ -50,7 +50,8 @@ class DropdownCounter {
     this.#itemList = this.#initItemList(this.#dropdownType);
     this.#inputField = new InputField(this.#$component);
     this.#controlPanel = new ControlPanel(this.#$component, {
-      handleButtonClick: this.#handleControlPanelClick.bind(this)
+      handleApplyButtonClick: this.#handleApplyButtonClick.bind(this),
+      handleResetButtonClick: this.#handleResetButtonClick.bind(this),
     });
   }
 
@@ -83,21 +84,12 @@ class DropdownCounter {
   #handleCounterItemClick(addedValue, type) {
     this.#itemList[type] += addedValue;
     this.#updateInput();
+    this.#updateControlPanel();
   }
 
   #handleDocumentClick(e) {
     if (!this.#isDropdown(e.target))
       this.#closeDropdown();
-  }
-  
-  #handleControlPanelClick(type) {
-    if (type === ControlPanel.APPLY)
-    {
-      this.#handleApplyButtonClick();
-    }
-    else if (type === ControlPanel.RESET)
-      this.#handleResetButtonClick();
-    else console.log("Wrong control panel type");
   }
 
   #handleApplyButtonClick() {
@@ -110,8 +102,8 @@ class DropdownCounter {
 
   #handleInputInit() {
     this.#counterItems.forEach(this.#renderCounterValue.bind(this));
-    const text = this.#buildString(this.#itemList, this.#dropdownType);
-    this.#inputField.setInputText(text);
+    this.#updateInput();
+    this.#updateControlPanel();
   }
 
   #updateInput() {
@@ -119,10 +111,19 @@ class DropdownCounter {
     this.#inputField.setInputText(text);
   }
 
+  #updateControlPanel() {
+    console.log(this.#isItemListEmpty());
+    if (this.#isItemListEmpty())
+      this.#controlPanel.hideResetButton();
+    else
+      this.#controlPanel.showResetButton();
+  }
+
   #resetCounterItems() {
     this.#counterItems.forEach(this.#resetCounterValue.bind(this));
     this.#itemList = this.#initItemList(this.#dropdownType);
     this.#updateInput();
+    this.#updateControlPanel();
   }
 
   #resetCounterValue(element) {
@@ -180,6 +181,15 @@ class DropdownCounter {
         console.log("Wrong dropdown type")
         return {};
     }
+  }
+
+  #isItemListEmpty() {
+    let isEmpty = true;
+    Object.values(this.#itemList).forEach(val => {
+      if (val !== 0)
+        isEmpty = false;
+    });
+    return isEmpty;
   }
 }
 

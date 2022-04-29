@@ -9,11 +9,19 @@ class ControlPanel {
   #$applyButton;
   #$resetButton;
 
-  #handleButtonClick;
+  #handleButtonClick = {};
 
   constructor($parent, options) {
     this.#init($parent, options);
     this.#render();
+  }
+
+  hideResetButton() {
+    this.#$resetButton.addClass(`${this.#className}__reset_hidden`);
+  }
+
+  showResetButton() {
+    this.#$resetButton.removeClass(`${this.#className}__reset_hidden`);
   }
 
   #init($parent, options) {
@@ -21,8 +29,9 @@ class ControlPanel {
     this.#$applyButton = this.#$component.find(`.js-${this.#className}__apply`);
     this.#$resetButton = this.#$component.find(`.js-${this.#className}__reset`);
 
-    const { handleButtonClick } = options;
-    this.#handleButtonClick = handleButtonClick;
+    const { handleApplyButtonClick, handleResetButtonClick } = options;
+    this.#handleButtonClick[ControlPanel.APPLY] = handleApplyButtonClick;
+    this.#handleButtonClick[ControlPanel.RESET] = handleResetButtonClick;
   }
 
   #render() {
@@ -35,11 +44,11 @@ class ControlPanel {
   }
 
   #handleApplyButtonClick() {
-    this.#handleButtonClick(ControlPanel.APPLY);
+    this.#handleButtonClick[ControlPanel.APPLY]();
   }
 
   #handleResetButtonClick() {
-    this.#handleButtonClick(ControlPanel.RESET);
+    this.#handleButtonClick[ControlPanel.RESET]();
   }
 }
 
