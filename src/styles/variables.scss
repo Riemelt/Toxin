@@ -10,15 +10,24 @@ $dark-shade-75: rgba(31, 32, 65, 0.75);
 $dark-shade-50: rgba(31, 32, 65, 0.5);
 $dark-shade-25: rgba(31, 32, 65, 0.25);
 $dark-shade-5: rgba(31, 32, 65, 0.05);
+
 $purple: #BC9CFF;
 $purple-50: #BC9CFF50;
+$purple-25: #BC9CFF25;
+
 $green: #6FCF97;
 
-$blue: #8BA4F9;
-$blue-50: #8BA4F950;
+$jordy-blue: #8BA4F9;
+$jordy-blue-50: #8BA4F950;
+$jordy-blue-25: #8BA4F925;
 
-$purple-blue-gradient: linear-gradient(180deg, $purple 0%, $blue 100%);
-$purple-blue-gradient-50: linear-gradient(180deg, $purple-50 0%, $blue-50 100%);
+$sky-blue: #66D2EA;
+
+$primary-gradient: linear-gradient(180deg, $purple 0%, $jordy-blue 100%);
+$primary-gradient-50: linear-gradient(180deg, $purple-50 0%, $jordy-blue-50 100%);
+$primary-gradient-25: linear-gradient(180deg, $purple-25 0%, $jordy-blue-25 100%);
+
+$secondary-gradient: linear-gradient(180deg, $green 0%, $sky-blue 100%);
 
 $small: toRem(150);
 $medium: toRem(266);

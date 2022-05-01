@@ -5,17 +5,145 @@ $className: 'datepicker';
 $airDatepicker: 'air-datepicker';
 
 .#{$className} {
+  border: 1px solid $dark-shade-25;
+  border-radius: toRem(4);
+  box-shadow: 0 toRem(10) toRem(20) 0 $dark-shade-5;
+  max-width: $big;
+  box-sizing: border-box;
+  padding: toRem(20);
 
   .#{$airDatepicker} {
-    max-width: $medium;
+    font-family: Montserrat, Arial, sans-serif;
+    color: $dark-shade-50;
     width: 100%;
-    border: 1px solid $dark-shade-50;
-		box-sizing: border-box;
-		border-radius: toRem(4);
-		box-shadow: 0 toRem(10) toRem(20) 0 $dark-shade-5;
+    border: initial;
+
+    &-nav {
+      border: initial;
+
+      &--action {
+        color: $purple;
+        font-size: toRem(24);
+        line-height: toRem(20);
+      }
+
+      &--title {
+        color: $dark-shade-100;
+        font-weight: 700;
+        font-size: toRem(19);
+        line-height: toRem(23);
+      }
+    }
 
     &--pointer {
       display: none;
+    }
+
+    &--content {
+      padding: initial;
+    }
+
+    &-body {
+      &--day-names {
+        height: toRem(40);
+        margin: initial;
+      }
+
+      &--day-name {
+        color: $purple;
+        font-weight: 700;
+        font-size: toRem(12);
+      }
+
+      &--cells {
+        &.-days- {
+          grid-auto-rows: toRem(40);
+        }
+      }
+    }
+
+    &-cell.-day- {
+      color: $dark-shade-50;
+      font-size: toRem(12);
+      border: none;
+
+      &.-focus- {
+        border-radius: 50%;
+      }
+
+      &.-range-from-, &.-range-to-, &.-in-range- {
+        position: relative;
+        background: none;
+
+        &::before {
+          position: absolute;
+          content: '';
+          height: 100%;
+          background-image: $primary-gradient;
+          opacity: 0.25;
+          z-index: -1;
+        }
+      }
+
+      &.-range-from- {
+        &::before {
+          right: 0;
+          width: 50%; 
+        }
+
+        &.-focus- {
+          background-image: $primary-gradient;
+          color: white;
+          font-weight: 700;
+        }
+      }
+
+      &.-range-to- {
+        &::before {
+          left: 0;
+          width: 50%; 
+        }
+
+        &.-focus- {
+          background-image: $primary-gradient;
+          color: white;
+          font-weight: 700;
+        }
+      }
+
+      &.-in-range- {
+        background: none;
+
+        &::before {
+          width: 100%;
+        }
+      }
+
+      &.-range-from-, &.-range-to- {
+        background-image: $primary-gradient;
+      }
+
+      &.-current-, &.-selected-, &.-range-to-, &.-range-from- {
+        color: white;
+        font-weight: 700;
+        border-radius: 50%;
+      }
+
+      &.-current- {
+        background-image: $secondary-gradient;
+      }
+
+      &.-selected- {
+        background-image: $primary-gradient;
+      }
+
+      &.-other-month- {
+        color: $dark-shade-25;
+
+        &.-selected-, &.-range-to-, &.-range-from- {
+          color: white;
+        }
+      }
     }
   }
 

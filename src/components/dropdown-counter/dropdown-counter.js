@@ -107,12 +107,11 @@ class DropdownCounter {
   }
 
   #updateInput() {
-    const text = this.#buildString(this.#itemList, this.#dropdownType);
+    const text = this.#buildString();
     this.#inputField.setInputText(text);
   }
 
   #updateControlPanel() {
-    console.log(this.#isItemListEmpty());
     if (this.#isItemListEmpty())
       this.#controlPanel.hideResetButton();
     else
@@ -153,18 +152,19 @@ class DropdownCounter {
     return this.#$component.is(target) || this.#$component.has(target).length !== 0;
   }
 
-  #buildString(itemList, type) {
+  #buildString() {
     let text = "";
+    const type = this.#dropdownType;
     const dictionaryMap = DropdownCounter.#DICTIONARY[type];
   
-    Object.keys(itemList).forEach(function(item) {
-      const itemCount = itemList[item];
+    for (let item in this.#itemList) {
+      const itemCount = this.#itemList[item];
       if (itemCount > 0) {
         if (text !== "")
           text += ", ";
         text += itemCount + " " + declOfNum(itemCount, dictionaryMap[item]);
       }
-    });
+    }
 
     if (text === "")
       text = DropdownCounter.#PLACEHOLDERS[type];
@@ -185,10 +185,12 @@ class DropdownCounter {
 
   #isItemListEmpty() {
     let isEmpty = true;
-    Object.values(this.#itemList).forEach(val => {
-      if (val !== 0)
+
+    for (let item in this.#itemList) {
+      if (this.#itemList[item] !== 0)
         isEmpty = false;
-    });
+    }
+
     return isEmpty;
   }
 }

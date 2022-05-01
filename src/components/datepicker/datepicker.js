@@ -1,4 +1,4 @@
-import InputField from "../input-field/input-field";
+import ControlPanel from "../control-panel/control-panel";
 
 import AirDatepicker from "air-datepicker";
 
@@ -9,9 +9,10 @@ class Datepicker {
   #className = "datepicker";
 
   #$component;
-  #inputField;
+  #$input;
   #airDatepicker;
 
+  #controlPanel;
   #startDate;
   #endDate;
 
@@ -21,26 +22,40 @@ class Datepicker {
 
   #init($parent) {
     this.#$component = $parent.find(`.js-${this.#className}`);
-    this.#inputField = new InputField(this.#$component);
+    this.#$input = this.#$component.find(`.js-${this.#className}__input`);
 
     this.#startDate = this.#$component.data("startDate");
     this.#endDate = this.#$component.data("endDate");
 
-    this.#initAirDatepicker();
-    this.#airDatepicker.hide();
+    this.#controlPanel = new ControlPanel(this.#$component, {
+      handleResetButtonClick: this.#handleResetButtonClick.bind(this),
+    });
 
+    this.#initAirDatepicker();
+  }
+
+  #handleResetButtonClick() {
+    this.#airDatepicker.clear();
   }
 
   #initAirDatepicker() {
-    const input = this.#inputField.getInput().get(0);
+    const input = this.#$input.get(0);
 
-    this.#airDatepicker = new AirDatepicker(this.#$component.get(0), {
+    this.#airDatepicker = new AirDatepicker(input, {
+      inline: true,
       visible: false,
       range: true,
       multipleDates: true,
       selectedDates: [this.#startDate, this.#endDate],
       dateFormat: this.#parseDates.bind(this),
-      container: this.#$component.get(0),
+      prevHtml: "<span class=\"material-icons\"> arrow_back </span>",
+      nextHtml: "<span class=\"material-icons\"> arrow_forward </span>",
+      navTitles: {
+        days: "MMMM yyyy"
+      },
+      onSelect() {
+        console.log("SELECT");
+      },
     });
   }
 

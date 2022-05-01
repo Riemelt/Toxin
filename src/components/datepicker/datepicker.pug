@@ -1,12 +1,12 @@
-include ../input-field/input-field
+include ../control-panel/control-panel
 
 mixin datepicker(vars)
   -
-    var { input, hasTwoInputs = false, startDate, endDate } = vars
+    var { hasTwoInputs = false, startDate, endDate } = vars
     var className = "datepicker"
     var classNames = `${className} js-${className}`
 
-  div(class=classNames data-start-date=startDate data-end-date=endDate)
-    div(class=`${className}__input`)
-      if input
-        +input-field({ ...input, size: "medium", expandable: true, isReadonly: true })
+  div(class=classNames type="hidden" data-start-date=startDate data-end-date=endDate)
+    input(class=`${className}__input js-${className}__input` type="hidden")
+    div(class=`${className}__control-panel-wrapper`)
+      +control-panel
