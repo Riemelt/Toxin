@@ -53,9 +53,6 @@ class Datepicker {
       navTitles: {
         days: "MMMM yyyy"
       },
-      onSelect() {
-        console.log("SELECT");
-      },
     });
   }
 
