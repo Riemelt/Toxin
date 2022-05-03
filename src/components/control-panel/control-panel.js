@@ -44,11 +44,11 @@ class ControlPanel {
   }
 
   #handleApplyButtonClick() {
-    this.#handleButtonClick[ControlPanel.APPLY]();
+    this.#handleButtonClick[ControlPanel.APPLY]?.();
   }
 
   #handleResetButtonClick() {
-    this.#handleButtonClick[ControlPanel.RESET]();
+    this.#handleButtonClick[ControlPanel.RESET]?.();
   }
 }
 

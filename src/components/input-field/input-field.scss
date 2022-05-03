@@ -90,6 +90,10 @@ $className: 'input-field';
 
   &_small {
     max-width: toRem(150);
+
+    .#{$className}__input {
+      padding-right: initial;
+    }
   }
 }
 

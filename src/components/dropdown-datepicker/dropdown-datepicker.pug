@@ -1,0 +1,21 @@
+include ../datepicker/datepicker
+include ../input-field/input-field
+
+mixin dropdown-datepicker(vars)
+  -
+    var { datepicker, inputs, withTwoInputs = false, size = "medium"} = vars
+    var className = "dropdown-datepicker"
+    var classNames = `${className} js-${className} ${className}_${size}`
+
+  div(class=classNames data-with-two-inputs=withTwoInputs)
+    div(class=`${className}__input-wrapper js-${className}__input-wrapper`)
+      if withTwoInputs
+        div(class=`${className}__input-start js-${className}__input-start`)
+          +input-field({...inputs[0], size: "small"})
+        div(class=`${className}__input-end js-${className}__input-end`)
+          +input-field({...inputs[1], size: "small"})
+      else
+        div(class=`${className}__input-single js-${className}__input-single`)
+          +input-field({...inputs[0], size: "medium"})
+    div(class=`${className}__datepicker js-${className}__datepicker`)
+      +datepicker({...datepicker, size})

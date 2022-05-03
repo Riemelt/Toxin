@@ -11,59 +11,121 @@ class Datepicker {
   #$component;
   #$input;
   #airDatepicker;
+  #options;
 
   #controlPanel;
-  #startDate;
-  #endDate;
+  #dates = [];
+  #dateStart;
+  #dateEnd;
 
-  constructor($parent) {
-    this.#init($parent);
+  constructor($parent, options = {}) {
+    this.#init($parent, options);
   }
 
-  #init($parent) {
+  static parseDates(dates) {
+    return dates.map(Datepicker.parseDate).join(" - ");
+  }
+
+  static parseDate(date) {
+    const day = date.getDate();
+    const month = date.getMonth();
+    return `${day} ${Datepicker.#MONTHS[month]}`;
+  }
+
+  static fixFocusDisplay(datepicker) {
+    const selector = ".air-datepicker-cell.-day-.-selected-";
+    const $selectedCell = $(selector, datepicker.$datepicker);
+
+    $selectedCell.addClass("-range-from-");
+    $selectedCell.addClass("-range-to-");
+  }
+
+  toggle() {
+    this.#$component.toggleClass(`${this.#className}_hidden`);
+  }
+
+  close() {
+    this.#$component.addClass(`${this.#className}_hidden`);
+  }
+
+  getDates() {
+    return {
+      start: this.#dateStart,
+      end: this.#dateEnd,
+    };
+  }
+
+  #init($parent, options) {
     this.#$component = $parent.find(`.js-${this.#className}`);
     this.#$input = this.#$component.find(`.js-${this.#className}__input`);
 
-    this.#startDate = this.#$component.data("startDate");
-    this.#endDate = this.#$component.data("endDate");
+    this.#initDates();
 
     this.#controlPanel = new ControlPanel(this.#$component, {
-      handleResetButtonClick: this.#handleResetButtonClick.bind(this),
+      handleResetButtonClick: this.#handleResetButtonClick?.bind(this),
+      handleApplyButtonClick: this.#handleApplyButtonClick?.bind(this),
     });
+
+    this.#options = options;
 
     this.#initAirDatepicker();
   }
 
   #handleResetButtonClick() {
     this.#airDatepicker.clear();
+
+    const { handleResetButtonClick } = this.#options;
+    handleResetButtonClick?.();
+  }
+
+  #handleApplyButtonClick() {
+    const { handleApplyButtonClick } = this.#options;
+    handleApplyButtonClick?.();
+  }
+
+  #initDates() {
+    const start = this.#$component.data("startDate");
+    const end = this.#$component.data("endDate");
+
+    if (start) {
+      this.#dates.push(start);
+      this.#dateStart = new Date(start);
+    }
+
+    if (end) {
+      this.#dates.push(end);
+      this.#dateEnd = new Date(end);
+    }
   }
 
   #initAirDatepicker() {
     const input = this.#$input.get(0);
-
     this.#airDatepicker = new AirDatepicker(input, {
       inline: true,
       visible: false,
       range: true,
       multipleDates: true,
-      selectedDates: [this.#startDate, this.#endDate],
-      dateFormat: this.#parseDates.bind(this),
+      selectedDates: this.#dates,
       prevHtml: "<span class=\"material-icons\"> arrow_back </span>",
       nextHtml: "<span class=\"material-icons\"> arrow_forward </span>",
       navTitles: {
         days: "MMMM yyyy"
       },
+      minDate: new Date(),
+      onSelect: this.#handleDatepickerClick.bind(this),
     });
   }
 
-  #parseDates(dates) {
-    return dates.map(this.#parseDate).join(" - ");
-  }
+  #handleDatepickerClick({date, datepicker}) {
+    if (date.length === 1) {
+      Datepicker.fixFocusDisplay(datepicker)
+    }
 
-  #parseDate(date) {
-    const day = date.getDate();
-    const month = date.getMonth();
-    return `${day} ${Datepicker.#MONTHS[month]}`;
+    this.#dateStart = date?.[0];
+    this.#dateEnd = date?.[1];
+
+    const { handleDatepickerClick } = this.#options;
+    handleDatepickerClick?.({date});
   }
 }
 

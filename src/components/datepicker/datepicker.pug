@@ -2,11 +2,14 @@ include ../control-panel/control-panel
 
 mixin datepicker(vars)
   -
-    var { hasTwoInputs = false, startDate, endDate } = vars
+    var { startDate, endDate, isHidden = false, size = "medium" } = vars
     var className = "datepicker"
-    var classNames = `${className} js-${className}`
+    var classNames = `${className} js-${className} ${className}_${size}`
 
-  div(class=classNames type="hidden" data-start-date=startDate data-end-date=endDate)
+  if isHidden
+    - classNames += ` ${className}_hidden`
+
+  div(class=classNames data-start-date=startDate data-end-date=endDate)
     input(class=`${className}__input js-${className}__input` type="hidden")
     div(class=`${className}__control-panel-wrapper`)
       +control-panel

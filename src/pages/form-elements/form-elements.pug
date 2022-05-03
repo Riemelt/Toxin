@@ -5,6 +5,8 @@ include ../../components/container/container
 include ../../components/label/label
 include ../../components/button/button
 include ../../components/control-panel/control-panel
+include ../../components/datepicker/datepicker
+include ../../components/dropdown-datepicker/dropdown-datepicker
 
 block vars
   -
@@ -15,15 +17,16 @@ block content
     let className = "form-elements"
   div(class=className)
     +container
-      div(class=`${className}__input-field js-${className}__input-field`)
+      //div(class=`${className}__input-field js-${className}__input-field`)
         +input-field({
           label: {
             title: "text field",
             description: "default",
           },
+          size: "small",
           placeholder: "Email"
           })
-      div(class=`${className}__input-field js-${className}__input-field`)
+      //div(class=`${className}__input-field js-${className}__input-field`)
         +input-field({
           label: {
             title: "masked text field"
@@ -31,9 +34,52 @@ block content
           placeholder: "ДД.ММ.ГГГГ",
           isMasked: true
           })
+      div(class=`${className}__dropdown-datepicker js-${className}__dropdown-datepicker`)
+        +dropdown-datepicker({
+          withTwoInputs: false,
+          size: "medium",
+          datepicker: {
+            isHidden: true,
+          },
+          inputs: [
+            {
+              label: {
+                title: "filter date dropdown",
+              },
+              isReadonly: true,
+              size: "medium",
+              expandable: true,
+            },
+          ]})
+      div(class=`${className}__dropdown-datepicker js-${className}__dropdown-datepicker`)
+        +dropdown-datepicker({
+          withTwoInputs: true,
+          size: "big",
+          datepicker: {
+            isHidden: true,
+            endDate: "2022-05-23",
+          },
+          inputs: [
+            {
+              label: {
+                title: "date dropdown",
+              },
+              isReadonly: true,
+              size: "small",
+              expandable: true,
+            },
+            {
+              label: {
+                title: "date dropdown",
+              },
+              isReadonly: true,
+              size: "small",
+              expandable: true,
+            }
+          ]})
       //+input-field({label: "text field", description: "hover / focus", placeholder: "This is pretty awesome", hovered: true})
       //+input-field({label: "dropdown", placeholder: "Сколько гостей", expandable: true})
-      div(class=`${className}__dropdown-counter js-${className}__dropdown-counter`)
+      //div(class=`${className}__dropdown-counter js-${className}__dropdown-counter`)
         +dropdown-counter({
           type: "room",
           input: {
@@ -48,7 +94,7 @@ block content
             {title: "ванные комнаты", value: 1, type: "bathroom"}
           ]})
       //+input-field({title: "text field", description: "default", placeholder: "Email", expandable: true})
-      div(class=`${className}__dropdown-counter js-${className}__dropdown-counter`)
+      //div(class=`${className}__dropdown-counter js-${className}__dropdown-counter`)
         +dropdown-counter({
           type: "guest",
           input: {
@@ -58,7 +104,7 @@ block content
             placeholder: "Сколько гостей",
           },
           items: [
-            {title: "взрослые", value: 1, type: "guest"},
-            {title: "дети", value: 1, type: "guest"},
-            {title: "младенцы", value: 2, type: "baby"}
+            {title: "взрослые", value: 0, type: "guest"},
+            {title: "дети", value: 0, type: "guest"},
+            {title: "младенцы", value: 0, type: "baby"}
           ]})

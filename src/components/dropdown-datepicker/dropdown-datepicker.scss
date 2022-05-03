@@ -1,0 +1,28 @@
+$className: 'dropdown-datepicker';
+
+.#{$className} {
+  max-width: $medium;
+  width: 100%;
+  position: relative;
+
+  &__input-wrapper {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__datepicker {
+    margin-top: toRem(5);
+    position: absolute;
+    z-index: 999;
+    width: 100%;
+    background-color: white;
+  }
+
+  &_big {
+    max-width: $big;
+  }
+
+  &_medium {
+    max-width: $medium;
+  }
+}

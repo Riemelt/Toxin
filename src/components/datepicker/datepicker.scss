@@ -8,7 +8,7 @@ $airDatepicker: 'air-datepicker';
   border: 1px solid $dark-shade-25;
   border-radius: toRem(4);
   box-shadow: 0 toRem(10) toRem(20) 0 $dark-shade-5;
-  max-width: $big;
+  max-width: $medium;
   box-sizing: border-box;
   padding: toRem(14) toRem(15) toRem(15) toRem(15);
 
@@ -75,13 +75,26 @@ $airDatepicker: 'air-datepicker';
       font-size: toRem(12);
       border: none;
 
-      &.-focus- {
-        border-radius: 50%;
+      &.-focus-, &.-range-from-, &.-range-to-, &.-in-range-, &.-current-, &.-selected- {
+        background: none;
+
+        &::after {
+          border-radius: 50%;
+          content: '';
+          position: absolute;
+          z-index: -1;
+          height: toRem(40);
+          width: toRem(39.88);
+        }
+      }
+
+      &.-focus-::after {
+        background-color: black;
+        opacity: 0.05;
       }
 
       &.-range-from-, &.-range-to-, &.-in-range- {
         position: relative;
-        background: none;
 
         &::before {
           position: absolute;
@@ -93,56 +106,69 @@ $airDatepicker: 'air-datepicker';
         }
       }
 
-      &.-range-from- {
+      &.-range-from-, &.-range-to- {
         &::before {
-          right: 0;
           width: 50%; 
         }
 
         &.-focus- {
-          background-image: $primary-gradient;
           color: white;
           font-weight: 700;
+
+          &::after {
+            background-image: $primary-gradient;
+          }
         }
       }
 
-      &.-range-to- {
-        &::before {
-          left: 0;
-          width: 50%; 
-        }
+      &.-range-from-::before {
+          right: 0;
+      }
 
-        &.-focus- {
-          background-image: $primary-gradient;
-          color: white;
-          font-weight: 700;
-        }
+      &.-range-to-::before {
+          left: 0;
       }
 
       &.-in-range- {
-        background: none;
-
         &::before {
           width: 100%;
         }
-      }
 
-      &.-range-from-, &.-range-to- {
-        background-image: $primary-gradient;
+        &.-focus-::after {
+          background: none;
+        }
       }
 
       &.-current-, &.-selected-, &.-range-to-, &.-range-from- {
         color: white;
         font-weight: 700;
         border-radius: 50%;
+
+        &::after {
+          background-image: $primary-gradient;
+        }
       }
 
-      &.-current- {
+      &.-current-, &.-selected-, &.-range-to-, &.-range-from-, &.-range-to- {
+        &.-focus-::after {
+          opacity: initial;
+        }
+      }
+
+      &.-current-::after {
         background-image: $secondary-gradient;
       }
 
       &.-selected- {
-        background-image: $primary-gradient;
+        &::after {
+          background-image: $primary-gradient;
+        }
+      }
+
+      &.-selected-.-range-from-.-range-to-.-focus- {
+        &::before {
+          display: none;
+        }
       }
 
       &.-other-month- {
@@ -158,5 +184,17 @@ $airDatepicker: 'air-datepicker';
   &__control-panel-wrapper {
     padding-left: toRem(5);
     padding-right: toRem(5); 
+  }
+
+  &_big {
+    max-width: $big;
+  }
+
+  &_medium {
+    max-width: $medium;
+  }
+
+  &_hidden {
+    display: none;
   }
 }

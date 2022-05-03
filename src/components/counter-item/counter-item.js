@@ -67,7 +67,7 @@ class CounterItem {
   #handleCounterClick(addedValue) {
     const value = this.getValue();
     this.setValue(value + addedValue);
-    this.#handleCounterItemClick(addedValue, this.#type);
+    this.#handleCounterItemClick?.(addedValue, this.#type);
   }
 
   #valueValidation(value) {
