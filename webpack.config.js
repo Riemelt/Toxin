@@ -1,6 +1,6 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const ESLintPlugin = require('eslint-webpack-plugin');
+//const ESLintPlugin = require('eslint-webpack-plugin');
 const fs = require('fs');
 const webpack = require('webpack');
 var ghpages = require('gh-pages');
@@ -20,7 +20,7 @@ const multipleHtmlPlugins = pages.map(name => {
 
 console.log(pages);
 
-ghpages.publish('dist', function(err) {});
+ghpages.publish('dist', function() {});
 
 let mode = "development";
 if (process.env.NODE_ENV === "production") {
@@ -31,7 +31,7 @@ console.log(mode + " mode");
 
 module.exports = {
     context: srcPath,
-    mode: mode,
+    mode,
     plugins: [
        // new ESLintPlugin({
        // }),

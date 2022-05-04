@@ -1,6 +1,5 @@
 import DropdownCounter from "../../components/dropdown-counter/dropdown-counter.js";
 import InputField from "../../components/input-field/input-field.js";
-import Datepicker from "../../components/datepicker/datepicker.js";
 import DropdownDatepicker from "../../components/dropdown-datepicker/dropdown-datepicker.js";
 
 (function($){

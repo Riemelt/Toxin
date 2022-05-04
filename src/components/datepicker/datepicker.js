@@ -22,10 +22,6 @@ class Datepicker {
     this.#init($parent, options);
   }
 
-  static parseDates(dates) {
-    return dates.map(Datepicker.parseDate).join(" - ");
-  }
-
   static parseDate(date) {
     const day = date.getDate();
     const month = date.getMonth();

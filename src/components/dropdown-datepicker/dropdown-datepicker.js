@@ -55,7 +55,7 @@ class DropdownDatepicker {
   }
 
   #withTwoInputs(data) {
-    return data.hasOwnProperty("withTwoInputs");
+    return Object.prototype.hasOwnProperty.call(data, "withTwoInputs");
   }
 
   #render() {

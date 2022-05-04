@@ -157,7 +157,7 @@ class DropdownCounter {
     const type = this.#dropdownType;
     const dictionaryMap = DropdownCounter.#DICTIONARY[type];
   
-    for (let item in this.#itemList) {
+    for (const item in this.#itemList) {
       const itemCount = this.#itemList[item];
       if (itemCount > 0) {
         if (text !== "")
@@ -186,7 +186,7 @@ class DropdownCounter {
   #isItemListEmpty() {
     let isEmpty = true;
 
-    for (let item in this.#itemList) {
+    for (const item in this.#itemList) {
       if (this.#itemList[item] !== 0)
         isEmpty = false;
     }

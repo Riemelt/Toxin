@@ -46,11 +46,11 @@ class InputField {
       min: this.#minDate,
       max: this.#maxDate,
     };
-    const mask = IMask(this.#$input.get(0), maskOptions);
+    IMask(this.#$input.get(0), maskOptions);
   }
 
   #isMasked(data) {
-    return data.hasOwnProperty("mask");
+    return Object.prototype.hasOwnProperty.call(data, "mask");
   }
 }
 

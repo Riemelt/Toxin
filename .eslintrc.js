@@ -1,20 +1,20 @@
 module.exports = {
-    "env": {
-        "browser": true,
-        "es2021": true,
-        "es6": true,
-        "jquery": true,
-        "node": true
+    env: {
+        browser: true,
+        es2021: true,
+        es6: true,
+        jquery: true,
+        node: true
     },
-    "extends": "eslint:recommended",
-    "parserOptions": {
-        "ecmaVersion": "latest",
-        "sourceType": "module"
+    extends: "eslint:recommended",
+    parserOptions: {
+        ecmaVersion: "latest",
+        sourceType: "module"
     },
-    "rules": {
+    rules: {
       "prefer-const": ["error", {
-        "destructuring": "any",
-        "ignoreReadBeforeAssign": false
+        destructuring: "any",
+        ignoreReadBeforeAssign: false
       }],
       "no-new-object": "error",
       "no-array-constructor": "error",
@@ -22,16 +22,16 @@ module.exports = {
       "quote-props": ["error", "as-needed"],
       "prefer-object-spread": "error",
       "prefer-destructuring": ["error", {
-        "VariableDeclarator": {
-          "array": false,
-          "object": true
+        VariableDeclarator: {
+          array: false,
+          object: true
         },
-        "AssignmentExpression": {
-          "array": true,
-          "object": true
+        AssignmentExpression: {
+          array: true,
+          object: true
         }
       }, {
-        "enforceForRenamedProperties": false
+        enforceForRenamedProperties: false
       }]
     }
 }
