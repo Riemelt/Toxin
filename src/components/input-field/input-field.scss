@@ -58,7 +58,13 @@ $className: 'input-field';
 		color: $dark-shade-50;
 		width: toRem(24);
 		height: toRem(24);
-	}
+    &::before {
+      font-size: toRem(24);
+      font-family: 'Material Icons', Arial, sans-serif;
+      content: "expand_more";
+	  }
+}
+
 
 	&_hovered, &_expandable {
 		.#{$className}__input::placeholder {

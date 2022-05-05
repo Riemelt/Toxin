@@ -1,0 +1,37 @@
+$className: 'expander';
+
+.#{$className} {
+  max-width: $medium;
+  width: 100%;
+
+  &__header {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  &__expander-button {
+    margin-left: auto;
+    cursor: pointer;
+    &::before {
+      font-size: toRem(24);
+      font-family: 'Material Icons', Arial, sans-serif;
+      color: $dark-shade-50;
+      content: "expand_more";
+    }
+  }
+
+  &__body {
+    display: none;
+  }
+
+  &__opened {
+    .#{$className}__body {
+      display: initial;
+    }
+
+    .#{$className}__expander-button::before {
+      content: "expand_less";
+    }
+  }
+}

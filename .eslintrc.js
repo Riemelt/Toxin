@@ -17,6 +17,7 @@ module.exports = {
         ignoreReadBeforeAssign: false
       }],
       "no-new-object": "error",
+      "no-var": "error",
       "no-array-constructor": "error",
       "object-shorthand": ["error", "always"],
       "quote-props": ["error", "as-needed"],

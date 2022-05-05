@@ -3,7 +3,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 //const ESLintPlugin = require('eslint-webpack-plugin');
 const fs = require('fs');
 const webpack = require('webpack');
-var ghpages = require('gh-pages');
+const ghpages = require('gh-pages');
 
 const path = require('path');
 const srcPath = path.resolve(__dirname, "./src");
