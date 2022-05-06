@@ -4,7 +4,9 @@ mixin datepicker(vars)
   -
     var { startDate, endDate, isHidden = false, size = "medium" } = vars
     var className = "datepicker"
-    var classNames = `${className} js-${className} ${className}_${size}`
+    var classNames = `${className} js-${className}`
+
+    classNames += (size === "big") ? ` ${className}_big` : ` ${className}_medium`
 
   if isHidden
     - classNames += ` ${className}_hidden`

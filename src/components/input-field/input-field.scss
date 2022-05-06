@@ -51,7 +51,7 @@ $className: 'input-field';
 		 }
 	}
 
-	&__expand-button {
+	&__button {
 		position: absolute;
 		right: toRem(10);
 		align-self: center;
@@ -61,8 +61,25 @@ $className: 'input-field';
     &::before {
       font-size: toRem(24);
       font-family: 'Material Icons', Arial, sans-serif;
-      content: "expand_more";
 	  }
+
+    &_expandable::before {
+      content: "expand_more";
+    }
+
+    &_subscribable::before {
+      content: "arrow_forward";
+    }
+
+    &_primary {
+      background: $primary-gradient;
+      background-clip: text;
+      color: transparent;
+    }
+
+    &_secondary {
+      color: $dark-shade-75;
+    } 
 }
 
 

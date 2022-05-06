@@ -2,14 +2,40 @@ include ../label/label
 
 mixin input-field(vars)
   -
-    var {label, placeholder = "", hovered, expandable, isReadonly, isMasked = false, size = "big"} = vars
+    var {label, placeholder = "", hovered, expandable, button, isReadonly, isMasked = false, size = "big"} = vars
     var className = "input-field"
-    var classNames = className + ` js-${className} ${className}_${size}`
+    var classNames = className + ` js-${className}`
+  
+  case (size)
+    when "small"
+      - classNames += ` ${className}_small`
+    when "medium"
+      - classNames += ` ${className}_medium`
+    default
+      - classNames += ` ${className}_big`
+
   if hovered
     - classNames += ` ${className}_hovered`
   if expandable
     - classNames += ` ${className}_expandable`
 
+  if button
+    - var buttonClassName = `${className}__button`
+    - var buttonClassNames = buttonClassName
+
+    case (button.icon)
+      when "expand_more"
+        - buttonClassNames += ` ${buttonClassName}_expandable`
+      when "arrow_forward"
+        - buttonClassNames += ` ${buttonClassName}_subscribable`
+      default
+        - buttonClassNames += ` ${buttonClassName}_expandable`
+
+    case (button.theme)
+      when "primary"
+        - buttonClassNames += ` ${buttonClassName}_primary`
+      when "secondary"
+        - buttonClassNames += ` ${buttonClassName}_secondary`
 
   div(class=classNames data-mask=isMasked)
     label(class=`${className}__label`)
@@ -17,5 +43,5 @@ mixin input-field(vars)
         +label(label)
       div(class=`${className}__main-field`)
         input(class=`${className}__input js-${className}__input` type="text" placeholder=placeholder readonly=isReadonly)
-        if expandable
-          button(class=`${className}__expand-button`)
+        if button
+          button(class=buttonClassNames)

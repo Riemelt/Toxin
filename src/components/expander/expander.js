@@ -11,7 +11,7 @@ class Expander {
   }
 
   #init($parent) {
-    this.#$component = (`.js-${this.#className}`, $parent);
+    this.#$component = $parent.find(`.js-${this.#className}`);
     this.#$header = this.#$component.find(`.js-${this.#className}__header`);
   }
 

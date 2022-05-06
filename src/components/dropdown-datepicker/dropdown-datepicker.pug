@@ -5,7 +5,9 @@ mixin dropdown-datepicker(vars)
   -
     var { datepicker, inputs, withTwoInputs = false, size = "medium"} = vars
     var className = "dropdown-datepicker"
-    var classNames = `${className} js-${className} ${className}_${size}`
+    var classNames = `${className} js-${className}`
+
+    classNames += (size === "big") ? ` ${className}_big` : ` ${className}_medium`
 
   div(class=classNames data-with-two-inputs=withTwoInputs)
     div(class=`${className}__input-wrapper js-${className}__input-wrapper`)
