@@ -26,6 +26,10 @@ $className: 'expander';
   }
 
   &__opened {
+    .#{$className}__header {
+      margin-bottom: toRem(16);
+    }
+
     .#{$className}__body {
       display: initial;
     }

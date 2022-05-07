@@ -4,6 +4,7 @@ mixin checkbox(vars)
       title = "",
       theme,
       description,
+      checked = false,
     } = vars
 
     const className = "checkbox"
@@ -14,7 +15,7 @@ mixin checkbox(vars)
 
   div(class=classNames)
     label(class=`${className}__body`)
-      input(class=`${className}__checkbox-input` type="checkbox")
+      input(class=`${className}__checkbox-input` type="checkbox" checked=checked)
       div(class=`${className}__checkmark`)
       span(class=`${className}__title`)= title
     if description
