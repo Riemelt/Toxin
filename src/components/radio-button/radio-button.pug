@@ -1,0 +1,20 @@
+mixin radio-button(vars)
+  -
+    const {
+      title = "",
+      checked = false,
+      name = "",
+    } = vars
+
+    const className = "radio-button"
+    let classNames = className + ` js-${className}`
+
+  div(class=classNames)
+    label(class=`${className}__body`)
+      input(class=`${className}__radio-input`
+            type="radio"
+            checked=checked
+            name=name
+            )
+      div(class=`${className}__button`)
+      span(class=`${className}__title`)= title

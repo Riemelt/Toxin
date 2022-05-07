@@ -1,0 +1,60 @@
+$className: 'radio-button';
+
+.#{$className} {
+  max-width: $medium;
+
+  &__body {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  &__radio-input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+  }
+
+  &__radio-input:checked
+  + &__button {
+    border-color: $purple;
+
+    &::after {
+      display: block;
+    }
+  }
+
+  &__radio-input:checked
+  ~ &__title {
+    color: $dark-shade-75;
+  }
+
+  &__button {
+    position: relative;
+    width: toRem(20);
+    height: toRem(20);
+    border-radius: 50%;
+    border: toRem(1) solid $dark-shade-25;
+    box-sizing: border-box;
+    margin-right: toRem(10);
+
+    &::after {
+      position: absolute;
+      margin: auto;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      content: '';
+      height: toRem(12);
+      width: toRem(12);
+      background-image: $primary-gradient;
+      border-radius: 50%;
+      display: none;
+    }
+  }
+
+  &__title {
+    color: $dark-shade-50;
+  }
+}
