@@ -1,0 +1,21 @@
+$className: 'bullet-list';
+
+.#{$className} {
+  max-width: $medium;
+
+  &__title {
+    margin-bottom: toRem(16);
+  }
+
+  &__list {
+    list-style-type: none;
+  }
+
+  &__item {
+    margin-bottom: toRem(10);
+
+    &:last-child {
+      margin-bottom: initial;
+    }
+  }
+}
