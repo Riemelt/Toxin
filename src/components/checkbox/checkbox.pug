@@ -1,0 +1,21 @@
+mixin checkbox(vars)
+  -
+    const {
+      title = "",
+      theme,
+      description,
+    } = vars
+
+    const className = "checkbox"
+    let classNames = className + ` js-${className}`
+
+  if theme === "rich"
+    - classNames += ` ${className}_rich`
+
+  div(class=classNames)
+    label(class=`${className}__body`)
+      input(class=`${className}__checkbox-input` type="checkbox")
+      div(class=`${className}__checkmark`)
+      span(class=`${className}__title`)= title
+    if description
+      p(class=`${className}__description`)= description

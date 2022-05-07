@@ -4,7 +4,7 @@ include ../counter-item/counter-item
 
 mixin dropdown-counter(vars)
   -
-    var {type = "guest", input, items = []} = vars
+    var {type = "guest", input, withControlPanel = true, items = []} = vars
     var className = "dropdown-counter"
     var classNames = className + ` js-${className}`
 
@@ -20,5 +20,6 @@ mixin dropdown-counter(vars)
               value: item.value,
               type: item.type,
             })
-      div(class=`${className}__control-panel-wrapper`) 
-        +control-panel
+      if withControlPanel
+        div(class=`${className}__control-panel-wrapper js-${className}__control-panel-wrapper`) 
+          +control-panel

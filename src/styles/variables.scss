@@ -1,8 +1,8 @@
 $htmlSize: 14;
 
 @function toRem($value) {
-	$remValue: calc($value / $htmlSize) + rem; 
-	@return $remValue;
+	$remValue: calc($value / $htmlSize); 
+	@return $remValue * 1rem;
 }
 
 $dark-shade-100: rgba(31, 32, 65, 1.0);
@@ -33,3 +33,5 @@ $small: toRem(150);
 $medium: toRem(266);
 $big: toRem(320);
 
+$checkbox-size: toRem(20);
+$checkbox-margin: toRem(10);

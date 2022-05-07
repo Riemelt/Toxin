@@ -10,6 +10,7 @@ class DropdownCounter {
   #$component;
   #$menu;
   #$counterItems;
+  #$controlPanel;
 
   #inputField;
   #controlPanel;
@@ -45,14 +46,18 @@ class DropdownCounter {
     this.#$menu = this.#$component.find(`.js-${this.#className}__menu`);
     this.#$counterItems = this.#$component.find(`.js-${this.#className}__item`);
     this.#$counterItems.each(this.#initCounterItem.bind(this));
+    this.#$controlPanel = this.#$component.find(`.js-${this.#className}__control-panel-wrapper`);
 
     this.#dropdownType = this.#$component.data("type");
     this.#itemList = this.#initItemList(this.#dropdownType);
     this.#inputField = new InputField(this.#$component);
-    this.#controlPanel = new ControlPanel(this.#$component, {
-      handleApplyButtonClick: this.#handleApplyButtonClick.bind(this),
-      handleResetButtonClick: this.#handleResetButtonClick.bind(this),
-    });
+
+    if (this.#$controlPanel.length !== 0) {
+      this.#controlPanel = new ControlPanel(this.#$component, {
+        handleApplyButtonClick: this.#handleApplyButtonClick.bind(this),
+        handleResetButtonClick: this.#handleResetButtonClick.bind(this),
+      });
+    }
   }
 
   #setHandlers() {
@@ -113,9 +118,9 @@ class DropdownCounter {
 
   #updateControlPanel() {
     if (this.#isItemListEmpty())
-      this.#controlPanel.hideResetButton();
+      this.#controlPanel?.hideResetButton();
     else
-      this.#controlPanel.showResetButton();
+      this.#controlPanel?.showResetButton();
   }
 
   #resetCounterItems() {

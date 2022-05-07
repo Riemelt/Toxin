@@ -1,0 +1,76 @@
+$className: 'checkbox';
+
+.#{$className} {
+  max-width: toRem(260);
+
+  &__body {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  &__checkbox-input {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+  }
+
+  &__checkmark {
+    position: relative;
+    border-radius: toRem(4);
+    border: toRem(1) solid $dark-shade-25;
+    height: $checkbox-size;
+    min-width: toRem(20);
+    margin-right: $checkbox-margin;
+
+    &::after {
+      position: absolute;
+      margin: auto;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 10%;
+      content: '';
+      height: toRem(8);
+      width: toRem(6);
+      border-style: solid;
+      border-width: toRem(2);
+      border-image: $primary-gradient 1;
+      border-left: none;
+      border-top: none;
+      transform: rotate(45deg);
+      box-sizing: border-box;
+      display: none;
+    }
+  }
+
+  &__checkbox-input:checked
+  + &__checkmark {
+    border-color: $purple;
+
+    &::after {
+      display: initial;
+    }
+  }
+
+  &__title {
+    color: $dark-shade-50;
+    line-height: toRem(18);
+  }
+
+  &__description {
+    color: $dark-shade-50;
+    font-size: toRem(12);
+    line-height: toRem(14);
+    padding-left: $checkbox-size + $checkbox-margin;
+    margin-top: toRem(5);
+    white-space: pre-line;
+  }
+
+  &_rich {
+    .#{$className}__title {
+      font-weight: 700;
+      color: $dark-shade-75;
+    }
+  }
+}
