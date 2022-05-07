@@ -1,0 +1,15 @@
+include ../radio-button/radio-button
+
+mixin radio-buttons-field(vars)
+  -
+    const {
+      items = []
+    } = vars
+
+    const className = "radio-buttons-field"
+    let classNames = className + ` js-${className}`
+
+  div(class=classNames)
+    each item in items
+      div(class=`${className}__item`)
+        +radio-button(item)

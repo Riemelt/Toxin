@@ -1,0 +1,14 @@
+$className: 'radio-buttons-field';
+
+.#{$className} {
+  max-width: $medium;
+  display: flex;
+
+  &__item {
+    margin-right: toRem(20);
+
+    &:last-child {
+      margin-right: initial;
+    }
+  }  
+}
