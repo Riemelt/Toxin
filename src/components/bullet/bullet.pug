@@ -1,0 +1,12 @@
+mixin bullet(vars)
+  -
+    const {
+      title = "",
+    } = vars
+
+    const className = "bullet"
+    let classNames = className + ` js-${className}`
+
+  div(class=classNames)
+    div(class=`${className}__bullet`)
+    span(class=`${className}__title`)= title

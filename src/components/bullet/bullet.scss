@@ -1,0 +1,15 @@
+$className: 'bullet';
+
+.#{$className} {
+  max-width: $medium;
+  display: flex;
+  align-items: center;
+
+  &__bullet {
+    height: toRem(10);
+    width: toRem(10);
+    background-color: $dark-shade-25;
+    border-radius: 50%;
+    margin-right: toRem(10);
+  }
+}
