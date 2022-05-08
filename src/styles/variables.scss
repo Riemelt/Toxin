@@ -5,6 +5,14 @@ $htmlSize: 14;
 	@return $remValue * 1rem;
 }
 
+@mixin hideInput() {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
 $dark-shade-100: rgba(31, 32, 65, 1.0);
 $dark-shade-75: rgba(31, 32, 65, 0.75);
 $dark-shade-50: rgba(31, 32, 65, 0.5);

@@ -1,0 +1,48 @@
+$className: 'toggle-switch';
+
+.#{$className} {
+  max-width: $medium;
+
+  &__body {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  &__switch-input {
+    @include hideInput;
+  }
+
+  &__switch-input:checked
+  + &__switch {
+    border-color: $purple;
+
+    &::after {
+      background-image: $primary-gradient;
+      transform: translateX(toRem(19));
+    }
+  }
+
+  &__switch {
+    position: relative;
+    height: toRem(20);
+    width: toRem(40);
+    border: toRem(1) solid $dark-shade-25;
+    border-radius: toRem(10);
+    margin-right: toRem(10);
+
+    &::after {
+      position: absolute;
+      content: '';
+      height: toRem(12);
+      width: toRem(12);
+      background-color: $dark-shade-25;
+      border-radius: 50%;
+      margin: auto 0;
+      left: 9%;
+      top: 0;
+      bottom: 0;
+      transition: transform 0.4s;
+    }
+  }
+}
