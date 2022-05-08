@@ -64,11 +64,11 @@ $className: 'input-field';
 	  }
 
     &_expandable::before {
-      content: "expand_more";
+      content: 'expand_more';
     }
 
     &_subscribable::before {
-      content: "arrow_forward";
+      content: 'arrow_forward';
     }
 
     &_primary {

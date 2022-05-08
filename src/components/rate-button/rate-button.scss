@@ -1,0 +1,25 @@
+$className: 'rate-button';
+
+.#{$className} {
+  display: flex;
+
+  &__icon {
+    max-width: toRem(24);
+    
+    &::before {
+      font-size: toRem(24);
+      font-family: 'Material Icons', Arial, sans-serif;
+      color: $dark-shade-50;
+      content: 'star';
+      background: $primary-gradient;
+      background-clip: text;
+      color: transparent;
+    }
+
+    &_empty {
+      &::before {
+        content: 'star_bordered';
+      }
+    }
+  }
+}

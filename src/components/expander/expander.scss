@@ -17,7 +17,7 @@ $className: 'expander';
       font-size: toRem(24);
       font-family: 'Material Icons', Arial, sans-serif;
       color: $dark-shade-50;
-      content: "expand_more";
+      content: 'expand_more';
     }
   }
 
@@ -35,7 +35,7 @@ $className: 'expander';
     }
 
     .#{$className}__expander-button::before {
-      content: "expand_less";
+      content: 'expand_less';
     }
   }
 }

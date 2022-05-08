@@ -1,0 +1,15 @@
+mixin rate-button(vars)
+  -
+    const {
+      value = 0,
+    } = vars
+
+    const className = "rate-button"
+    let classNames = className + ` js-${className}`
+
+  div(class=classNames)
+    - for (let x = 0; x < 5; x++)
+      - let iconClassNames = `${className}__icon`
+      if value <= x
+        - iconClassNames += ` ${className}__icon_empty`
+      span(class=iconClassNames)
