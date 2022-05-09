@@ -1,0 +1,64 @@
+$className: 'like-button';
+
+.#{$className} {
+  max-width: $medium;
+
+  &__body {
+    display: flex;
+    align-items: center;
+    width: toRem(40);
+    height: toRem(20);
+    border: toRem(1) solid $dark-shade-25;
+    border-radius: toRem(10);
+    font-size: toRem(10);
+    color: $dark-shade-25;
+    transition: border-color 0.2s;
+
+    &:hover, &:focus {
+      border-color: $purple;
+    }
+  }
+
+  &__input {
+    @include hideInput;
+  }
+
+  &__icon {
+    max-height: toRem(20);
+
+    &::before {
+      font-family: 'Material Icons', Arial, sans-serif;
+      content: 'favorite_border';
+      line-height: toRem(9);
+    }
+  }
+
+  &__likes, &__icon {
+    margin: 0 auto;
+  }
+
+  &__likes {
+    line-height: toRem(12);
+    margin-right: toRem(11);
+  }
+
+  &_checked {
+    .#{$className} {
+      &__body {
+        border-color: $purple;
+      }
+
+      &__icon::before {
+        content: 'favorite';
+        background: $primary-gradient;
+        background-clip: text;
+        color: transparent;
+      }
+
+      &__likes {
+        color: $purple;
+      }
+    }
+  }
+
+}

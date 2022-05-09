@@ -10,9 +10,7 @@ $className: 'checkbox';
   }
 
   &__checkbox-input {
-    position: absolute;
-    z-index: -1;
-    opacity: 0;
+    @include hideInput;
   }
 
   &__checkmark {

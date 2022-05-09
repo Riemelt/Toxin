@@ -10,6 +10,6 @@ mixin rate-button(vars)
   div(class=classNames)
     - for (let x = 0; x < 5; x++)
       - let iconClassNames = `${className}__icon`
-      if value <= x
-        - iconClassNames += ` ${className}__icon_empty`
+      if value > x
+        - iconClassNames += ` ${className}__icon_checked`
       span(class=iconClassNames)

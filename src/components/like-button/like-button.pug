@@ -1,0 +1,21 @@
+mixin like-button(vars)
+  -
+    const {
+      value = 0,
+      checked = false,
+    } = vars
+
+    const className = "like-button"
+    let classNames = className + ` js-${className}`
+
+  if checked
+    - classNames += ` ${className}_checked`
+
+  div(class=classNames)
+    label(class=`${className}__body`)
+      input(class=`${className}__input`
+            type="checkbox"
+            checked=checked
+            )
+      div(class=`${className}__icon`)
+      span(class=`${className}__likes js-${className}__likes`)= value
