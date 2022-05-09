@@ -1829,7 +1829,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_dropdown_datepicker_dropdown_datepicker_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../components/dropdown-datepicker/dropdown-datepicker.js */ "./components/dropdown-datepicker/dropdown-datepicker.js");
 /* harmony import */ var _components_expander_expander_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../components/expander/expander.js */ "./components/expander/expander.js");
 /* harmony import */ var _components_like_button_like_button_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../components/like-button/like-button.js */ "./components/like-button/like-button.js");
-Object(function webpackMissingModule() { var e = new Error("Cannot find module '../../components/ranger-slider/ranger-slider.js'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
+Object(function webpackMissingModule() { var e = new Error("Cannot find module '../../components/range-slider/range-slider.js'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
 /* provided dependency */ var jQuery = __webpack_require__(/*! jquery */ "../node_modules/jquery/dist/jquery.js");
 
 
@@ -1856,7 +1856,7 @@ Object(function webpackMissingModule() { var e = new Error("Cannot find module '
     new _components_like_button_like_button_js__WEBPACK_IMPORTED_MODULE_4__["default"]($(this));
   });
   $(".js-".concat(className, "__range-slider")).each(function () {
-    new Object(function webpackMissingModule() { var e = new Error("Cannot find module '../../components/ranger-slider/ranger-slider.js'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())($(this));
+    new Object(function webpackMissingModule() { var e = new Error("Cannot find module '../../components/range-slider/range-slider.js'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())($(this));
   });
 })(jQuery);
 
@@ -4817,4 +4817,4 @@ module.exports = __webpack_require__.p + "assets/941c5c5c52b286eecc2b.svg";
 /******/ 	
 /******/ })()
 ;
-//# sourceMappingURL=main.9e3d9193c9f084264bd2.js.map
+//# sourceMappingURL=main.ca29d1397a194752d2ea.js.map
