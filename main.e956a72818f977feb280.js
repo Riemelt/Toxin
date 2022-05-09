@@ -1725,10 +1725,10 @@ function _handleLikeButtonClick2(e) {
 
 /***/ }),
 
-/***/ "./components/ranger-slider/ranger-slider.js":
-/*!***************************************************!*\
-  !*** ./components/ranger-slider/ranger-slider.js ***!
-  \***************************************************/
+/***/ "./components/range-slider/range-slider..js":
+/*!**************************************************!*\
+  !*** ./components/range-slider/range-slider..js ***!
+  \**************************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -1839,7 +1839,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_dropdown_datepicker_dropdown_datepicker_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../components/dropdown-datepicker/dropdown-datepicker.js */ "./components/dropdown-datepicker/dropdown-datepicker.js");
 /* harmony import */ var _components_expander_expander_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../components/expander/expander.js */ "./components/expander/expander.js");
 /* harmony import */ var _components_like_button_like_button_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../components/like-button/like-button.js */ "./components/like-button/like-button.js");
-/* harmony import */ var _components_ranger_slider_ranger_slider_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../components/ranger-slider/ranger-slider.js */ "./components/ranger-slider/ranger-slider.js");
+Object(function webpackMissingModule() { var e = new Error("Cannot find module '../../components/ranger-slider/ranger-slider.js'"); e.code = 'MODULE_NOT_FOUND'; throw e; }());
 /* provided dependency */ var jQuery = __webpack_require__(/*! jquery */ "../node_modules/jquery/dist/jquery.js");
 
 
@@ -1866,7 +1866,7 @@ __webpack_require__.r(__webpack_exports__);
     new _components_like_button_like_button_js__WEBPACK_IMPORTED_MODULE_4__["default"]($(this));
   });
   $(".js-".concat(className, "__range-slider")).each(function () {
-    new _components_ranger_slider_ranger_slider_js__WEBPACK_IMPORTED_MODULE_5__["default"]($(this));
+    new Object(function webpackMissingModule() { var e = new Error("Cannot find module '../../components/ranger-slider/ranger-slider.js'"); e.code = 'MODULE_NOT_FOUND'; throw e; }())($(this));
   });
 })(jQuery);
 
@@ -2375,13 +2375,13 @@ ___CSS_LOADER_EXPORT___.push([module.id, ".radio-buttons-field {\n  max-width: 1
 
 /***/ }),
 
-/***/ "../node_modules/css-loader/dist/cjs.js!../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!../node_modules/sass-loader/dist/cjs.js!../node_modules/sass-resources-loader/lib/loader.js??ruleSet[1].rules[1].use[4]!./components/ranger-slider/ranger-slider.scss":
-/*!*******************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ../node_modules/css-loader/dist/cjs.js!../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!../node_modules/sass-loader/dist/cjs.js!../node_modules/sass-resources-loader/lib/loader.js??ruleSet[1].rules[1].use[4]!./components/ranger-slider/ranger-slider.scss ***!
-  \*******************************************************************************************************************************************************************************************************************************************************************************************/
+/***/ "../node_modules/css-loader/dist/cjs.js!../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!../node_modules/sass-loader/dist/cjs.js!../node_modules/sass-resources-loader/lib/loader.js??ruleSet[1].rules[1].use[4]!./components/range-slider/range-slider..scss":
+/*!******************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ../node_modules/css-loader/dist/cjs.js!../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!../node_modules/sass-loader/dist/cjs.js!../node_modules/sass-resources-loader/lib/loader.js??ruleSet[1].rules[1].use[4]!./components/range-slider/range-slider..scss ***!
+  \******************************************************************************************************************************************************************************************************************************************************************************************/
 /***/ (function() {
 
-throw new Error("Module build failed (from ../node_modules/css-loader/dist/cjs.js):\nError: Can't resolve 'nouislider/nouislider.css' in 'C:\\Toxin\\src\\components\\ranger-slider'\n    at finishWithoutResolve (C:\\Toxin\\node_modules\\enhanced-resolve\\lib\\Resolver.js:309:18)\n    at C:\\Toxin\\node_modules\\enhanced-resolve\\lib\\Resolver.js:386:15\n    at C:\\Toxin\\node_modules\\enhanced-resolve\\lib\\Resolver.js:435:5\n    at eval (eval at create (C:\\Toxin\\node_modules\\tapable\\lib\\HookCodeFactory.js:33:10), <anonymous>:16:1)\n    at C:\\Toxin\\node_modules\\enhanced-resolve\\lib\\Resolver.js:435:5\n    at eval (eval at create (C:\\Toxin\\node_modules\\tapable\\lib\\HookCodeFactory.js:33:10), <anonymous>:27:1)\n    at C:\\Toxin\\node_modules\\enhanced-resolve\\lib\\DescriptionFilePlugin.js:87:43\n    at C:\\Toxin\\node_modules\\enhanced-resolve\\lib\\Resolver.js:435:5\n    at eval (eval at create (C:\\Toxin\\node_modules\\tapable\\lib\\HookCodeFactory.js:33:10), <anonymous>:15:1)\n    at C:\\Toxin\\node_modules\\enhanced-resolve\\lib\\Resolver.js:435:5");
+throw new Error("Module build failed (from ../node_modules/css-loader/dist/cjs.js):\nError: Can't resolve 'nouislider/nouislider.css' in 'C:\\Toxin\\src\\components\\range-slider'\n    at finishWithoutResolve (C:\\Toxin\\node_modules\\enhanced-resolve\\lib\\Resolver.js:309:18)\n    at C:\\Toxin\\node_modules\\enhanced-resolve\\lib\\Resolver.js:386:15\n    at C:\\Toxin\\node_modules\\enhanced-resolve\\lib\\Resolver.js:435:5\n    at eval (eval at create (C:\\Toxin\\node_modules\\tapable\\lib\\HookCodeFactory.js:33:10), <anonymous>:16:1)\n    at C:\\Toxin\\node_modules\\enhanced-resolve\\lib\\Resolver.js:435:5\n    at eval (eval at create (C:\\Toxin\\node_modules\\tapable\\lib\\HookCodeFactory.js:33:10), <anonymous>:27:1)\n    at C:\\Toxin\\node_modules\\enhanced-resolve\\lib\\DescriptionFilePlugin.js:87:43\n    at C:\\Toxin\\node_modules\\enhanced-resolve\\lib\\Resolver.js:435:5\n    at eval (eval at create (C:\\Toxin\\node_modules\\tapable\\lib\\HookCodeFactory.js:33:10), <anonymous>:15:1)\n    at C:\\Toxin\\node_modules\\enhanced-resolve\\lib\\Resolver.js:435:5");
 
 /***/ }),
 
@@ -3734,10 +3734,10 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 
 /***/ }),
 
-/***/ "./components/ranger-slider/ranger-slider.scss":
-/*!*****************************************************!*\
-  !*** ./components/ranger-slider/ranger-slider.scss ***!
-  \*****************************************************/
+/***/ "./components/range-slider/range-slider..scss":
+/*!****************************************************!*\
+  !*** ./components/range-slider/range-slider..scss ***!
+  \****************************************************/
 /***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -3754,10 +3754,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! !../../../node_modules/style-loader/dist/runtime/styleTagTransform.js */ "../node_modules/style-loader/dist/runtime/styleTagTransform.js");
 /* harmony import */ var _node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _node_modules_css_loader_dist_cjs_js_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_1_use_2_node_modules_sass_loader_dist_cjs_js_node_modules_sass_resources_loader_lib_loader_js_ruleSet_1_rules_1_use_4_ranger_slider_scss__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! !!../../../node_modules/css-loader/dist/cjs.js!../../../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!../../../node_modules/sass-loader/dist/cjs.js!../../../node_modules/sass-resources-loader/lib/loader.js??ruleSet[1].rules[1].use[4]!./ranger-slider.scss */ "../node_modules/css-loader/dist/cjs.js!../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!../node_modules/sass-loader/dist/cjs.js!../node_modules/sass-resources-loader/lib/loader.js??ruleSet[1].rules[1].use[4]!./components/ranger-slider/ranger-slider.scss");
-/* harmony import */ var _node_modules_css_loader_dist_cjs_js_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_1_use_2_node_modules_sass_loader_dist_cjs_js_node_modules_sass_resources_loader_lib_loader_js_ruleSet_1_rules_1_use_4_ranger_slider_scss__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_cjs_js_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_1_use_2_node_modules_sass_loader_dist_cjs_js_node_modules_sass_resources_loader_lib_loader_js_ruleSet_1_rules_1_use_4_ranger_slider_scss__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_1_use_2_node_modules_sass_loader_dist_cjs_js_node_modules_sass_resources_loader_lib_loader_js_ruleSet_1_rules_1_use_4_range_slider_scss__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! !!../../../node_modules/css-loader/dist/cjs.js!../../../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!../../../node_modules/sass-loader/dist/cjs.js!../../../node_modules/sass-resources-loader/lib/loader.js??ruleSet[1].rules[1].use[4]!./range-slider..scss */ "../node_modules/css-loader/dist/cjs.js!../node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[1].use[2]!../node_modules/sass-loader/dist/cjs.js!../node_modules/sass-resources-loader/lib/loader.js??ruleSet[1].rules[1].use[4]!./components/range-slider/range-slider..scss");
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_1_use_2_node_modules_sass_loader_dist_cjs_js_node_modules_sass_resources_loader_lib_loader_js_ruleSet_1_rules_1_use_4_range_slider_scss__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_cjs_js_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_1_use_2_node_modules_sass_loader_dist_cjs_js_node_modules_sass_resources_loader_lib_loader_js_ruleSet_1_rules_1_use_4_range_slider_scss__WEBPACK_IMPORTED_MODULE_6__);
 /* harmony reexport (unknown) */ var __WEBPACK_REEXPORT_OBJECT__ = {};
-/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_css_loader_dist_cjs_js_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_1_use_2_node_modules_sass_loader_dist_cjs_js_node_modules_sass_resources_loader_lib_loader_js_ruleSet_1_rules_1_use_4_ranger_slider_scss__WEBPACK_IMPORTED_MODULE_6__) if(__WEBPACK_IMPORT_KEY__ !== "default") __WEBPACK_REEXPORT_OBJECT__[__WEBPACK_IMPORT_KEY__] = function(key) { return _node_modules_css_loader_dist_cjs_js_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_1_use_2_node_modules_sass_loader_dist_cjs_js_node_modules_sass_resources_loader_lib_loader_js_ruleSet_1_rules_1_use_4_ranger_slider_scss__WEBPACK_IMPORTED_MODULE_6__[key]; }.bind(0, __WEBPACK_IMPORT_KEY__)
+/* harmony reexport (unknown) */ for(var __WEBPACK_IMPORT_KEY__ in _node_modules_css_loader_dist_cjs_js_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_1_use_2_node_modules_sass_loader_dist_cjs_js_node_modules_sass_resources_loader_lib_loader_js_ruleSet_1_rules_1_use_4_range_slider_scss__WEBPACK_IMPORTED_MODULE_6__) if(__WEBPACK_IMPORT_KEY__ !== "default") __WEBPACK_REEXPORT_OBJECT__[__WEBPACK_IMPORT_KEY__] = function(key) { return _node_modules_css_loader_dist_cjs_js_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_1_use_2_node_modules_sass_loader_dist_cjs_js_node_modules_sass_resources_loader_lib_loader_js_ruleSet_1_rules_1_use_4_range_slider_scss__WEBPACK_IMPORTED_MODULE_6__[key]; }.bind(0, __WEBPACK_IMPORT_KEY__)
 /* harmony reexport (unknown) */ __webpack_require__.d(__webpack_exports__, __WEBPACK_REEXPORT_OBJECT__);
 
       
@@ -3780,12 +3780,12 @@ options.setAttributes = (_node_modules_style_loader_dist_runtime_setAttributesWi
 options.domAPI = (_node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1___default());
 options.insertStyleElement = (_node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4___default());
 
-var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()((_node_modules_css_loader_dist_cjs_js_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_1_use_2_node_modules_sass_loader_dist_cjs_js_node_modules_sass_resources_loader_lib_loader_js_ruleSet_1_rules_1_use_4_ranger_slider_scss__WEBPACK_IMPORTED_MODULE_6___default()), options);
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()((_node_modules_css_loader_dist_cjs_js_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_1_use_2_node_modules_sass_loader_dist_cjs_js_node_modules_sass_resources_loader_lib_loader_js_ruleSet_1_rules_1_use_4_range_slider_scss__WEBPACK_IMPORTED_MODULE_6___default()), options);
 
 
 
 
-       /* harmony default export */ __webpack_exports__["default"] = ((_node_modules_css_loader_dist_cjs_js_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_1_use_2_node_modules_sass_loader_dist_cjs_js_node_modules_sass_resources_loader_lib_loader_js_ruleSet_1_rules_1_use_4_ranger_slider_scss__WEBPACK_IMPORTED_MODULE_6___default()) && (_node_modules_css_loader_dist_cjs_js_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_1_use_2_node_modules_sass_loader_dist_cjs_js_node_modules_sass_resources_loader_lib_loader_js_ruleSet_1_rules_1_use_4_ranger_slider_scss__WEBPACK_IMPORTED_MODULE_6___default().locals) ? (_node_modules_css_loader_dist_cjs_js_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_1_use_2_node_modules_sass_loader_dist_cjs_js_node_modules_sass_resources_loader_lib_loader_js_ruleSet_1_rules_1_use_4_ranger_slider_scss__WEBPACK_IMPORTED_MODULE_6___default().locals) : undefined);
+       /* harmony default export */ __webpack_exports__["default"] = ((_node_modules_css_loader_dist_cjs_js_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_1_use_2_node_modules_sass_loader_dist_cjs_js_node_modules_sass_resources_loader_lib_loader_js_ruleSet_1_rules_1_use_4_range_slider_scss__WEBPACK_IMPORTED_MODULE_6___default()) && (_node_modules_css_loader_dist_cjs_js_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_1_use_2_node_modules_sass_loader_dist_cjs_js_node_modules_sass_resources_loader_lib_loader_js_ruleSet_1_rules_1_use_4_range_slider_scss__WEBPACK_IMPORTED_MODULE_6___default().locals) ? (_node_modules_css_loader_dist_cjs_js_node_modules_postcss_loader_dist_cjs_js_ruleSet_1_rules_1_use_2_node_modules_sass_loader_dist_cjs_js_node_modules_sass_resources_loader_lib_loader_js_ruleSet_1_rules_1_use_4_range_slider_scss__WEBPACK_IMPORTED_MODULE_6___default().locals) : undefined);
 
 
 /***/ }),
@@ -4454,8 +4454,8 @@ var map = {
 	"./components/logo-ui-kit/logo-ui-kit.scss": "./components/logo-ui-kit/logo-ui-kit.scss",
 	"./components/radio-button/radio-button.scss": "./components/radio-button/radio-button.scss",
 	"./components/radio-buttons-field/radio-buttons-field.scss": "./components/radio-buttons-field/radio-buttons-field.scss",
-	"./components/ranger-slider/ranger-slider.js": "./components/ranger-slider/ranger-slider.js",
-	"./components/ranger-slider/ranger-slider.scss": "./components/ranger-slider/ranger-slider.scss",
+	"./components/range-slider/range-slider..js": "./components/range-slider/range-slider..js",
+	"./components/range-slider/range-slider..scss": "./components/range-slider/range-slider..scss",
 	"./components/rate-button/rate-button.scss": "./components/rate-button/rate-button.scss",
 	"./components/toggle-switch/toggle-switch.scss": "./components/toggle-switch/toggle-switch.scss",
 	"./index.js": "./index.js",
@@ -4817,4 +4817,4 @@ module.exports = __webpack_require__.p + "assets/941c5c5c52b286eecc2b.svg";
 /******/ 	
 /******/ })()
 ;
-//# sourceMappingURL=main.4d36c8e1a9d9b9718a87.js.map
+//# sourceMappingURL=main.e956a72818f977feb280.js.map
