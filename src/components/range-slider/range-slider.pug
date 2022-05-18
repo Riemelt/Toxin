@@ -1,0 +1,18 @@
+include ../label/label
+
+mixin range-slider(vars)
+  -
+    const {
+      label = {},
+      description,
+    } = vars
+
+    const className = "range-slider"
+    let classNames = className + ` js-${className}`
+
+  div(class=classNames)
+    div(class=`${className}__label js-${className}__label`)
+      +label(label)
+    div(class=`${className}__slider js-${className}__slider`)
+    if description
+      div(class=`${className}__description`)= description

@@ -1,7 +1,7 @@
 mixin like-button(vars)
   -
     const {
-      value = 0,
+      likes = 0,
       checked = false,
     } = vars
 
@@ -15,7 +15,7 @@ mixin like-button(vars)
     label(class=`${className}__body`)
       input(class=`${className}__input`
             type="checkbox"
-            checked=checked
+            checked
             )
       div(class=`${className}__icon`)
-      span(class=`${className}__likes js-${className}__likes`)= value
+      span(class=`${className}__likes js-${className}__likes`)= likes

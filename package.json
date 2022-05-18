@@ -55,6 +55,7 @@
     "async": "^3.2.3",
     "imask": "^6.4.2",
     "jquery": "^3.6.0",
-    "normalize.css": "^8.0.1"
+    "normalize.css": "^8.0.1",
+    "nouislider": "^15.6.0"
   }
 }

@@ -1,0 +1,56 @@
+@import 'nouislider/dist/nouislider.css';
+
+$className: 'range-slider';
+
+$noUiSlider: 'noUi';
+
+.#{$className} {
+  max-width: $medium;
+
+  &__label {
+    margin-bottom: toRem(23);
+  }
+
+  &__slider {
+    max-height: $range-slider-height;
+    background-color: white;
+    border-color: $dark-shade-25;
+    box-shadow: none;
+
+    .#{$noUiSlider} {
+      &-connects {
+        overflow: initial;
+      }
+
+      &-connect {
+        background-image: $secondary-gradient;
+        height: $range-slider-height;
+        top: toRem(-1);
+      }
+
+      &-handle {
+        box-shadow: none;
+        max-height: toRem(12);
+        max-width: toRem(12);
+        background-image: $secondary-gradient;
+        top: toRem(-6);
+        right: toRem(-8);
+        cursor: pointer;
+        box-sizing: content-box;
+        border-radius: 50%;
+        border: toRem(2) solid white;
+
+        &::before, &::after {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &__description {
+    font-size: toRem(12);
+    line-height: toRem(14);
+    color: $dark-shade-50;
+    margin-top: toRem(13);
+  }
+}

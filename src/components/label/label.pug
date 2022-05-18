@@ -1,9 +1,13 @@
 mixin label(vars)
   -
-    var {title = "", description} = vars
-    var className = "label"
+    const {
+      title = "",
+      description = "",
+    } = vars
 
-  div(class=className)
+    const className = "label"
+    let classNames = className + ` js-${className}`
+
+  div(class=classNames)
     h3(class=`${className}__title`)= title
-    if description
-      div(class=`${className}__description`)= description
+    div(class=`${className}__description js-${className}__description`)= description

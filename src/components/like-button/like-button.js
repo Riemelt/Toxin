@@ -1,5 +1,5 @@
 class LikeButton {
-  #className = "like-button"
+  #className = "like-button";
 
   #$component;
   #$likes;
@@ -38,7 +38,7 @@ class LikeButton {
       this.#likes++;
       this.#isChecked = true;
     }
-    
+
     this.#$likes.html(this.#likes);
   }
 }
