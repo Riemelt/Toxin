@@ -1,0 +1,81 @@
+$className: 'pagination';
+
+$pluginName: 'paginationjs';
+
+.#{$className} {
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+
+  .#{$pluginName} {
+    &-pages {
+      & ul {
+        display: flex;
+        list-style-type: none;
+      }
+
+      & li {
+        display: flex;
+        font-size: toRem(12);
+        min-width: toRem(40);
+        min-height: toRem(40);
+      }
+
+      & a {
+        margin: auto;
+        color: $dark-shade-50;
+        text-decoration: none;
+      }
+    }
+
+    &-page {
+      cursor: pointer;
+
+      &.active {
+        border-radius: 50%;
+        background-image: $primary-gradient;
+        
+        & a {
+          color: white;
+          font-weight: 700;
+        }
+      }
+    }
+
+    &-prev, &-next {
+      cursor: pointer;
+      border-radius: 50%;
+      background-image: $secondary-gradient;
+
+      & a {
+        color: white;
+
+        &::before {
+          vertical-align: middle;
+          font-family: 'Material Icons', Arial, sans-serif;
+          font-size: toRem(24);
+          line-height: toRem(20.4);
+        }
+      }
+    }
+
+    &-prev {
+      & a::before {
+        content: 'arrow_back';
+      }
+    }
+
+    &-next {
+      & a::before {
+        content: 'arrow_forward';
+      }
+    }
+  }
+
+  &__pages-info {
+    margin: toRem(9) auto 0;
+    color: $dark-shade-75;
+    font-size: toRem(14);
+    line-height: toRem(24);
+  }
+}

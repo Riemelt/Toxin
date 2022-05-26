@@ -1,0 +1,11 @@
+mixin pagination(vars)
+  -
+    const {
+    } = vars
+
+    const className = "pagination"
+    let classNames = className + ` js-${className}`
+
+  div(class=classNames)
+    div(class=`${className}__pagination-container js-${className}__pagination-container`)
+    div(class=`${className}__pages-info js-${className}__pages-info`)

@@ -41,6 +41,7 @@ module.exports = {
         new webpack.ProvidePlugin({
           $: "jquery",
           jQuery: "jquery",
+          "window.jQuery": "jquery",
         }),
         require('autoprefixer'),
         new HtmlWebpackPlugin({
@@ -49,7 +50,7 @@ module.exports = {
           })
     ].concat(multipleHtmlPlugins),
     entry: {
-        main: "./index.js"
+        main: "./index.js",
     },
     output: {
         filename: "[name].[contenthash].js",

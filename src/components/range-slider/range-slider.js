@@ -1,6 +1,6 @@
-import Label from '../label/label';
+import Label from "../label/label";
 
-import noUiSlider from 'nouislider';
+import noUiSlider from "nouislider";
 
 class RangeSlider {
   #className = "range-slider";
