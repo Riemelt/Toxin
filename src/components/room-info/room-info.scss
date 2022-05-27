@@ -1,0 +1,26 @@
+$className: 'room-info';
+
+.#{$className} {
+  list-style-type: none;
+  max-width: toRem(280);
+
+  &__item {
+    border-bottom: toRem(1) solid $dark-shade-10;
+    margin-bottom: toRem(19.5);
+    padding-bottom: toRem(13);
+
+    &:last-child {
+      border: none;
+      margin: initial;
+      padding: initial;
+    }
+  }
+
+  &_withEndLine {
+    .#{$className}__item:last-child {
+      border-bottom: toRem(1) solid $dark-shade-10;
+      margin-bottom: toRem(19.5);
+      padding-bottom: toRem(13);
+    }
+  }
+}

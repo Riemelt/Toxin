@@ -72,9 +72,7 @@ $className: 'input-field';
     }
 
     &_primary {
-      background: $primary-gradient;
-      background-clip: text;
-      color: transparent;
+      @include iconWithGradient($primary-gradient);
     }
 
     &_secondary {

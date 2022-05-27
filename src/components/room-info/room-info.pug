@@ -1,0 +1,19 @@
+include ../room-info-item/room-info-item
+
+mixin room-info(vars)
+  -
+    const {
+      items = [],
+      withEndLine = false,
+    } = vars
+
+    const className = "room-info"
+    let classNames = className
+
+  if withEndLine
+    - classNames += ` ${className}_withEndLine`
+  
+  ul(class=classNames)
+    each item in items
+      li(class=`${className}__item`)
+        +room-info-item(item)
