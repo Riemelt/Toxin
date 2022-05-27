@@ -1,0 +1,18 @@
+$className: 'room-info-item';
+
+.#{$className} {
+  display: flex;
+
+  &__icon {
+    margin-right: toRem(10);
+    
+    & .material-icons {
+      font-size: toRem(48);
+      @include iconWithGradient($primary-gradient);
+    }
+  }
+
+  &__title {
+    font-weight: 700;
+  }
+}
