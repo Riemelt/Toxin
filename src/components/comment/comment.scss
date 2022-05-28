@@ -1,0 +1,37 @@
+$className: 'comment';
+
+.#{$className} {
+  &__author {
+    display: flex;
+  }
+
+  &__avatar {
+    max-height: toRem(48);
+    max-width: toRem(48);
+    width: 100%;
+    border-radius: 50%;
+    border: toRem(2) solid white;
+    filter: drop-shadow(toRem(0) toRem(10) toRem(20) $dark-shade-10);
+    margin-right: toRem(10);
+  }
+
+  &__name {
+    font-weight: 700;
+  }
+
+  &__body {
+    margin-top: toRem(8);
+    margin-left: toRem(5);
+    display: flex;
+  }
+
+  &__like-button {
+    margin-right: toRem(13);
+    margin-top: toRem(4);
+  }
+
+  &__comment {
+    margin-top: toRem(2);
+    white-space: pre-line;
+  }
+}

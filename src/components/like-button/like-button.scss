@@ -13,6 +13,7 @@ $className: 'like-button';
     font-size: toRem(10);
     color: $dark-shade-25;
     transition: border-color 0.2s;
+    cursor: pointer;
 
     &:hover, &:focus {
       border-color: $purple;
@@ -35,11 +36,12 @@ $className: 'like-button';
 
   &__likes, &__icon {
     margin: 0 auto;
+    margin-left: toRem(4);
   }
 
   &__likes {
     line-height: toRem(12);
-    margin-right: toRem(11);
+    margin-right: toRem(10);
   }
 
   &_checked {

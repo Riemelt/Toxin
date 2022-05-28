@@ -63,6 +63,11 @@ module.exports = {
             chunks: "all",
         },
     },
+    resolve: {
+      alias: {
+        Images: path.resolve(__dirname, "./src/assets/images/"),
+      },
+    },
     module: {
         rules: [
             {

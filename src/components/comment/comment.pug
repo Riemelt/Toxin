@@ -1,0 +1,25 @@
+include ../like-button/like-button
+
+mixin comment(vars)
+  -
+    const {
+      author = "",
+      avatar = "",
+      date,
+      likeButton = {},
+      comment = "",
+    } = vars
+
+    const className = "comment"
+    let classNames = className + ` js-${className}`
+
+  div(class=classNames data-date=date)
+    div(class=`${className}__author`)
+      img(class=`${className}__avatar` src=require(`Images/${avatar}`))
+      div(class=`${className}__author-info`)
+        div(class=`${className}__name`)= author
+        div(class=`${className}__date js-${className}__date`)
+    div(class=`${className}__body`)
+      div(class=`${className}__like-button`)
+        +like-button(likeButton)
+      div(class=`${className}__comment`)= comment
