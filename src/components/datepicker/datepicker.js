@@ -22,10 +22,19 @@ class Datepicker {
     this.#init($parent, options);
   }
 
-  static parseDate(date) {
+  static parseDate = {
+    primary: Datepicker.parseDatePrimary,
+    secondary: Datepicker.parseDateSecondary,
+  }
+
+  static parseDatePrimary(date) {
     const day = date.getDate();
     const month = date.getMonth();
     return `${day} ${Datepicker.#MONTHS[month]}`;
+  }
+
+  static parseDateSecondary(date) {
+    return date.toLocaleDateString("ru-RU");
   }
 
   static fixFocusDisplay(datepicker) {
@@ -34,6 +43,11 @@ class Datepicker {
 
     $selectedCell.addClass("-range-from-");
     $selectedCell.addClass("-range-to-");
+  }
+
+  static #validateDate(date) {
+    const today = new Date();
+    return date > today ? date : today;
   }
 
   toggle() {
@@ -52,6 +66,7 @@ class Datepicker {
   }
 
   #init($parent, options) {
+    this.#options = options;
     this.#$component = $parent.find(`.js-${this.#className}`);
     this.#$input = this.#$component.find(`.js-${this.#className}__input`);
 
@@ -61,8 +76,6 @@ class Datepicker {
       handleResetButtonClick: this.#handleResetButtonClick?.bind(this),
       handleApplyButtonClick: this.#handleApplyButtonClick?.bind(this),
     });
-
-    this.#options = options;
 
     this.#initAirDatepicker();
   }
@@ -80,17 +93,20 @@ class Datepicker {
   }
 
   #initDates() {
-    const start = this.#$component.data("startDate");
-    const end = this.#$component.data("endDate");
+    const { startDate, endDate } = this.#options;
 
-    if (start) {
-      this.#dates.push(start);
-      this.#dateStart = new Date(start);
+    if (startDate) {
+      const date = new Date(startDate);
+      const startDateValidated = Datepicker.#validateDate(date);
+      this.#dates.push(startDateValidated);
+      this.#dateStart = startDateValidated;
     }
 
-    if (end) {
-      this.#dates.push(end);
-      this.#dateEnd = new Date(end);
+    if (endDate) {
+      const date = new Date(endDate)
+      const endDateValidated = Datepicker.#validateDate(date);
+      this.#dates.push(endDateValidated);
+      this.#dateEnd = endDateValidated;
     }
   }
 
@@ -112,7 +128,7 @@ class Datepicker {
     });
   }
 
-  #handleDatepickerClick({date, datepicker}) {
+  #handleDatepickerClick({ date, datepicker }) {
     if (date.length === 1) {
       Datepicker.fixFocusDisplay(datepicker)
     }

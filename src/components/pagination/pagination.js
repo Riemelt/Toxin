@@ -9,7 +9,7 @@ class Pagination {
 
   #options;
 
-  constructor($parent, options) {
+  constructor($parent, options = {}) {
     this.#init($parent, options);
   }
 

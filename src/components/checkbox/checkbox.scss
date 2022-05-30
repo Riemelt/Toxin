@@ -5,7 +5,7 @@ $className: 'checkbox';
 
   &__body {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     cursor: pointer;
   }
 
@@ -54,6 +54,7 @@ $className: 'checkbox';
   &__title {
     color: $dark-shade-50;
     line-height: toRem(18);
+    white-space: pre-line;
   }
 
   &__description {

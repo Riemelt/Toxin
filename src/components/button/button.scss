@@ -4,6 +4,7 @@ $button: 'button';
   font-family: Montserrat, Arial, sans-serif;
   font-weight: 700;
   font-size: toRem(12);
+  line-height: toRem(14.63);
   text-transform: uppercase;
 
   &__body {
@@ -17,7 +18,7 @@ $button: 'button';
 	  color: $purple;
   }
 
-  &:hover {
+  &:hover, &.#{$button}_hovered {
     .#{$button}__text {
      color: $dark-shade-50;
     }
@@ -35,7 +36,7 @@ $button: 'button';
     background-origin: border-box;
     background-clip: content-box, border-box;
       
-    &:hover {
+    &:hover, &.#{$button}_hovered {
       background-image: linear-gradient(white, white), $primary-gradient-50;
 
       .#{$button}__text {
@@ -51,7 +52,7 @@ $button: 'button';
       color: white;
     }
 
-    &:hover {
+    &:hover, &.#{$button}_hovered  {
       opacity: 0.5;
 
       .#{$button}__text {

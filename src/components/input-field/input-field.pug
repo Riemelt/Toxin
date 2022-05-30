@@ -2,9 +2,18 @@ include ../label/label
 
 mixin input-field(vars)
   -
-    var {label, placeholder = "", hovered, expandable, button, isReadonly, isMasked = false, size = "big"} = vars
-    var className = "input-field"
-    var classNames = className + ` js-${className}`
+    const {
+      label,
+      placeholder = "",
+      hovered,
+      value = "",
+      button,
+      isReadonly,
+      size = "big"
+    } = vars
+
+    const className = "input-field"
+    let classNames = className + ` js-${className}`
   
   case (size)
     when "small"
@@ -16,13 +25,11 @@ mixin input-field(vars)
 
   if hovered
     - classNames += ` ${className}_hovered`
-  if expandable
-    - classNames += ` ${className}_expandable`
 
+  - const buttonClassName = `${className}__button`
+  - let buttonClassNames = buttonClassName
+  
   if button
-    - var buttonClassName = `${className}__button`
-    - var buttonClassNames = buttonClassName
-
     case (button.icon)
       when "expand_more"
         - buttonClassNames += ` ${buttonClassName}_expandable`
@@ -37,11 +44,16 @@ mixin input-field(vars)
       when "secondary"
         - buttonClassNames += ` ${buttonClassName}_secondary`
 
-  div(class=classNames data-mask=isMasked)
+  div(class=classNames)
     label(class=`${className}__label`)
       div(class=`${className}__header`)
         +label(label)
       div(class=`${className}__main-field`)
-        input(class=`${className}__input js-${className}__input` type="text" placeholder=placeholder readonly=isReadonly)
+        input(class=`${className}__input js-${className}__input`
+              type="text"
+              placeholder=placeholder
+              readonly=isReadonly
+              value=value
+              )
         if button
           button(class=buttonClassNames)

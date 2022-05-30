@@ -17,30 +17,33 @@ class DropdownDatepicker {
 
   static #PLACEHOLDER = "ДД.ММ.ГГГГ";
 
-  constructor($parent) {
-    this.#init($parent);
+  constructor($parent, options = {}) {
+    this.#init($parent, options);
     this.#render();
   }
 
-  #init($parent) {
+  #init($parent, {
+    withTwoInputs = false,
+    datepicker = {},
+    }) {
     this.#$component = $parent.find(`.js-${this.#className}`);
     this.#$inputWrapper = this.#$component.find(`.js-${this.#className}__input-wrapper`);
 
-    const data = this.#$component.data();
-    this.#initInputs(data);
-
-    if (this.#withTwoInputs(data)) {
+    if (withTwoInputs) {
       this.#inputMode = DropdownDatepicker.#MULTIPLE_MODE;
     }
+
+    this.#initInputs();
 
     this.#datepicker = new Datepicker(this.#$component, {
       handleApplyButtonClick: this.#handleApplyButtonClick.bind(this),
       handleResetButtonClick: this.#handleResetButtonClick.bind(this),
+      ...datepicker,
     });
   }
 
-  #initInputs(data) {
-    if (this.#withTwoInputs(data)) {
+  #initInputs() {
+    if (this.#inputMode === DropdownDatepicker.#MULTIPLE_MODE) {
       const $inputStart = this.#$component.find(`.js-${this.#className}__input-start`);
       const $inputEnd = this.#$component.find(`.js-${this.#className}__input-end`);
 
@@ -52,10 +55,6 @@ class DropdownDatepicker {
       const $inputSingle = this.#$component.find(`.js-${this.#className}__input-single`);
       this.#inputs.push(new InputField($inputSingle))
     }
-  }
-
-  #withTwoInputs(data) {
-    return Object.prototype.hasOwnProperty.call(data, "withTwoInputs");
   }
 
   #render() {
@@ -84,8 +83,10 @@ class DropdownDatepicker {
 
   #updateDropdownDatepicker() {
     const dates = this.#datepicker.getDates();
-    const start = dates.start ? Datepicker.parseDate(dates.start) : DropdownDatepicker.#PLACEHOLDER;
-    const end = dates.end ? Datepicker.parseDate(dates.end) : DropdownDatepicker.#PLACEHOLDER;
+    const parser = this.#inputMode === DropdownDatepicker.#SINGLE_MODE ? Datepicker.parseDate.primary : Datepicker.parseDate.secondary;
+
+    const start = dates.start ? parser(dates.start) : DropdownDatepicker.#PLACEHOLDER;
+    const end = dates.end ? parser(dates.end) : DropdownDatepicker.#PLACEHOLDER;
 
     this.#updateInputs({ start, end }, this.#inputMode);
   }

@@ -1,8 +1,16 @@
 mixin button(vars)
   -
-    var {text = "", bordered, filled, withIcon} = vars
-    var className = "button"
-    var classNames = className + ` js-${className}`
+    const {
+      text = "",
+      bordered,
+      filled,
+      withIcon,
+      hovered = false,
+    } = vars
+
+    const className = "button"
+    let classNames = className + ` js-${className}`
+
   if bordered
     - classNames += ` ${className}_bordered`
   if filled
@@ -10,6 +18,8 @@ mixin button(vars)
   if withIcon
     - classNames += ` ${className}_withIcon`
     - classNames += ` ${className}_filled`
+  if hovered
+    - classNames += ` ${className}_hovered`
     
   button(class=classNames)
       div(class=`${className}__body`)

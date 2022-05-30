@@ -70,6 +70,28 @@ $airDatepicker: 'air-datepicker';
       }
     }
 
+    &-cell.-month-, &-cell.-year- {
+      border: none;
+
+      &.-current-, &.-selected-, &.-focus- {
+        font-weight: 700;
+        color: white;
+      }
+
+      &.-current- {
+        background-image: $secondary-gradient;
+      }
+
+      &.-selected- {
+        background-image: $primary-gradient;
+      }
+
+      &.-focus- {
+        background-image: $primary-gradient;
+        border: none;
+      }
+    }
+
     &-cell.-day- {
       color: $dark-shade-50;
       font-size: toRem(12);
@@ -174,7 +196,7 @@ $airDatepicker: 'air-datepicker';
       &.-other-month- {
         color: $dark-shade-25;
 
-        &.-selected-, &.-range-to-, &.-range-from- {
+        &.-selected-, &.-range-to-, &.-range-from-, &.-current- {
           color: white;
         }
       }

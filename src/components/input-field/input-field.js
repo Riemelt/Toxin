@@ -9,8 +9,8 @@ class InputField {
   #minDate;
   #maxDate;
 
-  constructor($parent) {
-    this.#init($parent);
+  constructor($parent, options = {}) {
+    this.#init($parent, options);
   }
 
   toggleExpand() {
@@ -22,18 +22,20 @@ class InputField {
   }
 
   setInputText(text) {
-    this.#$input.prop("placeholder", text);
+    this.#$input.prop("value", text);
   }
 
   getInput() {
     return this.#$input;
   }
 
-  #init($parent) {
+  #init($parent, options) {
     this.#$inputField = $parent.find(`.js-${this.#className}`);
     this.#$input = $parent.find(`.js-${this.#className}__input`);
 
-    if (this.#isMasked(this.#$inputField.data())) {
+    const { isMasked = false } = options;
+
+    if (isMasked) {
       this.#minDate = new Date();
       this.#maxDate = new Date(new Date().setFullYear(new Date().getFullYear() + 1))
       this.#setMask();
@@ -47,10 +49,6 @@ class InputField {
       max: this.#maxDate,
     };
     IMask(this.#$input.get(0), maskOptions);
-  }
-
-  #isMasked(data) {
-    return Object.prototype.hasOwnProperty.call(data, "mask");
   }
 }
 

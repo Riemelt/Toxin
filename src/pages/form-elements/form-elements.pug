@@ -1,110 +1,107 @@
 extends ../../layouts/layout-ui-kit/layout-ui-kit
-include ../../components/input-field/input-field
-include ../../components/dropdown-counter/dropdown-counter
+
 include ../../components/container/container
 include ../../components/label/label
-include ../../components/button/button
-include ../../components/control-panel/control-panel
-include ../../components/datepicker/datepicker
+include ../../components/input-field/input-field
+include ../../components/dropdown-counter/dropdown-counter
 include ../../components/dropdown-datepicker/dropdown-datepicker
+include ../../components/checkbox-list/checkbox-list
+include ../../components/radio-buttons-field/radio-buttons-field
+include ../../components/toggle-switch/toggle-switch
+include ../../components/like-button/like-button
+include ../../components/rate-button/rate-button
+include ../../components/range-slider/range-slider
+include ../../components/button/button
+include ../../components/pagination/pagination
 
 block vars
   -
-    var title = "Form Elements"
+    const title = "Form Elements"
 
 block content
   - 
-    let className = "form-elements"
+    const className = "form-elements"
+    const data = require("./data.json")
+
   div(class=className)
     +container
-      //div(class=`${className}__input-field js-${className}__input-field`)
-        +input-field({
-          label: {
-            title: "text field",
-            description: "default",
-          },
-          size: "small",
-          placeholder: "Email"
-          })
-      //div(class=`${className}__input-field js-${className}__input-field`)
-        +input-field({
-          label: {
-            title: "masked text field"
-          },
-          placeholder: "ДД.ММ.ГГГГ",
-          isMasked: true
-          })
-      div(class=`${className}__dropdown-datepicker js-${className}__dropdown-datepicker`)
-        +dropdown-datepicker({
-          withTwoInputs: false,
-          size: "medium",
-          datepicker: {
-            isHidden: true,
-          },
-          inputs: [
-            {
-              label: {
-                title: "filter date dropdown",
-              },
-              isReadonly: true,
-              size: "medium",
-              expandable: true,
-            },
-          ]})
-      div(class=`${className}__dropdown-datepicker js-${className}__dropdown-datepicker`)
-        +dropdown-datepicker({
-          withTwoInputs: true,
-          size: "big",
-          datepicker: {
-            isHidden: true,
-            endDate: "2022-05-23",
-          },
-          inputs: [
-            {
-              label: {
-                title: "date dropdown",
-              },
-              isReadonly: true,
-              size: "small",
-              expandable: true,
-            },
-            {
-              label: {
-                title: "date dropdown",
-              },
-              isReadonly: true,
-              size: "small",
-              expandable: true,
-            }
-          ]})
-      //+input-field({label: "text field", description: "hover / focus", placeholder: "This is pretty awesome", hovered: true})
-      //+input-field({label: "dropdown", placeholder: "Сколько гостей", expandable: true})
-      //div(class=`${className}__dropdown-counter js-${className}__dropdown-counter`)
-        +dropdown-counter({
-          type: "room",
-          input: {
-            label: {
-              title: "dropdown2",
-            },
-            placeholder: "Сколько комнат",
-          },
-          items: [
-            {title: "спальни", value: 2, type: "room"},
-            {title: "кровати", value: 2, type: "bed"},
-            {title: "ванные комнаты", value: 1, type: "bathroom"}
-          ]})
-      //+input-field({title: "text field", description: "default", placeholder: "Email", expandable: true})
-      //div(class=`${className}__dropdown-counter js-${className}__dropdown-counter`)
-        +dropdown-counter({
-          type: "guest",
-          input: {
-            label: {
-              title: "dropdown"
-            },
-            placeholder: "Сколько гостей",
-          },
-          items: [
-            {title: "взрослые", value: 0, type: "guest"},
-            {title: "дети", value: 0, type: "guest"},
-            {title: "младенцы", value: 0, type: "baby"}
-          ]})
+      div(class=`${className}__body`)
+        div(class=`${className}__main-elements`)
+          div(class=`${className}__column-left`)
+            div(class=`${className}__input-field-default`)
+              +input-field(data.inputFieldDefault)
+            div(class=`${className}__input-field-hovered`)
+              +input-field(data.inputFieldHovered)
+            div(class=`${className}__dropdown-default js-${className}__dropdown-default`)
+              +dropdown-counter(data.dropdownDefault)
+            div(class=`${className}__input-field-masked js-${className}__input-field-masked`)
+              +input-field(data.inputFieldMasked)
+            div(class=`${className}__date-dropdown-double js-${className}__date-dropdown-double`)
+              +dropdown-datepicker(data.dateDropdownDouble)
+            div(class=`${className}__date-dropdown-single js-${className}__date-dropdown-single`)
+              +dropdown-datepicker(data.dateDropdownSingle)
+            div(class=`${className}__input-field-subscription js-${className}__input-field-subscription`)
+              +input-field(data.inputFieldSubscription)
+          div(class=`${className}__column-middle`)
+            div(class=`${className}__checkbox-buttons-default`)
+              +checkbox-list(data.checkboxButtonsDefault)
+            div(class=`${className}__radio-buttons`)
+              div(class=`${className}__label-wrapper`)
+                +label({ title: "radio buttons" })
+              +radio-buttons-field(data.radioButtons)
+              div(class=`${className}__toggle-switches`)
+                div(class=`${className}__label-wrapper`)
+                  +label({ title: "toggle" })
+                div(class=`${className}__toggle-switch-active`)
+                  +toggle-switch(data.toggleSwitchActive)
+                div(class=`${className}__toggle-switch-default`)
+                  +toggle-switch(data.toggleSwitchDefault)
+              div(class=`${className}__like-buttons`)
+                div(class=`${className}__label-wrapper`)
+                  +label({ title: "like button" })
+                div(class=`${className}__like-buttons-wrapper`)
+                  div(class=`${className}__like-button-default js-${className}__like-button-default`)
+                    +like-button(data.likeButtonDefault)
+                  div(class=`${className}__like-button-active js-${className}__like-button-active`)
+                    +like-button(data.likeButtonActive)
+              div(class=`${className}__rate-buttons`)
+                div(class=`${className}__label-wrapper`)
+                  +label({ title: "rate button" })
+                div(class=`${className}__rate-buttons-wrapper`)
+                  div(class=`${className}__rate-button-1`)
+                    +rate-button(data.rateButton1)
+                  div(class=`${className}__rate-button-2`)
+                    +rate-button(data.rateButton2)
+          div(class=`${className}__column-right`)
+            div(class=`${className}__range-slider js-${className}__range-slider`)
+              +range-slider(data.rangeSlider)
+            div(class=`${className}__buttons`)
+              div(class=`${className}__label-wrapper`)
+                  +label({ title: "buttons" })
+              div(class=`${className}__buttons-filled`)
+                +button(data.buttonFilled)
+                +button(data.buttonFilledActive)
+              div(class=`${className}__buttons-bordered`)
+                +button(data.buttonBordered)
+                +button(data.buttonBorderedActive)
+              div(class=`${className}__buttons-default`)
+                +button(data.buttonDefault)
+                +button(data.buttonDefaultActive)
+              div(class=`${className}__button-with-icon`)
+                +button(data.buttonWithIcon)
+            div(class=`${className}__pagination`)
+              div(class=`${className}__label-wrapper`)
+                +label({ title: "pagination" })
+              div(class=`${className}__pagination-wrapper js-${className}__pagination-wrapper`)
+                +pagination(data.pagination)
+        div(class=`${className}__dropdowns`)
+          div(class=`${className}__column`)
+          div(class=`${className}__column`)
+          div(class=`${className}__column`) 
+        div(class=`${className}__lists`)
+          div(class=`${className}__column`)
+          div(class=`${className}__column`)
+          div(class=`${className}__column`) 
+        div(class=`${className}__room-content`)
+          div(class=`${className}__column`)
+          div(class=`${className}__column`)

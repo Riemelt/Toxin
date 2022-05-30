@@ -1,5 +1,106 @@
 $className: 'form-elements';
 
 .#{$className} {
+  margin-top: toRem(66);
+
+  &__main-elements {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__column-left,
+  &__column-right {
+    min-width: $big;
+  }
+
+  &__column-middle {
+    min-width: $medium;
+  }
+
+  &__input-field-hovered,
+  &__input-field-masked {
+    margin-top: toRem(23);
+  }
+
+  &__dropdown-default {
+    margin-top: toRem(21);
+  }
+
+  &__date-dropdown-double,
+  &__date-dropdown-single,
+  &__input-field-subscription {
+    margin-top: toRem(42);
+  }
+
+  &__radio-buttons {
+    margin-top: toRem(43);
+  }
+
+  &__label-wrapper {
+    margin-bottom: toRem(13);
+  }
+
+  &__toggle-switches {
+    margin-top: toRem(41);
+  }
+
+  &__toggle-switch-default {
+    margin-top: toRem(10);
+  }
+
+  &__like-buttons {
+    margin-top: toRem(43);
+  }
+
+  &__like-buttons-wrapper {
+    display: flex;
+    column-gap: toRem(10);
+    margin-top: toRem(15);
+  }
+
+  &__rate-buttons {
+    margin-top: toRem(41);
+  }
+
+  &__rate-buttons-wrapper {
+    display: flex;
+    column-gap: toRem(20);
+    margin-top: toRem(16);
+  }
+
+  &__buttons {
+    margin-top: toRem(44);
+  }
+
+  &__buttons-filled {
+    margin-top: toRem(16);
+  }
+
+  &__buttons-bordered {
+    margin-top: toRem(30);
+  }
+
+  &__buttons-default {
+    margin-top: toRem(32);
+  }
+
+  &__button-with-icon {
+    margin-top: toRem(29);
+  }
+
+  &__buttons-filled,
+  &__buttons-bordered,
+  &__buttons-default {
+    display: flex;
+    column-gap: toRem(20);
+  }
+
+  &__pagination {
+    margin-top: toRem(41);
+  }
+
+  &__pagination-wrapper {
+    margin-top: toRem(15);
+  }
 
 }

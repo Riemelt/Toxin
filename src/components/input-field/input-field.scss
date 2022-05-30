@@ -6,7 +6,7 @@ $className: 'input-field';
 	width: 100%;
 
 	&__header {
-		margin-bottom: toRem(5);
+		margin-bottom: toRem(4);
 	}
 
 	&__main-field {
@@ -24,9 +24,9 @@ $className: 'input-field';
 		border: 1px solid $dark-shade-25;
 		box-sizing: border-box;
 		border-radius: toRem(4);
-		height: toRem(42);
+		height: toRem(44);
 		width: 100%;
-		padding-left: toRem(15);
+		padding-left: toRem(14);
     padding-right: toRem(91);
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -40,10 +40,6 @@ $className: 'input-field';
 		&:hover, &:focus {
 			border-color: $dark-shade-50;
 			outline: none;
-
-			&::placeholder {
-				color: $dark-shade-75;
-			}
 		}
 
 		&::placeholder {
@@ -79,13 +75,6 @@ $className: 'input-field';
       color: $dark-shade-75;
     } 
 }
-
-
-	&_hovered, &_expandable {
-		.#{$className}__input::placeholder {
-			color: $dark-shade-75;
-		}
-	}
 
 	&_hovered {
 		.#{$className}__input {

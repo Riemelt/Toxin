@@ -1,0 +1,208 @@
+{
+  "inputFieldDefault": {
+    "label": {
+      "title": "text field",
+      "description": "default"
+    },
+    "placeholder": "Email"
+  },
+  "inputFieldHovered": {
+    "label": {
+      "title": "text field",
+      "description": "hover / focus"
+    },
+    "value": "This is pretty awesome",
+    "hovered": true
+  },
+  "dropdownDefault": {
+    "type": "guest",
+    "input": {
+      "label": {
+        "title": "dropdown"
+      },
+      "value": "Сколько гостей",
+      "button": {
+        "icon": "expand_more"
+      }
+    },
+    "items": [
+      {
+        "title": "взрослые",
+        "value": 0,
+        "type": "guest"
+      },
+      {
+        "title": "дети",
+        "value": 0,
+        "type": "guest"
+      },
+      {
+        "title": "младенцы",
+        "value": 0,
+        "type": "baby"
+      }
+    ]
+  },
+  "inputFieldMasked": {
+    "label": {
+      "title": "masked text field"
+    },
+    "placeholder": "ДД.ММ.ГГГГ",
+    "isMasked": true
+  },
+  "dateDropdownDouble": {
+    "withTwoInputs": true,
+    "size": "big",
+    "datepicker": {
+      "isHidden": true,
+      "endDate": "2022-05-23"
+    },
+    "inputs": [
+      {
+        "label": {
+          "title": "date dropdown"
+        },
+        "button": {
+          "icon": "expand_more"
+        },
+        "isReadonly": true,
+        "size": "small"
+      },
+      {
+        "label": {
+          "title": "date dropdown"
+        },
+        "button": {
+          "icon": "expand_more"
+        },
+        "isReadonly": true,
+        "size": "small"
+      }
+    ]
+  },
+  "dateDropdownSingle": {
+    "withTwoInputs": false,
+    "size": "medium",
+    "datepicker": {
+      "isHidden": true,
+      "startDate": "2022-08-19",
+      "endDate": "2022-08-23"
+    },
+    "inputs": [
+      {
+        "label": {
+          "title": "filter date dropdown"
+        },
+        "button": {
+          "icon": "expand_more"
+        },
+        "isReadonly": true,
+        "size": "medium"
+      }
+    ]
+  },
+  "inputFieldSubscription": {
+    "label": {
+      "title": "subscription text field"
+    },
+    "button": {
+      "icon": "arrow_forward",
+      "theme": "primary"
+    },
+    "size": "medium",
+    "placeholder": "Email"
+  },
+  "checkboxButtonsDefault": {
+    "label": {
+      "title": "checkbox buttons"
+    },
+    "items": [
+      {
+        "title": "Можно курить",
+        "checked": false
+      },
+      {
+        "title": "Можно с питомцами",
+        "checked": true
+      },
+      {
+        "title": "Можно пригласить гостей\n(до 10 человек)",
+        "checked": true
+      }
+    ]
+  },
+  "radioButtons": {
+    "items": [
+      {
+        "title": "Мужчина",
+        "checked": true,
+        "name": "gender"
+      },
+      {
+        "title": "Женщина",
+        "checked": false,
+        "name": "gender"
+      }
+    ]
+  },
+  "toggleSwitchActive": {
+    "title": "Получать спецпредложения",
+    "checked": true
+  },
+  "toggleSwitchDefault": {
+    "title": "Получать спецпредложения",
+    "checked": false
+  },
+  "likeButtonDefault": {
+    "likes": 2,
+    "checked": false
+  },
+  "likeButtonActive": {
+    "likes": 12,
+    "checked": true
+  },
+  "rateButton1": {
+    "value": 4
+  },
+  "rateButton2": {
+    "value": 5
+  },
+  "rangeSlider": {
+    "label": {
+      "title": "range slider"
+    }
+  },
+  "buttonFilled": {
+    "text": "click me",
+    "filled": true
+  },
+  "buttonFilledActive": {
+    "text": "click me",
+    "filled": true,
+    "hovered": true
+  },
+  "buttonBordered": {
+    "text": "click me",
+    "bordered": true
+  },
+  "buttonBorderedActive": {
+    "text": "click me",
+    "bordered": true,
+    "hovered": true
+  },
+  "buttonDefault": {
+    "text": "click me"
+  },
+  "buttonDefaultActive": {
+    "text": "click me",
+    "hovered": true
+  },
+  "buttonWithIcon": {
+    "text": "Переайти к оплате",
+    "withIcon": true
+  },
+  "pagination": {
+    "pageSize": 12,
+    "itemsCount": 170
+  }
+}
