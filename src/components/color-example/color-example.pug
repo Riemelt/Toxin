@@ -1,7 +1,15 @@
-mixin color-example(color= "dark-shade-100", title= "Dark Shade 100%", code= "#1F2041")
-  - var className = "color-example"
+mixin color-example(vars)
+  -
+    const {
+      color = "dark-shade-100",
+      title = "Dark Shade 100%",
+      code = "#1F2041",
+    } = vars
+
+    const className = "color-example"
+
   div(class=className)
-    span(class=`${className}__color-block` + ` ${className}__color-block_${color}`)
+    span(class=`${className}__color-block ${className}__color-block_${color}`)
     div(class=`${className}__info`)
       span(class=`${className}__title`)= title
       span(class=`${className}__code`)= code

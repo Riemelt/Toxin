@@ -2,17 +2,21 @@ include ../label/label
 
 mixin expander(vars)
   -
-    var { title = "default", isOpened = false } = vars
-    var className = "expander"
-    var classNames = className + ` js-${className}`
+    const {
+      title = "default",
+      isOpened = false
+    } = vars
+
+    const className = "expander"
+    let classNames = className + ` js-${className}`
 
   if isOpened
-    - classNames += ` ${className}__opened`
+    - classNames += ` ${className}_opened`
 
   div(class=classNames)
     div(class=`${className}__header js-${className}__header`)
       div(class=`${className}__label`)
-        +label({title})
+        +label({ title })
       button(class=`${className}__expander-button`)
     div(class=`${className}__body js-${className}__body`)
       block

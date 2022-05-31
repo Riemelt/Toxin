@@ -1,4 +1,4 @@
-import LikeButton from "../like-button/like-button.js";
+import LikeButton from "../like-button";
 
 import { getTimePassed } from "../../scripts/functions.js"
 

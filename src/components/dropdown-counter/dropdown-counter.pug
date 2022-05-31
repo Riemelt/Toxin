@@ -4,22 +4,24 @@ include ../counter-item/counter-item
 
 mixin dropdown-counter(vars)
   -
-    var {type = "guest", input, withControlPanel = true, items = []} = vars
-    var className = "dropdown-counter"
-    var classNames = className + ` js-${className}`
+    const {
+      type = "guest",
+      input,
+      withControlPanel = true,
+      items = []
+    } = vars
+
+    const className = "dropdown-counter"
+    let classNames = className + ` js-${className}`
 
   div(class=classNames data-type=type)
     div(class=`${className}__input-wrapper`)
-      +input-field({...input, expandable: true, isReadonly: true})
+      +input-field({ ...input, expandable: true, isReadonly: true })
     div(class=`${className}__menu js-${className}__menu`)
       ul(class=`${className}__items`)
         each item in items
           li(class=`${className}__item js-${className}__item`) 
-            +counter-item({
-              title: item.title,
-              value: item.value,
-              type: item.type,
-            })
+            +counter-item(item)
       if withControlPanel
         div(class=`${className}__control-panel-wrapper js-${className}__control-panel-wrapper`) 
           +control-panel

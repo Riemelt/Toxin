@@ -1,6 +1,6 @@
-import InputField from "../input-field/input-field.js";
-import ControlPanel from "../control-panel/control-panel.js";
-import CounterItem from "../counter-item/counter-item.js";
+import InputField from "../input-field";
+import ControlPanel from "../control-panel";
+import CounterItem from "../counter-item";
 
 import { declOfNum } from "../../scripts/functions.js";
 

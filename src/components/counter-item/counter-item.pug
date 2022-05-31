@@ -1,11 +1,16 @@
 mixin counter-item(vars)
   -
-    var {title = "", value = 0, type = "guest" }  = vars
-    var className = "counter-item"
-    var classNames = className + ` js-${className}`
+    let {
+      title = "",
+      value = 0,
+      type = "guest",
+    }  = vars
 
-    var decrementDisabled
-    var incrementDisabled
+    const className = "counter-item"
+    let classNames = className + ` js-${className}`
+
+    let decrementDisabled
+    let incrementDisabled
 
   if value <= 0
     - value = 0

@@ -15,8 +15,14 @@ const multipleHtmlPlugins = pages.map(name => {
     return new HtmlWebpackPlugin({
       template: `./pages/${name}/${name}.pug`, // relative path to the HTML files
       filename: `${name}.html`, // output HTML files
+      chunks: [name],
     });
 });
+
+const entryPoints = pages.reduce((acc, name) => {
+  acc[name] = `./pages/${name}/index.js`;
+  return acc;
+}, {});
 
 console.log(pages);
 
@@ -45,13 +51,12 @@ module.exports = {
         }),
         require('autoprefixer'),
         new HtmlWebpackPlugin({
-            template: "./index.pug",
-            filename: "./index.html"
-          })
+          template: "./index.pug",
+          filename: "./index.html",
+          chunks: ["index"],
+        })
     ].concat(multipleHtmlPlugins),
-    entry: {
-        main: "./index.js",
-    },
+    entry: entryPoints,
     output: {
         filename: "[name].[contenthash].js",
         assetModuleFilename: "assets/[hash][ext][query]",

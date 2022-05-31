@@ -1,0 +1,16 @@
+extends ../../layouts/layout-ui-kit/layout-ui-kit
+
+include ../../components/container/container
+include ../../components/label/label
+
+block vars
+  -
+    const title = "Cards"
+
+block content
+  - 
+    const className = "cards"
+
+  div(class=`${className} js-${className}`)
+    +container
+      +label({ title: "test1", description: "test2" })

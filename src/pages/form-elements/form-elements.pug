@@ -21,9 +21,10 @@ block vars
 block content
   - 
     const className = "form-elements"
+    let classNames = `${className} js-${className}`
     const data = require("./data.json")
 
-  div(class=className)
+  div(class=classNames)
     +container
       div(class=`${className}__body`)
         div(class=`${className}__main-elements`)

@@ -1,6 +1,6 @@
-import ControlPanel from "../control-panel/control-panel";
-
 import AirDatepicker from "air-datepicker";
+
+import ControlPanel from "../control-panel";
 
 class Datepicker {
 

@@ -1,5 +1,5 @@
-import InputField from "../input-field/input-field";
-import Datepicker from "../datepicker/datepicker";
+import InputField from "../input-field";
+import Datepicker from "../datepicker";
 
 class DropdownDatepicker {
 

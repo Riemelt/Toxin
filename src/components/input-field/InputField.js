@@ -1,4 +1,5 @@
 import IMask from "imask";
+import "../label";
 
 class InputField {
   #className = "input-field";

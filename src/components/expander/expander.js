@@ -1,5 +1,6 @@
-class Expander {
+import "../label";
 
+class Expander {
   #className = "expander";
 
   #$component;
@@ -24,7 +25,7 @@ class Expander {
   }
 
   #handleExpanderClick() {
-    this.#$component.toggleClass(`${this.#className}__opened`);
+    this.#$component.toggleClass(`${this.#className}_opened`);
   }
 }
 
