@@ -1,7 +1,8 @@
 extends ../layout-base/layout-base
-include ../../components/logo-ui-kit/logo-ui-kit
+include ../../components/logo/logo
 
 block main
-	div(class="ui-kit")
-		+logo-ui-kit
-		block content
+  div(class="ui-kit")
+    div(class="ui-kit__logo-wrapper")
+      +logo({ src: "logoUIKit.svg" })
+    block content

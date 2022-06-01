@@ -1,0 +1,61 @@
+{
+  "colors": [
+    {
+      "color": "dark-shade-100",
+      "title": "Dark Shade 100%",
+      "code": "#1F2041"
+    },
+    {
+      "color": "dark-shade-75",
+      "title": "Dark Shade 75%",
+      "code": "#1F2041"
+    },
+    {
+      "color": "dark-shade-50",
+      "title": "Dark Shade 50%",
+      "code": "#1F2041"
+    },
+    {
+      "color": "dark-shade-25",
+      "title": "Dark Shade 25%",
+      "code": "#1F2041"
+    },
+    {
+      "color": "dark-shade-5",
+      "title": "Dark Shade 5%",
+      "code": "#1F2041"
+    },
+    {
+      "color": "purple",
+      "title": "Purple",
+      "code": "#BC9CFF"
+    },
+    {
+      "color": "green",
+      "title": "Green",
+      "code": "#6FCF97"
+    }
+  ],
+  "texts": [
+    {
+      "type": "h1-sample", 
+      "value": "h1", 
+      "description": "This one is the sub-section or\nwidget title"
+    },
+    {
+      "type": "h2-sample", 
+      "value": "h2", 
+      "description": "Next one is the item title inside\nwidgets"
+    },
+    {
+      "type": "h3-sample", 
+      "value": "h3", 
+      "description": "This is a label or CTA text"
+    },
+    {
+      "type": "body-sample", 
+      "value": "Body", 
+      "description": "This is the body text which is used for most\nof the design, like paragraphs, lists, etc."
+    }
+  ]
+}

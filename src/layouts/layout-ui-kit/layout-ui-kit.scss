@@ -1,0 +1,7 @@
+$className: 'ui-kit';
+
+.#{$className} {
+  &__logo-wrapper {
+    margin: toRem(30);
+  }
+}

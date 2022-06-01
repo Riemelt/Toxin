@@ -35,15 +35,20 @@ class CounterItem {
     this.#$counterValue.html(newValue);
   }
 
-  #init($parent, options) {
+  #init($parent, {
+    handleCounterItemClick,
+    type = "guest",
+    value = 0,
+  }) {
     this.#$component = $parent.find(`.js-${this.#className}`);
 
     this.#$decrement = this.#$component.find(`.js-${this.#className}__decrement`);
     this.#$increment = this.#$component.find(`.js-${this.#className}__increment`);
     this.#$counterValue = this.#$component.find(`.js-${this.#className}__value`);
-    this.#type = this.#$component.data("type");
+    
+    this.#type = type;
+    this.setValue(value);
 
-    const { handleCounterItemClick } = options;
     this.#handleCounterItemClick = handleCounterItemClick;
   }
 

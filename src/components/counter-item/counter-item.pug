@@ -1,6 +1,6 @@
 mixin counter-item(vars)
   -
-    let {
+    const {
       title = "",
       value = 0,
       type = "guest",
@@ -9,23 +9,9 @@ mixin counter-item(vars)
     const className = "counter-item"
     let classNames = className + ` js-${className}`
 
-    let decrementDisabled
-    let incrementDisabled
-
-  if value <= 0
-    - value = 0
-    - decrementDisabled = true
-  else if value >= 999
-    - value = 999
-    - incrementDisabled = true
-  else
-    - decrementDisabled = false
-    - incrementDisabled = false
-
-
-  div(class=classNames data-type=type)
+  div(class=classNames)
     h3(class=`${className}__title`)= title
     div(class=`${className}__counter`)
-      button(class=`${className}__decrement js-${className}__decrement` disabled=decrementDisabled) -
+      button(class=`${className}__decrement js-${className}__decrement`) -
       span(class=`${className}__value js-${className}__value`)= value
-      button(class=`${className}__increment js-${className}__increment` disabled=incrementDisabled) +
+      button(class=`${className}__increment js-${className}__increment`) +

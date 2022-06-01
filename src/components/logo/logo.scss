@@ -1,0 +1,10 @@
+$className: 'logo';
+
+.#{$className} {
+	display: flex;
+
+  &__icon {
+	  width: toRem(48);
+    height: toRem(48);
+  }
+}

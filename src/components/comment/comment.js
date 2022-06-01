@@ -1,6 +1,6 @@
 import LikeButton from "../like-button";
 
-import { getTimePassed } from "../../scripts/functions.js"
+import { getTimePassed } from "../../utilities/utilities.js"
 
 class Comment {
   #className = "comment";

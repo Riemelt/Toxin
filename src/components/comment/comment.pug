@@ -15,7 +15,7 @@ mixin comment(vars)
 
   div(class=classNames data-date=date)
     div(class=`${className}__author`)
-      img(class=`${className}__avatar` src=require(`Images/${avatar}`))
+      img(class=`${className}__avatar` src=require(`@images/${avatar}`))
       div(class=`${className}__author-info`)
         div(class=`${className}__name`)= author
         div(class=`${className}__date js-${className}__date`)

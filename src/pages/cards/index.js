@@ -1,4 +1,4 @@
-import "../../styles";
+import "../../main-styles";
 import "../../layouts/layout-ui-kit"
 
 import Cards from "./cards";

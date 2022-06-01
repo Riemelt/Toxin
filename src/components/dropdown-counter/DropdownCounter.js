@@ -2,10 +2,11 @@ import InputField from "../input-field";
 import ControlPanel from "../control-panel";
 import CounterItem from "../counter-item";
 
-import { declOfNum } from "../../scripts/functions.js";
+import { declOfNum } from "../../utilities/utilities.js";
 
 class DropdownCounter {
   #className = "dropdown-counter";
+  #options;
 
   #$component;
   #$menu;
@@ -35,20 +36,24 @@ class DropdownCounter {
     },
   }
 
-  constructor($parent) {
-    this.#init($parent);
+  constructor($parent, options) {
+    this.#init($parent, options);
     this.#render();
   }
 
-  #init($parent) {
+  #init($parent, options) {
     this.#$component = $parent.find(`.js-${this.#className}`);
+
+    this.#options = options;
 
     this.#$menu = this.#$component.find(`.js-${this.#className}__menu`);
     this.#$counterItems = this.#$component.find(`.js-${this.#className}__item`);
     this.#$counterItems.each(this.#initCounterItem.bind(this));
     this.#$controlPanel = this.#$component.find(`.js-${this.#className}__control-panel-wrapper`);
 
-    this.#dropdownType = this.#$component.data("type");
+    const { type = "guest" } = this.#options;
+    this.#dropdownType = type;
+
     this.#itemList = this.#initItemList(this.#dropdownType);
     this.#inputField = new InputField(this.#$component);
 
@@ -140,11 +145,14 @@ class DropdownCounter {
     this.#itemList[type] += value;
   }
 
-  #initCounterItem(_, element) {
+  #initCounterItem(index, element) {
     const $counterItem = $(element);
+    const { items = [] } = this.#options;
+    
     this.#counterItems.push(
       new CounterItem($counterItem, {
         handleCounterItemClick: this.#handleCounterItemClick.bind(this),
+        ...items[index],
       })
     );
   }

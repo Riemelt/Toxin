@@ -1,1 +1,3 @@
-import "../../components/logo-ui-kit";
+import "../../components/logo";
+
+import "./layout-ui-kit.scss";

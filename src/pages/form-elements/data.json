@@ -170,7 +170,13 @@
   "rangeSlider": {
     "label": {
       "title": "range slider"
-    }
+    },
+    "start": [5000, 10000],
+    "range": {
+      "min": 0,
+      "max": 16000
+    },
+    "step": 1000
   },
   "buttonFilled": {
     "text": "click me",

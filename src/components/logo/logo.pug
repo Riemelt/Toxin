@@ -1,0 +1,12 @@
+mixin logo(vars)
+  -
+    const {
+      src = "",
+      href = "/mock-address/change-me",
+    } = vars
+
+  a(class="logo-ui-kit", href=href)
+    img(class="logo-ui-kit__icon"
+        alt="toxin logo"
+        src=require(`@images/${src}`)
+    )

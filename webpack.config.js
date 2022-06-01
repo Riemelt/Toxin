@@ -70,7 +70,7 @@ module.exports = {
   },
   resolve: {
     alias: {
-      Images: path.resolve(__dirname, "./src/assets/images/"),
+      "@images": path.resolve(__dirname, "./src/assets/images/"),
     },
   },
   module: {
@@ -99,7 +99,7 @@ module.exports = {
           {
             loader: 'sass-resources-loader',
             options: {
-              resources: path.resolve(__dirname, "./src/styles/variables.scss")
+              resources: path.resolve(__dirname, "./src/main-styles/variables.scss")
             }
           }
         ]
