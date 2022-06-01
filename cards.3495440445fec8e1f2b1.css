@@ -1,8 +1,9 @@
 @font-face{font-family:"Montserrat";src:url(assets/fd460d45a5f0177d2021.woff) format("woff"),url(assets/e3d4e44ee75e77d28c76.ttf) format("truetype"),url(assets/508e58a38addc07c01a3.svg) format("svg");font-weight:400;font-style:normal}@font-face{font-family:"Montserrat";src:url(assets/7bf2e6b4444126d64021.woff) format("woff"),url(assets/02d72bf4fb269549b276.ttf) format("truetype"),url(assets/549b14a4efa3b6a2cfe4.svg) format("svg");font-weight:700;font-style:normal}@font-face{font-family:"Material Icons";src:url(assets/7ed307d51604da465296.woff) format("woff"),url(assets/799717c1af5017adcc83.ttf) format("truetype"),url(assets/44aad1fb185306c164d3.svg) format("svg");font-weight:400;font-style:normal}
 *{margin:0px;padding:0px;box-sizing:border-box}html{font-family:"Montserrat",Arial,sans-serif;font-size:14px;font-weight:400;line-height:1.7142857143rem;background:#fff;color:rgba(31,32,65,.75)}h1,h2,h3{font-weight:700;color:#1f2041}h1{font-size:1.7142857143rem;line-height:2.09rem}h2{font-size:1.3571428571rem;line-height:1.6542857143rem}h3{font-size:.8571428571rem;text-transform:uppercase;line-height:1.045rem}button{border:none;background-color:transparent;background-color:initial}
+.material-icons{font-family:"Material Icons";font-weight:normal;font-style:normal;font-size:24px;display:inline-block;line-height:1;text-transform:none;letter-spacing:normal;word-wrap:normal;white-space:nowrap;direction:ltr;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;-moz-osx-font-smoothing:grayscale;font-feature-settings:"liga"}
 .logo-ui-kit{display:flex;margin:2.1428571429rem}
 .container{max-width:82.7142857143rem;margin:0 auto}
 .label{line-height:1.045rem;font-size:.8571428571rem;text-transform:uppercase;display:flex}.label__description{margin-left:auto;color:rgba(31,32,65,.5)}
 
 
-/*# sourceMappingURL=cards.c158358e09ecb029bb9e.css.map*/
+/*# sourceMappingURL=cards.3495440445fec8e1f2b1.css.map*/
