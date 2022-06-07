@@ -6,6 +6,8 @@ import DropdownDatepicker from "../../components/dropdown-datepicker";
 import LikeButton         from "../../components/like-button";
 import RangeSlider        from "../../components/range-slider";
 import Pagination         from "../../components/pagination";
+import Expander           from "../../components/expander";
+import Comment            from "../../components/comment";
 
 import "../../components/container";
 import "../../components/label";
@@ -14,6 +16,8 @@ import "../../components/radio-buttons-field";
 import "../../components/toggle-switch";
 import "../../components/rate-button";
 import "../../components/button";
+import "../../components/bullet-list";
+import "../../components/room-info";
 
 
 class FormElements {
@@ -36,6 +40,13 @@ class FormElements {
     new LikeButton($(`.js-${this.#className}__like-button-active`, this.#$component));
     new RangeSlider($(`.js-${this.#className}__range-slider`, this.#$component), data.rangeSlider);
     new Pagination($(`.js-${this.#className}__pagination-wrapper`, this.#$component), data.pagination);
+    new DropdownCounter($(`.js-${this.#className}__dropdown-medium`, this.#$component), data.dropdownMedium);
+    new DropdownCounter($(`.js-${this.#className}__dropdown-medium-opened`, this.#$component), data.dropdownMediumOpened);
+    new DropdownCounter($(`.js-${this.#className}__dropdown-initial-opened`, this.#$component), data.dropdownInitialOpened);
+    new DropdownCounter($(`.js-${this.#className}__dropdown-opened`, this.#$component), data.dropdownOpened);
+    new Expander($(`.js-${this.#className}__expander`, this.#$component));
+    new Expander($(`.js-${this.#className}__expander-opened`, this.#$component));
+    new Comment($(`.js-${this.#className}__comment`, this.#$component));
   }
 }
 

@@ -8,11 +8,14 @@ mixin dropdown-counter(vars)
       type = "guest",
       input,
       withControlPanel = true,
-      items = []
+      items = [],
+      size = "big",
     } = vars
 
     const className = "dropdown-counter"
     let classNames = className + ` js-${className}`
+
+    classNames += size === "big" ? ` ${className}_big` : ` ${className}_medium`
 
   div(class=classNames)
     div(class=`${className}__input-wrapper`)

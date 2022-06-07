@@ -13,6 +13,10 @@ include ../../components/rate-button/rate-button
 include ../../components/range-slider/range-slider
 include ../../components/button/button
 include ../../components/pagination/pagination
+include ../../components/expander/expander
+include ../../components/bullet-list/bullet-list
+include ../../components/room-info/room-info
+include ../../components/comment/comment
 
 block vars
   -
@@ -44,8 +48,8 @@ block content
             div(class=`${className}__input-field-subscription js-${className}__input-field-subscription`)
               +input-field(data.inputFieldSubscription)
           div(class=`${className}__column-middle`)
-            div(class=`${className}__checkbox-buttons-default`)
-              +checkbox-list(data.checkboxButtonsDefault)
+            div(class=`${className}__checkbox-list-comforts`)
+              +checkbox-list(data.checkboxListComforts)
             div(class=`${className}__radio-buttons`)
               div(class=`${className}__label-wrapper`)
                 +label({ title: "radio buttons" })
@@ -96,13 +100,37 @@ block content
               div(class=`${className}__pagination-wrapper js-${className}__pagination-wrapper`)
                 +pagination(data.pagination)
         div(class=`${className}__dropdowns`)
-          div(class=`${className}__column`)
-          div(class=`${className}__column`)
-          div(class=`${className}__column`) 
+          div(class=`${className}__column-left`)
+            div(class=`${className}__dropdown-medium js-${className}__dropdown-medium`)
+              +dropdown-counter(data.dropdownMedium)
+            div(class=`${className}__dropdown-medium-opened js-${className}__dropdown-medium-opened`)
+              +dropdown-counter(data.dropdownMediumOpened)
+          div(class=`${className}__column-middle`)
+            div(class=`${className}__dropdown-initial-opened js-${className}__dropdown-initial-opened`)
+              +dropdown-counter(data.dropdownInitialOpened)
+          div(class=`${className}__column-right`) 
+            div(class=`${className}__dropdown-opened js-${className}__dropdown-opened`)
+              +dropdown-counter(data.dropdownOpened)
         div(class=`${className}__lists`)
-          div(class=`${className}__column`)
-          div(class=`${className}__column`)
-          div(class=`${className}__column`) 
+          div(class=`${className}__column-left`)
+            div(class=`${className}__expander js-${className}__expander`)
+              +expander({ title: "expandable checkbox list" })
+                div(class=`${className}__checkbox-list-additional-items`)
+                  +checkbox-list(data.checkboxListAdditionalItems)
+            div(class=`${className}__expander-opened js-${className}__expander-opened`)
+              +expander({ title: "expandable checkbox list", isOpened: true })
+                div(class=`${className}__checkbox-list-additional-items`)
+                  +checkbox-list(data.checkboxListAdditionalItems)
+          div(class=`${className}__column-middle`)
+            div(class=`${className}__checkbox-list-rich`)
+              +checkbox-list(data.checkboxListRich)
+          div(class=`${className}__column-right`)
+            div(class=`${className}__bullet-list`)
+              +bullet-list(data.bulletList)
         div(class=`${className}__room-content`)
-          div(class=`${className}__column`)
-          div(class=`${className}__column`)
+          div(class=`${className}__column-left`)
+            div(class=`${className}__room-info`)
+              +room-info(data.roomInfo)
+          div(class=`${className}__column-double`)
+            div(class=`${className}__comment js-${className}__comment`)
+              +comment(data.comment)

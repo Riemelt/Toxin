@@ -51,7 +51,11 @@ class DropdownCounter {
     this.#$counterItems.each(this.#initCounterItem.bind(this));
     this.#$controlPanel = this.#$component.find(`.js-${this.#className}__control-panel-wrapper`);
 
-    const { type = "guest" } = this.#options;
+    const {
+      type = "guest",
+      isOpened = false,
+    } = this.#options;
+
     this.#dropdownType = type;
 
     this.#itemList = this.#initItemList(this.#dropdownType);
@@ -62,6 +66,10 @@ class DropdownCounter {
         handleApplyButtonClick: this.#handleApplyButtonClick.bind(this),
         handleResetButtonClick: this.#handleResetButtonClick.bind(this),
       });
+    }
+
+    if (isOpened) {
+      this.#toggleDropdown();
     }
   }
 

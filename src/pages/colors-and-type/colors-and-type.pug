@@ -22,7 +22,7 @@ block content
         ul(class=`${className}__text-examples`)
           each text in data.texts
             li(class=`${className}__text-examples-item ${className}__text-examples-item_${text.type}`)
-              if text.type == "body-sample"
+              if text.type === "body-sample"
                 div(class=`${className}__text-examples-title`)= text.value
                 div(class=`${className}__text-examples-description`)= text.description
               else

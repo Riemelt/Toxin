@@ -1,21 +1,34 @@
 $className: 'form-elements';
 
 .#{$className} {
-  margin-top: toRem(66);
+  margin-top: toRem(59);
+  padding-bottom: toRem(130);
 
-  &__main-elements {
+  &__body {
+    margin: 0 toRem(1);
+  }
+
+  &__main-elements,
+  &__dropdowns,
+  &__lists,
+  &__room-content {
     display: flex;
-    justify-content: space-between;
   }
 
   &__column-left,
-  &__column-right {
+  &__column-right,
+  &__column-middle {
     min-width: $big;
   }
 
-  &__column-middle {
-    min-width: $medium;
+
+
+  &__column-middle,
+  &__column-double {
+    margin-left: toRem(126);
+    margin-right: auto;
   }
+
 
   &__input-field-hovered,
   &__input-field-masked {
@@ -101,6 +114,39 @@ $className: 'form-elements';
 
   &__pagination-wrapper {
     margin-top: toRem(15);
+  }
+
+  &__dropdowns {
+    margin-top: toRem(102);
+  }
+
+  &__dropdowns &__column-middle {
+    min-width: $big;
+  }
+
+  &__dropdown-medium-opened {
+    margin-top: toRem(20);
+  }
+
+  &__lists {
+    margin-top: toRem(168);
+  }
+
+  &__expander-opened {
+    margin-top: toRem(37);
+  }
+
+  &__checkbox-list-rich,
+  &__bullet-list {
+    margin-top: toRem(6);
+  }
+
+  &__room-content {
+    margin-top: toRem(101);
+  }
+
+  &__comment {
+    margin-top: toRem(10);
   }
 
 }

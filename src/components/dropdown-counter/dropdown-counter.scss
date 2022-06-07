@@ -2,7 +2,6 @@ $className: 'dropdown-counter';
 
 .#{$className} {
 	position: relative;
-	max-width: $big;
 	min-width: $small;
 	width: 100%;
 
@@ -17,9 +16,9 @@ $className: 'dropdown-counter';
 		display: none;
 		z-index: 999;
 		background-color: white;
-    padding-left: toRem(15);
-    padding-right: toRem(7);
-    padding-bottom: toRem(7);
+    padding-left: toRem(14);
+    padding-right: toRem(6);
+    padding-bottom: toRem(8);
 	}
 
   &__items {
@@ -27,11 +26,15 @@ $className: 'dropdown-counter';
   }
 
   &__item {
-    margin-top: toRem(6);
+    margin-top: toRem(7);
+    
+    &:first-child {
+      margin-top: toRem(5);
+    }
   }
 
   &__control-panel-wrapper {
-    margin-top: toRem(10);
+    margin-top: toRem(15);
   }
 
 	&_opened {
@@ -39,4 +42,12 @@ $className: 'dropdown-counter';
 			display: block;
 		}
 	}
+
+  &_big {
+    max-width: $big;
+  }
+
+  &_medium {
+    max-width: $medium;
+  }
 }

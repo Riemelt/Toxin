@@ -8,5 +8,6 @@ mixin bullet(vars)
     let classNames = className + ` js-${className}`
 
   div(class=classNames)
-    div(class=`${className}__bullet`)
+    div(class=`${className}__bullet-wrapper`)
+      div(class=`${className}__bullet`)
     span(class=`${className}__title`)= title
