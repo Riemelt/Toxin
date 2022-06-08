@@ -9,6 +9,7 @@ import Pagination         from "../../components/pagination";
 import Expander           from "../../components/expander";
 import Comment            from "../../components/comment";
 
+import "../../components/header-ui-kit"
 import "../../components/container";
 import "../../components/label";
 import "../../components/checkbox-list";

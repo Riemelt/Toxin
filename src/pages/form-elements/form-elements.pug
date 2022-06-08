@@ -1,5 +1,6 @@
-extends ../../layouts/layout-ui-kit/layout-ui-kit
+extends ../../layouts/layout-base/layout-base
 
+include ../../components/header-ui-kit/header-ui-kit
 include ../../components/container/container
 include ../../components/label/label
 include ../../components/input-field/input-field
@@ -22,13 +23,15 @@ block vars
   -
     const title = "Form Elements"
 
-block content
+block main
   - 
     const className = "form-elements"
     let classNames = `${className} js-${className}`
     const data = require("./data.json")
 
   div(class=classNames)
+    div(class=`${className}__header`)
+      +header-ui-kit(data.header)
     +container
       div(class=`${className}__body`)
         div(class=`${className}__main-elements`)

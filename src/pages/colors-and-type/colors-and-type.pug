@@ -1,5 +1,6 @@
-extends ../../layouts/layout-ui-kit/layout-ui-kit
+extends ../../layouts/layout-base/layout-base
 
+include ../../components/header-ui-kit/header-ui-kit
 include ../../components/color-example/color-example
 include ../../components/container/container
 
@@ -7,12 +8,14 @@ block vars
   -
     var title = "Colors&Type"
 
-block content
+block main
   - 
     const className = "colors-and-type"
     const data = require("./data.json")
 
   div(class=className)
+    div(class=`${className}__header`)
+      +header-ui-kit(data.header)
     +container
       div(class=`${className}__main`)
         ul(class=`${className}__color-palette`)

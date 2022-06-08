@@ -1,10 +1,9 @@
 $className: 'form-elements';
 
 .#{$className} {
-  margin-top: toRem(59);
-  padding-bottom: toRem(130);
-
   &__body {
+    padding-top: toRem(59);
+    padding-bottom: toRem(130);
     margin: 0 toRem(1);
   }
 

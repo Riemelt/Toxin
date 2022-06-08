@@ -1,0 +1,10 @@
+$className: "header-ui-kit";
+
+.#{$className} {
+  padding-top: toRem(30);
+  padding-left: toRem(30);
+
+  &_secondary {
+    background-color: $grey;
+  }
+}

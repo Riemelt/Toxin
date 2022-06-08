@@ -1,5 +1,5 @@
 import "../../main-styles";
-import "../../layouts/layout-ui-kit"
+import "../../layouts/layout-base"
 
 import Cards from "./cards";
 import "./cards.scss"

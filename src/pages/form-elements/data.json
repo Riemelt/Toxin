@@ -1,4 +1,10 @@
 {
+  "header": {
+    "logo": {
+      "src": "logoUIKit.svg",
+      "href": "/mock-address/change-me"
+    }
+  },
   "inputFieldDefault": {
     "label": {
       "title": "text field",

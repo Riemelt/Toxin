@@ -1,9 +1,10 @@
 $className: 'colors-and-type';
 
 .#{$className} {
-	padding: 0 toRem(20) 0;
-	margin: toRem(59) 0 0 toRem(20);
+  min-height: 100vh;
+
 	&__main {
+    padding: toRem(60) toRem(19) 0 toRem(10);
 		display: flex;
 	}
 
@@ -23,7 +24,6 @@ $className: 'colors-and-type';
 	&__text-examples {
 		list-style-type: none;
 		margin-left: auto;
-		margin-right: toRem(28);
 	}
 
 	&__text-examples-item {
