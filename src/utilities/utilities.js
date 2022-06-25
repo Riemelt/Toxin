@@ -42,7 +42,12 @@ function getTimePassed(date) {
   }
 }
 
+function formatPrice(price) {
+  return `${price.toLocaleString("ru-RU")}₽`;
+}
+
 export {
   declOfNum,
   getTimePassed,
+  formatPrice,
 }

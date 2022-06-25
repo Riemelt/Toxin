@@ -1,7 +1,12 @@
+import data from "./data.json";
+
+import CardRoom from "../../components/card-room";
+
+import "../../components/header-ui-kit";
 import "../../components/container";
-import Label from "../../components/label";
 
 class Cards {
+  #className = "cards";
   #$component;
 
   constructor($element) {
@@ -10,7 +15,9 @@ class Cards {
 
   #init($element) {
     this.#$component = $element;
-    new Label(this.#$component);
+
+    new CardRoom(($(`.js-${this.#className}__card-room-focused`), this.#$component), data.cardRoomFocused);
+
   }
 }
 

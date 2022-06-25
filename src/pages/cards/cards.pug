@@ -1,7 +1,8 @@
 extends ../../layouts/layout-base/layout-base
 
+include ../../components/header-ui-kit/header-ui-kit
 include ../../components/container/container
-include ../../components/label/label
+include ../../components/card-room/card-room
 
 block vars
   -
@@ -10,7 +11,11 @@ block vars
 block main
   - 
     const className = "cards"
+    const data = require("./data.json")
 
   div(class=`${className} js-${className}`)
+    div(class=`${className}__header`)
+      +header-ui-kit(data.header)
     +container
-      +label({ title: "test1", description: "test2" })
+      div(class=`${className}__card-room-focused js-${className}__card-room-focused`)
+        +card-room(data.cardRoomFocused)

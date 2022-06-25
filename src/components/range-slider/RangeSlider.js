@@ -1,5 +1,6 @@
 import noUiSlider from "nouislider";
 import Label from "../label";
+import { formatPrice } from "../../utilities/utilities.js";
 
 class RangeSlider {
   #className = "range-slider";
@@ -18,7 +19,7 @@ class RangeSlider {
   }
 
   static buildRangeString(priceFrom, priceTo) {
-    return `${priceFrom.toLocaleString("ru-RU")}₽ - ${priceTo.toLocaleString("ru-RU")}₽`;
+    return `${formatPrice(priceFrom)} - ${formatPrice(priceTo)}`;
   }
 
   #init($parent, options) {

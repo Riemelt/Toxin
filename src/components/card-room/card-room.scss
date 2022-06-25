@@ -1,0 +1,175 @@
+$className: 'card-room';
+
+.#{$className} {
+  color: $dark-shade-50;
+  background-color: white;
+  width: toRem(270);
+  height: toRem(257);
+  box-shadow: toRem(0) toRem(10) toRem(20) $dark-shade-5;
+  border-radius: toRem(4);
+
+  &__slider {
+    display: flex;
+    max-height: toRem(151);
+    overflow: hidden;
+    border-radius: toRem(4) toRem(4) 0 0;
+    position: relative;
+  }
+
+  &__slider-image {
+    width: 100%;
+    display: none;
+
+    &_active {
+      display: initial;
+    }
+  }
+
+  &__slider-navigation {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s 300ms, opacity 300ms;
+  }
+
+  &__previous,
+  &__next {
+    height: 100%;
+    width: toRem(42);
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  &__previous {
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%);
+  }
+
+  &__next {
+    background: linear-gradient(-90deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%);
+  }
+
+  &__previous-icon,
+  &__next-icon {
+    color: white;
+    margin: 0 auto;
+    width: toRem(24);
+    height: toRem(24);
+  }
+
+  &__previous-icon {
+    transform: rotate(90deg);
+  }
+
+  &__next-icon {
+    transform: rotate(-90deg);
+  }
+
+  &__control-panel {
+    position: absolute;
+    display: flex;
+    right: toRem(15);
+    bottom: toRem(10);
+    list-style-type: none;
+    z-index: 1;
+  }
+
+  &__control-panel-item {
+    margin-right: toRem(3.75);
+
+    &:last-child {
+      margin-right: initial;
+    }
+  }
+
+  &__control-panel-button {
+    cursor: pointer;
+    width: toRem(8);
+    height: toRem(8);
+    border-radius: 50%;
+    border: toRem(1) solid #FFFFFF;
+
+    &_active {
+      background: white;
+    }
+  }
+
+  &__info {
+    margin: toRem(21) toRem(20) toRem(20);
+    padding-bottom: toRem(20);
+  }
+
+  &__info-primary,
+  &__info-secondary {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__info-primary {
+    border-bottom: toRem(1) solid $dark-shade-10;
+    padding-bottom: toRem(9);
+  }
+
+  &__info-secondary {
+    margin-top: toRem(8);
+  }
+
+  &__number {
+    font-weight: 700;
+    color: $dark-shade-100;
+  }
+
+  &__number-sign {
+    line-height: toRem(23.16);
+  }
+  
+  &__number-value {
+    line-height: toRem(17.07);
+    font-size: toRem(19);
+  }
+
+  &__luxe {
+    font-size: toRem(12);
+    line-height: toRem(15);
+    color: $purple;
+    text-transform: uppercase;
+    font-weight: 700;
+    vertical-align: middle;
+    margin-left: toRem(1);
+  }
+
+  &__price-value,
+  &__duration,
+  &__reviews-count,
+  &__reviews-title {
+    line-height: toRem(18);
+  }
+
+  &__price-value,
+  &__reviews-count {
+    font-weight: 700;
+  }
+
+  &__duration {
+    font-size: toRem(12);
+  }
+
+  &:hover,
+  &_hovered {
+    .#{$className}__slider-navigation {
+      visibility: visible;
+      opacity: 1;
+      transition: visibility 0s, opacity 300ms;
+    }
+  }
+
+  &_hovered {
+    .#{$className}__slider-navigation {
+      transition: opacity 0s;
+    }
+  }
+}
