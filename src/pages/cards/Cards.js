@@ -1,9 +1,11 @@
 import data from "./data.json";
 
 import CardRoom from "../../components/card-room";
+import CardSearch from "../../components/card-search";
 
 import "../../components/header-ui-kit";
 import "../../components/container";
+import "../../components/card";
 
 class Cards {
   #className = "cards";
@@ -17,6 +19,7 @@ class Cards {
     this.#$component = $element;
 
     new CardRoom(($(`.js-${this.#className}__card-room-focused`), this.#$component), data.cardRoomFocused);
+    new CardSearch(($(`.js-${this.#className}__card-search`), this.#$component), data.cardSearch);
 
   }
 }

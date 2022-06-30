@@ -30,5 +30,81 @@
         "alt": "Card room 4"
       }
     ]
+  },
+  "cardSearch": {
+    "form": {
+      "action": "/mock-address/change-me",
+      "method": "get"
+    },
+    "title": "Найдём номера под ваши пожелания",
+    "dropdownDatepicker": {
+      "withTwoInputs": true,
+      "size": "big",
+      "datepicker": {
+        "isHidden": true
+      },
+      "inputs": [
+        {
+          "label": {
+            "title": "прибытие"
+          },
+          "button": {
+            "icon": "expand_more"
+          },
+          "isReadonly": true,
+          "type": "text",
+          "name": "startDate",
+          "size": "small"
+        },
+        {
+          "label": {
+            "title": "выезд"
+          },
+          "button": {
+            "icon": "expand_more"
+          },
+          "isReadonly": true,
+          "type": "text",
+          "name": "endDate",
+          "size": "small"
+        }
+      ]
+    },
+    "dropdownGuests": {
+      "type": "guest",
+      "input": {
+        "label": {
+          "title": "гости"
+        },
+        "value": "Сколько гостей",
+        "type": "text",
+        "name": "guests",
+        "button": {
+          "icon": "expand_more"
+        }
+      },
+      "items": [
+        {
+          "title": "взрослые",
+          "value": 0,
+          "type": "guest"
+        },
+        {
+          "title": "дети",
+          "value": 0,
+          "type": "guest"
+        },
+        {
+          "title": "младенцы",
+          "value": 0,
+          "type": "baby"
+        }
+      ]
+    },
+    "searchRoomButton": {
+      "text": "Подобрать номер",
+      "withIcon": true,
+      "type": "submit"
+    }
   }
 }

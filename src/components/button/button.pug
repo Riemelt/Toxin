@@ -6,6 +6,7 @@ mixin button(vars)
       filled,
       withIcon,
       hovered = false,
+      type = "button",
     } = vars
 
     const className = "button"
@@ -21,7 +22,9 @@ mixin button(vars)
   if hovered
     - classNames += ` ${className}_hovered`
     
-  button(class=classNames)
+  button(class=classNames
+         type=type
+  )
       div(class=`${className}__body`)
         span(class=`${className}__text`)= text
         if withIcon

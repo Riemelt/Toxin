@@ -3,6 +3,8 @@ extends ../../layouts/layout-base/layout-base
 include ../../components/header-ui-kit/header-ui-kit
 include ../../components/container/container
 include ../../components/card-room/card-room
+include ../../components/card/card
+include ../../components/card-search/card-search
 
 block vars
   -
@@ -17,5 +19,7 @@ block main
     div(class=`${className}__header`)
       +header-ui-kit(data.header)
     +container
-      div(class=`${className}__card-room-focused js-${className}__card-room-focused`)
-        +card-room(data.cardRoomFocused)
+      //div(class=`${className}__card-room-focused js-${className}__card-room-focused`)
+        //+card-room(data.cardRoomFocused)
+      div(class=`${className}__card-search js-${className}__card-search`)
+        +card-search(data.cardSearch)

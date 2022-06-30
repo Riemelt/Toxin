@@ -1,0 +1,10 @@
+$className: 'card';
+
+.#{$className} {
+  background-color: white;
+  max-width: toRem(380);
+  width: 100%;
+  border: toRem(1) solid rgba(0, 0, 0, 0.12);
+  box-shadow: toRem(0) toRem(0) toRem(25) rgba(0, 0, 0, 0.2);
+  border-radius: toRem(4);
+}

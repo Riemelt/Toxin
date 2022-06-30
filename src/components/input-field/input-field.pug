@@ -9,7 +9,9 @@ mixin input-field(vars)
       value = "",
       button,
       isReadonly,
-      size = "big"
+      size = "big",
+      type = "text",
+      name = "",
     } = vars
 
     const className = "input-field"
@@ -50,7 +52,8 @@ mixin input-field(vars)
         +label(label)
       div(class=`${className}__main-field`)
         input(class=`${className}__input js-${className}__input`
-              type="text"
+              type=type
+              name=name
               placeholder=placeholder
               readonly=isReadonly
               value=value
