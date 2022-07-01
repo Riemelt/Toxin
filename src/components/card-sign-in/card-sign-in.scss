@@ -1,0 +1,32 @@
+$className: 'card-sign-in';
+
+.#{$className} {
+  margin: toRem(29) toRem(29) toRem(31);
+
+  &__title {
+    padding-top: toRem(10);
+  }
+
+  &__input-email {
+    margin-top: toRem(17);
+  }
+
+  &__input-password {
+    margin-top: toRem(6);
+  }
+
+  &__sign-in-button {
+    margin-top: toRem(20);
+  }
+
+  &__registration {
+    margin-top: toRem(30);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__registration-content {
+    color: black;
+  }
+}

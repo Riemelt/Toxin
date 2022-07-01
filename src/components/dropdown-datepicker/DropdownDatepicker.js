@@ -38,6 +38,7 @@ class DropdownDatepicker {
     this.#datepicker = new Datepicker(this.#$component, {
       handleApplyButtonClick: this.#handleApplyButtonClick.bind(this),
       handleResetButtonClick: this.#handleResetButtonClick.bind(this),
+      handleDatepickerClick: this.#handleDatepickerClick.bind(this),
       ...datepicker,
     });
   }
@@ -108,6 +109,10 @@ class DropdownDatepicker {
   
   #handleResetButtonClick() {
     this.#inputs.forEach(input => input.setInputText(DropdownDatepicker.#PLACEHOLDER));
+  }
+
+  #handleDatepickerClick() {
+    this.#updateDropdownDatepicker();
   }
 
   #isDropdown(target) {

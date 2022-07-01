@@ -7,10 +7,7 @@ $className: 'card-search';
     padding-top: toRem(10);
   }
 
-  &__datepicker {
-    margin-top: toRem(22);
-  }
-
+  &__datepicker,
   &__dropdown-guests {
     margin-top: toRem(22);
   }

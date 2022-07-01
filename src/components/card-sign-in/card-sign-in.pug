@@ -1,0 +1,42 @@
+include ../card/card
+include ../input-field/input-field
+include ../button/button
+
+mixin card-sign-in(vars = {})
+  -
+    const {
+      form = {
+        action: "/mock-address/change-me",
+        method: "get",
+      },
+      title = "",
+      inputEmail = {},
+      inputPassword = {},
+      signInButton = {},
+      registration = {
+        content: "",
+        button: {},
+      },
+    } = vars
+
+    const className = "card-sign-in"
+    let classNames = `${className} js-${className}`
+
+  +card()
+    form(
+      class=classNames
+      action=form.action
+      method=form.method
+    )
+      h1(class=`${className}__title`)= title
+      div(class=`${className}__input-email`)
+        +input-field(inputEmail)
+      div(class=`${className}__input-password`)
+        +input-field(inputPassword)
+      div(class=`${className}__sign-in-button`)
+        +button(signInButton)
+      div(class=`${className}__registration`)
+        div(class=`${className}__registration-content`)= registration.content
+        div(class=`${className}__registration-button`)
+          +button(registration.button)
+

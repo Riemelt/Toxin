@@ -106,5 +106,37 @@
       "withIcon": true,
       "type": "submit"
     }
+  },
+  "cardSignIn": {
+    "form": {
+      "action": "",
+      "method": "get"
+    },
+    "title": "Войти",
+    "inputEmail": {
+      "placeholder": "Email",
+      "type": "text",
+      "required": true,
+      "name": "email"
+    },
+    "inputPassword": {
+      "placeholder": "Пароль",
+      "type": "text",
+      "required": true,
+      "name": "password"
+    },
+    "signInButton": {
+      "text": "войти",
+      "withIcon": true,
+      "type": "submit"
+    },
+    "registration": {
+      "content": "Нет аккаунта на Toxin?",
+      "button": {
+        "text": "создать",
+        "href": "/mock-address/change-me",
+        "bordered": true
+      }
+    }
   }
 }

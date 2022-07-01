@@ -3,4 +3,8 @@ $className: 'cards';
 .#{$className} {
   min-height: 100vh;
   background-color: $grey;
+
+  &__card-sign-in {
+    margin-top: toRem(50);
+  }
 }

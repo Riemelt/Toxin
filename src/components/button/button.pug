@@ -7,10 +7,22 @@ mixin button(vars)
       withIcon,
       hovered = false,
       type = "button",
+      href,
     } = vars
 
     const className = "button"
     let classNames = className + ` js-${className}`
+
+    const tag = href ? "a" : "button"
+
+    const buttonAttributes = {
+      a: {
+        href,
+      },
+      button: {
+        type,
+      },
+    }
 
   if bordered
     - classNames += ` ${className}_bordered`
@@ -22,9 +34,7 @@ mixin button(vars)
   if hovered
     - classNames += ` ${className}_hovered`
     
-  button(class=classNames
-         type=type
-  )
+  #{tag}(class=classNames)&attributes(buttonAttributes[tag])
       div(class=`${className}__body`)
         span(class=`${className}__text`)= text
         if withIcon

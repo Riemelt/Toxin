@@ -6,6 +6,7 @@ import CardSearch from "../../components/card-search";
 import "../../components/header-ui-kit";
 import "../../components/container";
 import "../../components/card";
+import "../../components/card-sign-in";
 
 class Cards {
   #className = "cards";

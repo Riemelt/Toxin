@@ -1,13 +1,17 @@
 $button: 'button';
 
 .#{$button} {
+  display: block;
   font-family: Montserrat, Arial, sans-serif;
   font-weight: 700;
   font-size: toRem(12);
   line-height: toRem(14.63);
   text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
 
   &__body {
+    height: 100%;
     position: relative;
     display: flex;
     align-items: center;

@@ -3,8 +3,9 @@ include ../label/label
 mixin input-field(vars)
   -
     const {
-      label,
+      label = {},
       placeholder = "",
+      required = false,
       hovered,
       value = "",
       button,
@@ -57,6 +58,7 @@ mixin input-field(vars)
               placeholder=placeholder
               readonly=isReadonly
               value=value
+              required=required
               )
         if button
           button(class=buttonClassNames)
