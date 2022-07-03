@@ -6,14 +6,19 @@ class DropdownDatepicker {
   #className = "dropdown-datepicker";
 
   #$component;
+  #options;
   #$inputWrapper;
   #inputs = [];
   #datepicker;
 
-  #inputMode = DropdownDatepicker.#SINGLE_MODE;
+  #inputMode = DropdownDatepicker.#SINGLE_INPUT;
+  #dateFormat = DropdownDatepicker.#DATE_FORMAT_PRIMARY;
 
-  static #SINGLE_MODE = "single";
-  static #MULTIPLE_MODE = "multiple";
+  static #DATE_FORMAT_PRIMARY = "primary";
+  static #DATE_FORMAT_SECONDARY = "secondary";
+
+  static #SINGLE_INPUT = "single";
+  static #MULTIPLE_INPUT = "multiple";
 
   static #PLACEHOLDER = "ДД.ММ.ГГГГ";
 
@@ -22,18 +27,22 @@ class DropdownDatepicker {
     this.#render();
   }
 
-  #init($parent, {
-    withTwoInputs = false,
-    datepicker = {},
-    }) {
+  #init($parent, options) {
+    this.#options = options;
     this.#$component = $parent.find(`.js-${this.#className}`);
     this.#$inputWrapper = this.#$component.find(`.js-${this.#className}__input-wrapper`);
 
-    if (withTwoInputs) {
-      this.#inputMode = DropdownDatepicker.#MULTIPLE_MODE;
-    }
+    const {
+      withTwoInputs = false,
+      dateFormat = DropdownDatepicker.#DATE_FORMAT_PRIMARY,
+      datepicker = {},
+    } = this.#options;
 
-    this.#initInputs();
+    this.#dateFormat = dateFormat;
+
+    if (withTwoInputs) {
+      this.#inputMode = DropdownDatepicker.#MULTIPLE_INPUT;
+    }
 
     this.#datepicker = new Datepicker(this.#$component, {
       handleApplyButtonClick: this.#handleApplyButtonClick.bind(this),
@@ -41,10 +50,12 @@ class DropdownDatepicker {
       handleDatepickerClick: this.#handleDatepickerClick.bind(this),
       ...datepicker,
     });
+
+    this.#initInputs();
   }
 
   #initInputs() {
-    if (this.#inputMode === DropdownDatepicker.#MULTIPLE_MODE) {
+    if (this.#inputMode === DropdownDatepicker.#MULTIPLE_INPUT) {
       const $inputStart = this.#$component.find(`.js-${this.#className}__input-start`);
       const $inputEnd = this.#$component.find(`.js-${this.#className}__input-end`);
 
@@ -83,20 +94,25 @@ class DropdownDatepicker {
   }
 
   #updateDropdownDatepicker() {
-    const dates = this.#datepicker.getDates();
-    const parser = this.#inputMode === DropdownDatepicker.#SINGLE_MODE ? Datepicker.parseDate.primary : Datepicker.parseDate.secondary;
+    const [ dateStart, dateEnd ] = this.#datepicker.getDates();
+    const parser = this.#dateFormat === DropdownDatepicker.#DATE_FORMAT_PRIMARY ? Datepicker.parseDate.primary : Datepicker.parseDate.secondary;
 
-    const start = dates.start ? parser(dates.start) : DropdownDatepicker.#PLACEHOLDER;
-    const end = dates.end ? parser(dates.end) : DropdownDatepicker.#PLACEHOLDER;
+    const start = dateStart ? parser(dateStart) : DropdownDatepicker.#PLACEHOLDER;
+    const end = dateEnd ? parser(dateEnd) : DropdownDatepicker.#PLACEHOLDER;
 
     this.#updateInputs({ start, end }, this.#inputMode);
   }
 
   #updateInputs(datesText, mode) {
-    if (mode === DropdownDatepicker.#SINGLE_MODE) {
-      const text = `${datesText.start} - ${datesText.end}`;
+    const { multipleDates = true } = this.#options.datepicker;
+
+    if (mode === DropdownDatepicker.#SINGLE_INPUT) {
+      let text = datesText.start;
+      if (multipleDates) {
+        text = `${text} - ${datesText.end}`
+      }
       this.#inputs[0].setInputText(text);
-    } else if (mode === DropdownDatepicker.#MULTIPLE_MODE) {
+    } else if (mode === DropdownDatepicker.#MULTIPLE_INPUT) {
       this.#inputs[0].setInputText(datesText.start);
       this.#inputs[1].setInputText(datesText.end);
     }

@@ -15,6 +15,7 @@ class Datepicker {
 
   #controlPanel;
   #dates = [];
+
   #dateStart;
   #dateEnd;
 
@@ -59,10 +60,16 @@ class Datepicker {
   }
 
   getDates() {
-    return {
-      start: this.#dateStart,
-      end: this.#dateEnd,
-    };
+    const dates = [];
+    if (this.#dateStart) {
+      dates.push(this.#dateStart)
+    }
+
+    if (this.#dateEnd) {
+      dates.push(this.#dateEnd)
+    }
+
+    return dates;
   }
 
   #init($parent, options) {
@@ -111,19 +118,27 @@ class Datepicker {
   }
 
   #initAirDatepicker() {
+    const {
+      range = true,
+      multipleDates = true,
+      minDate = new Date(),
+     } = this.#options;
     const input = this.#$input.get(0);
+
+    
+
     this.#airDatepicker = new AirDatepicker(input, {
       inline: true,
       visible: false,
-      range: true,
-      multipleDates: true,
+      range,
+      multipleDates,
       selectedDates: this.#dates,
       prevHtml: "<span class=\"material-icons\"> arrow_back </span>",
       nextHtml: "<span class=\"material-icons\"> arrow_forward </span>",
       navTitles: {
         days: "MMMM yyyy"
       },
-      minDate: new Date(),
+      minDate,
       onSelect: this.#handleDatepickerClick.bind(this),
     });
   }
@@ -133,10 +148,18 @@ class Datepicker {
       Datepicker.fixFocusDisplay(datepicker)
     }
 
-    this.#dateStart = date?.[0];
-    this.#dateEnd = date?.[1];
+    const {
+      handleDatepickerClick,
+      multipleDates = true,
+    } = this.#options;
 
-    const { handleDatepickerClick } = this.#options;
+    if (multipleDates) {
+      this.#dateStart = date?.[0];
+      this.#dateEnd = date?.[1];
+    } else {
+      this.#dateStart = date;
+    }
+
     handleDatepickerClick?.({date});
   }
 }
