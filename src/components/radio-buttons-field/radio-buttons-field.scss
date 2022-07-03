@@ -1,6 +1,7 @@
 $className: 'radio-buttons-field';
 
 .#{$className} {
+  border: initial;
   max-width: $medium;
   display: flex;
 

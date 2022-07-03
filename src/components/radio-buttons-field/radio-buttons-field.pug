@@ -9,7 +9,7 @@ mixin radio-buttons-field(vars)
     const className = "radio-buttons-field"
     let classNames = className + ` js-${className}`
 
-  div(class=classNames)
+  fieldset(class=classNames)
     each item in items
       div(class=`${className}__item`)
         +radio-button(item)

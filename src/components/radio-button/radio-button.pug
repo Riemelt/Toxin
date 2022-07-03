@@ -4,6 +4,7 @@ mixin radio-button(vars)
       title = "",
       checked = false,
       name = "",
+      value = "",
     } = vars
 
     const className = "radio-button"
@@ -15,6 +16,7 @@ mixin radio-button(vars)
             type="radio"
             checked=checked
             name=name
+            value=value
             )
       div(class=`${className}__button`)
       span(class=`${className}__title`)= title

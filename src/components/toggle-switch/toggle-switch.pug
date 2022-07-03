@@ -3,6 +3,7 @@ mixin toggle-switch(vars)
     const {
       title = "",
       checked = false,
+      name = "",
     } = vars
 
     const className = "toggle-switch"
@@ -13,6 +14,7 @@ mixin toggle-switch(vars)
       input(class=`${className}__switch-input`
             type="checkbox"
             checked=checked
+            name=name
             )
       div(class=`${className}__switch`)
       span(class=`${className}__title`)= title
