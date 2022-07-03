@@ -3,9 +3,9 @@ extends ../../layouts/layout-base/layout-base
 include ../../components/header-ui-kit/header-ui-kit
 include ../../components/container/container
 include ../../components/card-room/card-room
-include ../../components/card/card
 include ../../components/card-search/card-search
 include ../../components/card-sign-in/card-sign-in
+include ../../components/card-registration/card-registration
 
 block vars
   -
@@ -25,4 +25,6 @@ block main
       div(class=`${className}__card-search js-${className}__card-search`)
         //+card-search(data.cardSearch)
       div(class=`${className}__card-sign-in js-${className}__card-sign-in`)
-        +card-sign-in(data.cardSignIn)
+        //+card-sign-in(data.cardSignIn)
+      div(class=`${className}__card-registration js-${className}__card-registration`)
+        +card-registration(data.cardRegistration)

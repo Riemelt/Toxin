@@ -7,7 +7,7 @@ mixin dropdown-datepicker(vars)
       datepicker,
       inputs,
       withTwoInputs = false,
-      size = "medium"
+      size = "medium",
     } = vars
 
     const className = "dropdown-datepicker"
@@ -24,6 +24,6 @@ mixin dropdown-datepicker(vars)
           +input-field({ ...inputs[1], size: "small" })
       else
         div(class=`${className}__input-single js-${className}__input-single`)
-          +input-field({ ...inputs[0], size: "medium" })
+          +input-field(inputs[0])
     div(class=`${className}__datepicker js-${className}__datepicker`)
       +datepicker({ ...datepicker, size })

@@ -10,6 +10,10 @@ $className: 'dropdown-datepicker';
     justify-content: space-between;
   }
 
+  &__input-single {
+    width: 100%;
+  }
+
   &__datepicker {
     margin-top: toRem(5);
     position: absolute;

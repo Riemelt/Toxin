@@ -59,6 +59,7 @@
   "dateDropdownDouble": {
     "withTwoInputs": true,
     "size": "big",
+    "dateFormat": "secondary",
     "datepicker": {
       "isHidden": true,
       "endDate": "2022-05-23"

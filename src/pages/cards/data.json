@@ -115,7 +115,7 @@
     "title": "Войти",
     "inputEmail": {
       "placeholder": "Email",
-      "type": "text",
+      "type": "email",
       "required": true,
       "name": "email"
     },
@@ -134,6 +134,97 @@
       "content": "Нет аккаунта на Toxin?",
       "button": {
         "text": "создать",
+        "href": "/mock-address/change-me",
+        "bordered": true
+      }
+    }
+  },
+  "cardRegistration": {
+    "form": {
+      "action": "",
+      "method": "get"
+    },
+    "title": "Регистрация аккаунта",
+    "inputFirstName": {
+      "placeholder": "Имя",
+      "type": "text",
+      "required": true,
+      "name": "firstName"
+    },
+    "inputLastName": {
+      "placeholder": "Фамилия",
+      "type": "text",
+      "required": true,
+      "name": "secondName"
+    },
+    "inputGender": {
+      "items": [
+        {
+          "title": "Мужчина",
+          "checked": true,
+          "name": "gender",
+          "value": "male"
+        },
+        {
+          "title": "Женщина",
+          "name": "gender",
+          "value": "female"
+        }
+      ]
+    },
+    "dropdownBirthDate": {
+      "withTwoInputs": false,
+      "size": "big",
+      "dateFormat": "secondary",
+      "datepicker": {
+        "range": false,
+        "minDate": "01.01.1900",
+        "multipleDates": false,
+        "isHidden": true
+      },
+      "inputs": [
+        {
+          "label": {
+            "title": "дата рождения"
+          },
+          "isReadonly": true,
+          "type": "text",
+          "name": "birthDate",
+          "size": "big",
+          "required": true,
+          "isMasked": true
+        }
+      ]
+    },
+    "inputEmail": {
+      "label": {
+        "title": "данные для входа в сервис"
+      },
+      "placeholder": "Email",
+      "type": "email",
+      "required": true,
+      "name": "email"
+    },
+    "inputPassword": {
+      "placeholder": "Пароль",
+      "type": "text",
+      "required": true,
+      "name": "password"
+    },
+    "toggleSwitchSubscription": {
+      "title": "Получать спецпредложения",
+      "checked": false,
+      "name": "subscription"
+    },
+    "submitRegistrationButton": {
+      "text": "перейти к оплате",
+      "withIcon": true,
+      "type": "submit"
+    },
+    "login": {
+      "content": "Уже есть аккаунт на Toxin",
+      "button": {
+        "text": "войти",
         "href": "/mock-address/change-me",
         "bordered": true
       }

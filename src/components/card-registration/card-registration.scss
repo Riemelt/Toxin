@@ -1,0 +1,52 @@
+$className: 'card-registration';
+
+.#{$className} {
+  margin: toRem(29);
+
+  &__title {
+    padding-top: toRem(10);
+  }
+
+  &__input-first-name {
+    margin-top: toRem(17);
+  }
+  
+  &__input-last-name {
+    margin-top: toRem(6);
+  }
+
+  &__input-gender {
+    margin-top: toRem(8);
+  }
+
+  &__dropdown-birth-date {
+    margin-top: toRem(23);
+  }
+
+  &__input-email {
+    margin-top: toRem(21);
+  }
+
+  &__input-password {
+    margin-top: toRem(6);
+  }
+
+  &__toggle-switch-subscription {
+    margin-top: toRem(8);
+  }
+
+  &__registration-button {
+    margin-top: toRem(22);
+  }
+
+  &__login {
+    margin-top: toRem(30);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__login-content {
+    color: black;
+  }
+}

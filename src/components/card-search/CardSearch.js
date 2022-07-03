@@ -1,6 +1,9 @@
 import DropdownDatepicker from "../dropdown-datepicker";
 import DropdownCounter from "../dropdown-counter";
 
+import "../card";
+import "../button";
+
 class CardSearch {
   #className = "card-search";
 

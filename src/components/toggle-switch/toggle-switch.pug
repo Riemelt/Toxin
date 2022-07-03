@@ -11,10 +11,11 @@ mixin toggle-switch(vars)
 
   div(class=classNames)
     label(class=`${className}__body`)
-      input(class=`${className}__switch-input`
-            type="checkbox"
-            checked=checked
-            name=name
-            )
+      input(
+        class=`${className}__switch-input`
+        type="checkbox"
+        checked=checked
+        name=name
+      )
       div(class=`${className}__switch`)
       span(class=`${className}__title`)= title

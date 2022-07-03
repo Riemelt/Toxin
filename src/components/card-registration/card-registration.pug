@@ -1,0 +1,59 @@
+include ../card/card
+include ../input-field/input-field
+include ../radio-buttons-field/radio-buttons-field
+include ../dropdown-datepicker/dropdown-datepicker
+include ../toggle-switch/toggle-switch
+include ../button/button
+
+mixin card-registration(vars = {})
+  -
+    const {
+      form = {
+        action: "/mock-address/change-me",
+        method: "get",
+      },
+      title = "",
+      inputFirstName = {},
+      inputLastName = {},
+      inputGender = {},
+      dropdownBirthDate = {},
+      inputEmail = {},
+      inputPassword = {},
+      toggleSwitchSubscription = {},
+      submitRegistrationButton = {},
+      login = {
+        content: "",
+        button: {},
+      },
+    } = vars
+
+    const className = "card-registration"
+    let classNames = `${className} js-${className}`
+
+  +card()
+    form(
+      class=classNames
+      action=form.action
+      method=form.method
+    )
+      h1(class=`${className}__title`)= title
+      div(class=`${className}__input-first-name`)
+        +input-field(inputFirstName)
+      div(class=`${className}__input-last-name`)
+        +input-field(inputLastName)
+      div(class=`${className}__input-gender`)
+        +radio-buttons-field(inputGender)
+      div(class=`${className}__dropdown-birth-date js-${className}__dropdown-birth-date`)
+        +dropdown-datepicker(dropdownBirthDate)
+      div(class=`${className}__input-email`)
+        +input-field(inputEmail)
+      div(class=`${className}__input-password`)
+        +input-field(inputPassword)
+      div(class=`${className}__toggle-switch-subscription`)
+        +toggle-switch(toggleSwitchSubscription)
+      div(class=`${className}__registration-button`)
+        +button(submitRegistrationButton)
+      div(class=`${className}__login`)
+        div(class=`${className}__login-content`)= login.content
+        div(class=`${className}__login-button`)
+          +button(login.button)
