@@ -34,11 +34,15 @@ class InputField {
     this.#$inputField = $parent.find(`.js-${this.#className}`);
     this.#$input = $parent.find(`.js-${this.#className}__input`);
 
-    const { isMasked = false } = options;
+    const {
+      isMasked = false,
+      minDate = new Date("01.01.1900"),
+      maxDate = new Date(),
+    } = options;
 
     if (isMasked) {
-      this.#minDate = new Date();
-      this.#maxDate = new Date(new Date().setFullYear(new Date().getFullYear() + 1))
+      this.#minDate = new Date(minDate);
+      this.#maxDate = new Date(maxDate)
       this.#setMask();
     }
   }

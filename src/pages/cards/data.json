@@ -172,29 +172,17 @@
         }
       ]
     },
-    "dropdownBirthDate": {
-      "withTwoInputs": false,
-      "size": "big",
-      "dateFormat": "secondary",
-      "datepicker": {
-        "range": false,
-        "minDate": "01.01.1900",
-        "multipleDates": false,
-        "isHidden": true
+    "inputBirthDate": {
+      "label": {
+        "title": "дата рождения"
       },
-      "inputs": [
-        {
-          "label": {
-            "title": "дата рождения"
-          },
-          "isReadonly": true,
-          "type": "text",
-          "name": "birthDate",
-          "size": "big",
-          "required": true,
-          "isMasked": true
-        }
-      ]
+      "placeholder": "ДД.ММ.ГГГГ",
+      "type": "text",
+      "name": "birthDate",
+      "size": "big",
+      "required": true,
+      "isMasked": true,
+      "minDate": "01.01.1900"
     },
     "inputEmail": {
       "label": {

@@ -1,7 +1,6 @@
-import DropdownDatepicker from "../dropdown-datepicker";
+import InputField from "../input-field";
 
 import "../card";
-import "../input-field";
 import "../radio-buttons-field";
 import "../toggle-switch";
 import "../button";
@@ -10,17 +9,17 @@ class CardRegistration {
   #className = "card-registration";
 
   #$component;
-  #dropdownBirthDate;
+  #inputBirthDate;
 
   constructor($parent, options = {}) {
     this.#init($parent, options);
   }
 
   #init($parent, {
-    dropdownBirthDate = {},
+    inputBirthDate = {},
   }) {
     this.#$component = $parent.find(`.js-${this.#className}`);
-    this.#dropdownBirthDate = new DropdownDatepicker(this.#$component.find(`.js-${this.#className}__dropdown-birth-date`), dropdownBirthDate);
+    this.#inputBirthDate = new InputField(this.#$component.find(`.js-${this.#className}__input-birth-date`), inputBirthDate);
   }
 }
 

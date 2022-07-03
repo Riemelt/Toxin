@@ -1,7 +1,6 @@
 include ../card/card
 include ../input-field/input-field
 include ../radio-buttons-field/radio-buttons-field
-include ../dropdown-datepicker/dropdown-datepicker
 include ../toggle-switch/toggle-switch
 include ../button/button
 
@@ -16,7 +15,7 @@ mixin card-registration(vars = {})
       inputFirstName = {},
       inputLastName = {},
       inputGender = {},
-      dropdownBirthDate = {},
+      inputBirthDate = {},
       inputEmail = {},
       inputPassword = {},
       toggleSwitchSubscription = {},
@@ -43,8 +42,8 @@ mixin card-registration(vars = {})
         +input-field(inputLastName)
       div(class=`${className}__input-gender`)
         +radio-buttons-field(inputGender)
-      div(class=`${className}__dropdown-birth-date js-${className}__dropdown-birth-date`)
-        +dropdown-datepicker(dropdownBirthDate)
+      div(class=`${className}__input-birth-date js-${className}__input-birth-date`)
+        +input-field(inputBirthDate)
       div(class=`${className}__input-email`)
         +input-field(inputEmail)
       div(class=`${className}__input-password`)
