@@ -1,0 +1,24 @@
+mixin room-label(vars = {})
+  -
+    const {
+      theme,
+      isLuxe = false,
+      number = 0,
+    } = vars
+
+    const className = "room-label"
+    let classNames = `${className} js-${className}`
+
+  case (theme)
+    when "reservation"
+      - classNames += ` ${className}_theme-reservation`
+
+  div(class=classNames)
+    div(class=`${className}__number`)
+      span(class=`${className}__number-sign`) № 
+      span(class=`${className}__number-value`)= number
+      if isLuxe
+        span(class=`${className}__luxe`) люкс
+    div(class=`${className}__price`)
+      span(class=`${className}__price-value js-${className}__price-value`)
+      span(class=`${className}__duration`)  в сутки

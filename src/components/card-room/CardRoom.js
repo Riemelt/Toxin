@@ -1,4 +1,4 @@
-import { formatPrice } from "../../utilities/utilities.js";
+import RoomLabel from "../room-label";
 
 class CardRoom {
   #className = "card-room";
@@ -6,7 +6,6 @@ class CardRoom {
   #$component;
   #options;
 
-  #$price;
   #$images;
   #$nextButton;
   #$previousButton;
@@ -15,6 +14,7 @@ class CardRoom {
   #images = [];
   #activeImageId = 0;
   #controlButtons = [];
+  #label;
 
   static #NEXT = 1;
   static #PREVIOUS = -1;
@@ -28,7 +28,6 @@ class CardRoom {
     this.#options = options;
 
     this.#$component = $parent.find(`.js-${this.#className}`);
-    this.#$price = this.#$component.find(`.js-${this.#className}__price-value`);
     this.#$images = this.#$component.find(`.js-${this.#className}__slider-image`);
     this.#$nextButton = this.#$component.find(`.js-${this.#className}__next`);
     this.#$previousButton = this.#$component.find(`.js-${this.#className}__previous`);
@@ -37,9 +36,8 @@ class CardRoom {
     this.#$controlButtons.each((_, element) => this.#controlButtons.push($(element)));
 
     this.#$images.each(this.#initImage.bind(this));
-
-    const { price = 0 } = this.#options;
-    this.#initPrice(price);
+    const { roomLabel = {} } = options;
+    this.#label = new RoomLabel(this.#$component.find(`.js-${this.#className}__label`), roomLabel);
   }
 
   #render() {
@@ -103,11 +101,6 @@ class CardRoom {
 
   #setNewActiveImageId(id) {
     this.#activeImageId = id;
-  }
-
-  #initPrice(price) {
-    const priceFormatted = formatPrice(price);
-    this.#$price.html(priceFormatted);
   }
 }
 

@@ -4,7 +4,7 @@ $className: 'card-room';
   color: $dark-shade-50;
   background-color: white;
   width: toRem(270);
-  height: toRem(257);
+  max-height: toRem(257);
   box-shadow: toRem(0) toRem(10) toRem(20) $dark-shade-5;
   border-radius: toRem(4);
 
@@ -100,62 +100,30 @@ $className: 'card-room';
 
   &__info {
     margin: toRem(21) toRem(20) toRem(20);
-    padding-bottom: toRem(20);
+    padding-bottom: toRem(12);
   }
 
-  &__info-primary,
-  &__info-secondary {
+  &__rating-and-reviews {
     display: flex;
     justify-content: space-between;
   }
 
-  &__info-primary {
+  &__label {
     border-bottom: toRem(1) solid $dark-shade-10;
     padding-bottom: toRem(9);
   }
 
-  &__info-secondary {
+  &__rating-and-reviews {
     margin-top: toRem(8);
   }
 
-  &__number {
-    font-weight: 700;
-    color: $dark-shade-100;
-  }
-
-  &__number-sign {
-    line-height: toRem(23.16);
-  }
-  
-  &__number-value {
-    line-height: toRem(17.07);
-    font-size: toRem(19);
-  }
-
-  &__luxe {
-    font-size: toRem(12);
-    line-height: toRem(15);
-    color: $purple;
-    text-transform: uppercase;
-    font-weight: 700;
-    vertical-align: middle;
-    margin-left: toRem(1);
-  }
-
-  &__price-value,
-  &__duration,
   &__reviews-count,
   &__reviews-title {
     line-height: toRem(18);
   }
 
-  &__price-value,
   &__reviews-count {
     font-weight: 700;
-  }
-
-  &__duration {
-    font-size: toRem(12);
   }
 
   &:hover,

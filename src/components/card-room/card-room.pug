@@ -1,14 +1,14 @@
 include ../rate-button/rate-button
+include ../room-label/room-label
 
 mixin card-room(vars)
   -
     const {
       images = [],
-      number = 0,
       reviews = 0,
       rateButton = {},
-      isLuxe = false,
       isHovered = false,
+      roomLabel = {},
     } = vars
 
     const className = "card-room"
@@ -45,16 +45,9 @@ mixin card-room(vars)
           li(class=`${className}__control-panel-item`)
             button(class=`${className}__control-panel-button js-${className}__control-panel-button` data-id=i)
     div(class=`${className}__info`)
-      div(class=`${className}__info-primary`)
-        div(class=`${className}__number`)
-          span(class=`${className}__number-sign`) № 
-          span(class=`${className}__number-value`)= number
-          if isLuxe
-            span(class=`${className}__luxe`) люкс
-        div(class=`${className}__price`)
-          span(class=`${className}__price-value js-${className}__price-value`)
-          span(class=`${className}__duration`)  в сутки
-      div(class=`${className}__info-secondary`)
+      div(class=`${className}__label js-${className}__label`)
+        +room-label(roomLabel)
+      div(class=`${className}__rating-and-reviews`)
         div(class=`${className}__rating`)
           +rate-button(rateButton)
         div(class=`${className}__reviews`)

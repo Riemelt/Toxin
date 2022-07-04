@@ -1,0 +1,43 @@
+$className: 'room-label';
+
+.#{$className} {
+  display: flex;
+  justify-content: space-between;
+  
+  &__number {
+    font-weight: 700;
+    color: $dark-shade-100;
+  }
+
+  &__number-sign {
+    line-height: toRem(23.16);
+  }
+  
+  &__number-value {
+    line-height: toRem(17.07);
+    font-size: toRem(19);
+  }
+
+  &__luxe {
+    font-size: toRem(12);
+    line-height: toRem(15);
+    color: $purple;
+    text-transform: uppercase;
+    font-weight: 700;
+    vertical-align: middle;
+    margin-left: toRem(1);
+  }
+
+  &__price-value,
+  &__duration {
+    line-height: toRem(18);
+  }
+
+  &__price-value {
+    font-weight: 700;
+  }
+
+  &__duration {
+    font-size: toRem(12);
+  }
+}

@@ -10,8 +10,11 @@
       "value": 5
     },
     "reviews": 145,
-    "number": 888,
-    "price": 9990,
+    "roomLabel": {
+      "isLuxe": true,
+      "number": 888,
+      "price": 9990
+    },
     "images": [
       {
         "src": "card-room-1.png",
@@ -217,5 +220,12 @@
         "bordered": true
       }
     }
+  },
+  "cardReservation": {
+    "form": {
+      "action": "",
+      "method": "get"
+    },
+    "title": "Бронирование"
   }
 }
