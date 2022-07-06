@@ -46,8 +46,15 @@ function formatPrice(price) {
   return `${price.toLocaleString("ru-RU")}₽`;
 }
 
+function daysDifference(firstDate, secondDate) {
+  const time = secondDate?.getTime() - firstDate?.getTime();
+  const days = Math.ceil(time / (1000 * 3600 * 24));
+  return days ? days : 0;
+}
+
 export {
   declOfNum,
   getTimePassed,
   formatPrice,
+  daysDifference,
 }

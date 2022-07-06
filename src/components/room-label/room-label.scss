@@ -3,7 +3,8 @@ $className: 'room-label';
 .#{$className} {
   display: flex;
   justify-content: space-between;
-  
+  align-items: flex-end;
+
   &__number {
     font-weight: 700;
     color: $dark-shade-100;
@@ -31,6 +32,7 @@ $className: 'room-label';
   &__price-value,
   &__duration {
     line-height: toRem(18);
+    color: $dark-shade-50;
   }
 
   &__price-value {
@@ -39,5 +41,17 @@ $className: 'room-label';
 
   &__duration {
     font-size: toRem(12);
+  }
+
+  &_theme-reservation
+  .#{$className} {
+    &__number-value {
+      font-size: toRem(24);
+      line-height: toRem(29.26);
+    }
+
+    &__luxe {
+      margin-left: toRem(9);
+    }
   }
 }

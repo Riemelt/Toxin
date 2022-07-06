@@ -1,3 +1,5 @@
+import { daysDifference } from "../../utilities/utilities";
+
 import InputField from "../input-field";
 import Datepicker from "../datepicker";
 
@@ -25,6 +27,11 @@ class DropdownDatepicker {
   constructor($parent, options = {}) {
     this.#init($parent, options);
     this.#render();
+  }
+
+  getDaysOfStay() {
+    const [ dateStart, dateEnd ] = this.#datepicker.getDates();
+    return daysDifference(dateStart, dateEnd);
   }
 
   #init($parent, options) {

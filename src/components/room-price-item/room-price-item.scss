@@ -1,0 +1,70 @@
+$className: 'room-price-item';
+
+.#{$className} {
+  display: flex;
+  align-items: flex-start;
+
+  &__content {
+    max-width: toRem(220);
+    width: 100%;
+    line-height: toRem(18);
+  }
+
+  &__details {
+    position: relative;
+    right: 0;
+    line-height: toRem(0);
+  }
+  &__details-icon {
+    cursor: pointer;
+    width: toRem(20);
+    height: toRem(20);
+    color: $dark-shade-25;
+    font-size: toRem(12);
+    font-weight: 700;
+    border: toRem(1) solid $dark-shade-25;
+    border-radius: 50%;
+
+    &:hover + .#{$className}__details-content,
+    &:focus + .#{$className}__details-content {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(toRem(3));
+    }
+  }
+
+  &__details-content {
+    position: absolute;
+    font-size: toRem(12);
+    line-height: toRem(14);
+    border: toRem(1) solid $dark-shade-50;
+    box-shadow: toRem(0) toRem(0) toRem(10) rgba(0, 0, 0, 0.2);
+    padding: toRem(5) toRem(5) toRem(5);
+    border-radius: toRem(3);
+    transition: opacity 0.4s, visibility 0.4s, transform 0.4s;  
+    transform: translateY(toRem(20));
+    opacity: 0;
+    visibility: hidden;
+    min-width: toRem(100);
+    background-color: white;
+    z-index: 1;
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: toRem(10);
+      height: toRem(10);
+      background-color: white;
+      border-left: toRem(1) solid $dark-shade-50;
+      border-top: toRem(1) solid $dark-shade-50;
+      transform: translateY(toRem(-6.25)) rotate(45deg);
+      top: 0;
+    }
+  }
+
+  &__price {
+    margin-left: auto;
+    line-height: toRem(18);
+  }
+  
+}

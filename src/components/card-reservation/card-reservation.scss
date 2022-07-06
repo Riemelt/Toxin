@@ -1,0 +1,53 @@
+$className: 'card-reservation';
+
+.#{$className} {
+  margin: toRem(29) toRem(29) toRem(30);
+
+  &__label {
+    padding-top: toRem(10);
+  }
+
+  &__dropdown-datepicker {
+    margin-top: toRem(21);
+  }
+
+  &__dropdown-guests {
+    margin-top: toRem(23);
+  }
+
+  &__room-price {
+    list-style-type: none;
+    margin-top: toRem(20);
+  }
+
+  &__room-price-item {
+    margin-top: toRem(15);
+
+    &:first-child {
+      margin: initial;
+    }
+  }
+
+  &__total-price {
+    margin-top: toRem(30);
+    display: flex;
+  }
+
+  &__total,
+  &__total-price-value {
+    color: $dark-shade-100;
+    font-weight: 700;
+    font-size: toRem(19);
+    line-height: toRem(23);
+  }
+
+  &__dots {
+    width: 100%;
+    max-height: toRem(19);
+    border-bottom: toRem(1) dotted $dark-shade-25;
+  }
+
+  &__submit-reservation-button {
+    margin-top: toRem(21);
+  }
+}

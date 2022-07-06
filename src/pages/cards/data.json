@@ -226,6 +226,100 @@
       "action": "",
       "method": "get"
     },
-    "title": "Бронирование"
+    "roomLabel": {
+      "isLuxe": true,
+      "number": 888,
+      "price": 9990,
+      "theme": "reservation"
+    },
+    "dropdownDatepicker": {
+      "withTwoInputs": true,
+      "size": "big",
+      "dateFormat": "secondary",
+      "datepicker": {
+        "isHidden": true,
+        "startDate": "2022-08-19",
+        "endDate": "2022-08-23"
+      },
+      "inputs": [
+        {
+          "label": {
+            "title": "прибытие"
+          },
+          "button": {
+            "icon": "expand_more"
+          },
+          "isReadonly": true,
+          "type": "text",
+          "name": "startDate",
+          "size": "small"
+        },
+        {
+          "label": {
+            "title": "выезд"
+          },
+          "button": {
+            "icon": "expand_more"
+          },
+          "isReadonly": true,
+          "type": "text",
+          "name": "endDate",
+          "size": "small"
+        }
+      ]
+    },
+    "dropdownGuests": {
+      "type": "guest",
+      "input": {
+        "label": {
+          "title": "гости"
+        },
+        "value": "Сколько гостей",
+        "type": "text",
+        "name": "guests",
+        "button": {
+          "icon": "expand_more"
+        }
+      },
+      "items": [
+        {
+          "title": "взрослые",
+          "value": 2,
+          "type": "guest"
+        },
+        {
+          "title": "дети",
+          "value": 1,
+          "type": "guest"
+        },
+        {
+          "title": "младенцы",
+          "value": 0,
+          "type": "baby"
+        }
+      ]
+    },
+    "roomPriceItems": [
+      {
+        "theme": "roomPrice"
+      },
+      {
+        "theme": "discount",
+        "discount": 2179,
+        "content": "Сбор за услуги: скидка",
+        "details": "Скидка за первый заказ"
+      },
+      {
+        "theme": "servicePrice",
+        "price": 300,
+        "content": "Сбор за дополнительные услуги",
+        "details": "Сбор за дополнительное питание"
+      }
+    ],
+    "submitReservationButton": {
+      "text": "забронировать",
+      "withIcon": true,
+      "type": "submit"
+    }
   }
 }

@@ -22,7 +22,7 @@ block main
       +header-ui-kit(data.header)
     +container
       div(class=`${className}__card-room-focused js-${className}__card-room-focused`)
-        +card-room(data.cardRoomFocused)
+        //+card-room(data.cardRoomFocused)
       div(class=`${className}__card-search js-${className}__card-search`)
         //+card-search(data.cardSearch)
       div(class=`${className}__card-sign-in js-${className}__card-sign-in`)
@@ -30,4 +30,4 @@ block main
       div(class=`${className}__card-registration js-${className}__card-registration`)
         //+card-registration(data.cardRegistration)
       div(class=`${className}__card-reservation js-${className}__card-reservation`)
-        //+card-reservation(data.cardReservation)
+        +card-reservation(data.cardReservation)
