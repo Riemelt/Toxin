@@ -7,6 +7,7 @@ include ../../components/card-search/card-search
 include ../../components/card-sign-in/card-sign-in
 include ../../components/card-registration/card-registration
 include ../../components/card-reservation/card-reservation
+include ../../components/datepicker/datepicker
 
 block vars
   -
@@ -21,13 +22,24 @@ block main
     div(class=`${className}__header`)
       +header-ui-kit(data.header)
     +container
-      div(class=`${className}__card-room-focused js-${className}__card-room-focused`)
-        //+card-room(data.cardRoomFocused)
-      div(class=`${className}__card-search js-${className}__card-search`)
-        //+card-search(data.cardSearch)
-      div(class=`${className}__card-sign-in js-${className}__card-sign-in`)
-        //+card-sign-in(data.cardSignIn)
-      div(class=`${className}__card-registration js-${className}__card-registration`)
-        //+card-registration(data.cardRegistration)
-      div(class=`${className}__card-reservation js-${className}__card-reservation`)
-        +card-reservation(data.cardReservation)
+      div(class=`${className}__columns`)
+        div(class=`${className}__column-left`)
+          div(class=`${className}__card-search js-${className}__card-search`)
+            +card-search(data.cardSearch)
+          div(class=`${className}__card-registration js-${className}__card-registration`)
+            +card-registration(data.cardRegistration)
+        div(class=`${className}__column-middle`)
+          div(class=`${className}__card-reservation js-${className}__card-reservation`)
+            +card-reservation(data.cardReservation)
+          div(class=`${className}__card-sign-in js-${className}__card-sign-in`)
+            +card-sign-in(data.cardSignIn)
+        div(class=`${className}__column-right`)
+          div(class=`${className}__card-datepicker js-${className}__card-datepicker`)
+            +datepicker(data.cardDatepicker)
+          div(class=`${className}__card-room-focused js-${className}__card-room-focused`)
+            +card-room(data.cardRoomFocused)
+          div(class=`${className}__card-room-default js-${className}__card-room-default`)
+            +card-room(data.cardRoomDefault)
+
+
+

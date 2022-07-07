@@ -5,6 +5,13 @@
       "href": "/mock-address/change-me"
     }
   },
+  "cardDatepicker": {
+    "isHidden": false,
+    "size": "big",
+    "minDate": "2019-01-10",
+    "startDate": "2019-08-19",
+    "endDate": "2019-08-23"
+  },
   "cardRoomFocused": {
     "rateButton": {
       "value": 5
@@ -27,6 +34,35 @@
       {
         "src": "card-room-3.png",
         "alt": "Card room 3"
+      },
+      {
+        "src": "card-room-4.png",
+        "alt": "Card room 4"
+      }
+    ]
+  },
+  "cardRoomDefault": {
+    "rateButton": {
+      "value": 4
+    },
+    "reviews": 65,
+    "roomLabel": {
+      "isLuxe": false,
+      "number": 840,
+      "price": 9900
+    },
+    "images": [
+      {
+        "src": "card-room-2.png",
+        "alt": "Card room 2"
+      },
+      {
+        "src": "card-room-3.png",
+        "alt": "Card room 3"
+      },
+      {
+        "src": "card-room-1.png",
+        "alt": "Card room 1"
       },
       {
         "src": "card-room-4.png",
@@ -238,8 +274,9 @@
       "dateFormat": "secondary",
       "datepicker": {
         "isHidden": true,
-        "startDate": "2022-08-19",
-        "endDate": "2022-08-23"
+        "minDate": "2019-01-10",
+        "startDate": "2019-08-19",
+        "endDate": "2019-08-23"
       },
       "inputs": [
         {

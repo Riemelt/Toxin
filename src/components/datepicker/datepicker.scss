@@ -9,6 +9,7 @@ $airDatepicker: 'air-datepicker';
   border-radius: toRem(4);
   box-shadow: 0 toRem(10) toRem(20) 0 $dark-shade-5;
   max-width: $medium;
+  background-color: white;
   box-sizing: border-box;
   padding: toRem(14) toRem(15) toRem(15) toRem(15);
 
@@ -204,8 +205,8 @@ $airDatepicker: 'air-datepicker';
   }
 
   &__control-panel-wrapper {
-    padding-left: toRem(5);
-    padding-right: toRem(5); 
+    margin-top: toRem(6);
+    padding: toRem(0) toRem(5) toRem(4);
   }
 
   &_big {

@@ -46,11 +46,6 @@ class Datepicker {
     $selectedCell.addClass("-range-to-");
   }
 
-  static #validateDate(date) {
-    const today = new Date();
-    return date > today ? date : today;
-  }
-
   toggle() {
     this.#$component.toggleClass(`${this.#className}_hidden`);
   }
@@ -104,17 +99,24 @@ class Datepicker {
 
     if (startDate) {
       const date = new Date(startDate);
-      const startDateValidated = Datepicker.#validateDate(date);
+      const startDateValidated = this.#validateDate(date);
       this.#dates.push(startDateValidated);
       this.#dateStart = startDateValidated;
     }
 
     if (endDate) {
       const date = new Date(endDate)
-      const endDateValidated = Datepicker.#validateDate(date);
+      const endDateValidated = this.#validateDate(date);
       this.#dates.push(endDateValidated);
       this.#dateEnd = endDateValidated;
     }
+  }
+
+  #validateDate(date) {
+    const { minDate } = this.#options;
+    const minDateFormatted = minDate ? new Date(minDate) : new Date();
+
+    return date > minDateFormatted ? date : minDateFormatted;
   }
 
   #initAirDatepicker() {
@@ -122,15 +124,15 @@ class Datepicker {
       range = true,
       multipleDates = true,
       minDate = new Date(),
-     } = this.#options;
-    const input = this.#$input.get(0);
+    } = this.#options;
 
-    
+    const input = this.#$input.get(0);
 
     this.#airDatepicker = new AirDatepicker(input, {
       inline: true,
       visible: false,
       range,
+      minDate,
       multipleDates,
       selectedDates: this.#dates,
       prevHtml: "<span class=\"material-icons\"> arrow_back </span>",
@@ -138,7 +140,6 @@ class Datepicker {
       navTitles: {
         days: "MMMM yyyy"
       },
-      minDate,
       onSelect: this.#handleDatepickerClick.bind(this),
     });
   }
