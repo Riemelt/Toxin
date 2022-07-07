@@ -126,7 +126,9 @@ class DropdownDatepicker {
   }
 
   #handleApplyButtonClick() {
-    this.#updateDropdownDatepicker();
+    const { handleApplyButtonClick } = this.#options;
+    handleApplyButtonClick?.();
+    
     this.#datepicker.close();
   }
   

@@ -29,7 +29,7 @@ $className: 'room-price-item';
     &:focus + .#{$className}__details-content {
       opacity: 1;
       visibility: visible;
-      transform: translateY(toRem(3));
+      transform: translateY(toRem(15));
     }
   }
 

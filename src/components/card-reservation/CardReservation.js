@@ -35,7 +35,10 @@ class CardReservation {
     } = options;
 
     this.#label = new RoomLabel(this.#$component.find(`.js-${this.#className}__label`), roomLabel);
-    this.#dropdownDatepicker = new DropdownDatepicker(this.#$component.find(`.js-${this.#className}__dropdown-datepicker`), dropdownDatepicker);
+    this.#dropdownDatepicker = new DropdownDatepicker(this.#$component.find(`.js-${this.#className}__dropdown-datepicker`), {
+      handleApplyButtonClick: this.#handleApplyButtonClick.bind(this),
+      ...dropdownDatepicker,
+    });
     this.#dropdownGuests = new DropdownCounter(this.#$component.find(`.js-${this.#className}__dropdown-guests`), dropdownGuests);
 
     this.#$roomPriceItems = this.#$component.find(`.js-${this.#className}__room-price-item`);
@@ -77,6 +80,20 @@ class CardReservation {
         daysOfStay,
       })
     );
+  }
+
+  #updateRoomPriceItems() {
+    const daysOfStay = this.#dropdownDatepicker.getDaysOfStay();
+    
+    this.#roomPriceItems.forEach(element => {
+      element.setDaysOfStay(daysOfStay);
+      element.update();
+    });
+  }
+
+  #handleApplyButtonClick() {
+    this.#updateRoomPriceItems();
+    this.#updateTotalPrice();
   }
 }
 

@@ -34,6 +34,14 @@ class RoomPriceItem {
     return this.#priceGetter[this.#theme]();
   }
 
+  setDaysOfStay(daysOfStay) {
+    this.#options.daysOfStay = daysOfStay;
+  }
+
+  update() {
+    this.#contentUpdater[this.#theme]();
+  }
+
   #getRoomPrice() {
     const {
       roomPrice = 0,
