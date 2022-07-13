@@ -1,0 +1,10 @@
+$className: 'headers-and-footers';
+
+.#{$className} {
+  min-height: 100vh;
+  background-color: $grey;
+
+  &__header-signed-in {
+    margin-top: toRem(40);
+  }
+}

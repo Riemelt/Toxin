@@ -8,6 +8,7 @@ $className: 'cards';
   &__columns {
     display: flex;
     gap: toRem(40);
+    margin-top: toRem(65);
   }
 
   &__column-left,

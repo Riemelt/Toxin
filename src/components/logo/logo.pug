@@ -3,10 +3,14 @@ mixin logo(vars)
     const {
       src = "",
       href = "/mock-address/change-me",
+      theme = "",
     } = vars
 
-  a(class="logo-ui-kit", href=href)
-    img(class="logo-ui-kit__icon"
+    const className = "logo"
+    const classNames = theme === "uiKit" ? `${className} ${className}_ui-kit` : className
+
+  a(class=classNames, href=href)
+    img(class=`${className}__icon`
         alt="toxin logo"
         src=require(`@images/${src}`)
     )

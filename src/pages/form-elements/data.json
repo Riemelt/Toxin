@@ -187,20 +187,20 @@
   },
   "buttonFilled": {
     "text": "click me",
-    "filled": true
+    "theme": "filled"
   },
   "buttonFilledActive": {
     "text": "click me",
-    "filled": true,
+    "theme": "filled",
     "hovered": true
   },
   "buttonBordered": {
     "text": "click me",
-    "bordered": true
+    "theme": "bordered"
   },
   "buttonBorderedActive": {
     "text": "click me",
-    "bordered": true,
+    "theme": "bordered",
     "hovered": true
   },
   "buttonDefault": {
@@ -212,7 +212,8 @@
   },
   "buttonWithIcon": {
     "text": "Переайти к оплате",
-    "withIcon": true
+    "icon": "arrow_forward",
+    "theme": "long"
   },
   "pagination": {
     "pageSize": 12,

@@ -1,0 +1,144 @@
+{
+  "header": {
+    "logo": {
+      "src": "logoUIKit.svg",
+      "href": "/mock-address/change-me",
+      "theme": "uiKit"
+    }
+  },
+  "headerDefault": {
+    "logo": {
+      "src": "logo.svg",
+      "href": "/mock-address/change-me"
+    },
+    "navigation": {
+      "items": [
+        {
+          "content": "О нас",
+          "isActive": true,
+          "href": "/mock-address/change-me"
+        },
+        {
+          "content": "Услуги",
+          "subNavigation": [
+            {
+              "content": "Проживание",
+              "href": "/mock-address/change-me"
+            },
+            {
+              "content": "Питание",
+              "href": "/mock-address/change-me"
+            },
+            {
+              "content": "Уборка номеров",
+              "href": "/mock-address/change-me"
+            }
+          ]
+        },
+        {
+          "content": "Вакансии",
+          "href": "/mock-address/change-me"
+        },
+        {
+          "content": "Новости",
+          "href": "/mock-address/change-me"
+        },
+        {
+          "content": "Соглашения",
+          "subNavigation": [
+            {
+              "content": "Бронирование услуг",
+              "href": "/mock-address/change-me"
+            },
+            {
+              "content": "Политика конфиденциальности",
+              "href": "/mock-address/change-me"
+            },
+            {
+              "content": "Условия обслуживания",
+              "href": "/mock-address/change-me"
+            }
+          ]
+        }
+      ]
+    },
+    "signInButton": {
+      "text": "войти",
+      "theme": "bordered-header",
+      "href": "/mock-address/change-me"
+    },
+    "registrationButton": {
+      "text": "зарегистрироваться",
+      "theme": "long-header",
+      "href": "/mock-address/change-me"
+    }
+  },
+  "headerSignedIn": {
+    "logo": {
+      "src": "logo.svg",
+      "href": "/mock-address/change-me"
+    },
+    "navigation": {
+      "items": [
+        {
+          "content": "О нас",
+          "isActive": true,
+          "href": "/mock-address/change-me"
+        },
+        {
+          "content": "Услуги",
+          "subNavigation": [
+            {
+              "content": "Проживание",
+              "href": "/mock-address/change-me"
+            },
+            {
+              "content": "Питание",
+              "href": "/mock-address/change-me"
+            },
+            {
+              "content": "Уборка номеров",
+              "href": "/mock-address/change-me"
+            }
+          ]
+        },
+        {
+          "content": "Вакансии",
+          "href": "/mock-address/change-me"
+        },
+        {
+          "content": "Новости",
+          "href": "/mock-address/change-me"
+        },
+        {
+          "content": "Соглашения",
+          "subNavigation": [
+            {
+              "content": "Бронирование услуг",
+              "href": "/mock-address/change-me"
+            },
+            {
+              "content": "Политика конфиденциальности",
+              "href": "/mock-address/change-me"
+            },
+            {
+              "content": "Условия обслуживания",
+              "href": "/mock-address/change-me"
+            }
+          ]
+        }
+      ]
+    },
+    "userName": "Юлий Цезарь",
+    "signInButton": {
+      "text": "войти",
+      "theme": "bordered-header",
+      "href": "/mock-address/change-me"
+    },
+    "registrationButton": {
+      "text": "зарегистрироваться",
+      "theme": "long-header",
+      "href": "/mock-address/change-me"
+    }
+  }
+}

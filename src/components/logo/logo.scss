@@ -4,7 +4,12 @@ $className: 'logo';
 	display: flex;
 
   &__icon {
-	  width: toRem(48);
+	  width: toRem(105.69);
+    height: toRem(40);
+  }
+
+  &_ui-kit .#{$className}__icon {
+    width: toRem(48);
     height: toRem(48);
   }
 }

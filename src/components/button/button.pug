@@ -2,9 +2,8 @@ mixin button(vars)
   -
     const {
       text = "",
-      bordered,
-      filled,
-      withIcon,
+      theme,
+      icon,
       hovered = false,
       type = "button",
       href,
@@ -24,19 +23,24 @@ mixin button(vars)
       },
     }
 
-  if bordered
-    - classNames += ` ${className}_bordered`
-  if filled
-    - classNames += ` ${className}_filled`
-  if withIcon
-    - classNames += ` ${className}_withIcon`
-    - classNames += ` ${className}_filled`
+  case (theme)
+    when "bordered"
+      - classNames += ` ${className}_bordered`
+    when "filled"
+      - classNames += ` ${className}_filled`
+    when "long"
+      - classNames += ` ${className}_long`
+    when "bordered-header"
+      - classNames += ` ${className}_bordered-header`
+    when "long-header"
+      - classNames += ` ${className}_long-header`
+
   if hovered
     - classNames += ` ${className}_hovered`
     
   #{tag}(class=classNames)&attributes(buttonAttributes[tag])
       div(class=`${className}__body`)
         span(class=`${className}__text`)= text
-        if withIcon
+        if icon
           span(class=`${className}__icon`)
-            span(class="material-icons") arrow_forward
+            span(class="material-icons")= icon

@@ -1,0 +1,14 @@
+include ../navigation-item/navigation-item
+
+mixin navigation(vars = {})
+  -
+    const {
+      items = [],
+    } = vars
+
+    const className = "navigation"
+
+  ul(class=className)
+    each item in items
+      li(class=`${className}__item`)
+        +navigation-item(item)

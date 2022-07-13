@@ -1,0 +1,8 @@
+$className: 'navigation';
+
+.#{$className} {
+  list-style-type: none;
+  display: flex;
+  align-items: center;
+  gap: toRem(21);
+}

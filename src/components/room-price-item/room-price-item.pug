@@ -11,7 +11,7 @@ mixin room-price-item(vars = {})
 
   div(class=classNames)
     div(class=`${className}__content js-${className}__content`)
-    if (details)
+    if details
       div(class=`${className}__details`)
         button(class=`${className}__details-icon` type="button") i
         div(class=`${className}__details-content`)= details

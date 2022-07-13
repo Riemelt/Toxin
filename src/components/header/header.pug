@@ -1,0 +1,34 @@
+include ../logo/logo
+include ../navigation/navigation
+include ../button/button
+include ../container/container
+
+mixin header(vars = {})
+  -
+    const {
+      logo = {},
+      navigation = {},
+      signInButton = {},
+      registrationButton = {},
+      userName = "",
+    } = vars
+
+    const className = "header"
+
+  div(class=className)
+    +container
+      div(class=`${className}__body`)
+        div(class=`${className}__logo`)
+          +logo(logo)
+        div(class=`${className}__content`)
+          div(class=`${className}__navigation`)
+            +navigation(navigation)
+          if userName
+            div(class=`${className}__separator`)
+            div(class=`${className}__user-name`)= userName
+          else
+            div(class=`${className}__sign-in`)
+              div(class=`${className}__sign-in-button`)
+                +button(signInButton)
+              div(class=`${className}__registration-button`)
+                +button(registrationButton)

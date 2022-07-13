@@ -1,0 +1,33 @@
+mixin navigation-item(vars = {})
+  -
+    const {
+      content = "",
+      isActive = false,
+      href,
+      subNavigation,
+    } = vars
+
+    const className = "navigation-item"
+    let classNames = className
+
+    const tag = href ? "a" : "div"
+
+    const itemAttributes = {
+      a: {
+        href,
+      },
+      div: {},
+    }
+
+  if isActive
+    - classNames += ` ${className}_active`
+
+    
+  #{tag}(class=classNames)&attributes(itemAttributes[tag])
+    div(class=`${className}__content`)= content
+    if subNavigation
+      button(class=`${className}__expand-button`)
+      ul(class=`${className}__sub-navigation`)
+        each subItem in subNavigation
+          li(class=`${className}__sub-navigation-item`)
+            a(class=`${className}__sub-navigation-item-content` href=subItem.href)= subItem.content
