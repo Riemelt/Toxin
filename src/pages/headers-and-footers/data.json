@@ -140,5 +140,21 @@
       "theme": "long-header",
       "href": "/mock-address/change-me"
     }
+  },
+  "socials": {
+    "items": [
+      {
+        "icon": "fa-twitter",
+        "href": "/mock-address/change-me"
+      },
+      {
+        "icon": "fa-facebook-square",
+        "href": "/mock-address/change-me"
+      },
+      {
+        "icon": "fa-instagram",
+        "href": "/mock-address/change-me"
+      }
+    ]
   }
 }

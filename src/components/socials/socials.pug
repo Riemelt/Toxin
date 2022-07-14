@@ -1,0 +1,13 @@
+mixin socials(vars = {})
+  -
+    const {
+      items = [],
+    } = vars
+
+    const className = "socials"
+
+  ul(class=className)
+    each item in items
+      li(class=`${className}__item`)
+        a(class=`${className}__icon` href=item.href)
+          i(class=`fa-brands ${item.icon}`)
