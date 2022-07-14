@@ -20,14 +20,11 @@ $className: 'form-elements';
     min-width: $big;
   }
 
-
-
   &__column-middle,
   &__column-double {
     margin-left: toRem(126);
     margin-right: auto;
   }
-
 
   &__input-field-hovered,
   &__input-field-masked {
@@ -147,5 +144,4 @@ $className: 'form-elements';
   &__comment {
     margin-top: toRem(10);
   }
-
 }

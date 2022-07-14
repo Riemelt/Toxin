@@ -1,0 +1,64 @@
+include ../logo/logo
+include ../container/container
+include ../input-field/input-field
+include ../socials/socials
+
+mixin footer(vars = {})
+  -
+    const {
+      theme = "",
+      company = {
+        logo: {},
+        description: "",
+      },
+      navBlocks = [],
+      subscription = {
+        form: {
+          action: "",
+          method: "get",
+        },
+        title: "",
+        description: "",
+        input: {},
+      },
+      copyright = "",
+      socials = {},
+    } = vars
+
+    const className = "footer"
+    let classNames = className
+
+  - classNames += theme === "mobile" ? ` ${className}_mobile` : ""
+
+  footer(class=classNames)
+    div(class=`${className}__body-wrapper`)
+      +container
+        div(class=`${className}__body`)
+          div(class=`${className}__company`)
+            div(class=`${className}__company-logo`)
+              +logo(company.logo)
+            div(class=`${className}__company-description`)= company.description
+          nav(class=`${className}__navigation`)
+            ul(class=`${className}__navigation-blocks`)
+              each navBlock in navBlocks
+                li(class=`${className}__navigation-block`)
+                  h3(class=`${className}__navigation-block-title`)= navBlock.title
+                  ul(class=`${className}__navigation-block-items`)
+                    each item in navBlock.items
+                      li(class=`${className}__navigation-block-item`)
+                        a(class=`${className}__navigation-block-item-content` href=item.href)= item.content
+          form(
+            class=`${className}__subscription`
+            action=subscription.form.action
+            method=subscription.form.method
+          )
+            h3(class=`${className}__subscription-title`)= subscription.title
+            div(class=`${className}__subscription-description`)= subscription.description
+            div(class=`${className}__subscription-input`)
+              +input-field(subscription.input)
+    div(class=`${className}__bottom-wrapper`)
+      +container         
+        div(class=`${className}__bottom`)
+          div(class=`${className}__copyright`)= copyright
+          div(class=`${className}__socials`)
+            +socials(socials)

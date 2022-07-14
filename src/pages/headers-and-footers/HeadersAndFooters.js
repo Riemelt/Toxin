@@ -3,6 +3,7 @@ import data from "./data.json";
 import "../../components/container";
 import "../../components/header-ui-kit";
 import "../../components/header";
+import "../../components/footer";
 
 class HeadersAndFooters {
   #className = "headers-and-footers";

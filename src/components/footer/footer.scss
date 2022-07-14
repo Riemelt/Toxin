@@ -1,0 +1,117 @@
+$className: 'footer';
+
+.#{$className} {
+  background-color: white;
+  box-shadow: toRem(0) toRem(10) toRem(20) $dark-shade-5;
+
+  &__body {
+    min-height: toRem(372);
+    padding-top: toRem(100);
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__company,
+  &__subscription {
+    max-width: toRem(260);
+    width: 100%;
+  }
+
+  &__company-description {
+    margin-top: toRem(17);
+  }
+
+  &__navigation {
+    width: 100%;
+    margin-left: toRem(40);
+    margin-right: toRem(52);
+    margin-top: toRem(5);
+  }
+
+  &__navigation-blocks,
+  &__navigation-block-items {
+    list-style-type: none;
+  }
+
+  &__navigation-blocks {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__navigation-block-item {
+    margin-top: toRem(14);
+
+    &:first-child {
+      margin-top: toRem(17);
+    }
+  }
+
+  &__navigation-block:last-child {
+    margin-left: toRem(35);
+  }
+
+  &__navigation-block-item-content {
+    text-decoration: none;
+    color: $dark-shade-50;
+  }
+
+  &__subscription {
+    margin-top: toRem(5);
+  }
+
+  &__subscription-description {
+    margin-top: toRem(17);
+  }
+
+  &__subscription-input {
+    margin-top: toRem(19);
+  }
+
+  &__bottom-wrapper {
+    border-top: toRem(1) solid $dark-shade-10;
+  }
+
+  &__bottom {
+    min-height: toRem(70);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &_mobile {
+    max-width: toRem(768);
+    min-height: toRem(367);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .#{$className} {
+      &__company {
+        margin: 0 auto;
+        max-width: initial;
+        width: initial;
+      }
+
+      &__body {
+        min-height: initial;
+        padding: initial;
+      }
+
+      &__company-description,
+      &__navigation,
+      &__subscription {
+        display: none;
+      }
+
+      &__bottom-wrapper {
+        border: initial;
+      }
+
+      &__bottom {
+        margin-top: toRem(17);
+        flex-direction: column;
+      }
+    }
+  }
+}

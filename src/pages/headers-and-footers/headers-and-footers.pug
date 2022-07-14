@@ -3,6 +3,7 @@ extends ../../layouts/layout-base/layout-base
 include ../../components/header-ui-kit/header-ui-kit
 include ../../components/container/container
 include ../../components/header/header
+include ../../components/footer/footer
 
 block vars
   -
@@ -20,3 +21,7 @@ block main
       +header(data.headerDefault)
     div(class=`${className}__header-signed-in`)
       +header(data.headerSignedIn)
+    div(class=`${className}__footer-default`)
+      +footer(data.footerDefault)
+    div(class=`${className}__footer-mobile`)
+      +footer({ ...data.footerDefault, theme: "mobile" })

@@ -3,8 +3,15 @@ $className: 'headers-and-footers';
 .#{$className} {
   min-height: 100vh;
   background-color: $grey;
+  padding-bottom: toRem(150);
 
-  &__header-signed-in {
+  &__header-default {
+    margin-top: toRem(62);
+  }
+
+  &__header-signed-in,
+  &__footer-default,
+  &__footer-mobile {
     margin-top: toRem(40);
   }
 }

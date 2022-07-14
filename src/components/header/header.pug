@@ -15,13 +15,13 @@ mixin header(vars = {})
 
     const className = "header"
 
-  div(class=className)
+  header(class=className)
     +container
       div(class=`${className}__body`)
         div(class=`${className}__logo`)
           +logo(logo)
         div(class=`${className}__content`)
-          div(class=`${className}__navigation`)
+          nav(class=`${className}__navigation`)
             +navigation(navigation)
           if userName
             div(class=`${className}__separator`)
