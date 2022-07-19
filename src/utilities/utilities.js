@@ -52,9 +52,29 @@ function daysDifference(firstDate, secondDate) {
   return days ? days : 0;
 }
 
+function renderSlider({
+  images = [],
+  delay = 4000,
+  $component,
+}) {
+
+  let index = 0;
+
+  function changeImage() {
+    const path = require(`@images/${images[index].src}`);
+    $component.css("background-image", `url(${path})`);
+    index = index >= images.length - 1 ? 0 : index + 1;
+
+    setTimeout(changeImage, delay);
+  }
+
+  changeImage();
+}
+
 export {
   declOfNum,
   getTimePassed,
   formatPrice,
   daysDifference,
+  renderSlider,
 }

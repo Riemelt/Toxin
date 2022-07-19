@@ -1,0 +1,19 @@
+$className: 'landing';
+
+.#{$className} {
+	flex: 1 0 auto;
+  background-image: url('@images/landing-1.png');
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: cover;
+  transition: background-image 0.5s;
+  padding-top: toRem(70);
+
+  &__description {
+    margin-top: toRem(317);
+    margin-bottom: toRem(21);
+    max-width: toRem(260);
+    margin-left: auto;
+    text-align: right;
+  }
+}

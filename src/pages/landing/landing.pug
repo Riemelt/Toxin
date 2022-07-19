@@ -1,0 +1,19 @@
+extends ../../layouts/layout/layout
+
+include ../../components/container/container
+include ../../components/card-search/card-search
+
+block vars
+  -
+    const title = "Landing"
+
+block main
+  -
+    const className = "landing"
+    const data = require("./data.json")
+
+  div(class=`${className} js-${className}`)
+    +container()
+      div(class=`${className}__card-search js-${className}__card-search`)
+        +card-search(data.cardSearch)
+      div(class=`${className}__description`)= data.description

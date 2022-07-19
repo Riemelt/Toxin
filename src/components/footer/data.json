@@ -1,0 +1,105 @@
+{
+  "company": {
+    "logo": {
+      "src": "logo.svg",
+      "href": "/mock-address/change-me"
+    },
+    "description": "Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»"
+  },
+  "navBlocks": [
+    {
+      "title": "навигация",
+      "items": [
+        {
+          "content": "О нас",
+          "href": "/mock-address/change-me"
+        },
+        {
+          "content": "Новости",
+          "href": "/mock-address/change-me"
+        },
+        {
+          "content": "Служба поддержки",
+          "href": "/mock-address/change-me"
+        },
+        {
+          "content": "Услуги",
+          "href": "/mock-address/change-me"
+        }
+      ]
+    },
+    {
+      "title": "о нас",
+      "items": [
+        {
+          "content": "О сервисе",
+          "href": "/mock-address/change-me"
+        },
+        {
+          "content": "Наша команда",
+          "href": "/mock-address/change-me"
+        },
+        {
+          "content": "Вакансии",
+          "href": "/mock-address/change-me"
+        },
+        {
+          "content": "Инвесторы",
+          "href": "/mock-address/change-me"
+        }
+      ]
+    },
+    {
+      "title": "Служба поддержки",
+      "items": [
+        {
+          "content": "Соглашения",
+          "href": "/mock-address/change-me"
+        },
+        {
+          "content": "Сообщества",
+          "href": "/mock-address/change-me"
+        },
+        {
+          "content": "Связь с нами",
+          "href": "/mock-address/change-me"
+        }
+      ]
+    }
+  ],
+  "subscription": {
+    "form": {
+      "action": "",
+      "method": "get"
+    },
+    "title": "подписка",
+    "description": "Получайте специальные предложения и новости сервиса",
+    "input": {
+      "button": {
+        "icon": "arrow_forward",
+        "theme": "primary"
+      },
+      "type": "email",
+      "name": "email",
+      "size": "medium",
+      "placeholder": "Email"
+    }
+  },
+  "copyright": "Copyright © 2018 Toxin отель. Все права защищены.",
+  "socials": {
+    "items": [
+      {
+        "icon": "fa-twitter",
+        "href": "/mock-address/change-me"
+      },
+      {
+        "icon": "fa-facebook-square",
+        "href": "/mock-address/change-me"
+      },
+      {
+        "icon": "fa-instagram",
+        "href": "/mock-address/change-me"
+      }
+    ]
+  }
+}

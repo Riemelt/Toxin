@@ -1,0 +1,17 @@
+extends ../layout-base/layout-base
+
+include ../../components/header/header
+include ../../components/footer/footer
+
+block body
+  -
+    const header = require("../../components/header/data.json")
+    const footer = require("../../components/footer/data.json")
+
+  div(class="layout-wrapper")
+    div(class="header-wrapper")
+      +header(header)
+    main(class="main-wrapper")
+      block main
+    div(class="footer-wrapper")
+      +footer(footer)

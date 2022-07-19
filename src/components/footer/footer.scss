@@ -46,8 +46,9 @@ $className: 'footer';
     }
   }
 
-  &__navigation-block:last-child {
-    margin-left: toRem(35);
+  &__navigation-block {
+    max-width: toRem(149);
+    width: 100%;
   }
 
   &__navigation-block-item-content {
