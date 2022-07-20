@@ -4,11 +4,36 @@ $className: 'footer';
   background-color: white;
   box-shadow: toRem(0) toRem(10) toRem(20) $dark-shade-5;
 
+  @media (max-width: 768px) {
+    min-height: toRem(367);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
   &__body {
     min-height: toRem(372);
     padding-top: toRem(100);
     display: flex;
     justify-content: space-between;
+
+    @media (max-width: 1200px) {
+      flex-direction: column;
+      align-items: center;
+      gap: toRem(50);
+    }
+
+    @media (max-width: 768px) {
+      min-height: initial;
+      padding: initial;
+    }
+  }
+
+  &__company-logo {
+    @media (max-width: 768px) {
+      display: flex;
+      justify-content: center;
+    }
   }
 
   &__company,
@@ -19,6 +44,31 @@ $className: 'footer';
 
   &__company-description {
     margin-top: toRem(17);
+
+    @media (max-width: 1200px) {
+      margin: initial;
+    }
+
+    @media (max-width: 768px) {
+      display: none;
+    }
+  }
+
+  &__company {
+    @media (max-width: 1200px) {
+      display: flex;
+      max-width: initial;
+      align-items: center;
+      gap: toRem(20);
+      width: initial;
+      margin: 0 auto;
+    }
+
+    @media (max-width: 768px) {
+      margin: 0 auto;
+      max-width: initial;
+      width: initial;
+    }
   }
 
   &__navigation {
@@ -26,6 +76,10 @@ $className: 'footer';
     margin-left: toRem(40);
     margin-right: toRem(52);
     margin-top: toRem(5);
+
+    @media (max-width: 768px) {
+      display: none;
+    }
   }
 
   &__navigation-blocks,
@@ -58,18 +112,45 @@ $className: 'footer';
 
   &__subscription {
     margin-top: toRem(5);
+    display: block;
+
+    @media (max-width: 1200px) {
+      display: flex;
+      max-width: initial;
+      align-items: center;
+      gap: toRem(20);
+      width: initial;
+      margin: 0 auto;
+      padding-bottom: toRem(50);
+    }
+
+    @media (max-width: 768px) {
+      display: none;
+    }
   }
 
   &__subscription-description {
     margin-top: toRem(17);
+
+    @media (max-width: 1200px) {
+      margin: initial;
+    }
   }
 
   &__subscription-input {
     margin-top: toRem(19);
+
+    @media (max-width: 1200px) {
+      margin: initial;
+    }
   }
 
   &__bottom-wrapper {
     border-top: toRem(1) solid $dark-shade-10;
+
+    @media (max-width: 768px) {
+      border: initial;
+    }
   }
 
   &__bottom {
@@ -77,6 +158,11 @@ $className: 'footer';
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @media (max-width: 768px) {
+      margin-top: toRem(17);
+      flex-direction: column;
+    }
   }
 
   &_mobile {
