@@ -1,4 +1,8 @@
+import Layout from "./Layout.js";
 import "./layout.scss";
-import "../layout-base";
-import "../../components/header";
-import "../../components/footer";
+
+(function($){
+  const className = "layout";
+
+  new Layout($(`.js-${className}`));
+})(jQuery);

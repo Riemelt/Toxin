@@ -72,15 +72,10 @@ $button: 'button';
     }
   }
 
-  &_long,
-  &_long-header {
+  &_long {
     min-width: toRem(120);
     max-width: toRem(320);
     width: 100%;
-  }
-
-  &_bordered-header {
-    width: toRem(87);
   }
 
   &_long-header,
@@ -88,8 +83,20 @@ $button: 'button';
     height: toRem(34);
   }
 
+  &_bordered-header {
+    width: 100%;
+
+    @media (min-width: $xl) {
+      width: toRem(87);
+    }
+  }
+
   &_long-header {
-    width: toRem(196);
+    width: 100%;
+
+    @media (min-width: $xl) {
+      width: toRem(196);
+    }
   }
 
   &__icon {

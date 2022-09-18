@@ -1,3 +1,4 @@
 import "./navigation.scss";
+import Navigation from "./Navigation.js";
 
-import "../navigation-item";
+export default Navigation;

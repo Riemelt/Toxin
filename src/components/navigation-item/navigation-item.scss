@@ -4,9 +4,12 @@ $className: 'navigation-item';
   text-decoration: none;
   color: $dark-shade-50;
   position: relative;
-  align-items: center;
-  display: flex;
-  cursor: pointer;
+
+  &__header-wrapper {
+    align-items: center;
+    display: flex;
+    cursor: pointer;
+  }
 
   &__content {
     line-height: toRem(17);
@@ -27,27 +30,36 @@ $className: 'navigation-item';
   }
 
   &__sub-navigation {
+    display: none;
     list-style-type: none;
-    visibility: hidden;
-    opacity: 0.0;
-    position: absolute;
-    top: 0;
-    z-index: 1;
-    transform: translateY(toRem(24));
     background-color: white;
-    min-width: toRem(250);
     width: 100%;
-    border: toRem(1) solid rgba(0, 0, 0, 0.12);
-    border-radius: toRem(2);
+
+    @media (min-width: $xl) {
+      transform: translateY(toRem(24));
+      min-width: toRem(250);
+      position: absolute;
+      top: 0;
+      z-index: 1;
+      border: toRem(1) solid rgba(0, 0, 0, 0.12);
+      border-radius: toRem(2);
+      visibility: hidden;
+      opacity: 0.0;
+      display: initial;
+    }
   }
 
   &__sub-navigation-item {
-    border-bottom: toRem(1) solid rgba(0, 0, 0, 0.12);
-    padding: toRem(8) toRem(10);
-    line-height: toRem(17);
+    padding: toRem(10) 0 0 toRem(10);
 
-    &:last-child {
-      border-bottom: initial;
+    @media (min-width: $xl) {
+      border-bottom: toRem(1) solid rgba(0, 0, 0, 0.12);
+      line-height: toRem(17);
+      padding: toRem(5);
+  
+      &:last-child {
+        border-bottom: initial;
+      }
     }
   }
 
@@ -63,6 +75,12 @@ $className: 'navigation-item';
         visibility: visible;
         opacity: 1.0;
       }
+    }
+  }
+
+  &_opened {
+    .#{$className}__sub-navigation {
+      display: initial;
     }
   }
 

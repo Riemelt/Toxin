@@ -4,11 +4,44 @@ $className: 'header';
   background-color: white;
   box-shadow: toRem(0) toRem(10) toRem(20) $dark-shade-5;
 
+  &_opened {
+    .#{$className} {
+      &__content,
+      &__sign-in {
+        display: flex;
+        flex-direction: column;
+        gap: toRem(20);
+      }
+    }
+  }
+
   &__body {
     min-height: toRem(70);
     display: flex;
     align-items: center;
     justify-content: space-between;
+    z-index: 1;
+    position: relative;
+    padding: 0 toRem(20);
+
+    @media (min-width: $xl) {
+      padding: 0 toRem(140);
+    }
+  }
+
+  &__menu-button {
+    font-size: toRem(24);
+    font-family: 'Material Icons', Arial, sans-serif;
+    color: $dark-shade-50;
+    cursor: pointer;
+
+    &::before {
+      content: 'menu';
+    }
+
+    @media (min-width: $xl) {
+      display: none;
+    }
   }
 
   &__separator {
@@ -23,8 +56,31 @@ $className: 'header';
 
   &__content,
   &__sign-in {
-    align-items: center;
-    gap: toRem(20);
-    display: flex;
+    display: none;
+
+    @media (min-width: $xl) {
+      align-items: center;
+      gap: toRem(20);
+      display: flex;
+    }
+  }
+
+  &__content {
+    background-color: white;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    padding: toRem(20);
+    box-shadow: toRem(0) toRem(20) toRem(20) $dark-shade-5;
+    border-top: toRem(1) solid $dark-shade-10;
+
+    @media (min-width: $xl) {
+      position: initial;
+      border: initial;
+      box-shadow: initial;
+      width: initial;
+      padding: initial;
+    }
   }
 }

@@ -1,6 +1,4 @@
 import "./header.scss";
+import Header from "./Header.js";
 
-import "../logo";
-import "../navigation";
-import "../button";
-import "../container";
+export default Header;

@@ -8,7 +8,7 @@ mixin navigation-item(vars = {})
     } = vars
 
     const className = "navigation-item"
-    let classNames = className
+    let classNames = `${className} js-${className}`
 
     const tag = href ? "a" : "div"
 
@@ -24,9 +24,11 @@ mixin navigation-item(vars = {})
 
     
   #{tag}(class=classNames)&attributes(itemAttributes[tag])
-    div(class=`${className}__content`)= content
+    div(class=`${className}__header-wrapper js-${className}__header-wrapper`)
+      div(class=`${className}__content`)= content
+      if subNavigation
+        button(class=`${className}__expand-button`)
     if subNavigation
-      button(class=`${className}__expand-button`)
       ul(class=`${className}__sub-navigation`)
         each subItem in subNavigation
           li(class=`${className}__sub-navigation-item`)

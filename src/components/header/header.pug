@@ -14,12 +14,14 @@ mixin header(vars = {})
     } = vars
 
     const className = "header"
+    let classNames = `${className} js-${className}`
 
-  header(class=className)
+  header(class=classNames)
     +container
       div(class=`${className}__body`)
         div(class=`${className}__logo`)
           +logo(logo)
+        button(class=`${className}__menu-button js-${className}__menu-button`)
         div(class=`${className}__content`)
           nav(class=`${className}__navigation`)
             +navigation(navigation)
