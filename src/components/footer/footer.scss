@@ -4,7 +4,7 @@ $className: 'footer';
   background-color: white;
   box-shadow: toRem(0) toRem(10) toRem(20) $dark-shade-5;
 
-  @media (max-width: 768px) {
+  @media (max-width: $xs) {
     min-height: toRem(367);
     display: flex;
     flex-direction: column;
@@ -13,24 +13,24 @@ $className: 'footer';
 
   &__body {
     min-height: toRem(372);
-    padding-top: toRem(100);
+    padding: toRem(100) toRem(140) 0;
     display: flex;
     justify-content: space-between;
 
-    @media (max-width: 1200px) {
+    @media (max-width: $xxl) {
       flex-direction: column;
       align-items: center;
       gap: toRem(50);
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: $xs) {
       min-height: initial;
-      padding: initial;
+      padding: 0 toRem(20);
     }
   }
 
   &__company-logo {
-    @media (max-width: 768px) {
+    @media (max-width: $xs) {
       display: flex;
       justify-content: center;
     }
@@ -45,17 +45,17 @@ $className: 'footer';
   &__company-description {
     margin-top: toRem(17);
 
-    @media (max-width: 1200px) {
+    @media (max-width: $xxl) {
       margin: initial;
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: $xs) {
       display: none;
     }
   }
 
   &__company {
-    @media (max-width: 1200px) {
+    @media (max-width: $xxl) {
       display: flex;
       max-width: initial;
       align-items: center;
@@ -64,7 +64,7 @@ $className: 'footer';
       margin: 0 auto;
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: $xs) {
       margin: 0 auto;
       max-width: initial;
       width: initial;
@@ -77,7 +77,7 @@ $className: 'footer';
     margin-right: toRem(52);
     margin-top: toRem(5);
 
-    @media (max-width: 768px) {
+    @media (max-width: $xs) {
       display: none;
     }
   }
@@ -114,7 +114,7 @@ $className: 'footer';
     margin-top: toRem(5);
     display: block;
 
-    @media (max-width: 1200px) {
+    @media (max-width: $xxl) {
       display: flex;
       max-width: initial;
       align-items: center;
@@ -124,7 +124,7 @@ $className: 'footer';
       padding-bottom: toRem(50);
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: $xs) {
       display: none;
     }
   }
@@ -132,7 +132,7 @@ $className: 'footer';
   &__subscription-description {
     margin-top: toRem(17);
 
-    @media (max-width: 1200px) {
+    @media (max-width: $xxl) {
       margin: initial;
     }
   }
@@ -140,7 +140,7 @@ $className: 'footer';
   &__subscription-input {
     margin-top: toRem(19);
 
-    @media (max-width: 1200px) {
+    @media (max-width: $xxl) {
       margin: initial;
     }
   }
@@ -148,7 +148,7 @@ $className: 'footer';
   &__bottom-wrapper {
     border-top: toRem(1) solid $dark-shade-10;
 
-    @media (max-width: 768px) {
+    @media (max-width: $xs) {
       border: initial;
     }
   }
@@ -158,15 +158,19 @@ $className: 'footer';
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 0 toRem(140);
 
-    @media (max-width: 768px) {
+    @media (max-width: $xs) {
       margin-top: toRem(17);
+      min-height: initial;
+      gap: toRem(17);
       flex-direction: column;
+      padding: 0 toRem(20);
     }
   }
 
   &_mobile {
-    max-width: toRem(768);
+    max-width: $xs;
     min-height: toRem(367);
     margin: 0 auto;
     display: flex;
