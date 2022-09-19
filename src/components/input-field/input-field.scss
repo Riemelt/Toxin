@@ -2,7 +2,6 @@ $className: 'input-field';
 
 .#{$className} {
 	max-width: toRem(320);
-	min-width: toRem(150);
 	width: 100%;
 
 	&__header {
@@ -49,6 +48,8 @@ $className: 'input-field';
 
 	&__button {
 		position: absolute;
+    background-color: white;
+    z-index: 1;
 		right: toRem(10);
 		align-self: center;
 		color: $dark-shade-50;
@@ -102,7 +103,7 @@ $className: 'input-field';
     max-width: toRem(150);
 
     .#{$className}__input {
-      padding-right: initial;
+      padding-right: toRem(30);
     }
   }
 }

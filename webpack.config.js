@@ -24,6 +24,8 @@ const entryPoints = pages.reduce((acc, name) => {
   return acc;
 }, {});
 
+entryPoints.index = "./index.js";
+
 console.log(pages);
 
 ghpages.publish('dist', function() {});

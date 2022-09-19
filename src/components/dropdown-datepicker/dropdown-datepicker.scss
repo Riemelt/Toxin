@@ -8,6 +8,7 @@ $className: 'dropdown-datepicker';
   &__input-wrapper {
     display: flex;
     justify-content: space-between;
+    gap: toRem(20);
   }
 
   &__input-single {

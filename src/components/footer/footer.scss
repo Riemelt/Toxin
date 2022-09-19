@@ -169,6 +169,10 @@ $className: 'footer';
     }
   }
 
+  &__copyright {
+    text-align: center;
+  }
+
   &_mobile {
     max-width: $xs;
     min-height: toRem(367);
