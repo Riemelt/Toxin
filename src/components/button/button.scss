@@ -1,6 +1,6 @@
-$button: 'button';
+$className: 'button';
 
-.#{$button} {
+.#{$className} {
   display: block;
   font-family: Montserrat, Arial, sans-serif;
   font-weight: 700;
@@ -22,8 +22,8 @@ $button: 'button';
 	  color: $purple;
   }
 
-  &:hover, &.#{$button}_hovered {
-    .#{$button}__text {
+  &:hover, &.#{$className}_hovered {
+    .#{$className}__text {
      color: $dark-shade-50;
     }
   }
@@ -34,8 +34,21 @@ $button: 'button';
   &_long,
   &_long-header {
     border-radius: toRem(22);
+
+    .#{$className}__text {
+      padding: 0 toRem(18);
+    }
+  }
+
+  &_filled,
+  &_bordered,
+  &_long {
     height: toRem(44);
-    width: toRem(99);
+  }
+
+  &_filled,
+  &_bordered {
+    min-width: toRem(99);
   }
 
   &_bordered,
@@ -45,10 +58,10 @@ $button: 'button';
     background-origin: border-box;
     background-clip: content-box, border-box;
       
-    &:hover, &.#{$button}_hovered {
+    &:hover, &.#{$className}_hovered {
       background-image: linear-gradient(white, white), $primary-gradient-50;
 
-      .#{$button}__text {
+      .#{$className}__text {
         color: $purple;
       }
     }
@@ -59,21 +72,20 @@ $button: 'button';
   &_long-header {
     background: $primary-gradient;
 
-    .#{$button}__text {
+    .#{$className}__text {
       color: white;
     }
 
-    &:hover, &.#{$button}_hovered  {
+    &:hover, &.#{$className}_hovered  {
       opacity: 0.5;
 
-      .#{$button}__text {
+      .#{$className}__text {
         color: white;
       }
     }
   }
 
   &_long {
-    min-width: toRem(120);
     max-width: toRem(320);
     width: 100%;
   }
@@ -84,18 +96,20 @@ $button: 'button';
   }
 
   &_bordered-header {
+    min-width: toRem(87);
     width: 100%;
 
     @media (min-width: $xl) {
-      width: toRem(87);
+      width: initial;
     }
   }
 
   &_long-header {
+    min-width: toRem(196);
     width: 100%;
 
     @media (min-width: $xl) {
-      width: toRem(196);
+      width: initial;
     }
   }
 
