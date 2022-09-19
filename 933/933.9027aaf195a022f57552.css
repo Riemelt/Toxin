@@ -31,5 +31,6 @@
 .dropdown-counter{position:relative;min-width:10.7142857143rem;width:100%}.dropdown-counter__menu{position:absolute;width:100%;border:1px solid rgba(31,32,65,.5);border-top-width:0;box-sizing:border-box;border-radius:0 0 .2857142857rem .2857142857rem;box-shadow:0 .7142857143rem 1.4285714286rem 0 rgba(31,32,65,.05);display:none;z-index:999;background-color:#fff;padding-left:1rem;padding-right:.4285714286rem;padding-bottom:.5714285714rem}.dropdown-counter__items{list-style-type:none}.dropdown-counter__item{margin-top:.5rem}.dropdown-counter__item:first-child{margin-top:.3571428571rem}.dropdown-counter__control-panel-wrapper{margin-top:1.0714285714rem}.dropdown-counter_opened .dropdown-counter__menu{display:block}.dropdown-counter_big{max-width:22.8571428571rem}.dropdown-counter_medium{max-width:19rem}
 .card{background-color:#fff;max-width:27.1428571429rem;width:100%;border:.0714285714rem solid rgba(0,0,0,.12);box-shadow:0rem 0rem 1.7857142857rem rgba(0,0,0,.2);border-radius:.2857142857rem}
 .card-search{margin:2.0714285714rem}.card-search__title{padding-top:.7142857143rem}.card-search__datepicker,.card-search__dropdown-guests{margin-top:1.5714285714rem}.card-search__search-room-button{margin-top:2.2857142857rem}
+.container{max-width:102.8571428571rem;min-width:22.8571428571rem;margin:0 auto}
 
-/*# sourceMappingURL=810.b61ddcee3ebecb817108.css.map*/
+/*# sourceMappingURL=933.9027aaf195a022f57552.css.map*/
