@@ -1,5 +1,7 @@
 import RoomLabel from "../room-label";
 
+import "../rate-button";
+
 class CardRoom {
   #className = "card-room";
 

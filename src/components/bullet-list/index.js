@@ -1,3 +1,4 @@
-import "./bullet-list.scss";
-import "../label";
 import "../bullet";
+import "../label";
+
+import "./bullet-list.scss";

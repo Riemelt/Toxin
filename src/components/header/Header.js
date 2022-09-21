@@ -1,8 +1,8 @@
-import "../logo";
+import Navigation from "../navigation";
+
 import "../button";
 import "../container";
-
-import Navigation from "../navigation";
+import "../logo";
 
 class Header {
   #className = "header";

@@ -1,3 +1,5 @@
+import "../button";
+
 class ControlPanel {
 
   static APPLY = "apply";

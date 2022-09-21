@@ -1,9 +1,10 @@
-import data from "./data.json";
-
 import { renderSlider } from "../../utilities/utilities.js";
+
 import CardSearch from "../../components/card-search";
 
 import "../../components/container";
+
+import data from "./data.json";
 
 class Landing {
   #className = "landing";
@@ -39,7 +40,6 @@ class Landing {
 
     renderSlider(options);
   }
-
 }
 
 export default Landing;

@@ -1,6 +1,8 @@
 import noUiSlider from "nouislider";
-import Label from "../label";
+
 import { formatPrice } from "../../utilities/utilities.js";
+
+import Label from "../label";
 
 class RangeSlider {
   #className = "range-slider";

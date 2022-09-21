@@ -24,8 +24,6 @@ const entryPoints = pages.reduce((acc, name) => {
   return acc;
 }, {});
 
-entryPoints.index = "./index.js";
-
 console.log(pages);
 
 ghpages.publish('dist', function() {});
@@ -44,7 +42,8 @@ module.exports = {
    // new ESLintPlugin({
    // }),
     new MiniCssExtractPlugin({
-      filename: "[name]/[name].[contenthash].css"
+      filename: "[name]/[name].[contenthash].css",
+      ignoreOrder: true,
     }),
     new webpack.ProvidePlugin({
       $: "jquery",
@@ -64,7 +63,7 @@ module.exports = {
     assetModuleFilename: "assets/[name][hash][ext][query]",
     clean: true
   },
-  devtool: "source-map",
+  devtool: (mode === "development") ? "eval-source-map" : false,
   optimization: {
     splitChunks: {
       chunks: "all",

@@ -1,12 +1,12 @@
-import RoomLabel from "../room-label";
+import { formatPrice }    from "../../utilities/utilities.js";
+
+import DropdownCounter    from "../dropdown-counter";
 import DropdownDatepicker from "../dropdown-datepicker";
-import DropdownCounter from "../dropdown-counter";
-import RoomPriceItem from "../room-price-item";
+import RoomLabel          from "../room-label";
+import RoomPriceItem      from "../room-price-item";
 
-import { formatPrice } from "../../utilities/utilities.js";
-
-import "../card";
 import "../button";
+import "../card";
 
 class CardReservation {
   #className = "card-reservation";

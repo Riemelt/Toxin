@@ -1,14 +1,14 @@
-import data from "./data.json";
-
-import CardRoom from "../../components/card-room";
-import CardSearch from "../../components/card-search";
 import CardRegistration from "../../components/card-registration";
-import CardReservation from "../../components/card-reservation";
-import Datepicker from "../../components/datepicker";
+import CardReservation  from "../../components/card-reservation";
+import CardRoom         from "../../components/card-room";
+import CardSearch       from "../../components/card-search";
+import Datepicker       from "../../components/datepicker";
 
 import "../../components/header-ui-kit";
-import "../../components/container";
 import "../../components/card-sign-in";
+import "../../components/container";
+
+import data from "./data.json";
 
 class Cards {
   #className = "cards";

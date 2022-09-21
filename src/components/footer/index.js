@@ -1,5 +1,6 @@
-import "./footer.scss";
 import "../container";
-import "../logo";
 import "../input-field";
+import "../logo";
 import "../socials";
+
+import "./footer.scss";

@@ -1,9 +1,7 @@
-import data from "./data.json";
-
 import "../../components/container";
-import "../../components/header-ui-kit";
-import "../../components/header";
 import "../../components/footer";
+import "../../components/header";
+import "../../components/header-ui-kit";
 
 class HeadersAndFooters {
   #className = "headers-and-footers";

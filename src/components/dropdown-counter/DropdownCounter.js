@@ -1,8 +1,8 @@
-import InputField from "../input-field";
-import ControlPanel from "../control-panel";
-import CounterItem from "../counter-item";
-
 import { declOfNum } from "../../utilities/utilities.js";
+
+import ControlPanel from "../control-panel";
+import CounterItem  from "../counter-item";
+import InputField   from "../input-field";
 
 class DropdownCounter {
   #className = "dropdown-counter";

@@ -1,9 +1,10 @@
 import data from "../../components/header/data.json";
 
-import "../layout-base";
+import Header from "../../components/header";
+
 import "../../components/footer";
 
-import Header from "../../components/header";
+import "../layout-base";
 
 class Layout {
   #className = "layout";

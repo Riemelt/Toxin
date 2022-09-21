@@ -1,7 +1,7 @@
 import { daysDifference } from "../../utilities/utilities";
 
-import InputField from "../input-field";
 import Datepicker from "../datepicker";
+import InputField from "../input-field";
 
 class DropdownDatepicker {
 
