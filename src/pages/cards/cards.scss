@@ -6,6 +6,7 @@ $className: 'cards';
   padding-bottom: toRem(100);
 
   &__columns {
+    padding: 0 toRem(140);
     display: flex;
     gap: toRem(40);
     margin-top: toRem(65);
@@ -20,5 +21,4 @@ $className: 'cards';
     flex-direction: column;
     gap: toRem(40);
   }
-
 }

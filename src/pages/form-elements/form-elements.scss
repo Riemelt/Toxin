@@ -2,8 +2,7 @@ $className: 'form-elements';
 
 .#{$className} {
   &__body {
-    padding-top: toRem(59);
-    padding-bottom: toRem(130);
+    padding: toRem(59) toRem(140) toRem(130) toRem(140);
     margin: 0 toRem(1);
   }
 

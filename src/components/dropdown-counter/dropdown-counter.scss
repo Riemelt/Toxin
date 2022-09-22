@@ -34,7 +34,8 @@ $className: 'dropdown-counter';
   }
 
   &__control-panel-wrapper {
-    margin-top: toRem(15);
+    margin-top: toRem(22);
+    padding-bottom: toRem(3);
   }
 
 	&_opened {

@@ -17,6 +17,7 @@ $className: 'color-example';
 		display: flex;
 		flex-direction: column;
 		padding-left: toRem(40);
+    margin-top: toRem(1);
 	}
 
 	&__title {

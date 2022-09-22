@@ -4,12 +4,11 @@ $className: 'colors-and-type';
   min-height: 100vh;
 
 	&__main {
-    padding: toRem(60) toRem(19) 0 toRem(10);
+    padding: toRem(60) toRem(159) 0 toRem(150);
 		display: flex;
 	}
 
 	&__color-palette {
-		margin-top: toRem(1);
 		list-style-type: none;
 	}
 
