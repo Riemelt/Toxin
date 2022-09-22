@@ -1,5 +1,5 @@
 import "../../main-styles";
-import "../../layouts/layout-base"
+import "../../layouts/layout-base";
 
 import FormElements from "./FormElements.js";
 import "./form-elements.scss";

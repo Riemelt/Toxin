@@ -1,8 +1,8 @@
 import "../../main-styles";
-import "../../layouts/layout-base"
+import "../../layouts/layout-base";
 
 import Cards from "./Cards.js";
-import "./cards.scss"
+import "./cards.scss";
 
 (function($){
 

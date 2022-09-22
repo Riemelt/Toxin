@@ -1,8 +1,8 @@
 import "../../main-styles";
-import "../../layouts/layout-base"
+import "../../layouts/layout-base";
 
 import HeadersAndFooters from "./HeadersAndFooters.js";
-import "./headers-and-footers.scss"
+import "./headers-and-footers.scss";
 
 (function($){
 

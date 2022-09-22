@@ -1,8 +1,8 @@
 import "../../main-styles";
 import "../../layouts/layout";
 
-import Landing from "./Landing.js";
-import "./landing.scss";
+import Landing from "../landing/Landing.js";
+import "../landing/landing.scss";
 
 import data from "./data.json";
 

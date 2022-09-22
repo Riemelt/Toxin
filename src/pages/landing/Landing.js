@@ -4,22 +4,23 @@ import CardSearch from "../../components/card-search";
 
 import "../../components/container";
 
-import data from "./data.json";
-
 class Landing {
   #className = "landing";
   #$component;
 
+  #data = {};
   #sliderImages;
 
-  constructor($element) {
-    this.#init($element);
+  constructor($element, data = {}) {
+    this.#init($element, data);
   }
 
-  #init($element) {
+  #init($element, data) {
+    this.#data = data;
     this.#$component = $element;
-    this.#sliderImages = data.slider.images;
-    new CardSearch(this.#$component.find(`.js-${this.#className}__card-search`), data.cardSearch);
+
+    this.#sliderImages = this.#data.slider.images;
+    new CardSearch(this.#$component.find(`.js-${this.#className}__card-search`), this.#data.cardSearch);
     this.#render();
   }
 

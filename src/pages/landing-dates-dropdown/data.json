@@ -1,0 +1,97 @@
+{
+  "slider": {
+    "images": [
+      {
+        "src": "landing-1.png"
+      },
+      {
+        "src": "landing-2.png"
+      },
+      {
+        "src": "landing-3.png"
+      }
+    ]
+  },
+  "cardSearch": {
+    "form": {
+      "action": "/mock-address/change-me",
+      "method": "get"
+    },
+    "title": "Найдём номера под ваши пожелания",
+    "dropdownDatepicker": {
+      "withTwoInputs": true,
+      "size": "big",
+      "dateFormat": "secondary",
+      "datepicker": {
+        "isHidden": false,
+        "minDate": "2019-01-01",
+        "startDate": "2019-08-19",
+        "endDate": "2019-08-23"
+      },
+      "inputs": [
+        {
+          "label": {
+            "title": "прибытие"
+          },
+          "button": {
+            "icon": "expand_more"
+          },
+          "isReadonly": true,
+          "type": "text",
+          "name": "startDate",
+          "size": "small"
+        },
+        {
+          "label": {
+            "title": "выезд"
+          },
+          "button": {
+            "icon": "expand_more"
+          },
+          "isReadonly": true,
+          "type": "text",
+          "name": "endDate",
+          "size": "small"
+        }
+      ]
+    },
+    "dropdownGuests": {
+      "type": "guest",
+      "input": {
+        "label": {
+          "title": "гости"
+        },
+        "value": "Сколько гостей",
+        "type": "text",
+        "name": "guests",
+        "button": {
+          "icon": "expand_more"
+        }
+      },
+      "items": [
+        {
+          "title": "взрослые",
+          "value": 2,
+          "type": "guest"
+        },
+        {
+          "title": "дети",
+          "value": 1,
+          "type": "guest"
+        },
+        {
+          "title": "младенцы",
+          "value": 0,
+          "type": "baby"
+        }
+      ]
+    },
+    "searchRoomButton": {
+      "text": "Подобрать номер",
+      "icon": "arrow_forward",
+      "theme": "long",
+      "type": "submit"
+    }
+  },
+  "description": "Лучшие номера для вашей работы, отдыха и просто вдохновения"
+}
