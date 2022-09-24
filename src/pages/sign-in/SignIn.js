@@ -1,26 +1,24 @@
 import { renderSlider } from "../../utilities/utilities.js";
 
-import CardSearch from "../../components/card-search";
-
 import "../../components/container";
+import "../../components/card-sign-in";
 
-class Landing {
-  #className = "landing";
+import data from "./data.json";
+
+class SignIn {
+  #className = "sign-in";
   #$component;
 
-  #data = {};
   #sliderImages;
 
-  constructor($element, data = {}) {
-    this.#init($element, data);
+  constructor($element) {
+    this.#init($element);
   }
 
-  #init($element, data) {
-    this.#data = data;
+  #init($element) {
     this.#$component = $element;
 
-    this.#sliderImages = this.#data.slider.images;
-    new CardSearch(this.#$component.find(`.js-${this.#className}__card-search`), this.#data.cardSearch);
+    this.#sliderImages = data.slider.images;
     this.#render();
   }
 
@@ -43,4 +41,4 @@ class Landing {
   }
 }
 
-export default Landing;
+export default SignIn;

@@ -1,0 +1,24 @@
+$className: 'sign-in';
+
+.#{$className} {
+	flex-grow: 1;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: cover;
+  transition: background-image 0.8s;
+  padding-top: toRem(70);
+
+  &__main {
+    padding: 0 toRem(140) 0 toRem(140);
+
+    @media (max-width: $xs) {
+      padding: 0 toRem(20);
+    }
+  }
+
+  &__card-sign-in {
+    display: flex;
+    justify-content: center;
+    margin: toRem(102) 0 toRem(172);
+  }
+}

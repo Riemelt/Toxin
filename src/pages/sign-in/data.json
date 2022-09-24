@@ -1,0 +1,45 @@
+{
+  "slider": {
+    "images": [
+      {
+        "src": "landing-4.png"
+      },
+      {
+        "src": "landing-1.png"
+      }
+    ]
+  },
+  "cardSignIn": {
+    "form": {
+      "action": "",
+      "method": "get"
+    },
+    "title": "Войти",
+    "inputEmail": {
+      "placeholder": "Email",
+      "type": "email",
+      "required": true,
+      "name": "email"
+    },
+    "inputPassword": {
+      "placeholder": "Пароль",
+      "type": "text",
+      "required": true,
+      "name": "password"
+    },
+    "signInButton": {
+      "text": "войти",
+      "icon": "arrow_forward",
+      "theme": "long",
+      "type": "submit"
+    },
+    "registration": {
+      "content": "Нет аккаунта на Toxin?",
+      "button": {
+        "text": "создать",
+        "href": "/mock-address/change-me",
+        "theme": "bordered"
+      }
+    }
+  }
+}

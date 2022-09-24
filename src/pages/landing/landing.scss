@@ -2,11 +2,10 @@ $className: 'landing';
 
 .#{$className} {
 	flex-grow: 1;
-  background-image: url('@images/landing-1.png');
   background-repeat: no-repeat;
   background-position: bottom;
   background-size: cover;
-  transition: background-image 0.5s;
+  transition: background-image 0.8s;
   padding-top: toRem(70);
 
   &__main {
