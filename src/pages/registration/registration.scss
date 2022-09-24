@@ -1,0 +1,23 @@
+$className: 'registration';
+
+.#{$className} {
+	flex-grow: 1;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  background-size: cover;
+  transition: background-image 0.8s;
+
+  &__main {
+    padding: 0 toRem(134) 0 toRem(140);
+
+    @media (max-width: $xs) {
+      padding: 0 toRem(20);
+    }
+  }
+
+  &__card-registration {
+    display: flex;
+    justify-content: center;
+    margin: toRem(19) 0 toRem(19);
+  }
+}

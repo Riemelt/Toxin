@@ -1,0 +1,18 @@
+extends ../../layouts/layout/layout
+
+include ../../components/container/container
+include ../../components/card-registration/card-registration
+
+block vars
+  -
+    const title = "Registration"
+    const data = require("./data.json")
+
+block main
+  - const className = "registration"
+  
+  div(class=`${className} js-${className}`)
+    +container()
+      div(class=`${className}__main`)
+        div(class=`${className}__card-registration js-${className}__card-registration`)
+          +card-registration(data.cardRegistration)
