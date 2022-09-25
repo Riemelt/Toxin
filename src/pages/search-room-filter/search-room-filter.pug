@@ -1,0 +1,47 @@
+extends ../../layouts/layout/layout
+
+include ../../components/container/container
+include ../../components/dropdown-datepicker/dropdown-datepicker
+include ../../components/dropdown-counter/dropdown-counter
+include ../../components/range-slider/range-slider
+include ../../components/checkbox-list/checkbox-list
+include ../../components/expander/expander
+include ../../components/card-room/card-room
+include ../../components/pagination/pagination
+
+block vars
+  -
+    const title = "Search Room Filter"
+    const data = require("./data.json")
+
+block main
+  - const className = "search-room-filter"
+  
+  div(class=`${className} js-${className}`)
+    +container()
+      div(class=`${className}__body`)
+        main(class=`${className}__rooms-filtered`)
+          h1(class=`${className}__title`)= data.title
+          div(class=`${className}__card-rooms`)
+            each cardRoom in data.cardRooms
+              div(class=`${className}__card-room js-${className}__card-room`)
+                +card-room(cardRoom)
+          div(class=`${className}__pagination js-${className}__pagination`)
+            +pagination(data.pagination)
+        aside(class=`${className}__rooms-options`)
+          div(class=`${className}__date-dropdown js-${className}__date-dropdown`)
+            +dropdown-datepicker(data.dateDropdown)
+          div(class=`${className}__guests-dropdown js-${className}__guests-dropdown`)
+            +dropdown-counter(data.guestsDropdown)
+          div(class=`${className}__price-range js-${className}__price-range`)
+            +range-slider(data.priceRange)
+          div(class=`${className}__rules`)
+            +checkbox-list(data.rules)
+          div(class=`${className}__availability`)
+            +checkbox-list(data.availability)
+          div(class=`${className}__comforts-dropdown js-${className}__comforts-dropdown`)
+            +dropdown-counter(data.comfortsDropdown)
+          div(class=`${className}__comforts-additional-expander js-${className}__comforts-additional-expander`)
+            +expander({ title: "дополнительные удобства" })
+              div(class=`${className}__comforts-additional`)
+                +checkbox-list(data.comfortsAdditional)
