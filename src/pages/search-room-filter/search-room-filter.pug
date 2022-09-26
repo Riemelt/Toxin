@@ -42,6 +42,6 @@ block main
           div(class=`${className}__comforts-dropdown js-${className}__comforts-dropdown`)
             +dropdown-counter(data.comfortsDropdown)
           div(class=`${className}__comforts-additional-expander js-${className}__comforts-additional-expander`)
-            +expander({ title: "дополнительные удобства" })
+            +expander(data.comfortsAdditionalExpander)
               div(class=`${className}__comforts-additional`)
                 +checkbox-list(data.comfortsAdditional)

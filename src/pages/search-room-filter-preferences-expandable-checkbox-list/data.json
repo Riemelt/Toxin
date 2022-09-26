@@ -137,7 +137,7 @@
   },
   "comfortsAdditionalExpander": {
     "title": "дополнительные удобства",
-    "isOpened": false
+    "isOpened": true
   },
   "comfortsAdditional": {
     "items": [

@@ -108,6 +108,8 @@
   "comfortsDropdown": {
     "type": "room",
     "size": "medium",
+    "isOpened": true,
+    "withControlPanel": false,
     "input": {
       "label": {
         "title": "удобства номера"
