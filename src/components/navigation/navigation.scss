@@ -6,7 +6,7 @@ $className: 'navigation';
   flex-direction: column;
   gap: toRem(21);
 
-  @media (min-width: $xl) {
+  @media (min-width: $xxl) {
     flex-direction: row;
     align-items: center;
   }

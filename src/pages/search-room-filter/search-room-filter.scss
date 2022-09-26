@@ -2,37 +2,87 @@ $className: 'search-room-filter';
 
 .#{$className} {
 	flex-grow: 1;
+  border-bottom: toRem(1) solid $dark-shade-25;
 
   &__body {
-    padding: toRem(30) toRem(140) toRem(70);
+    padding: toRem(30) toRem(140) toRem(71);
     display: flex;
+    gap: toRem(20);
+
+    @media (max-width: $xs) {
+      flex-direction: column;
+    }
+
+    @media (max-width: 1400px) {
+      padding: toRem(30) toRem(20) toRem(71);
+    }
   }
 
   &__rooms-filtered {
     max-width: toRem(834);
     flex: 3 3 auto;
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
     order: 1;
-    margin: 0 auto;
+
+    @media (max-width: 1400px) {
+      align-items: center;
+    }
   }
 
   &__card-rooms {
-    margin-top: toRem(21);
+    margin-top: toRem(21.5);
     display: flex;
+    justify-content: center;
     flex-wrap: wrap;
-    gap: toRem(20) toRem(12);
+    gap: toRem(20.5) toRem(12);
   }
 
   &__pagination {
-    margin-top: toRem(40);
+    margin-top: toRem(42);
     display: flex;
     justify-content: center;
+    padding-right: toRem(16);
+
+    @media (max-width: 1400px) {
+      padding-right: initial;
+    }
   }
 
   &__rooms-options {
+    margin-top: toRem(1);
     display: flex;
     flex-direction: column;
-    gap: toRem(20);
-    flex: 1 1 auto;
+    flex: 1 0 auto;
     order: 0;
+
+    @media (max-width: $xs) {
+      align-items: center;
+    }
+  }
+
+  &__guests-dropdown {
+    margin-top: toRem(22);
+  }
+
+  &__price-range {
+    margin-top: toRem(31);
+  }
+
+  &__rules {
+    margin-top: toRem(31);
+  }
+
+  &__availability {
+    margin-top: toRem(33);
+  }
+
+  &__comforts-dropdown {
+    margin-top: toRem(30);
+  }
+
+  &__comforts-additional-expander {
+    margin-top: toRem(24);
   }
 }

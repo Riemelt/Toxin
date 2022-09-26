@@ -35,7 +35,7 @@ $className: 'navigation-item';
     background-color: white;
     width: 100%;
 
-    @media (min-width: $xl) {
+    @media (min-width: $xxl) {
       transform: translateY(toRem(24));
       min-width: toRem(250);
       position: absolute;
@@ -52,7 +52,7 @@ $className: 'navigation-item';
   &__sub-navigation-item {
     padding: toRem(10) 0 0 toRem(10);
 
-    @media (min-width: $xl) {
+    @media (min-width: $xxl) {
       border-bottom: toRem(1) solid rgba(0, 0, 0, 0.12);
       line-height: toRem(17);
       padding: toRem(5);

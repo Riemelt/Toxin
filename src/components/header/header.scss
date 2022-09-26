@@ -24,7 +24,7 @@ $className: 'header';
     position: relative;
     padding: 0 toRem(20);
 
-    @media (min-width: $xl) {
+    @media (min-width: $xxl) {
       padding: 0 toRem(140);
     }
   }
@@ -39,7 +39,7 @@ $className: 'header';
       content: 'menu';
     }
 
-    @media (min-width: $xl) {
+    @media (min-width: $xxl) {
       display: none;
     }
   }
@@ -58,7 +58,7 @@ $className: 'header';
   &__sign-in {
     display: none;
 
-    @media (min-width: $xl) {
+    @media (min-width: $xxl) {
       align-items: center;
       gap: toRem(20);
       display: flex;
@@ -75,7 +75,7 @@ $className: 'header';
     box-shadow: toRem(0) toRem(20) toRem(20) $dark-shade-5;
     border-top: toRem(1) solid $dark-shade-10;
 
-    @media (min-width: $xl) {
+    @media (min-width: $xxl) {
       position: initial;
       border: initial;
       box-shadow: initial;
