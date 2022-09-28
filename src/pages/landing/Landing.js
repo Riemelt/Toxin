@@ -13,6 +13,7 @@ class Landing {
 
   constructor($element, data = {}) {
     this.#init($element, data);
+    this.#render();
   }
 
   #init($element, data) {
@@ -21,7 +22,6 @@ class Landing {
 
     this.#sliderImages = this.#data.slider.images;
     new CardSearch(this.#$component.find(`.js-${this.#className}__card-search`), this.#data.cardSearch);
-    this.#render();
   }
 
   #render() {

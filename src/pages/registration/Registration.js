@@ -13,13 +13,13 @@ class Registration {
 
   constructor($element) {
     this.#init($element);
+    this.#render();
   }
 
   #init($element) {
     this.#$component = $element;
 
     this.#sliderImages = data.slider.images;
-    this.#render();
   }
 
   #render() {

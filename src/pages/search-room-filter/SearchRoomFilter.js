@@ -34,12 +34,6 @@ class SearchRoomFilter {
     new Pagination(this.#$component.find(`.js-${this.#className}__pagination`), this.#data.pagination);
   }
 
-  #render() {
-  }
-
-  #setHandlers() {
-  }
-
   #initCardRooms(index, element) {
     const $element = $(element);
     new CardRoom($element, this.#data.cardRooms[index]);

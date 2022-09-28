@@ -1,0 +1,46 @@
+{
+  "chartReviews": {
+    "title": "Впечатления от номера",
+    "ariaLabel": "reviews chart",
+    "radius": 61,
+    "borderWidth": 2,
+    "cutout": "90%",
+    "height": 125,
+    "width": 125,
+    "data": [
+      {
+        "label": "Разочарован",
+        "value": 0,
+        "gradient": {
+          "firstColor": "#909090",
+          "secondColor": "#3D4975"
+        }
+      },
+      {
+        "label": "Удовлетворительно",
+        "value": 260,
+        "gradient": {
+          "firstColor": "#BC9CFF",
+          "secondColor": "#8BA4F9"
+        },
+        "active": true
+      },
+      {
+        "label": "Хорошо",
+        "value": 261,
+        "gradient": {
+          "firstColor": "#6FCF97",
+          "secondColor": "#66D2EA"
+        }
+      },
+      {
+        "label": "Великолепно",
+        "value": 520,
+        "gradient": {
+          "firstColor": "#FFE39C",
+          "secondColor": "#FFBA9C"
+        }
+      }
+    ]
+  }
+}

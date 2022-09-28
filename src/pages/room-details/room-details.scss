@@ -1,0 +1,9 @@
+$className: 'room-details';
+
+.#{$className} {
+  flex-grow: 1;
+
+  &__chart-reviews {
+    margin-top: toRem(100);
+  }
+}
