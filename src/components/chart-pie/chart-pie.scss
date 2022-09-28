@@ -1,0 +1,77 @@
+$className: 'chart-pie';
+
+.#{$className} {
+
+  &__title {
+    margin-left: toRem(4);
+  }
+
+  &__body {
+    margin-top: toRem(19);
+    display: flex;
+    align-items: flex-end;
+  }
+
+  &__chart-wrapper {
+    position: relative;
+  }
+
+  &__chart {
+    max-width: toRem(125);
+    max-height: toRem(125);
+  }
+
+  &__reviews-wrapper {
+    position: absolute;
+    z-index: 1;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    max-width: toRem(70);
+    max-height: toRem(50);
+    text-align: center;
+  }
+
+  &__reviews-value,
+  &__reviews-label {
+    font-weight: 700;
+  }
+
+  &__reviews-value {
+    font-size: toRem(24);
+    line-height: toRem(29.26);
+  }
+
+  &__reviews-label {
+    font-size: toRem(12);
+    line-height: toRem(15);
+    text-transform: uppercase;
+  }
+
+  &__legend {
+    margin-left: toRem(28);
+    list-style-type: none;
+  }
+
+  &__legend-item {
+    display: flex;
+    align-items: flex-start;
+  }
+
+  &__bullet-wrapper {
+    margin-top: toRem(3);
+    height: toRem(15);
+    width: toRem(15);
+    display: flex;
+    align-items: flex-end;
+  }
+
+  &__bullet {
+    height: toRem(10);
+    width: toRem(10);
+    background-color: $dark-shade-25;
+    border-radius: 50%;
+  }
+}
