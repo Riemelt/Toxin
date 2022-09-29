@@ -2,6 +2,7 @@ extends ../../layouts/layout/layout
 
 include ../../components/container/container
 include ../../components/chart-pie/chart-pie
+include ../../components/gallery/gallery
 
 block vars
   -
@@ -12,7 +13,9 @@ block main
   - const className = "room-details"
   
   div(class=`${className} js-${className}`)
+    div(class=`${className}__gallery`)
+      +gallery(data.gallery)
     +container()
       main(class=`${className}__main`)
-        div(class=`${className}__chart-reviews js-${className}__chart-reviews`)
-          +chart-pie(data.chartReviews)
+        //div(class=`${className}__chart-reviews js-${className}__chart-reviews`)
+        //  +chart-pie(data.chartReviews)

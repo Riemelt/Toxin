@@ -18,6 +18,9 @@ html,
 body {
   height: 100%;
   min-width: $big;
+  max-width: $fullhd;
+  margin: 0 auto;
+  background-color: $grey;
 }
 
 h1, h2, h3 {

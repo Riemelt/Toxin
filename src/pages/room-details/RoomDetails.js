@@ -1,6 +1,7 @@
 import ChartPie from "../../components/chart-pie";
 
 import "../../components/container";
+import "../../components/gallery";
 
 class RoomDetails {
   #className = "room-details";
@@ -16,7 +17,7 @@ class RoomDetails {
   #init($element, data) {
     this.#data = data;
     this.#$component = $element;
-    new ChartPie(this.#$component.find(`.js-${this.#className}__chart-reviews`), data.chartReviews);
+    //new ChartPie(this.#$component.find(`.js-${this.#className}__chart-reviews`), data.chartReviews);
   }
 
   #render() {

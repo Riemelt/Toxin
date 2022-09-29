@@ -1,4 +1,18 @@
 {
+  "gallery": {
+    "imagePrimary": {
+      "src": "gallery-room-1.png",
+      "alt": "Gallery room 1"
+    },
+    "imageSecondaryOne": {
+      "src": "gallery-room-2.png",
+      "alt": "Gallery room 2"
+    },
+    "imageSecondaryTwo": {
+      "src": "gallery-room-3.png",
+      "alt": "Gallery room 3"
+    }
+  },
   "chartReviews": {
     "title": "Впечатления от номера",
     "ariaLabel": "reviews chart",

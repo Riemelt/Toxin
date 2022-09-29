@@ -1,0 +1,31 @@
+$className: 'gallery';
+
+.#{$className} {
+  display: flex;
+
+  &__images-primary-wrapper {
+    @media (min-width: $xxxl) {
+      flex-grow: 2;
+    }
+  } 
+
+  &__image-primary,
+  &__image-secondary-one,
+  &__image-secondary-two {
+    height: 100%;
+    width: 100%
+  }
+
+  &__images-secondary-wrapper {
+    display: none;
+    flex-direction: column;
+
+    @media (min-width: $xs) {
+      display: flex;
+    }
+
+    @media (min-width: $xxxl) {
+      flex-grow: 1;
+    }
+  }
+}
