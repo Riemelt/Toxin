@@ -5,7 +5,6 @@ mixin comment(vars)
     const {
       author = "",
       avatar = "",
-      date,
       likeButton = {},
       comment = "",
     } = vars
@@ -13,7 +12,7 @@ mixin comment(vars)
     const className = "comment"
     let classNames = className + ` js-${className}`
 
-  div(class=classNames data-date=date)
+  div(class=classNames)
     div(class=`${className}__author`)
       img(class=`${className}__avatar` src=require(`@images/${avatar}`))
       div(class=`${className}__author-info`)

@@ -46,7 +46,7 @@ class FormElements {
     new DropdownCounter($(`.js-${this.#className}__dropdown-opened`, this.#$component), data.dropdownOpened);
     new Expander($(`.js-${this.#className}__expander`, this.#$component));
     new Expander($(`.js-${this.#className}__expander-opened`, this.#$component));
-    new Comment($(`.js-${this.#className}__comment`, this.#$component));
+    new Comment($(`.js-${this.#className}__comment`, this.#$component), data.comment);
   }
 }
 

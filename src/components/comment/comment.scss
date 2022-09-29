@@ -19,6 +19,10 @@ $className: 'comment';
     font-weight: 700;
   }
 
+  &__date::first-letter {
+    text-transform: capitalize;
+  }
+
   &__body {
     margin-top: toRem(8);
     margin-left: toRem(5);

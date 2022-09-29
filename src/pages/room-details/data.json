@@ -13,6 +13,27 @@
       "alt": "Gallery room 3"
     }
   },
+  "info": {
+    "title": "Сведения о номере",
+    "withEndLine": false,
+    "items": [
+      {
+        "title": "Комфорт",
+        "description": "Шумопоглощающие стены",
+        "icon": "insert_emoticon"
+      },
+      {
+        "title": "Удобство",
+        "description": "Окно в каждой из спален",
+        "icon": "location_city"
+      },
+      {
+        "title": "Уют",
+        "description": "Номер оснащён камином",
+        "icon": "whatshot"
+      }
+    ]
+  },
   "chartReviews": {
     "title": "Впечатления от номера",
     "ariaLabel": "reviews chart",
@@ -56,5 +77,133 @@
         }
       }
     ]
+  },
+  "comments": {
+    "title": "Отзывы посетителей номера",
+    "comments": [
+      {
+        "author": "Мурад Сарафанов",
+        "avatar": "author-picture-1.png",
+        "date": "2022-09-25",
+        "comment": "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий.\nИ стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто\nне жаловался из соседей.",
+        "likeButton": {
+          "likes": 12,
+          "checked": true
+        }
+      },
+      {
+        "author": "Патрисия Стёклышкова",
+        "avatar": "author-picture-2.png",
+        "date": "2022-09-22",
+        "comment": "Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать,\n каждый день новое блюдо и десерт как комплимент",
+        "likeButton": {
+          "likes": 2,
+          "checked": false
+        }
+      }
+    ]
+  },
+  "cardReservation": {
+    "form": {
+      "action": "",
+      "method": "get"
+    },
+    "roomLabel": {
+      "isLuxe": true,
+      "number": 888,
+      "price": 9990,
+      "theme": "reservation"
+    },
+    "dropdownDatepicker": {
+      "withTwoInputs": true,
+      "size": "big",
+      "dateFormat": "secondary",
+      "datepicker": {
+        "isHidden": true,
+        "minDate": "2019-01-10",
+        "startDate": "2019-08-19",
+        "endDate": "2019-08-23"
+      },
+      "inputs": [
+        {
+          "label": {
+            "title": "прибытие"
+          },
+          "button": {
+            "icon": "expand_more"
+          },
+          "isReadonly": true,
+          "type": "text",
+          "name": "startDate",
+          "size": "small"
+        },
+        {
+          "label": {
+            "title": "выезд"
+          },
+          "button": {
+            "icon": "expand_more"
+          },
+          "isReadonly": true,
+          "type": "text",
+          "name": "endDate",
+          "size": "small"
+        }
+      ]
+    },
+    "dropdownGuests": {
+      "type": "guest",
+      "input": {
+        "label": {
+          "title": "гости"
+        },
+        "value": "Сколько гостей",
+        "type": "text",
+        "name": "guests",
+        "button": {
+          "icon": "expand_more"
+        }
+      },
+      "items": [
+        {
+          "title": "взрослые",
+          "value": 2,
+          "type": "guest"
+        },
+        {
+          "title": "дети",
+          "value": 1,
+          "type": "guest"
+        },
+        {
+          "title": "младенцы",
+          "value": 0,
+          "type": "baby"
+        }
+      ]
+    },
+    "roomPriceItems": [
+      {
+        "theme": "roomPrice"
+      },
+      {
+        "theme": "discount",
+        "discount": 2179,
+        "content": "Сбор за услуги: скидка",
+        "details": "Скидка за первый заказ"
+      },
+      {
+        "theme": "servicePrice",
+        "price": 300,
+        "content": "Сбор за дополнительные услуги",
+        "details": "Сбор за дополнительное питание"
+      }
+    ],
+    "submitReservationButton": {
+      "text": "забронировать",
+      "icon": "arrow_forward",
+      "theme": "long",
+      "type": "submit"
+    }
   }
 }

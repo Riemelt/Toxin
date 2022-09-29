@@ -2,7 +2,7 @@ import moment from "moment";
 
 const TIME_DICTIONARY = {
   days:   ["день", "дня", "дней"],
-  weeks:  ["неделя", "недели", "недель"],
+  weeks:  ["неделю", "недели", "недель"],
   months: ["месяц", "месяца", "месяцев"],
   years:  ["год", "года", "лет"],
 }
@@ -17,20 +17,26 @@ function getTimePassed(date) {
 
   const years = now.diff(date, "years");
   if (years > 0) {
+    const number = years === 1 ? "" : `${years} `;
+
     const timeType = declOfNum(years, TIME_DICTIONARY.years);
-    return `${years} ${timeType} назад`;
+    return `${number}${timeType} назад`;
   }
 
   const months = now.diff(date, "months");
   if (months > 0) {
+    const number = months === 1 ? "" : `${months} `;
+
     const timeType = declOfNum(months, TIME_DICTIONARY.months);
-    return `${months} ${timeType} назад`;
+    return `${number}${timeType} назад`;
   }
 
   const weeks = now.diff(date, "weeks");
   if (weeks > 0) {
+    const number = weeks === 1 ? "" : `${weeks} `;
+
     const timeType = declOfNum(weeks, TIME_DICTIONARY.weeks);
-    return `${weeks} ${timeType} назад`;
+    return `${number}${timeType} назад`;
   }
 
   const days = now.diff(date, "days");

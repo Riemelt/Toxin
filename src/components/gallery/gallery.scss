@@ -2,6 +2,11 @@ $className: 'gallery';
 
 .#{$className} {
   display: flex;
+  max-height: toRem(485);
+
+  @media (min-width: ($xxxl + 1)) {
+    max-height: initial;
+  }
 
   &__images-primary-wrapper {
     @media (min-width: $xxxl) {
@@ -13,12 +18,14 @@ $className: 'gallery';
   &__image-secondary-one,
   &__image-secondary-two {
     height: 100%;
-    width: 100%
+    width: 100%;
+    flex-grow: 1;
   }
 
   &__images-secondary-wrapper {
     display: none;
     flex-direction: column;
+    justify-content: center;
 
     @media (min-width: $xs) {
       display: flex;

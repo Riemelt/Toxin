@@ -1,8 +1,16 @@
 $className: 'room-info';
 
 .#{$className} {
-  list-style-type: none;
   max-width: toRem(280);
+
+  &__title +
+  &__items {
+    margin-top: toRem(21);
+  }
+
+  &__items {
+    list-style-type: none;
+  }
 
   &__item {
     border-bottom: toRem(1) solid $dark-shade-10;

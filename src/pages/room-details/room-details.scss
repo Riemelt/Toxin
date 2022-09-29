@@ -6,4 +6,8 @@ $className: 'room-details';
   &__chart-reviews {
     margin-top: toRem(100);
   }
+
+  &__card-reservation {
+    margin: toRem(100);
+  }
 }

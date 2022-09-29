@@ -3,6 +3,9 @@ extends ../../layouts/layout/layout
 include ../../components/container/container
 include ../../components/chart-pie/chart-pie
 include ../../components/gallery/gallery
+include ../../components/room-info/room-info
+include ../../components/card-reservation/card-reservation
+include ../../components/comments/comments
 
 block vars
   -
@@ -17,5 +20,11 @@ block main
       +gallery(data.gallery)
     +container()
       main(class=`${className}__main`)
+        div(class=`${className}__comments js-${className}__comments`)
+          +comments(data.comments)
+        //div(class=`${className}__card-reservation js-${className}__card-reservation`)
+        //  +card-reservation(data.cardReservation)
+        //div(class=`${className}__info`)
+        //  +room-info(data.info)
         //div(class=`${className}__chart-reviews js-${className}__chart-reviews`)
         //  +chart-pie(data.chartReviews)

@@ -4,16 +4,18 @@ import LikeButton from "../like-button";
 
 class Comment {
   #className = "comment";
+  #options;
 
   #$component;
   #$date;
   #likeButton;
 
-  constructor($parent) {
-    this.#init($parent);
+  constructor($parent, options = {}) {
+    this.#init($parent, options);
   }
 
-  #init($parent) {
+  #init($parent, options) {
+    this.#options = options;
     this.#$component = $parent.find(`.js-${this.#className}`);
     this.#$date = this.#$component.find(`.js-${this.#className}__date`);
     this.#likeButton = new LikeButton(this.#$component);
@@ -22,7 +24,7 @@ class Comment {
   }
 
   #initDate() {
-    const date = new Date(this.#$component.data("date"));
+    const { date = "" } = this.#options;
     const timePassed = getTimePassed(date);
 
     this.#$date.html(timePassed);

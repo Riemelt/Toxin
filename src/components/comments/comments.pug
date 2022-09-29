@@ -1,0 +1,20 @@
+include ../comment/comment
+
+mixin comments(vars)
+  -
+    const {
+      title = "",
+      comments = [],
+    } = vars
+
+    const className = "comments"
+    let classNames = className + ` js-${className}`
+
+  div(class=classNames)
+    div(class=`${className}__header`)
+      h2(class=`${className}__title`)= title
+      div(class=`${className}__counter js-${className}__counter`)
+    ul(class=`${className}__comments-list`)
+      each comment in comments
+        li(class=`${className}__comment js-${className}__comment`)
+          +comment(comment)

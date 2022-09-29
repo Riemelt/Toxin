@@ -1,0 +1,31 @@
+$className: 'comments';
+
+.#{$className} {
+  max-width: toRem(710);
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__counter {
+    color: $dark-shade-50;
+  }
+
+  &__header +
+  &__comments-list {
+    margin-top: toRem(20);
+  }
+
+  &__comments-list {
+    list-style-type: none;
+  }
+
+  &__comment {
+    margin-top: toRem(23);
+
+    &:first-child {
+      margin-top: initial;
+    }
+  }
+}
