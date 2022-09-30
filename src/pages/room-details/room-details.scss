@@ -2,12 +2,58 @@ $className: 'room-details';
 
 .#{$className} {
   flex-grow: 1;
+  border-bottom: toRem(1) solid $dark-shade-25;
 
-  &__chart-reviews {
-    margin-top: toRem(100);
+  &__main {
+    padding: toRem(70) toRem(140) toRem(73);
+    display: flex;
+    flex-direction: row;
+    gap: toRem(50) toRem(20);
+    justify-content: center;
+    flex-wrap: wrap;
+
+    @media (max-width: $xs) {
+      padding: toRem(70) toRem(20) toRem(73);
+      flex-direction: column;
+      align-items: center;
+    }
   }
 
   &__card-reservation {
-    margin: toRem(100);
+    order: 2;
+  }
+
+  &__details {
+    order: 1;
+    flex: 2 2;
+    display: flex;
+    flex-direction: column;
+    gap: toRem(27);
+  }
+
+  &__section-1,
+  &__section-3 {
+    display: flex;
+    justify-content: space-between;
+    gap: toRem(30);
+
+    @media (max-width: $xs) {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  }
+
+  &__section-1 {
+    max-width: toRem(672);
+  }
+
+  &__section-3 {
+    margin-top: toRem(5);
+    max-width: toRem(685);
+  }
+
+  &__cancelation-content {
+    margin-top: toRem(18);
+    white-space: pre-line;
   }
 }

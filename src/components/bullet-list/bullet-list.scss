@@ -18,4 +18,10 @@ $className: 'bullet-list';
       margin-bottom: initial;
     }
   }
+
+  &_theme-bigger-title .#{$className} {
+    &__title {
+      margin: 0 0 toRem(18) toRem(21);
+    }
+  }
 }

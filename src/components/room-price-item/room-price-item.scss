@@ -3,6 +3,7 @@ $className: 'room-price-item';
 .#{$className} {
   display: flex;
   align-items: flex-start;
+  gap: toRem(20);
 
   &__content {
     max-width: toRem(220);
@@ -15,6 +16,7 @@ $className: 'room-price-item';
     right: 0;
     line-height: toRem(0);
   }
+
   &__details-icon {
     cursor: pointer;
     width: toRem(20);
@@ -66,5 +68,4 @@ $className: 'room-price-item';
     margin-left: auto;
     line-height: toRem(18);
   }
-  
 }

@@ -4,17 +4,23 @@ include ../bullet/bullet
 mixin bullet-list(vars)
   -
     const {
-      label,
+      title,
+      theme = "",
       items = [],
     } = vars
 
     const className = "bullet-list"
     let classNames = className + ` js-${className}`
 
+    const titleTag = theme === "biggerTitle" ? "h2" : "h3"
+
+  case (theme)
+    when "biggerTitle"
+      - classNames += ` ${className}_theme-bigger-title`
+
   div(class=classNames)
-    if label
-      div(class=`${className}__title`)
-        +label(label)
+    if title
+      #{titleTag}(class=`${className}__title`)= title
     ul(class=`${className}__list`)
       each item in items
         li(class=`${className}__item`)

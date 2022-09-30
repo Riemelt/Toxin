@@ -6,6 +6,7 @@ include ../../components/gallery/gallery
 include ../../components/room-info/room-info
 include ../../components/card-reservation/card-reservation
 include ../../components/comments/comments
+include ../../components/bullet-list/bullet-list
 
 block vars
   -
@@ -20,11 +21,22 @@ block main
       +gallery(data.gallery)
     +container()
       main(class=`${className}__main`)
-        div(class=`${className}__comments js-${className}__comments`)
-          +comments(data.comments)
-        //div(class=`${className}__card-reservation js-${className}__card-reservation`)
-        //  +card-reservation(data.cardReservation)
-        //div(class=`${className}__info`)
-        //  +room-info(data.info)
-        //div(class=`${className}__chart-reviews js-${className}__chart-reviews`)
-        //  +chart-pie(data.chartReviews)
+        div(class=`${className}__card-reservation js-${className}__card-reservation`)
+          +card-reservation(data.cardReservation)
+        div(class=`${className}__details`)
+          div(class=`${className}__section-1`)
+            div(class=`${className}__info`)
+              +room-info(data.info)
+            div(class=`${className}__chart-reviews js-${className}__chart-reviews`)
+              +chart-pie(data.chartReviews)
+          div(class=`${className}__section-2`)
+            div(class=`${className}__comments js-${className}__comments`)
+              +comments(data.comments)
+          div(class=`${className}__section-3`)
+            div(class=`${className}__rules`)
+              +bullet-list(data.rules)
+            div(class=`${className}__cancelation`)
+              h2(class=`${className}__cancelation-title`)= data.cancelation.title
+              p(class=`${className}__cancelation-content`)= data.cancelation.content
+
+

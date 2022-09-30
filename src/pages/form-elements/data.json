@@ -395,9 +395,7 @@
     ]
   },
   "bulletList": {
-    "label": {
-      "title": "bullet list"
-    },
+    "title": "bullet list",
     "items": [
       {
         "title": "Нельзя с питомцами"

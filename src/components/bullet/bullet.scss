@@ -17,6 +17,7 @@ $className: 'bullet';
     width: toRem(10);
     background-color: $dark-shade-25;
     border-radius: 50%;
+    margin-top: toRem(3);
   }
 
   &__title {
