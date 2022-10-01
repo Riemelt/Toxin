@@ -25,19 +25,19 @@
     "isHovered": true,
     "images": [
       {
-        "src": "card-room-1.png",
+        "src": "card-room-1.jpg",
         "alt": "Card room 1"
       },
       {
-        "src": "card-room-2.png",
+        "src": "card-room-2.jpg",
         "alt": "Card room 2"
       },
       {
-        "src": "card-room-3.png",
+        "src": "card-room-3.jpg",
         "alt": "Card room 3"
       },
       {
-        "src": "card-room-4.png",
+        "src": "card-room-4.jpg",
         "alt": "Card room 4"
       }
     ]
@@ -54,19 +54,19 @@
     },
     "images": [
       {
-        "src": "card-room-2.png",
+        "src": "card-room-2.jpg",
         "alt": "Card room 2"
       },
       {
-        "src": "card-room-3.png",
+        "src": "card-room-3.jpg",
         "alt": "Card room 3"
       },
       {
-        "src": "card-room-1.png",
+        "src": "card-room-1.jpg",
         "alt": "Card room 1"
       },
       {
-        "src": "card-room-4.png",
+        "src": "card-room-4.jpg",
         "alt": "Card room 4"
       }
     ]

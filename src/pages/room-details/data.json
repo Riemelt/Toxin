@@ -1,15 +1,15 @@
 {
   "gallery": {
     "imagePrimary": {
-      "src": "gallery-room-1.png",
+      "src": "gallery-room-1.jpg",
       "alt": "Gallery room 1"
     },
     "imageSecondaryOne": {
-      "src": "gallery-room-2.png",
+      "src": "gallery-room-2.jpg",
       "alt": "Gallery room 2"
     },
     "imageSecondaryTwo": {
-      "src": "gallery-room-3.png",
+      "src": "gallery-room-3.jpg",
       "alt": "Gallery room 3"
     }
   },
@@ -83,7 +83,7 @@
     "comments": [
       {
         "author": "Мурад Сарафанов",
-        "avatar": "author-picture-1.png",
+        "avatar": "author-picture-1.jpg",
         "date": "2022-09-25",
         "comment": "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.",
         "likeButton": {
@@ -93,7 +93,7 @@
       },
       {
         "author": "Патрисия Стёклышкова",
-        "avatar": "author-picture-2.png",
+        "avatar": "author-picture-2.jpg",
         "date": "2022-09-22",
         "comment": "Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент",
         "likeButton": {
