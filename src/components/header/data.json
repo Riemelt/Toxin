@@ -1,7 +1,7 @@
 {
   "logo": {
     "src": "logo.svg",
-    "href": "/mock-address/change-me"
+    "href": "landing.html"
   },
   "navigation": {
     "items": [
@@ -56,11 +56,11 @@
   "signInButton": {
     "text": "войти",
     "theme": "bordered-header",
-    "href": "/mock-address/change-me"
+    "href": "sign-in.html"
   },
   "registrationButton": {
     "text": "зарегистрироваться",
     "theme": "long-header",
-    "href": "/mock-address/change-me"
+    "href": "registration.html"
   }
 }

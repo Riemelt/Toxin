@@ -124,7 +124,7 @@
   },
   "cardReservation": {
     "form": {
-      "action": "/mock-address/change-me",
+      "action": "",
       "method": "get"
     },
     "roomLabel": {

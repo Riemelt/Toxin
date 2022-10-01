@@ -4,6 +4,7 @@ include ../room-label/room-label
 mixin card-room(vars)
   -
     const {
+      href       = "/mock-address/change-me",
       images     = [],
       reviews    = 0,
       rateButton = {},
@@ -19,7 +20,7 @@ mixin card-room(vars)
   if isHovered
     - classNames += ` ${className}_hovered`
 
-  div(class=classNames)
+  a(class=classNames href=href)
     div(class=`${className}__slider`)
       if images[0]
         img(class=`${className}__slider-image ${className}__slider-image_active js-${className}__slider-image`

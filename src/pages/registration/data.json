@@ -84,7 +84,7 @@
       "content": "Уже есть аккаунт на Toxin",
       "button": {
         "text": "войти",
-        "href": "/mock-address/change-me",
+        "href": "sign-in.html",
         "theme": "bordered"
       }
     }
