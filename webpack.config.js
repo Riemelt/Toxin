@@ -72,6 +72,7 @@ module.exports = {
   resolve: {
     alias: {
       "@images": path.resolve(__dirname, "./src/assets/images/"),
+      "@favicons": path.resolve(__dirname, "./src/assets/favicons/"),
     },
   },
   module: {
@@ -106,14 +107,24 @@ module.exports = {
         ]
       },
       {
+        test: /\.(svg|png|ico|xml|json|webmanifest)$/i,
+        include: /favicons/,
+        type: "asset/resource",
+        generator: {
+          filename: 'assets/favicons/[name][hash][ext][query]',
+        },
+      },
+      {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        exclude: /fonts|favicons/,
         type: "asset/resource",
         generator: {
           filename: 'assets/images/[name][hash][ext][query]',
         },
       },
       {
-        test: /\.(woff|woff2|eot|ttf|otf)$/i,
+        test: /\.(woff|woff2|eot|ttf|otf|svg)$/i,
+        include: /fonts/,
         type: "asset/resource",
         generator: {
           filename: 'assets/fonts/[name][hash][ext][query]',
