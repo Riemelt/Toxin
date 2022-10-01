@@ -53,6 +53,7 @@ class CardRoom {
   }
 
   #handleControlButtonsClick(event) {
+    event.preventDefault();
     const $this = $(event.target);
     const id = $this.data("id");
 
@@ -61,12 +62,14 @@ class CardRoom {
     }
   }
 
-  #handlePreviousButtonClick() {
+  #handlePreviousButtonClick(event) {
+    event.preventDefault();
     const newActiveImageId = this.#getNewActiveImageId(CardRoom.#PREVIOUS);
     this.#update(newActiveImageId);
   }
 
-  #handleNextButtonClick() {
+  #handleNextButtonClick(event) {
+    event.preventDefault();
     const newActiveImageId = this.#getNewActiveImageId(CardRoom.#NEXT);
     this.#update(newActiveImageId);
   }

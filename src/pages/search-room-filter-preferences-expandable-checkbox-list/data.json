@@ -169,6 +169,7 @@
   },
   "cardRooms": [
     {
+      "href": "/room-details.html",
       "rateButton": {
         "value": 5
       },
@@ -199,6 +200,7 @@
       ]
     },
     {
+      "href": "/room-details.html",
       "rateButton": {
         "value": 4
       },
@@ -228,6 +230,7 @@
       ]
     },
     {
+      "href": "/room-details.html",
       "rateButton": {
         "value": 3
       },
@@ -257,6 +260,7 @@
       ]
     },
     {
+      "href": "/room-details.html",
       "rateButton": {
         "value": 5
       },
@@ -286,6 +290,7 @@
       ]
     },
     {
+      "href": "/room-details.html",
       "rateButton": {
         "value": 4
       },
@@ -315,6 +320,7 @@
       ]
     },
     {
+      "href": "/room-details.html",
       "rateButton": {
         "value": 3
       },
@@ -344,6 +350,7 @@
       ]
     },
     {
+      "href": "/room-details.html",
       "rateButton": {
         "value": 5
       },
@@ -373,6 +380,7 @@
       ]
     },
     {
+      "href": "/room-details.html",
       "rateButton": {
         "value": 4
       },
@@ -402,6 +410,7 @@
       ]
     },
     {
+      "href": "/room-details.html",
       "rateButton": {
         "value": 3
       },
@@ -431,6 +440,7 @@
       ]
     },
     {
+      "href": "/room-details.html",
       "rateButton": {
         "value": 5
       },
@@ -460,6 +470,7 @@
       ]
     },
     {
+      "href": "/room-details.html",
       "rateButton": {
         "value": 3
       },
@@ -489,6 +500,7 @@
       ]
     },
     {
+      "href": "/room-details.html",
       "rateButton": {
         "value": 3
       },

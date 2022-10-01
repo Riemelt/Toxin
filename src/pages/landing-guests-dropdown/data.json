@@ -14,7 +14,7 @@
   },
   "cardSearch": {
     "form": {
-      "action": "/mock-address/change-me",
+      "action": "/search-room-filter.html",
       "method": "get"
     },
     "title": "Найдём номера под ваши пожелания",

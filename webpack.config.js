@@ -14,7 +14,7 @@ const pages = fs.readdirSync(pagesPath);
 const multipleHtmlPlugins = pages.map(name => {
   return new HtmlWebpackPlugin({
     template: `./pages/${name}/${name}.pug`, // relative path to the HTML files
-    filename: `${name}/${name}.html`, // output HTML files
+    filename: `./${name}.html`, // output HTML files
     chunks: [name],
   });
 });
@@ -42,7 +42,7 @@ module.exports = {
    // new ESLintPlugin({
    // }),
     new MiniCssExtractPlugin({
-      filename: "[name]/[name].[contenthash].css",
+      filename: "./[name].[contenthash].css",
       ignoreOrder: true,
     }),
     new webpack.ProvidePlugin({
@@ -59,7 +59,7 @@ module.exports = {
   ].concat(multipleHtmlPlugins),
   entry: entryPoints,
   output: {
-    filename: "[name]/[name].[contenthash].js",
+    filename: "./[name].[contenthash].js",
     assetModuleFilename: "assets/[name][hash][ext][query]",
     clean: true
   },

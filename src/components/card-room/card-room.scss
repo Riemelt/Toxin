@@ -1,6 +1,8 @@
 $className: 'card-room';
 
 .#{$className} {
+  display: block;
+  text-decoration: none;
   color: $dark-shade-50;
   background-color: white;
   width: toRem(270);

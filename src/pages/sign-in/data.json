@@ -37,7 +37,7 @@
       "content": "Нет аккаунта на Toxin?",
       "button": {
         "text": "создать",
-        "href": "/mock-address/change-me",
+        "href": "/registration.html",
         "theme": "bordered"
       }
     }
