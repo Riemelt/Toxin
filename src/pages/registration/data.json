@@ -84,11 +84,7 @@
       "content": "Уже есть аккаунт на Toxin",
       "button": {
         "text": "войти",
-<<<<<<< HEAD
         "href": "sign-in.html",
-=======
-        "href": "/sign-in.html",
->>>>>>> 12e6c72b19fb985915f855701027079029bc27ce
         "theme": "bordered"
       }
     }

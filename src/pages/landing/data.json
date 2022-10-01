@@ -14,11 +14,7 @@
   },
   "cardSearch": {
     "form": {
-<<<<<<< HEAD
       "action": "search-room-filter.html",
-=======
-      "action": "/search-room-filter.html",
->>>>>>> 12e6c72b19fb985915f855701027079029bc27ce
       "method": "get"
     },
     "title": "Найдём номера под ваши пожелания",

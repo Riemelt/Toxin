@@ -37,11 +37,7 @@
       "content": "Нет аккаунта на Toxin?",
       "button": {
         "text": "создать",
-<<<<<<< HEAD
         "href": "registration.html",
-=======
-        "href": "/registration.html",
->>>>>>> 12e6c72b19fb985915f855701027079029bc27ce
         "theme": "bordered"
       }
     }
