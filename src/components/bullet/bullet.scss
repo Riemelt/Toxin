@@ -6,8 +6,8 @@ $className: 'bullet';
   align-items: flex-start;
 
   &__bullet-wrapper {
-    height: toRem(21);
-    width: toRem(21);
+    min-height: toRem(21);
+    min-width: toRem(21);
     display: flex;
     align-items: center;
   }

@@ -49,7 +49,11 @@ $className: 'room-details';
 
   &__section-3 {
     margin-top: toRem(5);
-    max-width: toRem(685);
+    max-width: toRem(691);
+  }
+
+  &__cancelation {
+    max-width: toRem(330);
   }
 
   &__cancelation-content {
