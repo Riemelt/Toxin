@@ -51,11 +51,6 @@ module.exports = {
       "window.jQuery": "jquery",
     }),
     require('autoprefixer'),
-    new HtmlWebpackPlugin({
-      template: "./index.pug",
-      filename: "./index.html",
-      chunks: ["index"],
-    })
   ].concat(multipleHtmlPlugins),
   entry: entryPoints,
   output: {

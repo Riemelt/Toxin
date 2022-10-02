@@ -1,0 +1,56 @@
+$className: 'index';
+
+.#{$className} {
+  background-color: #222222;
+  min-height: 100vh;
+  padding: toRem(100) toRem(20) 0;
+
+  &__main {
+    max-width: toRem(500);
+    margin: 0 auto;
+    background-color: $grey;
+    padding: toRem(25);
+    border-radius: toRem(15);
+
+  }
+
+  &__ui-kit-title,
+  &__website-title,
+  &__ui-kit-page,
+  &__website-page {
+    font-weight: 700;
+  }
+
+  &__ui-kit-title,
+  &__website-title {
+    color: $dark-shade-100;
+    font-size: toRem(23);
+    margin-bottom: toRem(20);
+  }
+
+  &__ui-kit-pages,
+  &__website-pages {
+    list-style-type: none;
+  }
+
+  &__ui-kit-pages {
+    margin-bottom: toRem(30);
+  }
+
+  &__ui-kit-page,
+  &__website-page {
+    text-decoration: none;
+    color: #EB5C2B;
+    font-size: toRem(17);
+
+    &:hover {
+      color: #9c3c1c;
+    }
+  }
+
+  &__ui-kit-page-item,
+  &__website-page-item {
+    margin-top: toRem(5);
+    margin-left: toRem(20);
+  }
+}

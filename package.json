@@ -1,7 +1,7 @@
 {
   "name": "toxin",
   "version": "1.0.0",
-  "description": "",
+  "description": "Hotel reservations",
   "main": "index.js",
   "scripts": {
     "start": "set NODE_ENV=development&&webpack serve --open",
@@ -16,8 +16,13 @@
     "type": "git",
     "url": "git+https://github.com/Riemelt/Toxin.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "hotel",
+    "reservations",
+    "rooms",
+    "toxin"
+  ],
+  "author": "Riemelt <n.lychenkov@gmail.com> (https://github.com/Riemelt)",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/Riemelt/Toxin/issues"

@@ -1,0 +1,58 @@
+{
+  "pagesUiKit": [
+    {
+      "name": "Colors & Type",
+      "href": "colors-and-type.html"
+    },
+    {
+      "name": "Form Elements",
+      "href": "form-elements.html"
+    },
+    {
+      "name": "Cards",
+      "href": "cards.html"
+    },
+    {
+      "name": "Headers & Footers",
+      "href": "headers-and-footers.html"
+    }
+  ],
+  "pagesWebsite": [
+    {
+      "name": "Landing",
+      "href": "landing.html"
+    },
+    {
+      "name": "Landing / Dates Dropdown",
+      "href": "landing-dates-dropdown.html"
+    },
+    {
+      "name": "Landing / Guests Dropdown",
+      "href": "landing-guests-dropdown.html"
+    },
+    {
+      "name": "Search room / Filter",
+      "href": "search-room-filter.html"
+    },
+    {
+      "name": "Search room / Filter / Preferences Dropdown",
+      "href": "search-room-filter-preferences-dropdown.html"
+    },
+    {
+      "name": "Search room / Filter / Preferences Expandable Checkbox list",
+      "href": "search-room-filter-preferences-expandable-checkbox-list.html"
+    },
+    {
+      "name": "Room details",
+      "href": "room-details.html"
+    },
+    {
+      "name": "Registration",
+      "href": "registration.html"
+    },
+    {
+      "name": "Sign in",
+      "href": "sign-in.html"
+    }
+  ]
+}

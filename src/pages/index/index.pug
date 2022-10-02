@@ -1,0 +1,22 @@
+extends ../../layouts/layout-base/layout-base
+
+block vars
+  - var title = "Toxin"
+
+block body
+  -
+    const className = "index"
+    const data = require("./data.json")
+
+  div(class=className)
+    main(class=`${className}__main`)
+      div(class=`${className}__ui-kit-title`) UI kit
+      ul(class=`${className}__ui-kit-pages`)
+        each page in data.pagesUiKit
+          li(class=`${className}__ui-kit-page-item`)
+            a(class=`${className}__ui-kit-page` href=page.href)= page.name
+      div(class=`${className}__website-title`) Website pages
+      ul(class=`${className}__website-pages`)
+        each page in data.pagesWebsite
+          li(class=`${className}__website-page-item`)
+            a(class=`${className}__website-page` href=page.href)= page.name
