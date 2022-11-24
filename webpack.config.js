@@ -1,5 +1,7 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const PugPlugin = require('pug-plugin');
+
 //const ESLintPlugin = require('eslint-webpack-plugin');
 const fs = require('fs');
 const webpack = require('webpack');
@@ -127,7 +129,7 @@ module.exports = {
       },
       {
         test: /\.pug$/,
-        loader: "pug-loader",
+        loader: PugPlugin.loader,
         exclude: /(node_modules|bower_components)/,
         options: {
             basedir: path.resolve(__dirname, './src')
