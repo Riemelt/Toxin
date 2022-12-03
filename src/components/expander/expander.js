@@ -13,7 +13,7 @@ class Expander {
 
   #init($parent) {
     this.#$component = $parent.find(`.js-${this.#className}`);
-    this.#$header = this.#$component.find(`.js-${this.#className}__header`);
+    this.#$header    = this.#$component.find(`.js-${this.#className}__header`);
   }
 
   #render() {

@@ -1,14 +1,15 @@
-mixin rate-button(vars)
+mixin rate-button(vars = {})
   -
     const {
-      value = 0,
+      value      = 0,
+      starsCount = 5,
     } = vars
 
     const className = "rate-button"
-    let classNames = className + ` js-${className}`
+    let classNames  = className + ` js-${className}`
 
   div(class=classNames)
-    - for (let x = 0; x < 5; x++)
+    - for (let x = 0; x < starsCount; x++)
       - let iconClassNames = `${className}__icon`
       if value > x
         - iconClassNames += ` ${className}__icon_checked`

@@ -40,7 +40,8 @@ $noUiSlider: 'noUi';
         border-radius: 50%;
         border: toRem(2) solid white;
 
-        &::before, &::after {
+        &::before,
+        &::after {
           display: none;
         }
       }

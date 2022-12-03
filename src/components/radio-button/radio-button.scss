@@ -27,6 +27,16 @@ $className: 'radio-button';
     color: $dark-shade-75;
   }
 
+  &__radio-input:hover
+  + &__button {
+    border-width: toRem(2);
+  }
+
+  &__radio-input:hover
+  ~ &__title {
+    font-weight: 700;
+  }
+
   &__button {
     position: relative;
     width: toRem(20);

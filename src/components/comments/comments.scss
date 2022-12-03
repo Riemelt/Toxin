@@ -12,8 +12,8 @@ $className: 'comments';
     color: $dark-shade-50;
   }
 
-  &__header +
-  &__comments-list {
+  &__header
+  + &__comments-list {
     margin-top: toRem(20);
   }
 

@@ -3,7 +3,6 @@ import CardReservation  from "../../components/card-reservation";
 import CardRoom         from "../../components/card-room";
 import CardSearch       from "../../components/card-search";
 import Datepicker       from "../../components/datepicker";
-
 import "../../components/header-ui-kit";
 import "../../components/card-sign-in";
 import "../../components/container";
@@ -20,6 +19,7 @@ class Cards {
 
   #init($element) {
     this.#$component = $element;
+
     new Datepicker($(`.js-${this.#className}__card-datepicker`, this.#$component), data.cardDatepicker);
     new CardRoom($(`.js-${this.#className}__card-room-focused`, this.#$component), data.cardRoomFocused);
     new CardRoom($(`.js-${this.#className}__card-room-default`, this.#$component), data.cardRoomDefault);

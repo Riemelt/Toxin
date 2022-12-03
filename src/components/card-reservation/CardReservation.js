@@ -1,10 +1,11 @@
-import { formatPrice }    from "../../utilities/utilities.js";
+import {
+  formatPrice,
+} from "../../utilities/utilities.js";
 
 import DropdownCounter    from "../dropdown-counter";
 import DropdownDatepicker from "../dropdown-datepicker";
 import RoomLabel          from "../room-label";
 import RoomPriceItem      from "../room-price-item";
-
 import "../button";
 import "../card";
 
@@ -13,9 +14,7 @@ class CardReservation {
 
   #$component;
   #options;
-  #label;
   #dropdownDatepicker;
-  #dropdownGuests;
   #$roomPriceItems;
   #roomPriceItems = [];
   #$totalPrice;
@@ -25,21 +24,23 @@ class CardReservation {
   }
 
   #init($parent, options) {
-    this.#options = options;
+    this.#options    = options;
     this.#$component = $parent.find(`.js-${this.#className}`);
 
     const {
-      roomLabel = {},
+      roomLabel          = {},
       dropdownDatepicker = {},
-      dropdownGuests = {},
+      dropdownGuests     = {},
     } = options;
 
-    this.#label = new RoomLabel(this.#$component.find(`.js-${this.#className}__label`), roomLabel);
+    new RoomLabel(this.#$component.find(`.js-${this.#className}__label`), roomLabel);
+
     this.#dropdownDatepicker = new DropdownDatepicker(this.#$component.find(`.js-${this.#className}__dropdown-datepicker`), {
       handleApplyButtonClick: this.#handleApplyButtonClick.bind(this),
       ...dropdownDatepicker,
     });
-    this.#dropdownGuests = new DropdownCounter(this.#$component.find(`.js-${this.#className}__dropdown-guests`), dropdownGuests);
+
+    new DropdownCounter(this.#$component.find(`.js-${this.#className}__dropdown-guests`), dropdownGuests);
 
     this.#$roomPriceItems = this.#$component.find(`.js-${this.#className}__room-price-item`);
     this.#$roomPriceItems.each(this.#initRoomPriceItem.bind(this));
@@ -71,6 +72,7 @@ class CardReservation {
         price = 0,
       },
     } = this.#options;
+    
     const daysOfStay = this.#dropdownDatepicker.getDaysOfStay();
 
     this.#roomPriceItems.push(

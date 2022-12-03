@@ -1,13 +1,10 @@
 import "../../main-styles";
-import "../../layouts/layout-base";
-
 import HeadersAndFooters from "./HeadersAndFooters.js";
 import "./headers-and-footers.scss";
+import data from "./data.json";
 
-(function($){
-
+(function($) {
   const className = "headers-and-footers";
 
-  new HeadersAndFooters($(`.js-${className}`));
-
+  new HeadersAndFooters($(`.js-${className}`), data);
 })(jQuery);

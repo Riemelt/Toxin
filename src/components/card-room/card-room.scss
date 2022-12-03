@@ -1,8 +1,6 @@
 $className: 'card-room';
 
 .#{$className} {
-  display: block;
-  text-decoration: none;
   color: $dark-shade-50;
   background-color: white;
   width: toRem(270);
@@ -40,6 +38,8 @@ $className: 'card-room';
 
   &__previous,
   &__next {
+    position: relative;
+    z-index: 1;
     height: 100%;
     width: toRem(42);
     display: flex;
@@ -71,13 +71,20 @@ $className: 'card-room';
     transform: rotate(-90deg);
   }
 
+  &__link {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+  }
+
   &__control-panel {
     position: absolute;
     display: flex;
     right: toRem(15);
     bottom: toRem(10);
     list-style-type: none;
-    z-index: 1;
+    z-index: 2;
   }
 
   &__control-panel-item {
@@ -101,6 +108,8 @@ $className: 'card-room';
   }
 
   &__info {
+    display: block;
+    text-decoration: none;
     margin: toRem(21) toRem(20) toRem(20);
     padding-bottom: toRem(12);
   }
@@ -121,6 +130,7 @@ $className: 'card-room';
 
   &__reviews-count,
   &__reviews-title {
+    color: $dark-shade-50;
     line-height: toRem(18);
   }
 

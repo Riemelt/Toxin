@@ -1,14 +1,12 @@
-import { renderSlider } from "../../utilities/utilities.js";
-
+import {
+  renderSlider,
+} from "../../utilities/utilities.js";
 import "../../components/container";
 import "../../components/card-sign-in";
-
 import data from "./data.json";
 
 class SignIn {
-  #className = "sign-in";
   #$component;
-
   #sliderImages;
 
   constructor($element) {
@@ -17,8 +15,7 @@ class SignIn {
   }
 
   #init($element) {
-    this.#$component = $element;
-
+    this.#$component   = $element;
     this.#sliderImages = data.slider.images;
   }
 

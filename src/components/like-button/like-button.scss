@@ -15,8 +15,10 @@ $className: 'like-button';
     transition: border-color 0.2s;
     cursor: pointer;
 
-    &:hover, &:focus {
+    &:hover,
+    &:focus-within {
       border-color: $purple;
+      border-width: toRem(2);
     }
   }
 
@@ -34,7 +36,8 @@ $className: 'like-button';
     }
   }
 
-  &__likes, &__icon {
+  &__likes,
+  &__icon {
     margin: 0 auto;
     margin-left: toRem(4);
   }
@@ -62,5 +65,4 @@ $className: 'like-button';
       }
     }
   }
-
 }

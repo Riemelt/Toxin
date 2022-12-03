@@ -3,8 +3,8 @@ $className: 'room-info';
 .#{$className} {
   max-width: toRem(280);
 
-  &__title +
-  &__items {
+  &__title
+  + &__items {
     margin-top: toRem(21);
   }
 

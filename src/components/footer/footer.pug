@@ -6,29 +6,29 @@ include ../socials/socials
 mixin footer(vars = {})
   -
     const {
-      theme = "",
+      theme     = "",
+      navBlocks = [],
+      copyright = "",
+      socials   = {},
       company = {
         logo: {},
         description: "",
       },
-      navBlocks = [],
       subscription = {
         form: {
-          action: "",
+          action: "/mock-address/change-me",
           method: "get",
         },
         title: "",
         description: "",
         input: {},
       },
-      copyright = "",
-      socials = {},
     } = vars
 
     const className = "footer"
-    let classNames = className
+    let classNames  = className
 
-  - classNames += theme === "mobile" ? ` ${className}_mobile` : ""
+    classNames += theme === "mobile" ? ` ${className}_mobile` : ""
 
   footer(class=classNames)
     div(class=`${className}__body-wrapper`)

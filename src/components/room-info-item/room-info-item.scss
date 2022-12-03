@@ -6,7 +6,7 @@ $className: 'room-info-item';
   &__icon {
     margin-right: toRem(10);
     
-    & .material-icons {
+    .material-icons {
       font-size: toRem(48);
       @include iconWithGradient($primary-gradient);
     }

@@ -42,7 +42,8 @@ $pluginName: 'paginationjs';
       }
     }
 
-    &-prev, &-next {
+    &-prev,
+    &-next {
       cursor: pointer;
       border-radius: 50%;
       background-image: $secondary-gradient;

@@ -2,18 +2,18 @@ include ../input-field/input-field
 include ../control-panel/control-panel
 include ../counter-item/counter-item
 
-mixin dropdown-counter(vars)
+mixin dropdown-counter(vars = {})
   -
     const {
-      type = "guest",
-      input,
+      input            = {},
+      type             = "guest",
       withControlPanel = true,
-      items = [],
-      size = "big",
+      items            = [],
+      size             = "big",
     } = vars
 
     const className = "dropdown-counter"
-    let classNames = className + ` js-${className}`
+    let classNames  = className + ` js-${className}`
 
     classNames += size === "big" ? ` ${className}_big` : ` ${className}_medium`
 

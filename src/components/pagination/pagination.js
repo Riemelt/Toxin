@@ -15,11 +15,11 @@ class Pagination {
 
   #init($parent, options) {
     this.#$component = $parent.find(`.js-${this.#className}`);
+    this.#options    = options;
 
     this.#$paginationContainer = this.#$component.find(`.js-${this.#className}__pagination-container`);
-    this.#$pagesInfo = this.#$component.find(`.js-${this.#className}__pages-info`);
+    this.#$pagesInfo           = this.#$component.find(`.js-${this.#className}__pages-info`);
 
-    this.#options = options;
     this.#initPaginationjs();
   }
 
@@ -27,14 +27,14 @@ class Pagination {
     const { pageSize = 12 } = this.#options;
 
     this.#$paginationContainer.pagination({
-      dataSource: this.#initData.bind(this),
       pageSize,
-      pageRange: 1,
+      dataSource:       this.#initData.bind(this),
+      pageRange:        1,
       autoHidePrevious: true,
-      autoHideNext: true,
-      prevText: "",
-      nextText: "",
-      callback: this.#renderPagination.bind(this),
+      autoHideNext:     true,
+      prevText:         "",
+      nextText:         "",
+      callback:         this.#renderPagination.bind(this),
     });
   }
 
@@ -43,8 +43,9 @@ class Pagination {
     const result = [];
 
     for (let i = 1; i <= itemsCount; i++) {
-        result.push(i);
+      result.push(i);
     }
+
     done(result);
   }
 
@@ -53,10 +54,10 @@ class Pagination {
   }
 
   #updatePagesInfo({ pageNumber, pageSize, totalNumber }) {
-    const itemsFrom = (pageNumber - 1) * pageSize + 1;
-    const itemsTo = pageNumber * pageSize;
+    const itemsFrom  = (pageNumber - 1) * pageSize + 1;
+    const itemsTo    = pageNumber * pageSize;
     const totalItems = totalNumber >= 100 ? "100+" : totalNumber;
-    const pagesInfo = this.#buildPagesInfoText(itemsFrom, itemsTo, totalItems);
+    const pagesInfo  = this.#buildPagesInfoText(itemsFrom, itemsTo, totalItems);
     this.#setPagesInfo(pagesInfo);
   }
 

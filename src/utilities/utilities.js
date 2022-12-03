@@ -9,13 +9,14 @@ const TIME_DICTIONARY = {
 
 function declOfNum(number, titles) {  
   const cases = [2, 0, 1, 1, 1, 2];  
-  return titles[ (number%100>4 && number%100<20)? 2 : cases[(number%10<5)?number%10:5] ];  
+  return titles[(number % 100 > 4 && number % 100 < 20) ? 2 : cases[(number % 10 < 5) ? number % 10 : 5]];
 }
 
 function getTimePassed(date) {
   const now = moment();
 
   const years = now.diff(date, "years");
+
   if (years > 0) {
     const number = years === 1 ? "" : `${years} `;
 
@@ -59,11 +60,10 @@ function daysDifference(firstDate, secondDate) {
 }
 
 function renderSlider({
-  images = [],
-  delay = 4000,
   $component,
+  images = [],
+  delay  = 4000,
 }) {
-
   let index = 0;
 
   function changeImage() {

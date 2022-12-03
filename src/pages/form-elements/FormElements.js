@@ -6,7 +6,6 @@ import LikeButton         from "../../components/like-button";
 import Pagination         from "../../components/pagination";
 import InputField         from "../../components/input-field";
 import RangeSlider        from "../../components/range-slider";
-
 import "../../components/label";
 import "../../components/radio-buttons-field";
 import "../../components/bullet-list";

@@ -10,14 +10,13 @@ class Navigation {
 
   constructor($parent, options = {}) {
     this.#init($parent, options);
-    this.#render();
   }
 
   #init($parent, options) {
-    this.#options = options;
-
-    this.#$component = $parent.find(`.js-${this.#className}`);
+    this.#options          = options;
+    this.#$component       = $parent.find(`.js-${this.#className}`);
     this.#$navigationItems = this.#$component.find(`.js-${this.#className}__item`);
+
     this.#$navigationItems.each(this.#initNavigationItem.bind(this));
   }
 
@@ -26,13 +25,9 @@ class Navigation {
 
     if (this.#options.items[index].subNavigation) {
       this.#navigationItems.push(
-        new NavigationItem($navigationItem,
-      ));
+        new NavigationItem($navigationItem)
+      );
     }
-  }
-
-  #render() {
-    
   }
 }
 

@@ -212,7 +212,7 @@
     ],
     "subscription": {
       "form": {
-        "action": "",
+        "action": "/mock-address/change-me",
         "method": "get"
       },
       "title": "подписка",

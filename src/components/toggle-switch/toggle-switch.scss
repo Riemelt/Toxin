@@ -23,6 +23,11 @@ $className: 'toggle-switch';
     }
   }
 
+  &__switch-input:focus
+  + &__switch {
+    border-width: toRem(2);
+  } 
+
   &__switch {
     position: relative;
     height: toRem(20);
@@ -44,5 +49,11 @@ $className: 'toggle-switch';
       bottom: 0;
       transition: transform 0.4s;
     }
+  }
+
+  &:hover {
+    .#{$className}__switch {
+      border-width: toRem(2);
+    } 
   }
 }

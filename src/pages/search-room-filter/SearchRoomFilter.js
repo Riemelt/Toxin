@@ -4,7 +4,6 @@ import RangeSlider        from "../../components/range-slider";
 import Expander           from "../../components/expander";
 import CardRoom           from "../../components/card-room";
 import Pagination         from "../../components/pagination";
-
 import "../../components/container";
 import "../../components/checkbox-list";
 
@@ -20,8 +19,9 @@ class SearchRoomFilter {
   }
 
   #init($element, data) {
-    this.#data = data;
+    this.#data       = data;
     this.#$component = $element;
+
     new DropdownDatepicker(this.#$component.find(`.js-${this.#className}__date-dropdown`), this.#data.dateDropdown);
     new DropdownCounter(this.#$component.find(`.js-${this.#className}__guests-dropdown`), this.#data.guestsDropdown);
     new RangeSlider(this.#$component.find(`.js-${this.#className}__price-range`), this.#data.priceRange);

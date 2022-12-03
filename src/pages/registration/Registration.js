@@ -1,8 +1,8 @@
-import { renderSlider } from "../../utilities/utilities.js";
-
+import {
+  renderSlider,
+} from "../../utilities/utilities.js";
 import "../../components/container";
-import "../../components/card-registration";
-
+import CardRegistration from "../../components/card-registration";
 import data from "./data.json";
 
 class Registration {
@@ -11,15 +11,19 @@ class Registration {
 
   #sliderImages;
 
-  constructor($element) {
-    this.#init($element);
+  constructor($element, options = {}) {
+    this.#init($element, options);
     this.#render();
   }
 
-  #init($element) {
-    this.#$component = $element;
-
+  #init($element, {
+    cardRegistration = {},
+  }) {
+    this.#$component   = $element;
     this.#sliderImages = data.slider.images;
+
+    const $cardRegistration = this.#$component.find(`.js-${this.#className}__card-registration`);
+    new CardRegistration($cardRegistration, cardRegistration);
   }
 
   #render() {

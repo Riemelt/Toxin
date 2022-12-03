@@ -33,12 +33,12 @@ class InputField {
 
   #init($parent, options) {
     this.#$inputField = $parent.find(`.js-${this.#className}`);
-    this.#$input = $parent.find(`.js-${this.#className}__input`);
+    this.#$input      = $parent.find(`.js-${this.#className}__input`);
 
     const {
       isMasked = false,
-      minDate = new Date("01.01.1900"),
-      maxDate = new Date(),
+      minDate  = new Date("01.01.1900"),
+      maxDate  = new Date(),
     } = options;
 
     if (isMasked) {
@@ -51,9 +51,10 @@ class InputField {
   #setMask() {
     const maskOptions = {
       mask: Date,
-      min: this.#minDate,
-      max: this.#maxDate,
+      min:  this.#minDate,
+      max:  this.#maxDate,
     };
+
     IMask(this.#$input.get(0), maskOptions);
   }
 }

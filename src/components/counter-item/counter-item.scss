@@ -20,16 +20,18 @@ $className: 'counter-item';
     color: $dark-shade-100;
   }
 
-  &__decrement, &__increment {
+  &__decrement,
+  &__increment {
     width: toRem(30);
     height: toRem(30);
-    border: 1px solid $dark-shade-25;
+    border: toRem(1) solid $dark-shade-25;
     border-radius: 50%;
     color: $dark-shade-50;
     font-size: toRem(18);
   }
 
-  &__decrement:disabled, &__increment:disabled {
+  &__decrement:disabled,
+  &__increment:disabled {
     opacity: 0.5;
   }
 }

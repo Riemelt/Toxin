@@ -43,7 +43,7 @@ $className: 'index';
     color: #EB5C2B;
     font-size: toRem(17);
 
-    &:hover {
+    &:hover, &:visited {
       color: #9c3c1c;
     }
   }

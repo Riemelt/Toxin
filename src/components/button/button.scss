@@ -22,7 +22,16 @@ $className: 'button';
 	  color: $purple;
   }
 
-  &:hover, &.#{$className}_hovered {
+  &__icon {
+    position: absolute;
+    width: toRem(24);
+    height: toRem(24);
+    right: toRem(10);
+    color: white;
+  }
+
+  &:hover,
+  &_hovered {
     .#{$className}__text {
      color: $dark-shade-50;
     }
@@ -58,7 +67,8 @@ $className: 'button';
     background-origin: border-box;
     background-clip: content-box, border-box;
       
-    &:hover, &.#{$className}_hovered {
+    &:hover,
+    &_hovered {
       background-image: linear-gradient(white, white), $primary-gradient-50;
 
       .#{$className}__text {
@@ -76,7 +86,8 @@ $className: 'button';
       color: white;
     }
 
-    &:hover, &.#{$className}_hovered  {
+    &:hover,
+    &_hovered  {
       opacity: 0.5;
 
       .#{$className}__text {
@@ -111,13 +122,5 @@ $className: 'button';
     @media (min-width: $xl) {
       width: initial;
     }
-  }
-
-  &__icon {
-    position: absolute;
-    width: toRem(24);
-    height: toRem(24);
-    right: toRem(10);
-    color: white;
   }
 }

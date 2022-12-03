@@ -13,7 +13,7 @@ class Label {
   }
 
   #init($parent) {
-    this.#$component = $parent.find(`.js-${this.#className}`);
+    this.#$component   = $parent.find(`.js-${this.#className}`);
     this.#$description = this.#$component.find(`.js-${this.#className}__description`);
   }
 }

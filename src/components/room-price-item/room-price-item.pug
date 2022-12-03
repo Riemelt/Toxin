@@ -1,18 +1,21 @@
 mixin room-price-item(vars = {})
   -
     const {
-      theme = "roomPrice",
+      theme   = "roomPrice",
       details = "",
       content = "",
     } = vars
 
     const className = "room-price-item"
-    let classNames = `${className} js-${className}`
+    let classNames  = `${className} js-${className}`
 
   div(class=classNames)
     div(class=`${className}__content js-${className}__content`)
     if details
       div(class=`${className}__details`)
-        button(class=`${className}__details-icon` type="button") i
+        button(
+          class=`${className}__details-icon`
+          type="button"
+        ) i
         div(class=`${className}__details-content`)= details
     div(class=`${className}__price js-${className}__price`)

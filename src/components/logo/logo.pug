@@ -1,12 +1,12 @@
-mixin logo(vars)
+mixin logo(vars = {})
   -
     const {
-      src = "",
-      href = "/mock-address/change-me",
+      src   = "",
+      href  = "/mock-address/change-me",
       theme = "",
     } = vars
 
-    const className = "logo"
+    const className  = "logo"
     const classNames = theme === "uiKit" ? `${className} ${className}_ui-kit` : className
 
   a(class=classNames, href=href)

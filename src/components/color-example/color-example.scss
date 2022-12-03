@@ -5,9 +5,37 @@ $className: 'color-example';
 	align-items: center;
 
 	&__color-block {
-		border-radius: 6px;
+		border-radius: toRem(6);
 		width: toRem(70);
 		height: toRem(70);
+
+    &_dark-shade-100 {
+      background-color: $dark-shade-100;
+    }
+  
+    &_dark-shade-75 {
+      background-color: $dark-shade-75;
+    }
+  
+    &_dark-shade-50 {
+      background-color: $dark-shade-50;
+    }
+  
+    &_dark-shade-25 {
+      background-color: $dark-shade-25;
+    }
+  
+    &_dark-shade-5 {
+      background-color: $dark-shade-5;
+    }
+  
+    &_purple {
+      background-color: $purple;
+    }
+  
+    &_green {
+      background-color: $green;
+    }
 	}
 
 	&__info {
@@ -22,35 +50,5 @@ $className: 'color-example';
 
 	&__title {
 		font-weight: 700;
-	}
-}
-
-  .#{$className}__color-block {
-	&_dark-shade-100 {
-		background-color: $dark-shade-100;
-	}
-
-	&_dark-shade-75 {
-		background-color: $dark-shade-75;
-	}
-
-	&_dark-shade-50 {
-		background-color: $dark-shade-50;
-	}
-
-	&_dark-shade-25 {
-		background-color: $dark-shade-25;
-	}
-
-	&_dark-shade-5 {
-		background-color: $dark-shade-5;
-	}
-
-	&_purple {
-		background-color: $purple;
-	}
-
-	&_green {
-		background-color: $green;
 	}
 }

@@ -1,4 +1,6 @@
-import { declOfNum } from "../../utilities/utilities.js";
+import {
+  declOfNum,
+} from "../../utilities/utilities.js";
 
 import ControlPanel from "../control-panel";
 import CounterItem  from "../counter-item";
@@ -16,49 +18,48 @@ class DropdownCounter {
   #inputField;
   #controlPanel;
   #dropdownType;
-  #counterItems = [];
   #itemList;
+  #counterItems = [];
 
   static #PLACEHOLDERS = {
     guest: "Сколько гостей",
-    room: "Сколько комнат",
+    room:  "Сколько комнат",
   }
 
   static #DICTIONARY = {
     guest: {
-      guest: ["гость", "гостя", "гостей"],
-      baby: ["младенец", "младенца", "младенцев"],
+      guest:    ["гость", "гостя", "гостей"],
+      baby:     ["младенец", "младенца", "младенцев"],
     },
     room: {
-      room: ["спальня", "спальни", "спален"],
+      room:     ["спальня", "спальни", "спален"],
       bathroom: ["ванная комната", "ванные комнаты", "ванных комнат"],
-      bed: ["кровать", "кровати", "кроватей"],
+      bed:      ["кровать", "кровати", "кроватей"],
     },
   }
 
-  constructor($parent, options) {
+  constructor($parent, options = {}) {
     this.#init($parent, options);
     this.#render();
   }
 
   #init($parent, options) {
     this.#$component = $parent.find(`.js-${this.#className}`);
+    this.#options    = options;
 
-    this.#options = options;
-
-    this.#$menu = this.#$component.find(`.js-${this.#className}__menu`);
+    this.#$menu         = this.#$component.find(`.js-${this.#className}__menu`);
     this.#$counterItems = this.#$component.find(`.js-${this.#className}__item`);
     this.#$counterItems.each(this.#initCounterItem.bind(this));
     this.#$controlPanel = this.#$component.find(`.js-${this.#className}__control-panel-wrapper`);
 
     const {
-      type = "guest",
+      type     = "guest",
       isOpened = false,
     } = this.#options;
 
     this.#dropdownType = type;
 
-    this.#itemList = this.#initItemList(this.#dropdownType);
+    this.#itemList   = this.#initItemList(this.#dropdownType);
     this.#inputField = new InputField(this.#$component);
 
     if (this.#$controlPanel.length !== 0) {
@@ -93,10 +94,12 @@ class DropdownCounter {
     this.#inputField.toggleExpand();
   }
 
-  #handleDropdownClick(e) {
-    e.preventDefault();
-    if (!this.#isMenu(e.target))
+  #handleDropdownClick(event) {
+    event.preventDefault();
+
+    if (!this.#isMenu(event.target)) {
       this.#toggleDropdown();
+    }
   }
 
   #handleCounterItemClick(addedValue, type) {
@@ -105,8 +108,8 @@ class DropdownCounter {
     this.#updateControlPanel();
   }
 
-  #handleDocumentClick(e) {
-    if (!this.#isDropdown(e.target))
+  #handleDocumentClick(event) {
+    if (!this.#isDropdown(event.target))
       this.#closeDropdown();
   }
 
@@ -149,7 +152,7 @@ class DropdownCounter {
 
   #renderCounterValue(element) {
     const value = element.getValue();
-    const type = element.getType();
+    const type  = element.getType();
     this.#itemList[type] += value;
   }
 
@@ -174,32 +177,33 @@ class DropdownCounter {
   }
 
   #buildString() {
-    let text = "";
-    const type = this.#dropdownType;
+    let text            = "";
+    const type          = this.#dropdownType;
     const dictionaryMap = DropdownCounter.#DICTIONARY[type];
   
     for (const item in this.#itemList) {
       const itemCount = this.#itemList[item];
+
       if (itemCount > 0) {
-        if (text !== "")
-          text += ", ";
+        text += text !== "" ? ", " : "";
         text += itemCount + " " + declOfNum(itemCount, dictionaryMap[item]);
       }
     }
 
-    if (text === "")
+    if (text === "") {
       text = DropdownCounter.#PLACEHOLDERS[type];
+    }
+
     return text;
   }
 
   #initItemList(type) {
     switch (type) {
       case "guest":
-        return {guest: 0, baby: 0};
+        return { guest: 0, baby: 0 };
       case "room":
-        return {room: 0, bed: 0, bathroom: 0};
+        return { room: 0, bed: 0, bathroom: 0 };
       default:
-        console.log("Wrong dropdown type")
         return {};
     }
   }
@@ -208,8 +212,9 @@ class DropdownCounter {
     let isEmpty = true;
 
     for (const item in this.#itemList) {
-      if (this.#itemList[item] !== 0)
+      if (this.#itemList[item] !== 0) {
         isEmpty = false;
+      }
     }
 
     return isEmpty;

@@ -14,9 +14,9 @@ class LikeButton {
 
   #init($parent) {
     this.#$component = $parent.find(`.js-${this.#className}`);
-    this.#$likes = this.#$component.find(`.js-${this.#className}__likes`);
-    this.#likes = Number(this.#$likes.html());
-    this.#isChecked = this.#$component.hasClass(`${this.#className}_checked`);
+    this.#$likes     = this.#$component.find(`.js-${this.#className}__likes`);
+    this.#likes      = Number(this.#$likes.html());
+    this.#isChecked  = this.#$component.hasClass(`${this.#className}_checked`);
   }
 
   #render() {
@@ -27,8 +27,8 @@ class LikeButton {
     this.#$component.on("click.like-button", this.#handleLikeButtonClick.bind(this));
   }
 
-  #handleLikeButtonClick(e) {
-    e.preventDefault();
+  #handleLikeButtonClick(event) {
+    event.preventDefault();
     this.#$component.toggleClass(`${this.#className}_checked`);
 
     if (this.#isChecked) {

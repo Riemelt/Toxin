@@ -27,7 +27,7 @@ class ControlPanel {
   }
 
   #init($parent, options) {
-    this.#$component = $parent.find(`.js-${this.#className}`);
+    this.#$component   = $parent.find(`.js-${this.#className}`);
     this.#$applyButton = this.#$component.find(`.js-${this.#className}__apply`);
     this.#$resetButton = this.#$component.find(`.js-${this.#className}__reset`);
 

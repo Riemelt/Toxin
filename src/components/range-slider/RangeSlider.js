@@ -1,7 +1,8 @@
 import noUiSlider from "nouislider";
 
-import { formatPrice } from "../../utilities/utilities.js";
-
+import {
+  formatPrice,
+} from "../../utilities/utilities.js";
 import Label from "../label";
 
 class RangeSlider {
@@ -26,13 +27,13 @@ class RangeSlider {
 
   #init($parent, options) {
     this.#$component = $parent.find(`.js-${this.#className}`);
-    this.#options = options;
+    this.#options    = options;
 
     this.#$slider = this.#$component.find(`.js-${this.#className}__slider`);
-    this.#slider = this.#$slider.get(0);
+    this.#slider  = this.#$slider.get(0);
 
     this.#$label = this.#$component.find(`.js-${this.#className}__label`);
-    this.#label = new Label(this.#$label);
+    this.#label  = new Label(this.#$label);
 
     this.#initRangeSlider();
   }
@@ -51,12 +52,13 @@ class RangeSlider {
   }
 
   #initRangeSlider() {
-    const { start = [5000, 10000],
-            range = {
-              min: 0,
-              max: 16000
-            },
-            step = 1000
+    const {
+      start = [5000, 10000],
+      range = {
+        min: 0,
+        max: 16000
+      },
+      step = 1000
     } = this.#options;
 
     noUiSlider.create(this.#slider, {

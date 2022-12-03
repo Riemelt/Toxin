@@ -1,7 +1,7 @@
 include ../label/label
 include ../bullet/bullet
 
-mixin bullet-list(vars)
+mixin bullet-list(vars = {})
   -
     const {
       title,
@@ -10,7 +10,7 @@ mixin bullet-list(vars)
     } = vars
 
     const className = "bullet-list"
-    let classNames = className + ` js-${className}`
+    let classNames  = className + ` js-${className}`
 
     const titleTag = theme === "biggerTitle" ? "h2" : "h3"
 

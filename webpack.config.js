@@ -1,17 +1,13 @@
-const HtmlWebpackPlugin = require("html-webpack-plugin");
+const HtmlWebpackPlugin    = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const PugPlugin = require('pug-plugin');
+const PugPlugin            = require('pug-plugin');
+const fs                   = require('fs');
+const webpack              = require('webpack');
+const path                 = require('path');
 
-//const ESLintPlugin = require('eslint-webpack-plugin');
-const fs = require('fs');
-const webpack = require('webpack');
-const ghpages = require('gh-pages');
-
-const path = require('path');
-const srcPath = path.resolve(__dirname, "./src");
-
-const pagesPath = path.resolve(__dirname, "./src/pages");
-const pages = fs.readdirSync(pagesPath);
+const srcPath              = path.resolve(__dirname, "./src");
+const pagesPath            = path.resolve(__dirname, "./src/pages");
+const pages                = fs.readdirSync(pagesPath);
 
 const multipleHtmlPlugins = pages.map(name => {
   return new HtmlWebpackPlugin({
@@ -26,23 +22,18 @@ const entryPoints = pages.reduce((acc, name) => {
   return acc;
 }, {});
 
-console.log(pages);
-
-ghpages.publish('dist', function() {});
-
 let mode = "development";
+
 if (process.env.NODE_ENV === "production") {
   mode = "production";
 }
-console.log(mode + " mode");
 
+console.log(mode + " mode");
 
 module.exports = {
   context: srcPath,
   mode,
   plugins: [
-   // new ESLintPlugin({
-   // }),
     new MiniCssExtractPlugin({
       filename: "./[name].[contenthash].css",
       ignoreOrder: true,

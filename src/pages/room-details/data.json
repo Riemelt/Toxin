@@ -2,15 +2,15 @@
   "gallery": {
     "imagePrimary": {
       "src": "gallery-room-1.jpg",
-      "alt": "Gallery room 1"
+      "alt": "Бежевая комната с двухместной кроватью и круглым настенным зеркалом"
     },
     "imageSecondaryOne": {
       "src": "gallery-room-2.jpg",
-      "alt": "Gallery room 2"
+      "alt": "Бежевая комната с одноместной кроватью"
     },
     "imageSecondaryTwo": {
       "src": "gallery-room-3.jpg",
-      "alt": "Gallery room 3"
+      "alt": "Просторная бежевая комната с креслами, столом и большими окнами"
     }
   },
   "info": {
@@ -83,7 +83,10 @@
     "comments": [
       {
         "author": "Мурад Сарафанов",
-        "avatar": "author-picture-1.jpg",
+        "avatar": {
+          "src": "author-picture-1.jpg",
+          "alt": "Мужчина"
+        },
         "date": "2022-09-25",
         "comment": "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.",
         "likeButton": {
@@ -93,7 +96,10 @@
       },
       {
         "author": "Патрисия Стёклышкова",
-        "avatar": "author-picture-2.jpg",
+        "avatar": {
+          "src": "author-picture-2.jpg",
+          "alt": "Женщина"
+        },
         "date": "2022-09-22",
         "comment": "Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент",
         "likeButton": {
@@ -118,13 +124,13 @@
       }
     ]
   },
-  "cancelation": {
+  "cancellation": {
     "title": "Отмена",
     "content": "Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги."
   },
   "cardReservation": {
     "form": {
-      "action": "",
+      "action": "/mock-address/change-me",
       "method": "get"
     },
     "roomLabel": {

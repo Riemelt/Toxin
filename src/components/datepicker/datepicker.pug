@@ -1,14 +1,14 @@
 include ../control-panel/control-panel
 
-mixin datepicker(vars)
+mixin datepicker(vars = {})
   -
     const {
       isHidden = false,
-      size = "medium",
+      size     = "medium",
     } = vars
     
     const className = "datepicker"
-    let classNames = `${className} js-${className}`
+    let classNames  = `${className} js-${className}`
 
     classNames += (size === "big") ? ` ${className}_big` : ` ${className}_medium`
 
@@ -16,6 +16,9 @@ mixin datepicker(vars)
     - classNames += ` ${className}_hidden`
 
   div(class=classNames)
-    input(class=`${className}__input js-${className}__input` type="hidden")
+    input(
+      class=`${className}__input js-${className}__input`
+      type="text"
+    )
     div(class=`${className}__control-panel-wrapper`)
       +control-panel

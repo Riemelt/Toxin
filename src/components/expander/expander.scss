@@ -14,6 +14,7 @@ $className: 'expander';
     margin-left: auto;
     padding-right: toRem(9);
     cursor: pointer;
+
     &::before {
       font-size: toRem(24);
       font-family: 'Material Icons', Arial, sans-serif;
@@ -27,16 +28,18 @@ $className: 'expander';
   }
 
   &_opened {
-    .#{$className}__header {
-      margin-bottom: toRem(11);
-    }
+    .#{$className} {
+      &__header {
+        margin-bottom: toRem(11);
+      }
 
-    .#{$className}__body {
-      display: initial;
-    }
+      &__body {
+        display: initial;
+      }
 
-    .#{$className}__expander-button::before {
-      content: 'expand_less';
+      &__expander-button::before {
+        content: 'expand_less';
+      }
     }
   }
 }

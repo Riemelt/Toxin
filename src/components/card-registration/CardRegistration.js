@@ -9,7 +9,6 @@ class CardRegistration {
   #className = "card-registration";
 
   #$component;
-  #inputBirthDate;
 
   constructor($parent, options = {}) {
     this.#init($parent, options);
@@ -19,7 +18,7 @@ class CardRegistration {
     inputBirthDate = {},
   }) {
     this.#$component = $parent.find(`.js-${this.#className}`);
-    this.#inputBirthDate = new InputField(this.#$component.find(`.js-${this.#className}__input-birth-date`), inputBirthDate);
+    new InputField(this.#$component.find(`.js-${this.#className}__input-birth-date`), inputBirthDate);
   }
 }
 

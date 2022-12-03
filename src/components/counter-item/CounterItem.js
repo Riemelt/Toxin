@@ -17,7 +17,7 @@ class CounterItem {
 
   #handleCounterItemClick;
 
-  constructor($parent, options) {
+  constructor($parent, options = {}) {
     this.#init($parent, options);
     this.#render();
   }
@@ -37,13 +37,12 @@ class CounterItem {
 
   #init($parent, {
     handleCounterItemClick,
-    type = "guest",
+    type  = "guest",
     value = 0,
   }) {
-    this.#$component = $parent.find(`.js-${this.#className}`);
-
-    this.#$decrement = this.#$component.find(`.js-${this.#className}__decrement`);
-    this.#$increment = this.#$component.find(`.js-${this.#className}__increment`);
+    this.#$component    = $parent.find(`.js-${this.#className}`);
+    this.#$decrement    = this.#$component.find(`.js-${this.#className}__decrement`);
+    this.#$increment    = this.#$component.find(`.js-${this.#className}__increment`);
     this.#$counterValue = this.#$component.find(`.js-${this.#className}__value`);
     
     this.#type = type;

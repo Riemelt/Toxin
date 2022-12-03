@@ -11,13 +11,13 @@ mixin card-registration(vars = {})
         action: "/mock-address/change-me",
         method: "get",
       },
-      title = "",
-      inputFirstName = {},
-      inputLastName = {},
-      inputGender = {},
-      inputBirthDate = {},
-      inputEmail = {},
-      inputPassword = {},
+      title                    = "",
+      inputFirstName           = {},
+      inputLastName            = {},
+      inputGender              = {},
+      inputBirthDate           = {},
+      inputEmail               = {},
+      inputPassword            = {},
       toggleSwitchSubscription = {},
       submitRegistrationButton = {},
       login = {
@@ -27,7 +27,7 @@ mixin card-registration(vars = {})
     } = vars
 
     const className = "card-registration"
-    let classNames = `${className} js-${className}`
+    let classNames  = `${className} js-${className}`
 
   +card()
     form(

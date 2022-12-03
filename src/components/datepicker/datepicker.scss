@@ -5,13 +5,21 @@ $className: 'datepicker';
 $airDatepicker: 'air-datepicker';
 
 .#{$className} {
-  border: 1px solid $dark-shade-25;
+  border: toRem(1) solid $dark-shade-25;
   border-radius: toRem(4);
   box-shadow: 0 toRem(10) toRem(20) 0 $dark-shade-5;
   max-width: $medium;
   background-color: white;
   box-sizing: border-box;
   padding: toRem(14) toRem(15) toRem(15) toRem(15);
+
+  &__input {
+    @include hideInput();
+  }
+
+  &:focus-within {
+    border-width: toRem(2);
+  }
 
   .#{$airDatepicker} {
     font-family: Montserrat, Arial, sans-serif;
@@ -52,6 +60,7 @@ $airDatepicker: 'air-datepicker';
       margin-left: toRem(2);
       padding-left: toRem(5);
       padding-right: toRem(5);  
+
       &--day-names {
         height: toRem(40);
         margin: initial;
@@ -71,10 +80,13 @@ $airDatepicker: 'air-datepicker';
       }
     }
 
-    &-cell.-month-, &-cell.-year- {
+    &-cell.-month-,
+    &-cell.-year- {
       border: none;
 
-      &.-current-, &.-selected-, &.-focus- {
+      &.-current-,
+      &.-selected-,
+      &.-focus- {
         font-weight: 700;
         color: white;
       }
@@ -98,7 +110,12 @@ $airDatepicker: 'air-datepicker';
       font-size: toRem(12);
       border: none;
 
-      &.-focus-, &.-range-from-, &.-range-to-, &.-in-range-, &.-current-, &.-selected- {
+      &.-focus-,
+      &.-range-from-,
+      &.-range-to-,
+      &.-in-range-,
+      &.-current-,
+      &.-selected- {
         background: none;
 
         &::after {
@@ -116,7 +133,9 @@ $airDatepicker: 'air-datepicker';
         opacity: 0.05;
       }
 
-      &.-range-from-, &.-range-to-, &.-in-range- {
+      &.-range-from-,
+      &.-range-to-,
+      &.-in-range- {
         position: relative;
 
         &::before {
@@ -129,7 +148,8 @@ $airDatepicker: 'air-datepicker';
         }
       }
 
-      &.-range-from-, &.-range-to- {
+      &.-range-from-,
+      &.-range-to- {
         &::before {
           width: 50%; 
         }
@@ -162,7 +182,10 @@ $airDatepicker: 'air-datepicker';
         }
       }
 
-      &.-current-, &.-selected-, &.-range-to-, &.-range-from- {
+      &.-current-,
+      &.-selected-,
+      &.-range-to-,
+      &.-range-from- {
         color: white;
         font-weight: 700;
         border-radius: 50%;
@@ -172,7 +195,11 @@ $airDatepicker: 'air-datepicker';
         }
       }
 
-      &.-current-, &.-selected-, &.-range-to-, &.-range-from-, &.-range-to- {
+      &.-current-,
+      &.-selected-,
+      &.-range-to-,
+      &.-range-from-,
+      &.-range-to- {
         &.-focus-::after {
           opacity: initial;
         }
@@ -197,7 +224,10 @@ $airDatepicker: 'air-datepicker';
       &.-other-month- {
         color: $dark-shade-25;
 
-        &.-selected-, &.-range-to-, &.-range-from-, &.-current- {
+        &.-selected-,
+        &.-range-to-,
+        &.-range-from-,
+        &.-current- {
           color: white;
         }
       }

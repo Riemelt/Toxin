@@ -69,7 +69,7 @@
   ],
   "subscription": {
     "form": {
-      "action": "",
+      "action": "/mock-address/change-me",
       "method": "get"
     },
     "title": "подписка",
@@ -77,7 +77,8 @@
     "input": {
       "button": {
         "icon": "arrow_forward",
-        "theme": "primary"
+        "theme": "primary",
+        "type": "submit"
       },
       "type": "email",
       "name": "email",

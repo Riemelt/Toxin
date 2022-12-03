@@ -10,14 +10,14 @@ mixin card-search(vars = {})
         action: "/mock-address/change-me",
         method: "get",
       },
-      title = "",
+      title              = "",
       dropdownDatepicker = {},
-      dropdownGuests = {},
-      searchRoomButton = {},
+      dropdownGuests     = {},
+      searchRoomButton   = {},
     } = vars
 
     const className = "card-search"
-    let classNames = `${className} js-${className}`
+    let classNames  = `${className} js-${className}`
 
   +card()
     form(

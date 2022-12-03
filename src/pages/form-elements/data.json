@@ -62,7 +62,8 @@
     "dateFormat": "secondary",
     "datepicker": {
       "isHidden": true,
-      "endDate": "2022-05-23"
+      "endDate": "2019-08-19",
+      "minDate": "2019-01-10"
     },
     "inputs": [
       {
@@ -93,7 +94,8 @@
     "datepicker": {
       "isHidden": true,
       "startDate": "2022-08-19",
-      "endDate": "2022-08-23"
+      "endDate": "2022-08-23",
+      "minDate": "2019-01-10"
     },
     "inputs": [
       {
@@ -425,7 +427,10 @@
   },
   "comment": {
     "author": "Мурад Сарафанов",
-    "avatar": "author-picture-1.jpg",
+    "avatar": {
+      "src": "author-picture-1.jpg",
+      "alt": "Мужчина"
+    },
     "date": "2022-06-02",
     "comment": "Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.",
     "likeButton": {

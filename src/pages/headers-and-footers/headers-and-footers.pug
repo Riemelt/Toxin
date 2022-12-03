@@ -12,14 +12,14 @@ block vars
 block body
   -
     const className = "headers-and-footers"
-    const data = require("./data.json")
+    const data      = require("./data.json")
 
   div(class=`${className} js-${className}`)
     div(class=`${className}__header`)
       +header-ui-kit(data.header)
-    div(class=`${className}__header-default`)
+    div(class=`${className}__header-default js-${className}__header-default`)
       +header(data.headerDefault)
-    div(class=`${className}__header-signed-in`)
+    div(class=`${className}__header-signed-in js-${className}__header-signed-in`)
       +header(data.headerSignedIn)
     div(class=`${className}__footer-default`)
       +footer(data.footerDefault)

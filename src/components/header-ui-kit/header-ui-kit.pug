@@ -4,11 +4,11 @@ mixin header-ui-kit(vars = {})
   -
     const {
       theme = "",
-      logo = {},
+      logo  = {},
     } = vars
 
     const className = "header-ui-kit"
-    let classNames = className
+    let classNames  = className
 
   if (theme === "secondary")
     - classNames += ` ${className}_secondary`

@@ -1,7 +1,8 @@
-import { renderSlider } from "../../utilities/utilities.js";
+import {
+  renderSlider,
+} from "../../utilities/utilities.js";
 
 import CardSearch from "../../components/card-search";
-
 import "../../components/container";
 
 class Landing {
@@ -17,7 +18,7 @@ class Landing {
   }
 
   #init($element, data) {
-    this.#data = data;
+    this.#data       = data;
     this.#$component = $element;
 
     this.#sliderImages = this.#data.slider.images;

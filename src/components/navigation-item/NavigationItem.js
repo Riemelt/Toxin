@@ -1,5 +1,6 @@
 class NavigationItem {
   #className = "navigation-item";
+
   #$component;
   #$header;
 
@@ -10,7 +11,7 @@ class NavigationItem {
 
   #init($parent) {
     this.#$component = $parent.find(`.js-${this.#className}`);
-    this.#$header = this.#$component.find(`.js-${this.#className}__header-wrapper`);
+    this.#$header    = this.#$component.find(`.js-${this.#className}__header-wrapper`);
   }
 
   #render() {

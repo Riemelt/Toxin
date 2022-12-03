@@ -19,8 +19,8 @@ $className: 'bullet-list';
     }
   }
 
-  &_theme-bigger-title .#{$className} {
-    &__title {
+  &_theme-bigger-title {
+    .#{$className}__title {
       margin: 0 0 toRem(18) toRem(21);
     }
   }

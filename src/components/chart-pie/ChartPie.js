@@ -4,7 +4,9 @@ import {
   ArcElement,
 } from "chart.js";
 
-import { declOfNum } from "../../utilities/utilities.js";
+import {
+  declOfNum,
+} from "../../utilities/utilities.js";
 
 class ChartPie {
   #className = "chart-pie";
@@ -17,8 +19,6 @@ class ChartPie {
 
   #$reviewsValue;
   #$reviewsLabel;
-
-  #chart;
 
   static #DICTIONARY = ["голос", "голоса", "голосов"];
 
@@ -47,7 +47,7 @@ class ChartPie {
   }
 
   #setHandlers() {
-    this.#$legendItems.on("mouseover.chartPie", this.#handleChartLegendMouseover.bind(this));
+    this.#$legendItems.on("mouseover.chart-pie", this.#handleChartLegendMouseover.bind(this));
   }
 
   #initLegend() {
@@ -56,10 +56,11 @@ class ChartPie {
 
   #initBullet(index, element) {
     const { data = [] } = this.#options;
-    const dataIndex = data.length - index - 1;
-    const $element = $(element);
+    const dataIndex     = data.length - index - 1;
+    const $element      = $(element);
+
     const {
-      firstColor = "black",
+      firstColor  = "black",
       secondColor = "black",
     } = data[dataIndex].gradient;
 
@@ -123,7 +124,7 @@ class ChartPie {
       }
     }
 
-    this.#chart = new Chart(
+    new Chart(
       context,
       config,
     );

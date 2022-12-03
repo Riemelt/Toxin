@@ -1,16 +1,16 @@
-mixin button(vars)
+mixin button(vars = {})
   -
     const {
-      text = "",
       theme,
       icon,
-      hovered = false,
-      type = "button",
       href,
+      text    = "",
+      hovered = false,
+      type    = "button",
     } = vars
 
     const className = "button"
-    let classNames = className + ` js-${className}`
+    let classNames  = className + ` js-${className}`
 
     const tag = href ? "a" : "button"
 
@@ -39,7 +39,7 @@ mixin button(vars)
     - classNames += ` ${className}_hovered`
     
   #{tag}(class=classNames)&attributes(buttonAttributes[tag])
-      div(class=`${className}__body`)
+      span(class=`${className}__body`)
         span(class=`${className}__text`)= text
         if icon
           span(class=`${className}__icon`)

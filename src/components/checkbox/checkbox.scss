@@ -51,6 +51,16 @@ $className: 'checkbox';
     }
   }
 
+  &__checkbox-input:focus
+  ~ &__checkmark {
+    border-width: toRem(2);
+  }
+
+  &__checkbox-input:focus
+  ~ &__title {
+    font-weight: 700;
+  }
+
   &__title {
     color: $dark-shade-50;
     line-height: toRem(18);
@@ -64,6 +74,18 @@ $className: 'checkbox';
     padding-left: $checkbox-size + $checkbox-margin;
     margin-top: toRem(5);
     white-space: pre-line;
+  }
+
+  &:hover {
+    .#{$className} {
+      &__checkmark {
+        border-width: toRem(2);
+      }
+
+      &__title {
+        font-weight: 700;
+      }
+    }
   }
 
   &_rich {

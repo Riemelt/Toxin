@@ -3,24 +3,14 @@ $className: 'input-field';
 .#{$className} {
 	max-width: toRem(320);
 	width: 100%;
+  position: relative;
 
 	&__header {
 		margin-bottom: toRem(4);
 	}
 
-	&__main-field {
-		position: relative;
-		display: flex;
-
-    &:hover {
-      .#{$className}__input {
-        border-color: $dark-shade-50;
-      }
-    }
-	}
-
 	&__input {
-		border: 1px solid $dark-shade-25;
+		border: toRem(1) solid $dark-shade-25;
 		box-sizing: border-box;
 		border-radius: toRem(4);
 		height: toRem(44);
@@ -36,7 +26,8 @@ $className: 'input-field';
     font-size: toRem(14);
     line-height: toRem(18);
 
-		&:hover, &:focus {
+		&:hover,
+    &:focus {
 			border-color: $dark-shade-50;
 			outline: none;
 		}
@@ -51,10 +42,13 @@ $className: 'input-field';
     background-color: white;
     z-index: 1;
 		right: toRem(10);
+    transform: translateY(40%);
 		align-self: center;
 		color: $dark-shade-50;
 		width: toRem(24);
 		height: toRem(24);
+    cursor: pointer;
+
     &::before {
       font-size: toRem(24);
       font-family: 'Material Icons', Arial, sans-serif;
@@ -75,7 +69,7 @@ $className: 'input-field';
     &_secondary {
       color: $dark-shade-75;
     } 
-}
+  }
 
 	&_hovered {
 		.#{$className}__input {

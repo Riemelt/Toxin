@@ -43,15 +43,16 @@ $className: 'room-label';
     font-size: toRem(12);
   }
 
-  &_theme-reservation
-  .#{$className} {
-    &__number-value {
-      font-size: toRem(24);
-      line-height: toRem(29.26);
-    }
-
-    &__luxe {
-      margin-left: toRem(9);
+  &_theme-reservation {
+    .#{$className} {
+      &__number-value {
+        font-size: toRem(24);
+        line-height: toRem(29.26);
+      }
+  
+      &__luxe {
+        margin-left: toRem(9);
+      }
     }
   }
 }

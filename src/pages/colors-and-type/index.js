@@ -1,5 +1,4 @@
 import "../../main-styles";
-import "../../layouts/layout-base";
 
 import "../../components/color-example";
 import "../../components/container";

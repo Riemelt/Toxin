@@ -6,19 +6,17 @@ class CardRoom {
   #className = "card-room";
 
   #$component;
-  #options;
 
   #$images;
   #$nextButton;
   #$previousButton;
   #$controlButtons;
 
-  #images = [];
-  #activeImageId = 0;
+  #images         = [];
+  #activeImageId  = 0;
   #controlButtons = [];
-  #label;
 
-  static #NEXT = 1;
+  static #NEXT     = 1;
   static #PREVIOUS = -1;
 
   constructor($parent, options) {
@@ -27,19 +25,18 @@ class CardRoom {
   }
 
   #init($parent, options) {
-    this.#options = options;
-
-    this.#$component = $parent.find(`.js-${this.#className}`);
-    this.#$images = this.#$component.find(`.js-${this.#className}__slider-image`);
-    this.#$nextButton = this.#$component.find(`.js-${this.#className}__next`);
+    this.#$component      = $parent.find(`.js-${this.#className}`);
+    this.#$images         = this.#$component.find(`.js-${this.#className}__slider-image`);
+    this.#$nextButton     = this.#$component.find(`.js-${this.#className}__next`);
     this.#$previousButton = this.#$component.find(`.js-${this.#className}__previous`);
     this.#$controlButtons = this.#$component.find(`.js-${this.#className}__control-panel-button`);
     
     this.#$controlButtons.each((_, element) => this.#controlButtons.push($(element)));
 
     this.#$images.each(this.#initImage.bind(this));
+
     const { roomLabel = {} } = options;
-    this.#label = new RoomLabel(this.#$component.find(`.js-${this.#className}__label`), roomLabel);
+    new RoomLabel(this.#$component.find(`.js-${this.#className}__label`), roomLabel);
   }
 
   #render() {
@@ -54,8 +51,9 @@ class CardRoom {
 
   #handleControlButtonsClick(event) {
     event.preventDefault();
+    
     const $this = $(event.target);
-    const id = $this.data("id");
+    const id    = $this.data("id");
 
     if (id < this.#images.length) {
       this.#update(id);

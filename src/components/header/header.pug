@@ -6,15 +6,15 @@ include ../container/container
 mixin header(vars = {})
   -
     const {
-      logo = {},
-      navigation = {},
-      signInButton = {},
+      logo               = {},
+      navigation         = {},
+      signInButton       = {},
       registrationButton = {},
-      userName = "",
+      userName           = "",
     } = vars
 
     const className = "header"
-    let classNames = `${className} js-${className}`
+    let classNames  = `${className} js-${className}`
 
   header(class=classNames)
     +container

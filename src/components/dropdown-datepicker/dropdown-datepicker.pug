@@ -1,17 +1,17 @@
 include ../datepicker/datepicker
 include ../input-field/input-field
 
-mixin dropdown-datepicker(vars)
+mixin dropdown-datepicker(vars = {})
   -
     const {
-      datepicker,
-      inputs,
+      datepicker    = {},
+      inputs        = [],
       withTwoInputs = false,
-      size = "medium",
+      size          = "medium",
     } = vars
 
     const className = "dropdown-datepicker"
-    let classNames = `${className} js-${className}`
+    let classNames  = `${className} js-${className}`
 
     classNames += (size === "big") ? ` ${className}_big` : ` ${className}_medium`
 

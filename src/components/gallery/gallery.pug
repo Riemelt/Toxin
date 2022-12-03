@@ -1,4 +1,4 @@
-mixin gallery(vars)
+mixin gallery(vars = {})
   -
     const {
       imagePrimary      = {},
@@ -10,16 +10,19 @@ mixin gallery(vars)
 
   div(class=className)
     div(class=`${className}__images-primary-wrapper`)
-      img(class=`${className}__image-primary`
+      img(
+        class=`${className}__image-primary`
         src=require(`@images/${imagePrimary.src}`)
         alt=imagePrimary.alt
       )
     div(class=`${className}__images-secondary-wrapper`)
-      img(class=`${className}__image-secondary-one`
+      img(
+        class=`${className}__image-secondary-one`
         src=require(`@images/${imageSecondaryOne.src}`)
         alt=imageSecondaryOne.alt
       )
-      img(class=`${className}__image-secondary-two`
+      img(
+        class=`${className}__image-secondary-two`
         src=require(`@images/${imageSecondaryTwo.src}`)
         alt=imageSecondaryTwo.alt
       )

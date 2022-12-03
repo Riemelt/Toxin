@@ -69,6 +69,7 @@ $className: 'navigation-item';
   }
 
   &:hover,
+  &:focus-within,
   &__sub-navigation:hover {
     .#{$className} {
       &__sub-navigation {

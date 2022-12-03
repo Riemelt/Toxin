@@ -1,22 +1,22 @@
 include ../label/label
 
-mixin input-field(vars)
+mixin input-field(vars = {})
   -
     const {
-      label = {},
-      placeholder = "",
-      required = false,
+      label,
       hovered,
-      value = "",
+      value,
       button,
       isReadonly,
-      size = "big",
-      type = "text",
-      name = "",
+      name,
+      placeholder = "",
+      required    = false,
+      size        = "big",
+      type        = "text",
     } = vars
 
     const className = "input-field"
-    let classNames = className + ` js-${className}`
+    let classNames  = className + ` js-${className}`
   
   case (size)
     when "small"
@@ -29,8 +29,9 @@ mixin input-field(vars)
   if hovered
     - classNames += ` ${className}_hovered`
 
-  - const buttonClassName = `${className}__button`
-  - let buttonClassNames = buttonClassName
+  -
+    const buttonClassName = `${className}__button`
+    let buttonClassNames  = buttonClassName
   
   if button
     case (button.icon)
@@ -48,17 +49,19 @@ mixin input-field(vars)
         - buttonClassNames += ` ${buttonClassName}_secondary`
 
   div(class=classNames)
-    label(class=`${className}__label`)
+    if (label)
       div(class=`${className}__header`)
         +label(label)
-      div(class=`${className}__main-field`)
-        input(class=`${className}__input js-${className}__input`
-              type=type
-              name=name
-              placeholder=placeholder
-              readonly=isReadonly
-              value=value
-              required=required
-              )
-        if button
-          button(class=buttonClassNames type="button")
+    label(class=`${className}__label`)
+      input(
+        class=`${className}__input js-${className}__input`
+        type=type
+        name=name
+        placeholder=placeholder
+        readonly=isReadonly
+        value=value
+        required=required
+      )
+    if button
+      - const { type = "button" } = button
+      button(class=buttonClassNames type=type)

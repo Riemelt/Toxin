@@ -1,7 +1,7 @@
 include ../rate-button/rate-button
 include ../room-label/room-label
 
-mixin card-room(vars)
+mixin card-room(vars = {})
   -
     const {
       href       = "/mock-address/change-me",
@@ -13,39 +13,54 @@ mixin card-room(vars)
     } = vars
 
     const className = "card-room"
-    let classNames = `${className} js-${className}`
+    let classNames  = `${className} js-${className}`
 
     const imageLimit = images.length > 4 ? 4 : images.length
 
   if isHovered
     - classNames += ` ${className}_hovered`
 
-  a(class=classNames href=href)
+  div(class=classNames)
     div(class=`${className}__slider`)
       if images[0]
-        img(class=`${className}__slider-image ${className}__slider-image_active js-${className}__slider-image`
-            src=require(`@images/${images[0].src}`)
-            alt=images[0].alt
+        img(
+          class=`${className}__slider-image ${className}__slider-image_active js-${className}__slider-image`
+          src=require(`@images/${images[0].src}`)
+          alt=images[0].alt
         )
       - for (let i = 1; i < imageLimit; i++)
-        img(class=`${className}__slider-image js-${className}__slider-image`
-            src=require(`@images/${images[i].src}`)
-            alt=images[i].alt
+        img(
+          class=`${className}__slider-image js-${className}__slider-image`
+          src=require(`@images/${images[i].src}`)
+          alt=images[i].alt
         )
       div(class=`${className}__slider-navigation`)
         button(class=`${className}__previous js-${className}__previous`)
-          div(class=`${className}__previous-icon`)
+          span(class=`${className}__previous-icon`)
             span(class="material-icons") expand_more
         button(class=`${className}__next js-${className}__next`)
-          div(class=`${className}__next-icon`)
+          span(class=`${className}__next-icon`)
             span(class="material-icons") expand_more
+        a(
+          class=`${className}__link`
+          href=href
+        )
       ul(class=`${className}__control-panel`)
         li(class=`${className}__control-panel-item`)
-          button(class=`${className}__control-panel-button ${className}__control-panel-button_active js-${className}__control-panel-button` data-id=0)
+          button(
+            class=`${className}__control-panel-button ${className}__control-panel-button_active js-${className}__control-panel-button`
+            data-id=0
+          )
         - for (let i = 1; i < 4; i++)
           li(class=`${className}__control-panel-item`)
-            button(class=`${className}__control-panel-button js-${className}__control-panel-button` data-id=i)
-    div(class=`${className}__info`)
+            button(
+              class=`${className}__control-panel-button js-${className}__control-panel-button`
+              data-id=i
+            )
+    a(
+      class=`${className}__info`
+      href=href
+    )
       div(class=`${className}__label js-${className}__label`)
         +room-label(roomLabel)
       div(class=`${className}__rating-and-reviews`)
