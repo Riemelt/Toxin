@@ -8,11 +8,11 @@ $className: 'card-registration';
   }
 
   &__input-first-name {
-    margin-top: toRem(17);
+    margin-top: toRem(21);
   }
   
   &__input-last-name {
-    margin-top: toRem(6);
+    margin-top: toRem(10);
   }
 
   &__input-gender {
@@ -28,7 +28,7 @@ $className: 'card-registration';
   }
 
   &__input-password {
-    margin-top: toRem(6);
+    margin-top: toRem(10);
   }
 
   &__toggle-switch-subscription {

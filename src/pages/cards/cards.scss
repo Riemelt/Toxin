@@ -21,4 +21,8 @@ $className: 'cards';
     flex-direction: column;
     gap: toRem(40);
   }
+
+  &__card-reservation {
+    margin-top: toRem(2);
+  }
 }

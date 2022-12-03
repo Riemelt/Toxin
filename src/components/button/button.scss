@@ -33,7 +33,7 @@ $className: 'button';
   &:hover,
   &_hovered {
     .#{$className}__text {
-     color: $dark-shade-50;
+      color: $dark-shade-50;
     }
   }
 
@@ -68,7 +68,7 @@ $className: 'button';
     background-clip: content-box, border-box;
       
     &:hover,
-    &_hovered {
+    &.#{$className}_hovered {
       background-image: linear-gradient(white, white), $primary-gradient-50;
 
       .#{$className}__text {
@@ -87,7 +87,7 @@ $className: 'button';
     }
 
     &:hover,
-    &_hovered  {
+    &.#{$className}_hovered  {
       opacity: 0.5;
 
       .#{$className}__text {
