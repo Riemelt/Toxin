@@ -1,13 +1,13 @@
 import {
   declOfNum,
-} from "../../utilities/utilities.js";
+} from '../../utilities/utilities.js';
 
-import ControlPanel from "../control-panel";
-import CounterItem  from "../counter-item";
-import InputField   from "../input-field";
+import ControlPanel from '../control-panel';
+import CounterItem  from '../counter-item';
+import InputField   from '../input-field';
 
 class DropdownCounter {
-  #className = "dropdown-counter";
+  #className = 'dropdown-counter';
   #options;
 
   #$component;
@@ -22,19 +22,19 @@ class DropdownCounter {
   #counterItems = [];
 
   static #PLACEHOLDERS = {
-    guest: "Сколько гостей",
-    room:  "Сколько комнат",
+    guest: 'Сколько гостей',
+    room:  'Сколько комнат',
   }
 
   static #DICTIONARY = {
     guest: {
-      guest:    ["гость", "гостя", "гостей"],
-      baby:     ["младенец", "младенца", "младенцев"],
+      guest:    ['гость', 'гостя', 'гостей'],
+      baby:     ['младенец', 'младенца', 'младенцев'],
     },
     room: {
-      room:     ["спальня", "спальни", "спален"],
-      bathroom: ["ванная комната", "ванные комнаты", "ванных комнат"],
-      bed:      ["кровать", "кровати", "кроватей"],
+      room:     ['спальня', 'спальни', 'спален'],
+      bathroom: ['ванная комната', 'ванные комнаты', 'ванных комнат'],
+      bed:      ['кровать', 'кровати', 'кроватей'],
     },
   }
 
@@ -53,7 +53,7 @@ class DropdownCounter {
     this.#$controlPanel = this.#$component.find(`.js-${this.#className}__control-panel-wrapper`);
 
     const {
-      type     = "guest",
+      type     = 'guest',
       isOpened = false,
     } = this.#options;
 
@@ -76,8 +76,8 @@ class DropdownCounter {
 
   #setHandlers() {
     jQuery(this.#handleInputInit.bind(this));
-    $(document).on("click.dropdown", this.#handleDocumentClick.bind(this));
-    this.#$component.on("click.dropdown", this.#handleDropdownClick.bind(this));
+    $(document).on('click.dropdown', this.#handleDocumentClick.bind(this));
+    this.#$component.on('click.dropdown', this.#handleDropdownClick.bind(this));
   }
 
   #render() {
@@ -177,7 +177,7 @@ class DropdownCounter {
   }
 
   #buildString() {
-    let text            = "";
+    let text            = '';
     const type          = this.#dropdownType;
     const dictionaryMap = DropdownCounter.#DICTIONARY[type];
   
@@ -185,12 +185,12 @@ class DropdownCounter {
       const itemCount = this.#itemList[item];
 
       if (itemCount > 0) {
-        text += text !== "" ? ", " : "";
-        text += itemCount + " " + declOfNum(itemCount, dictionaryMap[item]);
+        text += text !== '' ? ', ' : '';
+        text += itemCount + ' ' + declOfNum(itemCount, dictionaryMap[item]);
       }
     }
 
-    if (text === "") {
+    if (text === '') {
       text = DropdownCounter.#PLACEHOLDERS[type];
     }
 
@@ -199,9 +199,9 @@ class DropdownCounter {
 
   #initItemList(type) {
     switch (type) {
-      case "guest":
+      case 'guest':
         return { guest: 0, baby: 0 };
-      case "room":
+      case 'room':
         return { room: 0, bed: 0, bathroom: 0 };
       default:
         return {};

@@ -4,7 +4,7 @@ include ../room-label/room-label
 mixin card-room(vars = {})
   -
     const {
-      href       = "/mock-address/change-me",
+      href       = '/mock-address/change-me',
       images     = [],
       reviews    = 0,
       rateButton = {},
@@ -12,7 +12,7 @@ mixin card-room(vars = {})
       roomLabel  = {},
     } = vars
 
-    const className = "card-room"
+    const className = 'card-room'
     let classNames  = `${className} js-${className}`
 
     const imageLimit = images.length > 4 ? 4 : images.length
@@ -37,10 +37,10 @@ mixin card-room(vars = {})
       div(class=`${className}__slider-navigation`)
         button(class=`${className}__previous js-${className}__previous`)
           span(class=`${className}__previous-icon`)
-            span(class="material-icons") expand_more
+            span(class='material-icons') expand_more
         button(class=`${className}__next js-${className}__next`)
           span(class=`${className}__next-icon`)
-            span(class="material-icons") expand_more
+            span(class='material-icons') expand_more
         a(
           class=`${className}__link`
           href=href

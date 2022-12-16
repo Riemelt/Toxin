@@ -3,11 +3,11 @@ mixin checkbox(vars = {})
     const {
       description,
       isRich  = false,
-      title   = "",
+      title   = '',
       checked = false,
     } = vars
 
-    const className = "checkbox"
+    const className = 'checkbox'
     let classNames  = className + ` js-${className}`
 
   if isRich
@@ -17,7 +17,7 @@ mixin checkbox(vars = {})
     label(class=`${className}__body`)
       input(
         class=`${className}__checkbox-input`
-        type="checkbox"
+        type='checkbox'
         checked=checked
       )
       span(class=`${className}__checkmark`)

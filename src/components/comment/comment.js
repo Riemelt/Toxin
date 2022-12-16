@@ -1,11 +1,11 @@
 import {
   getTimePassed,
-} from "../../utilities/utilities.js"
+} from '../../utilities/utilities.js'
 
-import LikeButton from "../like-button";
+import LikeButton from '../like-button';
 
 class Comment {
-  #className = "comment";
+  #className = 'comment';
   #options;
 
   #$component;
@@ -26,7 +26,7 @@ class Comment {
   }
 
   #initDate() {
-    const { date = "" } = this.#options;
+    const { date = '' } = this.#options;
     const timePassed = getTimePassed(date);
 
     this.#$date.html(timePassed);

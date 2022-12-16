@@ -1,7 +1,7 @@
-import "paginationjs";
+import 'paginationjs';
 
 class Pagination {
-  #className = "pagination";
+  #className = 'pagination';
 
   #$component;
   #$paginationContainer;
@@ -32,8 +32,8 @@ class Pagination {
       pageRange:        1,
       autoHidePrevious: true,
       autoHideNext:     true,
-      prevText:         "",
-      nextText:         "",
+      prevText:         '',
+      nextText:         '',
       callback:         this.#renderPagination.bind(this),
     });
   }
@@ -56,7 +56,7 @@ class Pagination {
   #updatePagesInfo({ pageNumber, pageSize, totalNumber }) {
     const itemsFrom  = (pageNumber - 1) * pageSize + 1;
     const itemsTo    = pageNumber * pageSize;
-    const totalItems = totalNumber >= 100 ? "100+" : totalNumber;
+    const totalItems = totalNumber >= 100 ? '100+' : totalNumber;
     const pagesInfo  = this.#buildPagesInfoText(itemsFrom, itemsTo, totalItems);
     this.#setPagesInfo(pagesInfo);
   }

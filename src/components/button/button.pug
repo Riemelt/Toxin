@@ -4,15 +4,15 @@ mixin button(vars = {})
       theme,
       icon,
       href,
-      text    = "",
+      text    = '',
       hovered = false,
-      type    = "button",
+      type    = 'button',
     } = vars
 
-    const className = "button"
+    const className = 'button'
     let classNames  = className + ` js-${className}`
 
-    const tag = href ? "a" : "button"
+    const tag = href ? 'a' : 'button'
 
     const buttonAttributes = {
       a: {
@@ -24,7 +24,7 @@ mixin button(vars = {})
     }
 
     const materialIcon = {
-      arrowForward: "arrow_forward",
+      arrowForward: 'arrow_forward',
     }
 
     const themeClass = {
@@ -46,4 +46,4 @@ mixin button(vars = {})
         span(class=`${className}__text`)= text
         if icon
           span(class=`${className}__icon`)
-            span(class="material-icons")= materialIcon[icon]
+            span(class='material-icons')= materialIcon[icon]

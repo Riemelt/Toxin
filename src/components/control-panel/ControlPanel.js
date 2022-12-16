@@ -1,11 +1,11 @@
-import "../button";
+import '../button';
 
 class ControlPanel {
 
-  static APPLY = "apply";
-  static RESET = "reset";
+  static APPLY = 'apply';
+  static RESET = 'reset';
 
-  #className = "control-panel";
+  #className = 'control-panel';
 
   #$component;
   #$applyButton;
@@ -41,8 +41,8 @@ class ControlPanel {
   }
 
   #setHandlers() {
-    this.#$applyButton.on("click.control-panel", this.#handleApplyButtonClick.bind(this));
-    this.#$resetButton.on("click.control-panel", this.#handleResetButtonClick.bind(this));
+    this.#$applyButton.on('click.control-panel', this.#handleApplyButtonClick.bind(this));
+    this.#$resetButton.on('click.control-panel', this.#handleResetButtonClick.bind(this));
   }
 
   #handleApplyButtonClick() {

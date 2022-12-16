@@ -2,7 +2,7 @@ mixin chart-pie(vars = {})
   -
     const {
       title,
-      ariaLabel = "",
+      ariaLabel = '',
       width     = 300,
       height    = 150,
       data      = [],
@@ -10,7 +10,7 @@ mixin chart-pie(vars = {})
 
     const dataReversed = data.reverse()
 
-    const className = "chart-pie"
+    const className = 'chart-pie'
     let classNames  = className + ` js-${className}`
 
   div(class=classNames)
@@ -20,7 +20,7 @@ mixin chart-pie(vars = {})
       div(class=`${className}__chart-wrapper`)
         canvas(
           class=`${className}__chart js-${className}__chart`
-          role="img"
+          role='img'
           aria-label=ariaLabel
           width=width
           height=height

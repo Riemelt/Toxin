@@ -1,12 +1,12 @@
 import {
   renderSlider,
-} from "../../utilities/utilities.js";
+} from '../../utilities/utilities.js';
 
-import CardSearch from "../../components/card-search";
-import "../../components/container";
+import CardSearch from '../../components/card-search';
+import '../../components/container';
 
 class Landing {
-  #className = "landing";
+  #className = 'landing';
   #$component;
 
   #data = {};

@@ -5,7 +5,7 @@ mixin like-button(vars = {})
       checked = false,
     } = vars
 
-    const className = "like-button"
+    const className = 'like-button'
     let classNames  = className + ` js-${className}`
 
   if checked
@@ -15,7 +15,7 @@ mixin like-button(vars = {})
     label(class=`${className}__body`)
       input(
         class=`${className}__input`
-        type="checkbox"
+        type='checkbox'
         checked=checked
       )
       span(class=`${className}__icon`)

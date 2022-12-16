@@ -1,12 +1,12 @@
 import {
   renderSlider,
-} from "../../utilities/utilities.js";
-import "../../components/container";
-import CardRegistration from "../../components/card-registration";
-import data from "./data.json";
+} from '../../utilities/utilities.js';
+import '../../components/container';
+import CardRegistration from '../../components/card-registration';
+import data from './data.json';
 
 class Registration {
-  #className = "registration";
+  #className = 'registration';
   #$component;
 
   #sliderImages;

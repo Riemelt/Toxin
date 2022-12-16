@@ -2,11 +2,11 @@ mixin logo(vars = {})
   -
     const {
       theme,
-      src   = "",
-      href  = "/mock-address/change-me",
+      src   = '',
+      href  = '/mock-address/change-me',
     } = vars
 
-    const className = "logo"
+    const className = 'logo'
     let classNames  = className
 
     const themeClass = {
@@ -22,6 +22,6 @@ mixin logo(vars = {})
   )
     img(
       class=`${className}__icon`
-      alt="toxin logo"
+      alt='toxin logo'
       src=require(`@images/${src}`)
     )

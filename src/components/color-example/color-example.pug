@@ -1,12 +1,12 @@
 mixin color-example(vars = {})
   -
     const {
-      color = "dark-shade-100",
-      title = "Dark Shade 100%",
-      code  = "#1F2041",
+      color = 'dark-shade-100',
+      title = 'Dark Shade 100%',
+      code  = '#1F2041',
     } = vars
 
-    const className = "color-example"
+    const className = 'color-example'
 
   div(class=className)
     span(class=`${className}__color-block ${className}__color-block_${color}`)

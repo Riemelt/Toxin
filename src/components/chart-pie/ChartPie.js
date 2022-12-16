@@ -2,14 +2,14 @@ import {
   Chart,
   DoughnutController,
   ArcElement,
-} from "chart.js";
+} from 'chart.js';
 
 import {
   declOfNum,
-} from "../../utilities/utilities.js";
+} from '../../utilities/utilities.js';
 
 class ChartPie {
-  #className = "chart-pie";
+  #className = 'chart-pie';
   #options;
 
   #$component;
@@ -20,7 +20,7 @@ class ChartPie {
   #$reviewsValue;
   #$reviewsLabel;
 
-  static #DICTIONARY = ["голос", "голоса", "голосов"];
+  static #DICTIONARY = ['голос', 'голоса', 'голосов'];
 
   constructor($parent, options = {}) {
     this.#init($parent, options);
@@ -47,7 +47,7 @@ class ChartPie {
   }
 
   #setHandlers() {
-    this.#$legendItems.on("mouseover.chart-pie", this.#handleChartLegendMouseover.bind(this));
+    this.#$legendItems.on('mouseover.chart-pie', this.#handleChartLegendMouseover.bind(this));
   }
 
   #initLegend() {
@@ -60,11 +60,11 @@ class ChartPie {
     const $element      = $(element);
 
     const {
-      firstColor  = "black",
-      secondColor = "black",
+      firstColor  = 'black',
+      secondColor = 'black',
     } = data[dataIndex].gradient;
 
-    $element.css("background-image", `linear-gradient(180deg, ${firstColor} 0%, ${secondColor} 100%)`);
+    $element.css('background-image', `linear-gradient(180deg, ${firstColor} 0%, ${secondColor} 100%)`);
   }
 
   #initChartReviews() {
@@ -82,11 +82,11 @@ class ChartPie {
       ArcElement,
     );
 
-    const context = this.#$chart.get(0).getContext("2d");
+    const context = this.#$chart.get(0).getContext('2d');
     const {
       radius          = 0,
       borderWidth     = 2,
-      cutout          = "90%",
+      cutout          = '90%',
       data: chartData = [],
     } = this.#options;
 
@@ -110,7 +110,7 @@ class ChartPie {
 
     const config = {
       data,
-      type: "doughnut",
+      type: 'doughnut',
       options: {
         plugins: {
           legend: {
@@ -155,12 +155,12 @@ class ChartPie {
 
   #updateChartReviews(value, color) {
     this.#$reviewsValue.html(value);
-    this.#$reviewsValue.css("color", color);
+    this.#$reviewsValue.css('color', color);
 
     const newLabel = declOfNum(value, ChartPie.#DICTIONARY);
 
     this.#$reviewsLabel.html(newLabel);
-    this.#$reviewsLabel.css("color", color);
+    this.#$reviewsLabel.css('color', color);
   }
 
   #createGradient(context, gradient) {

@@ -1,16 +1,16 @@
 mixin room-info-item(vars = {})
   -
     const {
-      icon        = "",
-      title       = "",
-      description = "",
+      icon        = '',
+      title       = '',
+      description = '',
     } = vars
 
-    const className = "room-info-item"
+    const className = 'room-info-item'
   
   div(class=className)
     div(class=`${className}__icon`)
-      span(class="material-icons")= icon
+      span(class='material-icons')= icon
     div(class=`${className}__info`)
       div(class=`${className}__title`)= title
       div(class=`${className}__description`)= description

@@ -1,10 +1,10 @@
-import moment from "moment";
+import moment from 'moment';
 
 const TIME_DICTIONARY = {
-  days:   ["день", "дня", "дней"],
-  weeks:  ["неделю", "недели", "недель"],
-  months: ["месяц", "месяца", "месяцев"],
-  years:  ["год", "года", "лет"],
+  days:   ['день', 'дня', 'дней'],
+  weeks:  ['неделю', 'недели', 'недель'],
+  months: ['месяц', 'месяца', 'месяцев'],
+  years:  ['год', 'года', 'лет'],
 }
 
 function declOfNum(number, titles) {  
@@ -15,34 +15,34 @@ function declOfNum(number, titles) {
 function getTimePassed(date) {
   const now = moment();
 
-  const years = now.diff(date, "years");
+  const years = now.diff(date, 'years');
 
   if (years > 0) {
-    const number = years === 1 ? "" : `${years} `;
+    const number = years === 1 ? '' : `${years} `;
 
     const timeType = declOfNum(years, TIME_DICTIONARY.years);
     return `${number}${timeType} назад`;
   }
 
-  const months = now.diff(date, "months");
+  const months = now.diff(date, 'months');
   if (months > 0) {
-    const number = months === 1 ? "" : `${months} `;
+    const number = months === 1 ? '' : `${months} `;
 
     const timeType = declOfNum(months, TIME_DICTIONARY.months);
     return `${number}${timeType} назад`;
   }
 
-  const weeks = now.diff(date, "weeks");
+  const weeks = now.diff(date, 'weeks');
   if (weeks > 0) {
-    const number = weeks === 1 ? "" : `${weeks} `;
+    const number = weeks === 1 ? '' : `${weeks} `;
 
     const timeType = declOfNum(weeks, TIME_DICTIONARY.weeks);
     return `${number}${timeType} назад`;
   }
 
-  const days = now.diff(date, "days");
+  const days = now.diff(date, 'days');
   if (days === 0) {
-    return "Сегодня"
+    return 'Сегодня'
   } else {
     const timeType = declOfNum(days, TIME_DICTIONARY.days);
     return `${days} ${timeType} назад`;
@@ -50,7 +50,7 @@ function getTimePassed(date) {
 }
 
 function formatPrice(price) {
-  return `${price.toLocaleString("ru-RU")}₽`;
+  return `${price.toLocaleString('ru-RU')}₽`;
 }
 
 function daysDifference(firstDate, secondDate) {
@@ -68,7 +68,7 @@ function renderSlider({
 
   function changeImage() {
     const path = require(`@images/${images[index].src}`);
-    $component.css("background-image", `url(${path})`);
+    $component.css('background-image', `url(${path})`);
     index = index >= images.length - 1 ? 0 : index + 1;
 
     setTimeout(changeImage, delay);

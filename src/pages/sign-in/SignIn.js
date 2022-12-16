@@ -1,9 +1,9 @@
 import {
   renderSlider,
-} from "../../utilities/utilities.js";
-import "../../components/container";
-import "../../components/card-sign-in";
-import data from "./data.json";
+} from '../../utilities/utilities.js';
+import '../../components/container';
+import '../../components/card-sign-in';
+import data from './data.json';
 
 class SignIn {
   #$component;

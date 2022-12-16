@@ -2,18 +2,18 @@ mixin toggle-switch(vars = {})
   -
     const {
       name,
-      title   = "",
+      title   = '',
       checked = false,
     } = vars
 
-    const className = "toggle-switch"
+    const className = 'toggle-switch'
     let classNames  = className + ` js-${className}`
 
   div(class=classNames)
     label(class=`${className}__body`)
       input(
         class=`${className}__switch-input`
-        type="checkbox"
+        type='checkbox'
         checked=checked
         name=name
       )

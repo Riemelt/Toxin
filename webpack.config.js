@@ -1,12 +1,12 @@
-const HtmlWebpackPlugin    = require("html-webpack-plugin");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const HtmlWebpackPlugin    = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const PugPlugin            = require('pug-plugin');
 const fs                   = require('fs');
 const webpack              = require('webpack');
 const path                 = require('path');
 
-const srcPath              = path.resolve(__dirname, "./src");
-const pagesPath            = path.resolve(__dirname, "./src/pages");
+const srcPath              = path.resolve(__dirname, './src');
+const pagesPath            = path.resolve(__dirname, './src/pages');
 const pages                = fs.readdirSync(pagesPath);
 
 const multipleHtmlPlugins = pages.map(name => {
@@ -22,74 +22,74 @@ const entryPoints = pages.reduce((acc, name) => {
   return acc;
 }, {});
 
-let mode = "development";
+let mode = 'development';
 
-if (process.env.NODE_ENV === "production") {
-  mode = "production";
+if (process.env.NODE_ENV === 'production') {
+  mode = 'production';
 }
 
-console.log(mode + " mode");
+console.log(mode + ' mode');
 
 module.exports = {
   context: srcPath,
   mode,
   plugins: [
     new MiniCssExtractPlugin({
-      filename: "./[name].[contenthash].css",
+      filename: './[name].[contenthash].css',
       ignoreOrder: true,
     }),
     new webpack.ProvidePlugin({
-      $: "jquery",
-      jQuery: "jquery",
-      "window.jQuery": "jquery",
+      $: 'jquery',
+      jQuery: 'jquery',
+      'window.jQuery': 'jquery',
     }),
     require('autoprefixer'),
   ].concat(multipleHtmlPlugins),
   entry: entryPoints,
   output: {
-    filename: "./[name].[contenthash].js",
-    assetModuleFilename: "assets/[name][hash][ext][query]",
+    filename: './[name].[contenthash].js',
+    assetModuleFilename: 'assets/[name][hash][ext][query]',
     clean: true
   },
-  devtool: (mode === "development") ? "eval-source-map" : false,
+  devtool: (mode === 'development') ? 'eval-source-map' : false,
   optimization: {
     splitChunks: {
-      chunks: "all",
+      chunks: 'all',
     },
   },
   resolve: {
     alias: {
-      "@images": path.resolve(__dirname, "./src/assets/images/"),
-      "@favicons": path.resolve(__dirname, "./src/assets/favicons/"),
+      '@images': path.resolve(__dirname, './src/assets/images/'),
+      '@favicons': path.resolve(__dirname, './src/assets/favicons/'),
     },
   },
   module: {
     rules: [
       {
         test: /\.html$/i,
-        loader: "html-loader",
+        loader: 'html-loader',
       },
       {
         test: /\.(sa|sc|c)ss$/,
         use: [
-          (mode === "development") ? "style-loader" : MiniCssExtractPlugin.loader,
-          "css-loader",
+          (mode === 'development') ? 'style-loader' : MiniCssExtractPlugin.loader,
+          'css-loader',
           {
-            loader: "postcss-loader",
+            loader: 'postcss-loader',
             options: {
               postcssOptions: {
                 plugins: [
-                  "autoprefixer",
-                  "postcss-preset-env",
+                  'autoprefixer',
+                  'postcss-preset-env',
                 ]
               }
             }
           },
-          "sass-loader",
+          'sass-loader',
           {
             loader: 'sass-resources-loader',
             options: {
-              resources: path.resolve(__dirname, "./src/main-styles/variables.scss")
+              resources: path.resolve(__dirname, './src/main-styles/variables.scss')
             }
           }
         ]
@@ -97,7 +97,7 @@ module.exports = {
       {
         test: /\.(svg|png|ico|xml|json|webmanifest)$/i,
         include: /favicons/,
-        type: "asset/resource",
+        type: 'asset/resource',
         generator: {
           filename: 'assets/favicons/[name][hash][ext][query]',
         },
@@ -105,7 +105,7 @@ module.exports = {
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
         exclude: /fonts|favicons/,
-        type: "asset/resource",
+        type: 'asset/resource',
         generator: {
           filename: 'assets/images/[name][hash][ext][query]',
         },
@@ -113,7 +113,7 @@ module.exports = {
       {
         test: /\.(woff|woff2|eot|ttf|otf|svg)$/i,
         include: /fonts/,
-        type: "asset/resource",
+        type: 'asset/resource',
         generator: {
           filename: 'assets/fonts/[name][hash][ext][query]',
         },
@@ -130,9 +130,9 @@ module.exports = {
         test: /\.m?js$/,
         exclude: /node_modules/,
         use: {
-          loader: "babel-loader",
+          loader: 'babel-loader',
           options: {
-            presets: ["@babel/preset-env"]
+            presets: ['@babel/preset-env']
           }
         }
       }
@@ -141,7 +141,7 @@ module.exports = {
   devServer: {
     hot: true,
     static: {
-      directory: path.resolve(__dirname, "dist"),
+      directory: path.resolve(__dirname, 'dist'),
     },
   },
 };

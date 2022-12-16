@@ -1,12 +1,12 @@
-import InputField from "../input-field";
+import InputField from '../input-field';
 
-import "../button";
-import "../card";
-import "../radio-buttons-field";
-import "../toggle-switch";
+import '../button';
+import '../card';
+import '../radio-buttons-field';
+import '../toggle-switch';
 
 class CardRegistration {
-  #className = "card-registration";
+  #className = 'card-registration';
 
   #$component;
 

@@ -1,11 +1,11 @@
-import { daysDifference } from "../../utilities/utilities";
+import { daysDifference } from '../../utilities/utilities';
 
-import Datepicker from "../datepicker";
-import InputField from "../input-field";
+import Datepicker from '../datepicker';
+import InputField from '../input-field';
 
 class DropdownDatepicker {
 
-  #className = "dropdown-datepicker";
+  #className = 'dropdown-datepicker';
 
   #$component;
   #options;
@@ -16,12 +16,12 @@ class DropdownDatepicker {
   #inputMode  = DropdownDatepicker.#SINGLE_INPUT;
   #dateFormat = DropdownDatepicker.#DATE_FORMAT_PRIMARY;
 
-  static #DATE_FORMAT_PRIMARY = "primary";
+  static #DATE_FORMAT_PRIMARY = 'primary';
 
-  static #SINGLE_INPUT   = "single";
-  static #MULTIPLE_INPUT = "multiple";
+  static #SINGLE_INPUT   = 'single';
+  static #MULTIPLE_INPUT = 'multiple';
 
-  static #PLACEHOLDER = "ДД.ММ.ГГГГ";
+  static #PLACEHOLDER = 'ДД.ММ.ГГГГ';
 
   constructor($parent, options = {}) {
     this.#init($parent, options);
@@ -81,8 +81,8 @@ class DropdownDatepicker {
 
   #setHandlers() {
     jQuery(this.#handleInputInit.bind(this));
-    $(document).on("click.dropdown-datepicker", this.#handleDocumentClick.bind(this));
-    this.#$inputWrapper.on("click.dropdown-datepicker", this.#handleInputWrapperClick.bind(this));
+    $(document).on('click.dropdown-datepicker', this.#handleDocumentClick.bind(this));
+    this.#$inputWrapper.on('click.dropdown-datepicker', this.#handleInputWrapperClick.bind(this));
   }
 
   #handleInputWrapperClick() {

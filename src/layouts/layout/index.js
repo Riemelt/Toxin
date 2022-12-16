@@ -1,8 +1,8 @@
-import Layout from "./Layout.js";
-import "./layout.scss";
+import Layout from './Layout.js';
+import './layout.scss';
 
 (function($){
-  const className = "layout";
+  const className = 'layout';
 
   new Layout($(`.js-${className}`));
 })(jQuery);

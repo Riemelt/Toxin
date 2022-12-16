@@ -1,5 +1,5 @@
 class LikeButton {
-  #className = "like-button";
+  #className = 'like-button';
 
   #$component;
   #$likes;
@@ -24,7 +24,7 @@ class LikeButton {
   }
 
   #setHandlers() {
-    this.#$component.on("click.like-button", this.#handleLikeButtonClick.bind(this));
+    this.#$component.on('click.like-button', this.#handleLikeButtonClick.bind(this));
   }
 
   #handleLikeButtonClick(event) {

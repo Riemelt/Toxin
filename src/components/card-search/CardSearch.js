@@ -1,10 +1,10 @@
-import DropdownCounter    from "../dropdown-counter";
-import DropdownDatepicker from "../dropdown-datepicker";
-import "../button";
-import "../card";
+import DropdownCounter    from '../dropdown-counter';
+import DropdownDatepicker from '../dropdown-datepicker';
+import '../button';
+import '../card';
 
 class CardSearch {
-  #className = "card-search";
+  #className = 'card-search';
 
   #$component;
 

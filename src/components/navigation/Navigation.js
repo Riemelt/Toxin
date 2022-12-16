@@ -1,7 +1,7 @@
-import NavigationItem from "../navigation-item";
+import NavigationItem from '../navigation-item';
 
 class Navigation {
-  #className = "navigation";
+  #className = 'navigation';
   #$component;
   #options;
 

@@ -6,23 +6,23 @@ module.exports = {
         jquery: true,
         node: true
     },
-    extends: "eslint:recommended",
+    extends: 'eslint:recommended',
     parserOptions: {
-        ecmaVersion: "latest",
-        sourceType: "module"
+        ecmaVersion: 'latest',
+        sourceType: 'module'
     },
     rules: {
-      "prefer-const": ["error", {
-        destructuring: "any",
+      'prefer-const': ['error', {
+        destructuring: 'any',
         ignoreReadBeforeAssign: false
       }],
-      "no-new-object": "error",
-      "no-var": "error",
-      "no-array-constructor": "error",
-      "object-shorthand": ["error", "always"],
-      "quote-props": ["error", "as-needed"],
-      "prefer-object-spread": "error",
-      "prefer-destructuring": ["error", {
+      'no-new-object': 'error',
+      'no-var': 'error',
+      'no-array-constructor': 'error',
+      'object-shorthand': ['error', 'always'],
+      'quote-props': ['error', 'as-needed'],
+      'prefer-object-spread': 'error',
+      'prefer-destructuring': ['error', {
         VariableDeclarator: {
           array: false,
           object: true
@@ -33,6 +33,7 @@ module.exports = {
         }
       }, {
         enforceForRenamedProperties: false
-      }]
+      }],
+      quotes: ['error', 'single'],
     }
 }

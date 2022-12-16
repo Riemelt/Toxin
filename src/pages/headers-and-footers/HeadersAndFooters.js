@@ -1,10 +1,10 @@
-import "../../components/container";
-import "../../components/footer";
-import "../../components/header-ui-kit";
-import Header from "../../components/header";
+import '../../components/container';
+import '../../components/footer';
+import '../../components/header-ui-kit';
+import Header from '../../components/header';
 
 class HeadersAndFooters {
-  #className = "headers-and-footers";
+  #className = 'headers-and-footers';
   #$component;
 
   constructor($element, options = {}) {

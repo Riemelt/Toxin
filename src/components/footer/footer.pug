@@ -8,24 +8,24 @@ mixin footer(vars = {})
     const {
       isMobile  = false,
       navBlocks = [],
-      copyright = "",
+      copyright = '',
       socials   = {},
       company = {
         logo: {},
-        description: "",
+        description: '',
       },
       subscription = {
         form: {
-          action: "/mock-address/change-me",
-          method: "get",
+          action: '/mock-address/change-me',
+          method: 'get',
         },
-        title: "",
-        description: "",
+        title: '',
+        description: '',
         input: {},
       },
     } = vars
 
-    const className = "footer"
+    const className = 'footer'
     let classNames  = className
 
   if isMobile

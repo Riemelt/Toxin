@@ -2,11 +2,11 @@ include ../button/button
 
 mixin control-panel()
   -
-    const className = "control-panel"
+    const className = 'control-panel'
     let classNames  = `${className} js-${className}`
 
   div(class=classNames)
     div(class=`${className}__reset js-${className}__reset`)
-      +button({ text: "очистить" })
+      +button({ text: 'очистить' })
     div(class=`${className}__apply js-${className}__apply`)
-      +button({ text: "применить" })
+      +button({ text: 'применить' })

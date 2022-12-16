@@ -1,14 +1,14 @@
-import DropdownDatepicker from "../../components/dropdown-datepicker";
-import DropdownCounter    from "../../components/dropdown-counter";
-import RangeSlider        from "../../components/range-slider";
-import Expander           from "../../components/expander";
-import CardRoom           from "../../components/card-room";
-import Pagination         from "../../components/pagination";
-import "../../components/container";
-import "../../components/checkbox-list";
+import DropdownDatepicker from '../../components/dropdown-datepicker';
+import DropdownCounter    from '../../components/dropdown-counter';
+import RangeSlider        from '../../components/range-slider';
+import Expander           from '../../components/expander';
+import CardRoom           from '../../components/card-room';
+import Pagination         from '../../components/pagination';
+import '../../components/container';
+import '../../components/checkbox-list';
 
 class SearchRoomFilter {
-  #className = "search-room-filter";
+  #className = 'search-room-filter';
   #$component;
 
   #data = {};

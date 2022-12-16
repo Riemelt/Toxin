@@ -9,10 +9,10 @@ mixin bullet-list(vars = {})
       items = [],
     } = vars
 
-    const className = "bullet-list"
+    const className = 'bullet-list'
     let classNames  = className + ` js-${className}`
 
-    const titleTag = withBiggerTitle ? "h2" : "h3"
+    const titleTag = withBiggerTitle ? 'h2' : 'h3'
 
   if withBiggerTitle
     - classNames += ` ${className}_with-bigger-title`

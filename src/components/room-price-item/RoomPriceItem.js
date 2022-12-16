@@ -1,10 +1,10 @@
 import {
   formatPrice,
   declOfNum,
-} from "../../utilities/utilities.js"
+} from '../../utilities/utilities.js'
 
 class RoomPriceItem {
-  #className = "room-price-item";
+  #className = 'room-price-item';
 
   #$component;
   #options;
@@ -12,7 +12,7 @@ class RoomPriceItem {
   #$price;
   #theme;
 
-  static #DICTIONARY = ["сутки", "суток", "суток"];
+  static #DICTIONARY = ['сутки', 'суток', 'суток'];
 
   #contentUpdater = {
     roomPrice:    this.#updateRoomPrice.bind(this),
@@ -67,7 +67,7 @@ class RoomPriceItem {
     this.#$content   = this.#$component.find(`.js-${this.#className}__content`);
     this.#$price     = this.#$component.find(`.js-${this.#className}__price`);
 
-    const { theme = "roomPrice" } = this.#options;
+    const { theme = 'roomPrice' } = this.#options;
     this.#theme = theme;
     this.#contentUpdater[theme]();
   }
@@ -96,7 +96,7 @@ class RoomPriceItem {
   #updateDiscount() {
     const {
       discount = 0,
-      content  = "",
+      content  = '',
     } = this.#options;
 
     const contentText = `${content} ${formatPrice(discount)}`;
@@ -109,7 +109,7 @@ class RoomPriceItem {
   #updateServicePrice() {
     const {
       price   = 0,
-      content = "",
+      content = '',
     } = this.#options;
 
     this.#updateContent(content);

@@ -1,7 +1,7 @@
-import "../label";
+import '../label';
 
 class Expander {
-  #className = "expander";
+  #className = 'expander';
 
   #$component;
   #$header;
@@ -21,7 +21,7 @@ class Expander {
   }
 
   #setHandlers() {
-    this.#$header.on("click.expander", this.#handleExpanderClick.bind(this));
+    this.#$header.on('click.expander', this.#handleExpanderClick.bind(this));
   }
 
   #handleExpanderClick() {

@@ -3,16 +3,16 @@ include ../like-button/like-button
 mixin comment(vars = {})
   -
     const {
-      author     = "",
+      author     = '',
       likeButton = {},
-      comment    = "",
+      comment    = '',
       avatar = {
-        src: "",
-        alt: "",
+        src: '',
+        alt: '',
       },
     } = vars
 
-    const className = "comment"
+    const className = 'comment'
     let classNames  = className + ` js-${className}`
 
   div(class=classNames)

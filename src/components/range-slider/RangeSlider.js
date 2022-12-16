@@ -1,12 +1,12 @@
-import noUiSlider from "nouislider";
+import noUiSlider from 'nouislider';
 
 import {
   formatPrice,
-} from "../../utilities/utilities.js";
-import Label from "../label";
+} from '../../utilities/utilities.js';
+import Label from '../label';
 
 class RangeSlider {
-  #className = "range-slider";
+  #className = 'range-slider';
   #options;
 
   #$component;
@@ -43,7 +43,7 @@ class RangeSlider {
   }
 
   #setHandlers() {
-    this.#slider.noUiSlider.on("update.range-slider", this.#handleRangeSliderUpdate.bind(this));
+    this.#slider.noUiSlider.on('update.range-slider', this.#handleRangeSliderUpdate.bind(this));
   }
 
   #handleRangeSliderUpdate(values) {

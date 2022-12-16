@@ -1,26 +1,26 @@
-import Comment            from "../../components/comment";
-import DropdownCounter    from "../../components/dropdown-counter"
-import DropdownDatepicker from "../../components/dropdown-datepicker";
-import Expander           from "../../components/expander";
-import LikeButton         from "../../components/like-button";
-import Pagination         from "../../components/pagination";
-import InputField         from "../../components/input-field";
-import RangeSlider        from "../../components/range-slider";
-import "../../components/label";
-import "../../components/radio-buttons-field";
-import "../../components/bullet-list";
-import "../../components/button";
-import "../../components/checkbox-list";
-import "../../components/header-ui-kit"
-import "../../components/container";
-import "../../components/rate-button";
-import "../../components/room-info";
-import "../../components/toggle-switch";
+import Comment            from '../../components/comment';
+import DropdownCounter    from '../../components/dropdown-counter'
+import DropdownDatepicker from '../../components/dropdown-datepicker';
+import Expander           from '../../components/expander';
+import LikeButton         from '../../components/like-button';
+import Pagination         from '../../components/pagination';
+import InputField         from '../../components/input-field';
+import RangeSlider        from '../../components/range-slider';
+import '../../components/label';
+import '../../components/radio-buttons-field';
+import '../../components/bullet-list';
+import '../../components/button';
+import '../../components/checkbox-list';
+import '../../components/header-ui-kit'
+import '../../components/container';
+import '../../components/rate-button';
+import '../../components/room-info';
+import '../../components/toggle-switch';
 
-import data from "./data.json";
+import data from './data.json';
 
 class FormElements {
-  #className = "form-elements";
+  #className = 'form-elements';
 
   #$component;
 

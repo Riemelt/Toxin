@@ -1,16 +1,16 @@
 import {
   formatPrice,
-} from "../../utilities/utilities.js";
+} from '../../utilities/utilities.js';
 
-import DropdownCounter    from "../dropdown-counter";
-import DropdownDatepicker from "../dropdown-datepicker";
-import RoomLabel          from "../room-label";
-import RoomPriceItem      from "../room-price-item";
-import "../button";
-import "../card";
+import DropdownCounter    from '../dropdown-counter';
+import DropdownDatepicker from '../dropdown-datepicker';
+import RoomLabel          from '../room-label';
+import RoomPriceItem      from '../room-price-item';
+import '../button';
+import '../card';
 
 class CardReservation {
-  #className = "card-reservation";
+  #className = 'card-reservation';
 
   #$component;
   #options;

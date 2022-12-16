@@ -1,5 +1,5 @@
 class Label {
-  #className = "label";
+  #className = 'label';
 
   #$component;
   #$description;

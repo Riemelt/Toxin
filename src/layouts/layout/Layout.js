@@ -1,9 +1,9 @@
-import data   from "../../components/header/data.json";
-import Header from "../../components/header";
-import "../../components/footer";
+import data   from '../../components/header/data.json';
+import Header from '../../components/header';
+import '../../components/footer';
 
 class Layout {
-  #className = "layout";
+  #className = 'layout';
   #$component;
 
   constructor($element) {

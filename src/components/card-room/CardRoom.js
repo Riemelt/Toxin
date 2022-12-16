@@ -1,9 +1,9 @@
-import RoomLabel from "../room-label";
+import RoomLabel from '../room-label';
 
-import "../rate-button";
+import '../rate-button';
 
 class CardRoom {
-  #className = "card-room";
+  #className = 'card-room';
 
   #$component;
 
@@ -44,16 +44,16 @@ class CardRoom {
   }
 
   #setHandlers() {
-    this.#$previousButton.on("click.cardRoom", this.#handlePreviousButtonClick.bind(this));
-    this.#$nextButton.on("click.cardRoom", this.#handleNextButtonClick.bind(this));
-    this.#$controlButtons.on("click.cardRoom", this.#handleControlButtonsClick.bind(this));
+    this.#$previousButton.on('click.cardRoom', this.#handlePreviousButtonClick.bind(this));
+    this.#$nextButton.on('click.cardRoom', this.#handleNextButtonClick.bind(this));
+    this.#$controlButtons.on('click.cardRoom', this.#handleControlButtonsClick.bind(this));
   }
 
   #handleControlButtonsClick(event) {
     event.preventDefault();
     
     const $this = $(event.target);
-    const id    = $this.data("id");
+    const id    = $this.data('id');
 
     if (id < this.#images.length) {
       this.#update(id);

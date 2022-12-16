@@ -1,9 +1,9 @@
 import {
   formatPrice,
-} from "../../utilities/utilities.js";
+} from '../../utilities/utilities.js';
 
 class RoomLabel {
-  #className = "room-label";
+  #className = 'room-label';
 
   #$component;
   #$price;

@@ -1,9 +1,9 @@
-import IMask from "imask";
+import IMask from 'imask';
 
-import "../label";
+import '../label';
 
 class InputField {
-  #className = "input-field";
+  #className = 'input-field';
 
   #$inputField;
   #$input;
@@ -24,7 +24,7 @@ class InputField {
   }
 
   setInputText(text) {
-    this.#$input.prop("value", text);
+    this.#$input.prop('value', text);
   }
 
   getInput() {
@@ -37,7 +37,7 @@ class InputField {
 
     const {
       isMasked = false,
-      minDate  = new Date("01.01.1900"),
+      minDate  = new Date('01.01.1900'),
       maxDate  = new Date(),
     } = options;
 

@@ -21,13 +21,13 @@ include ../../components/comment/comment
 
 block vars
   -
-    const title = "Form Elements"
+    const title = 'Form Elements'
 
 block body
   -
-    const className = "form-elements"
+    const className = 'form-elements'
     let classNames  = `${className} js-${className}`
-    const data      = require("./data.json")
+    const data      = require('./data.json')
 
   div(class=classNames)
     div(class=`${className}__header`)
@@ -55,18 +55,18 @@ block body
               +checkbox-list(data.checkboxListComforts)
             div(class=`${className}__radio-buttons`)
               div(class=`${className}__label-wrapper`)
-                +label({ title: "radio buttons" })
+                +label({ title: 'radio buttons' })
               +radio-buttons-field(data.radioButtons)
               div(class=`${className}__toggle-switches`)
                 div(class=`${className}__label-wrapper`)
-                  +label({ title: "toggle" })
+                  +label({ title: 'toggle' })
                 div(class=`${className}__toggle-switch-active`)
                   +toggle-switch(data.toggleSwitchActive)
                 div(class=`${className}__toggle-switch-default`)
                   +toggle-switch(data.toggleSwitchDefault)
               div(class=`${className}__like-buttons`)
                 div(class=`${className}__label-wrapper`)
-                  +label({ title: "like button" })
+                  +label({ title: 'like button' })
                 div(class=`${className}__like-buttons-wrapper`)
                   div(class=`${className}__like-button-default js-${className}__like-button-default`)
                     +like-button(data.likeButtonDefault)
@@ -74,7 +74,7 @@ block body
                     +like-button(data.likeButtonActive)
               div(class=`${className}__rate-buttons`)
                 div(class=`${className}__label-wrapper`)
-                  +label({ title: "rate button" })
+                  +label({ title: 'rate button' })
                 div(class=`${className}__rate-buttons-wrapper`)
                   div(class=`${className}__rate-button-1`)
                     +rate-button(data.rateButton1)
@@ -85,7 +85,7 @@ block body
               +range-slider(data.rangeSlider)
             div(class=`${className}__buttons`)
               div(class=`${className}__label-wrapper`)
-                  +label({ title: "buttons" })
+                  +label({ title: 'buttons' })
               div(class=`${className}__buttons-filled`)
                 +button(data.buttonFilled)
                 +button(data.buttonFilledActive)
@@ -99,7 +99,7 @@ block body
                 +button(data.buttonWithIcon)
             div(class=`${className}__pagination`)
               div(class=`${className}__label-wrapper`)
-                +label({ title: "pagination" })
+                +label({ title: 'pagination' })
               div(class=`${className}__pagination-wrapper js-${className}__pagination-wrapper`)
                 +pagination(data.pagination)
         div(class=`${className}__dropdowns`)
@@ -117,11 +117,11 @@ block body
         div(class=`${className}__lists`)
           div(class=`${className}__column-left`)
             div(class=`${className}__expander js-${className}__expander`)
-              +expander({ title: "expandable checkbox list" })
+              +expander({ title: 'expandable checkbox list' })
                 div(class=`${className}__checkbox-list-additional-items`)
                   +checkbox-list(data.checkboxListAdditionalItems)
             div(class=`${className}__expander-opened js-${className}__expander-opened`)
-              +expander({ title: "expandable checkbox list", isOpened: true })
+              +expander({ title: 'expandable checkbox list', isOpened: true })
                 div(class=`${className}__checkbox-list-additional-items`)
                   +checkbox-list(data.checkboxListAdditionalItems)
           div(class=`${className}__column-middle`)

@@ -1,12 +1,12 @@
 mixin counter-item(vars = {})
   -
     const {
-      title = "",
+      title = '',
       value = 0,
-      type  = "guest",
+      type  = 'guest',
     }  = vars
 
-    const className = "counter-item"
+    const className = 'counter-item'
     let classNames  = className + ` js-${className}`
 
   div(class=classNames)

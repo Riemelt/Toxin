@@ -6,12 +6,12 @@ include ../../components/container/container
 
 block vars
   -
-    var title = "Colors&Type"
+    var title = 'Colors&Type'
 
 block body
   -
-    const className = "colors-and-type"
-    const data      = require("./data.json")
+    const className = 'colors-and-type'
+    const data      = require('./data.json')
 
   div(class=className)
     div(class=`${className}__header`)
@@ -25,7 +25,7 @@ block body
         ul(class=`${className}__text-examples`)
           each text in data.texts
             li(class=`${className}__text-examples-item ${className}__text-examples-item_${text.type}`)
-              if text.type === "body-sample"
+              if text.type === 'body-sample'
                 div(class=`${className}__text-examples-title`)= text.value
                 div(class=`${className}__text-examples-description`)= text.description
               else

@@ -1,13 +1,13 @@
-import ChartPie        from "../../components/chart-pie";
-import CardReservation from "../../components/card-reservation";
-import Comments        from "../../components/comments";
-import "../../components/container";
-import "../../components/gallery";
-import "../../components/room-info";
-import "../../components/bullet-list";
+import ChartPie        from '../../components/chart-pie';
+import CardReservation from '../../components/card-reservation';
+import Comments        from '../../components/comments';
+import '../../components/container';
+import '../../components/gallery';
+import '../../components/room-info';
+import '../../components/bullet-list';
 
 class RoomDetails {
-  #className = "room-details";
+  #className = 'room-details';
   #$component;
 
   constructor($element, data = {}) {

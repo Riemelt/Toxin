@@ -1,4 +1,4 @@
-import Comments from "./Comments.js";
-import "./comments.scss";
+import Comments from './Comments.js';
+import './comments.scss';
 
 export default Comments;

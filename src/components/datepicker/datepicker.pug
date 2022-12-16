@@ -4,10 +4,10 @@ mixin datepicker(vars = {})
   -
     const {
       isHidden = false,
-      size     = "medium",
+      size     = 'medium',
     } = vars
     
-    const className = "datepicker"
+    const className = 'datepicker'
     let classNames  = `${className} js-${className}`
 
     const sizeClass = {
@@ -23,7 +23,7 @@ mixin datepicker(vars = {})
   div(class=classNames)
     input(
       class=`${className}__input js-${className}__input`
-      type="text"
+      type='text'
     )
     div(class=`${className}__control-panel-wrapper`)
       +control-panel

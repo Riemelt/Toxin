@@ -1,10 +1,10 @@
-import Navigation from "../navigation";
-import "../button";
-import "../container";
-import "../logo";
+import Navigation from '../navigation';
+import '../button';
+import '../container';
+import '../logo';
 
 class Header {
-  #className = "header";
+  #className = 'header';
 
   #$component;
   #$menuButton;
@@ -28,7 +28,7 @@ class Header {
   }
 
   #setHandlers() {
-    this.#$menuButton.on("click.header", this.#handleMenuButtonClick.bind(this));
+    this.#$menuButton.on('click.header', this.#handleMenuButtonClick.bind(this));
   }
 
   #handleMenuButtonClick() {

@@ -1,12 +1,12 @@
-import AirDatepicker from "air-datepicker";
+import AirDatepicker from 'air-datepicker';
 
-import ControlPanel from "../control-panel";
+import ControlPanel from '../control-panel';
 
 class Datepicker {
 
-  static #MONTHS = ["янв", "фев", "мар", "апр", "мая", "июн", "июл", "авг", "сен", "окт", "ноя", "дек"];
+  static #MONTHS = ['янв', 'фев', 'мар', 'апр', 'мая', 'июн', 'июл', 'авг', 'сен', 'окт', 'ноя', 'дек'];
 
-  #className = "datepicker";
+  #className = 'datepicker';
 
   #$component;
   #$input;
@@ -33,15 +33,15 @@ class Datepicker {
   }
 
   static parseDateSecondary(date) {
-    return date.toLocaleDateString("ru-RU");
+    return date.toLocaleDateString('ru-RU');
   }
 
   static fixFocusDisplay(datepicker) {
-    const selector      = ".air-datepicker-cell.-day-.-selected-";
+    const selector      = '.air-datepicker-cell.-day-.-selected-';
     const $selectedCell = $(selector, datepicker.$datepicker);
 
-    $selectedCell.addClass("-range-from-");
-    $selectedCell.addClass("-range-to-");
+    $selectedCell.addClass('-range-from-');
+    $selectedCell.addClass('-range-to-');
   }
 
   toggle() {
@@ -133,10 +133,10 @@ class Datepicker {
       visible:       false,
       keyboardNav:   true,
       selectedDates: this.getDates(),
-      prevHtml:      "<span class=\"material-icons\"> arrow_back </span>",
-      nextHtml:      "<span class=\"material-icons\"> arrow_forward </span>",
+      prevHtml:      '<span class="material-icons"> arrow_back </span>',
+      nextHtml:      '<span class="material-icons"> arrow_forward </span>',
       navTitles: {
-        days: "MMMM yyyy"
+        days: 'MMMM yyyy'
       },
       onSelect: this.#handleDatepickerClick.bind(this),
     });

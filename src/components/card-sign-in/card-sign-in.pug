@@ -6,20 +6,20 @@ mixin card-sign-in(vars = {})
   -
     const {
       form = {
-        action: "/mock-address/change-me",
-        method: "get",
+        action: '/mock-address/change-me',
+        method: 'get',
       },
-      title         = "",
+      title         = '',
       inputEmail    = {},
       inputPassword = {},
       signInButton  = {},
       registration = {
-        content: "",
+        content: '',
         button: {},
       },
     } = vars
 
-    const className = "card-sign-in"
+    const className = 'card-sign-in'
     let classNames  = `${className} js-${className}`
 
   +card()

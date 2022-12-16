@@ -3,14 +3,14 @@ mixin navigation-item(vars = {})
     const {
       href,
       subNavigation,
-      content  = "",
+      content  = '',
       isActive = false,
     } = vars
 
-    const className = "navigation-item"
+    const className = 'navigation-item'
     let classNames  = `${className} js-${className}`
 
-    const tag = href ? "a" : "div"
+    const tag = href ? 'a' : 'div'
 
     const itemAttributes = {
       a: {

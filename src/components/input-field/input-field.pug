@@ -9,13 +9,13 @@ mixin input-field(vars = {})
       button,
       isReadonly,
       name,
-      placeholder = "",
+      placeholder = '',
       required    = false,
-      size        = "big",
-      type        = "text",
+      size        = 'big',
+      type        = 'text',
     } = vars
 
-    const className = "input-field"
+    const className = 'input-field'
     let classNames  = className + ` js-${className}`
 
     const sizeClass = {
@@ -47,7 +47,7 @@ mixin input-field(vars = {})
     -
       const {
         theme,
-        icon = "expandMore",
+        icon = 'expandMore',
       } = button
 
       buttonClassNames += buttonIconClass[icon]
@@ -70,7 +70,7 @@ mixin input-field(vars = {})
         required=required
       )
     if button
-      - const { type: buttonType = "button" } = button
+      - const { type: buttonType = 'button' } = button
       button(
         class=buttonClassNames
         type=buttonType

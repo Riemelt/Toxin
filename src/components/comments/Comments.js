@@ -1,11 +1,11 @@
 import {
   declOfNum,
-} from "../../utilities/utilities";
+} from '../../utilities/utilities';
 
-import Comment from "../comment";
+import Comment from '../comment';
 
 class Comments {
-  #className = "comments";
+  #className = 'comments';
   #options;
 
   #$component;
@@ -13,9 +13,9 @@ class Comments {
   #$counter;
 
   static #DICTIONARY = [
-    "отзыв",
-    "отзыва",
-    "отзывов",
+    'отзыв',
+    'отзыва',
+    'отзывов',
   ];
 
   constructor($parent, options = {}) {

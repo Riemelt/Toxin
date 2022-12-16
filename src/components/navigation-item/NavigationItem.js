@@ -1,5 +1,5 @@
 class NavigationItem {
-  #className = "navigation-item";
+  #className = 'navigation-item';
 
   #$component;
   #$header;
@@ -19,7 +19,7 @@ class NavigationItem {
   }
 
   #setHandlers() {
-    this.#$header.on("click.navigationItem", this.#handleNavigationItemClick.bind(this));
+    this.#$header.on('click.navigationItem', this.#handleNavigationItemClick.bind(this));
   }
 
   #handleNavigationItemClick() {
