@@ -23,6 +23,10 @@ mixin button(vars = {})
       },
     }
 
+    const materialIcon = {
+      arrowForward: "arrow_forward",
+    }
+
     const themeClass = {
       bordered: ` ${className}_bordered`,
       filled: ` ${className}_filled`,
@@ -31,7 +35,8 @@ mixin button(vars = {})
       longHeader: ` ${className}_long-header`,
     }
 
-    classNames += themeClass[theme]
+  if theme
+    - classNames += themeClass[theme]
 
   if hovered
     - classNames += ` ${className}_hovered`
@@ -41,4 +46,4 @@ mixin button(vars = {})
         span(class=`${className}__text`)= text
         if icon
           span(class=`${className}__icon`)
-            span(class="material-icons")= icon
+            span(class="material-icons")= materialIcon[icon]

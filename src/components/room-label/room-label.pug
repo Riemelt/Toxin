@@ -13,7 +13,8 @@ mixin room-label(vars = {})
       reservation: ` ${className}_theme-reservation`
     }
 
-    classNames += themeClass[theme]
+  if theme
+    - classNames += themeClass[theme]
 
   div(class=classNames)
     div(class=`${className}__number`)

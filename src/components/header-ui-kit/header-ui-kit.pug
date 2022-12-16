@@ -3,7 +3,7 @@ include ../logo/logo
 mixin header-ui-kit(vars = {})
   -
     const {
-      theme = "",
+      theme,
       logo  = {},
     } = vars
 
@@ -14,7 +14,8 @@ mixin header-ui-kit(vars = {})
       secondary: ` ${className}_secondary`,
     }
 
-    classNames += themeClass[theme]
+  if theme
+    - classNames += themeClass[theme]
 
   header(class=classNames)
     div(class=`${className}__logo`)

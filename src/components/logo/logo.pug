@@ -1,9 +1,9 @@
 mixin logo(vars = {})
   -
     const {
+      theme,
       src   = "",
       href  = "/mock-address/change-me",
-      theme = "",
     } = vars
 
     const className = "logo"
@@ -13,7 +13,8 @@ mixin logo(vars = {})
       uiKit: ` ${className}_ui-kit`,
     }
 
-    classNames += themeClass[theme]
+  if theme
+    - classNames += themeClass[theme]
 
   a(
     class=classNames,
