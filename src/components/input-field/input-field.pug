@@ -17,14 +17,14 @@ mixin input-field(vars = {})
 
     const className = "input-field"
     let classNames  = className + ` js-${className}`
-  
-  case (size)
-    when "small"
-      - classNames += ` ${className}_small`
-    when "medium"
-      - classNames += ` ${className}_medium`
-    default
-      - classNames += ` ${className}_big`
+
+    const sizeClass = {
+      small: ` ${className}_small`,
+      medium: ` ${className}_medium`,
+      big: ` ${className}_big`,
+    }
+
+    classNames += sizeClass[size]
 
   if hovered
     - classNames += ` ${className}_hovered`
@@ -33,20 +33,25 @@ mixin input-field(vars = {})
     const buttonClassName = `${className}__button`
     let buttonClassNames  = buttonClassName
   
-  if button
-    case (button.icon)
-      when "expand_more"
-        - buttonClassNames += ` ${buttonClassName}_expandable`
-      when "arrow_forward"
-        - buttonClassNames += ` ${buttonClassName}_subscribable`
-      default
-        - buttonClassNames += ` ${buttonClassName}_expandable`
+    const buttonIconClass = {
+      expandMore: ` ${buttonClassName}_expandable`,
+      arrowForward: ` ${buttonClassName}_subscribable`,
+    }
 
-    case (button.theme)
-      when "primary"
-        - buttonClassNames += ` ${buttonClassName}_primary`
-      when "secondary"
-        - buttonClassNames += ` ${buttonClassName}_secondary`
+    const buttonThemeClass = {
+      primary: ` ${buttonClassName}_primary`,
+      secondary: ` ${buttonClassName}_secondary`,
+    }
+
+  if button
+    -
+      const {
+        theme,
+        icon = "expandMore",
+      } = button
+
+      buttonClassNames += buttonIconClass[icon]
+      buttonClassNames += buttonThemeClass[theme]
 
   div(class=classNames)
     if (label)

@@ -24,4 +24,4 @@ block body
     div(class=`${className}__footer-default`)
       +footer(data.footerDefault)
     div(class=`${className}__footer-mobile`)
-      +footer({ ...data.footerDefault, theme: "mobile" })
+      +footer({ ...data.footerDefault, isMobile: true })

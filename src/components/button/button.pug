@@ -23,17 +23,15 @@ mixin button(vars = {})
       },
     }
 
-  case (theme)
-    when "bordered"
-      - classNames += ` ${className}_bordered`
-    when "filled"
-      - classNames += ` ${className}_filled`
-    when "long"
-      - classNames += ` ${className}_long`
-    when "bordered-header"
-      - classNames += ` ${className}_bordered-header`
-    when "long-header"
-      - classNames += ` ${className}_long-header`
+    const themeClass = {
+      bordered: ` ${className}_bordered`,
+      filled: ` ${className}_filled`,
+      long: ` ${className}_long`,
+      borderedHeader: ` ${className}_bordered-header`,
+      longHeader: ` ${className}_long-header`,
+    }
+
+    classNames += themeClass[theme]
 
   if hovered
     - classNames += ` ${className}_hovered`

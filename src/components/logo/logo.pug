@@ -6,11 +6,21 @@ mixin logo(vars = {})
       theme = "",
     } = vars
 
-    const className  = "logo"
-    const classNames = theme === "uiKit" ? `${className} ${className}_ui-kit` : className
+    const className = "logo"
+    let classNames  = className
 
-  a(class=classNames, href=href)
-    img(class=`${className}__icon`
-        alt="toxin logo"
-        src=require(`@images/${src}`)
+    const themeClass = {
+      uiKit: ` ${className}_ui-kit`,
+    }
+
+    classNames += themeClass[theme]
+
+  a(
+    class=classNames,
+    href=href
+  )
+    img(
+      class=`${className}__icon`
+      alt="toxin logo"
+      src=require(`@images/${src}`)
     )

@@ -10,7 +10,12 @@ mixin datepicker(vars = {})
     const className = "datepicker"
     let classNames  = `${className} js-${className}`
 
-    classNames += (size === "big") ? ` ${className}_big` : ` ${className}_medium`
+    const sizeClass = {
+      big: ` ${className}_big`,
+      medium: ` ${className}_medium`,
+    }
+
+    classNames += sizeClass[size]
 
   if isHidden
     - classNames += ` ${className}_hidden`

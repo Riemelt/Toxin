@@ -15,7 +15,7 @@
           "title": "даты пребывания в отеле"
         },
         "button": {
-          "icon": "expand_more"
+          "icon": "expandMore"
         },
         "isReadonly": true,
         "size": "medium"
@@ -34,7 +34,7 @@
       "type": "text",
       "name": "guests",
       "button": {
-        "icon": "expand_more"
+        "icon": "expandMore"
       }
     },
     "items": [
@@ -94,13 +94,13 @@
       {
         "title": "Широкий коридор",
         "description": "Ширина коридоров в номере не\u00A0менее 91 см.",
-        "theme": "rich",
+        "isRich": true,
         "checked": false
       },
       {
         "title": "Помощник для инвалидов",
         "description": "На 1 этаже вас встретит специалист и\u00A0проводит до номера.",
-        "theme": "rich",
+        "isRich": true,
         "checked": false
       }
     ]
@@ -113,7 +113,7 @@
         "title": "удобства номера"
       },
       "button": {
-        "icon": "expand_more",
+        "icon": "expandMore",
         "theme": "secondary"
       }
     },

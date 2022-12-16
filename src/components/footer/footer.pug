@@ -6,7 +6,7 @@ include ../socials/socials
 mixin footer(vars = {})
   -
     const {
-      theme     = "",
+      isMobile  = false,
       navBlocks = [],
       copyright = "",
       socials   = {},
@@ -28,7 +28,8 @@ mixin footer(vars = {})
     const className = "footer"
     let classNames  = className
 
-    classNames += theme === "mobile" ? ` ${className}_mobile` : ""
+  if isMobile
+    - classNames += ` ${className}_mobile`
 
   footer(class=classNames)
     div(class=`${className}__body-wrapper`)

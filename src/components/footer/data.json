@@ -76,7 +76,7 @@
     "description": "Получайте специальные предложения и новости сервиса",
     "input": {
       "button": {
-        "icon": "arrow_forward",
+        "icon": "arrowForward",
         "theme": "primary",
         "type": "submit"
       },

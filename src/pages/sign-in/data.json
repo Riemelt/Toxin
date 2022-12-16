@@ -29,7 +29,7 @@
     },
     "signInButton": {
       "text": "войти",
-      "icon": "arrow_forward",
+      "icon": "arrowForward",
       "theme": "long",
       "type": "submit"
     },

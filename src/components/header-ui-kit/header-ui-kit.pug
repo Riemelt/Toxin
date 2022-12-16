@@ -10,8 +10,11 @@ mixin header-ui-kit(vars = {})
     const className = "header-ui-kit"
     let classNames  = className
 
-  if (theme === "secondary")
-    - classNames += ` ${className}_secondary`
+    const themeClass = {
+      secondary: ` ${className}_secondary`,
+    }
+
+    classNames += themeClass[theme]
 
   header(class=classNames)
     div(class=`${className}__logo`)

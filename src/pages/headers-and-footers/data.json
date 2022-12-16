@@ -64,12 +64,12 @@
     },
     "signInButton": {
       "text": "войти",
-      "theme": "bordered-header",
+      "theme": "borderedHeader",
       "href": "/mock-address/change-me"
     },
     "registrationButton": {
       "text": "зарегистрироваться",
-      "theme": "long-header",
+      "theme": "longHeader",
       "href": "/mock-address/change-me"
     }
   },
@@ -132,12 +132,12 @@
     "userName": "Юлий Цезарь",
     "signInButton": {
       "text": "войти",
-      "theme": "bordered-header",
+      "theme": "borderedHeader",
       "href": "/mock-address/change-me"
     },
     "registrationButton": {
       "text": "зарегистрироваться",
-      "theme": "long-header",
+      "theme": "longHeader",
       "href": "/mock-address/change-me"
     }
   },
@@ -219,7 +219,7 @@
       "description": "Получайте специальные предложения и новости сервиса",
       "input": {
         "button": {
-          "icon": "arrow_forward",
+          "icon": "arrowForward",
           "theme": "primary"
         },
         "type": "email",

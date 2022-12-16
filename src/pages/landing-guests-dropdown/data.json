@@ -34,7 +34,7 @@
             "title": "прибытие"
           },
           "button": {
-            "icon": "expand_more"
+            "icon": "expandMore"
           },
           "isReadonly": true,
           "type": "text",
@@ -46,7 +46,7 @@
             "title": "выезд"
           },
           "button": {
-            "icon": "expand_more"
+            "icon": "expandMore"
           },
           "isReadonly": true,
           "type": "text",
@@ -66,7 +66,7 @@
         "type": "text",
         "name": "guests",
         "button": {
-          "icon": "expand_more"
+          "icon": "expandMore"
         }
       },
       "items": [
@@ -89,7 +89,7 @@
     },
     "searchRoomButton": {
       "text": "Подобрать номер",
-      "icon": "arrow_forward",
+      "icon": "arrowForward",
       "theme": "long",
       "type": "submit"
     }

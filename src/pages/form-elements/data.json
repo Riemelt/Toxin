@@ -28,7 +28,7 @@
       },
       "value": "Сколько гостей",
       "button": {
-        "icon": "expand_more"
+        "icon": "expandMore"
       }
     },
     "items": [
@@ -71,7 +71,7 @@
           "title": "date dropdown"
         },
         "button": {
-          "icon": "expand_more"
+          "icon": "expandMore"
         },
         "isReadonly": true,
         "size": "small"
@@ -81,7 +81,7 @@
           "title": "date dropdown"
         },
         "button": {
-          "icon": "expand_more"
+          "icon": "expandMore"
         },
         "isReadonly": true,
         "size": "small"
@@ -103,7 +103,7 @@
           "title": "filter date dropdown"
         },
         "button": {
-          "icon": "expand_more"
+          "icon": "expandMore"
         },
         "isReadonly": true,
         "size": "medium"
@@ -115,7 +115,7 @@
       "title": "subscription text field"
     },
     "button": {
-      "icon": "arrow_forward",
+      "icon": "arrowForward",
       "theme": "primary"
     },
     "size": "medium",
@@ -214,7 +214,7 @@
   },
   "buttonWithIcon": {
     "text": "Перейти к оплате",
-    "icon": "arrow_forward",
+    "icon": "arrowForward",
     "theme": "long"
   },
   "pagination": {
@@ -230,7 +230,7 @@
         "description": "default"
       },
       "button": {
-        "icon": "expand_more",
+        "icon": "expandMore",
         "theme": "secondary"
       }
     },
@@ -263,7 +263,7 @@
         "description": "expanded"
       },
       "button": {
-        "icon": "expand_more",
+        "icon": "expandMore",
         "theme": "secondary"
       }
     },
@@ -295,7 +295,7 @@
         "title": "dropdown"
       },
       "button": {
-        "icon": "expand_more",
+        "icon": "expandMore",
         "theme": "secondary"
       }
     },
@@ -327,7 +327,7 @@
         "title": "dropdown"
       },
       "button": {
-        "icon": "expand_more",
+        "icon": "expandMore",
         "theme": "secondary"
       }
     },
@@ -385,13 +385,13 @@
       {
         "title": "Широкий коридор",
         "description": "Ширина коридоров в номере не\u00A0менее 91 см.",
-        "theme": "rich",
+        "isRich": true,
         "checked": false
       },
       {
         "title": "Помощник для инвалидов",
         "description": "На 1 этаже вас встретит специалист и\u00A0проводит до номера.",
-        "theme": "rich",
+        "isRich": true,
         "checked": false
       }
     ]

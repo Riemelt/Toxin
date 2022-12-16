@@ -13,7 +13,12 @@ mixin dropdown-datepicker(vars = {})
     const className = "dropdown-datepicker"
     let classNames  = `${className} js-${className}`
 
-    classNames += (size === "big") ? ` ${className}_big` : ` ${className}_medium`
+    const sizeClass = {
+      big: ` ${className}_big`,
+      medium: ` ${className}_medium`,
+    }
+
+    classNames += sizeClass[size]
 
   div(class=classNames)
     div(class=`${className}__input-wrapper js-${className}__input-wrapper`)

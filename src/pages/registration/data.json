@@ -76,7 +76,7 @@
     },
     "submitRegistrationButton": {
       "text": "зарегистрироваться",
-      "icon": "arrow_forward",
+      "icon": "arrowForward",
       "theme": "long",
       "type": "submit"
     },

@@ -111,7 +111,7 @@
   },
   "rules": {
     "title": "Правила",
-    "theme": "biggerTitle",
+    "withBiggerTitle": true,
     "items": [
       {
         "title": "Нельзя с питомцами"
@@ -155,7 +155,7 @@
             "title": "прибытие"
           },
           "button": {
-            "icon": "expand_more"
+            "icon": "expandMore"
           },
           "isReadonly": true,
           "type": "text",
@@ -167,7 +167,7 @@
             "title": "выезд"
           },
           "button": {
-            "icon": "expand_more"
+            "icon": "expandMore"
           },
           "isReadonly": true,
           "type": "text",
@@ -186,7 +186,7 @@
         "type": "text",
         "name": "guests",
         "button": {
-          "icon": "expand_more"
+          "icon": "expandMore"
         }
       },
       "items": [
@@ -226,7 +226,7 @@
     ],
     "submitReservationButton": {
       "text": "забронировать",
-      "icon": "arrow_forward",
+      "icon": "arrowForward",
       "theme": "long",
       "type": "submit"
     }

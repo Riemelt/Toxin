@@ -5,18 +5,17 @@ mixin bullet-list(vars = {})
   -
     const {
       title,
-      theme = "",
+      withBiggerTitle = false,
       items = [],
     } = vars
 
     const className = "bullet-list"
     let classNames  = className + ` js-${className}`
 
-    const titleTag = theme === "biggerTitle" ? "h2" : "h3"
+    const titleTag = withBiggerTitle ? "h2" : "h3"
 
-  case (theme)
-    when "biggerTitle"
-      - classNames += ` ${className}_theme-bigger-title`
+  if withBiggerTitle
+    - classNames += ` ${className}_with-bigger-title`
 
   div(class=classNames)
     if title
