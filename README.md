@@ -38,12 +38,10 @@ Toxin is a hotel website for room reservations, which is an educational project 
 * [material-icons](https://github.com/marella/material-icons#readme)
 * [FortAwesome-Free](https://github.com/FortAwesome/Font-Awesome)
 * [air-datepicker](https://github.com/t1m0n/air-datepicker)
-* [async](https://github.com/caolan/async)
 * [chart-js](https://github.com/chartjs/Chart.js)
 * [imask](https://github.com/uNmAnNeR/imaskjs)
 * [jquery](https://github.com/jquery/jquery)
 * [moment](https://github.com/moment/moment)
-* [normalize.css](https://github.com/necolas/normalize.css/)
 * [noUiSlider](https://github.com/leongersen/noUiSlider)
 * [paginationjs](https://github.com/superRaytin/paginationjs)
 
@@ -85,7 +83,7 @@ npm run build
     ├───components               # bem blocks, one folder per component
     ├───layouts                  # layouts with general page structure
     ├───main-styles              # scss variables, global styles, fonts loading
-    ├───pages                    # final web-pages and all entypoints, one folder per page
+    ├───pages                    # final web-pages and all entry points, one folder per page
     ├───utilities                # js helper functions
     ├───.eslintrc.js             # eslint rules for js
     ├───.gitignore               # list of folders to ignore to commit such as node_modules and dist

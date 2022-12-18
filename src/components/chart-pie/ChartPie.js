@@ -2,6 +2,7 @@ import {
   Chart,
   DoughnutController,
   ArcElement,
+  LinearScale,
 } from 'chart.js';
 
 import {
@@ -117,6 +118,7 @@ class ChartPie {
     Chart.register(
       DoughnutController,
       ArcElement,
+      LinearScale,
     );
 
     const context = this.#$chart.get(0).getContext('2d');
