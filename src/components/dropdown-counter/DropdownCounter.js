@@ -1,4 +1,5 @@
 import {
+  $getElement,
   declOfNum,
 } from '../../utilities/utilities.js';
 
@@ -24,7 +25,7 @@ class DropdownCounter {
   static #PLACEHOLDERS = {
     guest: 'Сколько гостей',
     room:  'Сколько комнат',
-  }
+  };
 
   static #DICTIONARY = {
     guest: {
@@ -36,9 +37,12 @@ class DropdownCounter {
       bathroom: ['ванная комната', 'ванные комнаты', 'ванных комнат'],
       bed:      ['кровать', 'кровати', 'кроватей'],
     },
-  }
+  };
 
-  constructor($parent, options = {}) {
+  constructor({
+    $parent,
+    options = {}
+  }) {
     this.#init($parent, options);
     this.#render();
   }
@@ -47,10 +51,25 @@ class DropdownCounter {
     this.#$component = $parent.find(`.js-${this.#className}`);
     this.#options    = options;
 
-    this.#$menu         = this.#$component.find(`.js-${this.#className}__menu`);
-    this.#$counterItems = this.#$component.find(`.js-${this.#className}__item`);
+    this.#$menu = $getElement({
+      $parent: this.#$component,
+      component: this.#className,
+      element: 'menu',
+    });
+
+    this.#$counterItems = $getElement({
+      $parent: this.#$component,
+      component: this.#className,
+      element: 'item',
+    });
+
     this.#$counterItems.each(this.#initCounterItem.bind(this));
-    this.#$controlPanel = this.#$component.find(`.js-${this.#className}__control-panel-wrapper`);
+
+    this.#$controlPanel = $getElement({
+      $parent: this.#$component,
+      component: this.#className,
+      element: 'control-panel-wrapper',
+    });
 
     const {
       type     = 'guest',
@@ -60,12 +79,17 @@ class DropdownCounter {
     this.#dropdownType = type;
 
     this.#itemList   = this.#initItemList(this.#dropdownType);
-    this.#inputField = new InputField(this.#$component);
+    this.#inputField = new InputField({
+      $parent: this.#$component,
+    });
 
     if (this.#$controlPanel.length !== 0) {
-      this.#controlPanel = new ControlPanel(this.#$component, {
-        handleApplyButtonClick: this.#handleApplyButtonClick.bind(this),
-        handleResetButtonClick: this.#handleResetButtonClick.bind(this),
+      this.#controlPanel = new ControlPanel({
+        $parent: this.#$component,
+        options: {
+          handleApplyButtonClick: this.#handleApplyButtonClick.bind(this),
+          handleResetButtonClick: this.#handleResetButtonClick.bind(this),
+        },
       });
     }
 
@@ -161,9 +185,12 @@ class DropdownCounter {
     const { items = [] } = this.#options;
     
     this.#counterItems.push(
-      new CounterItem($counterItem, {
-        handleCounterItemClick: this.#handleCounterItemClick.bind(this),
-        ...items[index],
+      new CounterItem({
+        $parent: $counterItem,
+        options: {
+          handleCounterItemClick: this.#handleCounterItemClick.bind(this),
+          ...items[index],
+        },
       })
     );
   }
@@ -173,7 +200,9 @@ class DropdownCounter {
   }
 
   #isDropdown(target) {
-    return this.#$component.is(target) || this.#$component.has(target).length !== 0;
+    const isDropdown = this.#$component.is(target);
+    const isInsideDropdown = this.#$component.has(target).length !== 0;
+    return isDropdown || isInsideDropdown;
   }
 
   #buildString() {

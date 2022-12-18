@@ -1,3 +1,7 @@
+import {
+  $getElement,
+} from '../../utilities/utilities';
+
 class CounterItem {
 
   static #DECREMENT = -1;
@@ -17,7 +21,10 @@ class CounterItem {
 
   #handleCounterItemClick;
 
-  constructor($parent, options = {}) {
+  constructor({
+    $parent,
+    options = {}
+  }) {
     this.#init($parent, options);
     this.#render();
   }
@@ -41,9 +48,24 @@ class CounterItem {
     value = 0,
   }) {
     this.#$component    = $parent.find(`.js-${this.#className}`);
-    this.#$decrement    = this.#$component.find(`.js-${this.#className}__decrement`);
-    this.#$increment    = this.#$component.find(`.js-${this.#className}__increment`);
-    this.#$counterValue = this.#$component.find(`.js-${this.#className}__value`);
+
+    this.#$decrement = $getElement({
+      $parent: this.#$component,
+      component: this.#className,
+      element: 'decrement',
+    });
+
+    this.#$increment = $getElement({
+      $parent: this.#$component,
+      component: this.#className,
+      element: 'increment',
+    });
+
+    this.#$counterValue = $getElement({
+      $parent: this.#$component,
+      component: this.#className,
+      element: 'value',
+    });
     
     this.#type = type;
     this.setValue(value);
@@ -56,8 +78,15 @@ class CounterItem {
   }
 
   #setHandlers() {
-    this.#$decrement.on('click.counter-item', this.#handleDecrementClick.bind(this));
-    this.#$increment.on('click.counter-item', this.#handleIncrementClick.bind(this));
+    this.#$decrement.on(
+      'click.counter-item',
+      this.#handleDecrementClick.bind(this)
+    );
+
+    this.#$increment.on(
+      'click.counter-item',
+      this.#handleIncrementClick.bind(this)
+    );
   }
 
   #handleDecrementClick() {

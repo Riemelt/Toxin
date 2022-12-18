@@ -1,3 +1,6 @@
+import {
+  $getElement,
+} from '../../utilities/utilities';
 import CardRegistration from '../../components/card-registration';
 import CardReservation  from '../../components/card-reservation';
 import CardRoom         from '../../components/card-room';
@@ -7,25 +10,92 @@ import '../../components/header-ui-kit';
 import '../../components/card-sign-in';
 import '../../components/container';
 
-import data from './data.json';
-
 class Cards {
   #className = 'cards';
   #$component;
 
-  constructor($element) {
-    this.#init($element);
+  constructor({
+    $element,
+    options = {},
+  }) {
+    this.#init($element, options);
   }
 
-  #init($element) {
+  #init($element, {
+    cardDatepicker = {},
+    cardRoomFocused = {},
+    cardRoomDefault = {},
+    cardSearch = {},
+    cardRegistration = {},
+    cardReservation = {},
+  }) {
     this.#$component = $element;
 
-    new Datepicker($(`.js-${this.#className}__card-datepicker`, this.#$component), data.cardDatepicker);
-    new CardRoom($(`.js-${this.#className}__card-room-focused`, this.#$component), data.cardRoomFocused);
-    new CardRoom($(`.js-${this.#className}__card-room-default`, this.#$component), data.cardRoomDefault);
-    new CardSearch($(`.js-${this.#className}__card-search`, this.#$component), data.cardSearch);
-    new CardRegistration($(`.js-${this.#className}__card-registration`, this.#$component), data.cardRegistration);
-    new CardReservation($(`.js-${this.#className}__card-reservation`, this.#$component), data.cardReservation);
+    const $cardDatepicker = $getElement({
+      $parent: this.#$component,
+      component: this.#className,
+      element: 'card-datepicker',
+    });
+
+    new Datepicker({
+      $parent: $cardDatepicker,
+      options: cardDatepicker,
+    });
+
+    const $cardRoomFocused = $getElement({
+      $parent: this.#$component,
+      component: this.#className,
+      element: 'card-room-focused',
+    });
+
+    new CardRoom({
+      $parent: $cardRoomFocused,
+      options: cardRoomFocused,
+    });
+
+    const $cardRoomDefault = $getElement({
+      $parent: this.#$component,
+      component: this.#className,
+      element: 'card-room-default',
+    });
+
+    new CardRoom({
+      $parent: $cardRoomDefault,
+      options: cardRoomDefault,
+    });
+
+    const $cardSearch = $getElement({
+      $parent: this.#$component,
+      component: this.#className,
+      element: 'card-search',
+    });
+
+    new CardSearch({
+      $parent: $cardSearch,
+      options: cardSearch,
+    });
+
+    const $cardRegistration = $getElement({
+      $parent: this.#$component,
+      component: this.#className,
+      element: 'card-registration',
+    });
+
+    new CardRegistration({
+      $parent: $cardRegistration,
+      options: cardRegistration,
+    });
+
+    const $cardReservation = $getElement({
+      $parent: this.#$component,
+      component: this.#className,
+      element: 'card-reservation',
+    });
+
+    new CardReservation({
+      $parent: $cardReservation,
+      options: cardReservation,
+    });
   }
 }
 

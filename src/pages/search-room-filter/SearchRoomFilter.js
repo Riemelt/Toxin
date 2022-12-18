@@ -6,37 +6,106 @@ import CardRoom           from '../../components/card-room';
 import Pagination         from '../../components/pagination';
 import '../../components/container';
 import '../../components/checkbox-list';
+import {
+  $getElement,
+} from '../../utilities/utilities';
 
 class SearchRoomFilter {
   #className = 'search-room-filter';
   #$component;
 
-  #data = {};
+  #options = {};
   #$cardRooms;
 
-  constructor($element, data = {}) {
-    this.#init($element, data);
+  constructor({
+    $element,
+    options = {},
+  }) {
+    this.#init($element, options);
   }
 
-  #init($element, data) {
-    this.#data       = data;
+  #init($element, options) {
+    this.#options = options;
     this.#$component = $element;
 
-    new DropdownDatepicker(this.#$component.find(`.js-${this.#className}__date-dropdown`), this.#data.dateDropdown);
-    new DropdownCounter(this.#$component.find(`.js-${this.#className}__guests-dropdown`), this.#data.guestsDropdown);
-    new RangeSlider(this.#$component.find(`.js-${this.#className}__price-range`), this.#data.priceRange);
-    new DropdownCounter(this.#$component.find(`.js-${this.#className}__comforts-dropdown`), this.#data.comfortsDropdown);
-    new Expander(this.#$component.find(`.js-${this.#className}__comforts-additional-expander`));
+    const $dropdownDatepicker = $getElement({
+      $parent: this.#$component,
+      component: this.#className,
+      element: 'date-dropdown',
+    });
 
-    this.#$cardRooms = this.#$component.find(`.js-${this.#className}__card-room`);
+    new DropdownDatepicker({
+      $parent: $dropdownDatepicker,
+      options: this.#options.dateDropdown,
+    });
+
+    const $dropdownGuests = $getElement({
+      $parent: this.#$component,
+      component: this.#className,
+      element: 'guests-dropdown',
+    });
+    
+    new DropdownCounter({
+      $parent: $dropdownGuests,
+      options: this.#options.guestsDropdown,
+    });
+
+    const $rangeSlider = $getElement({
+      $parent: this.#$component,
+      component: this.#className,
+      element: 'price-range',
+    });
+    
+    new RangeSlider({
+      $parent: $rangeSlider,
+      options: this.#options.priceRange,
+    });
+
+    const $dropdownComforts = $getElement({
+      $parent: this.#$component,
+      component: this.#className,
+      element: 'comforts-dropdown',
+    });
+    
+    new DropdownCounter({
+      $parent: $dropdownComforts,
+      options: this.#options.comfortsDropdown,
+    });
+
+    const $expander = $getElement({
+      $parent: this.#$component,
+      component: this.#className,
+      element: 'comforts-additional-expander',
+    });
+
+    new Expander($expander);
+
+    this.#$cardRooms = $getElement({
+      $parent: this.#$component,
+      component: this.#className,
+      element: 'card-room',
+    });
+
     this.#$cardRooms.each(this.#initCardRooms.bind(this));
 
-    new Pagination(this.#$component.find(`.js-${this.#className}__pagination`), this.#data.pagination);
+    const $pagination = $getElement({
+      $parent: this.#$component,
+      component: this.#className,
+      element: 'pagination',
+    });
+    
+    new Pagination({
+      $parent: $pagination,
+      options: this.#options.pagination,
+    });
   }
 
   #initCardRooms(index, element) {
     const $element = $(element);
-    new CardRoom($element, this.#data.cardRooms[index]);
+    new CardRoom({
+      $parent: $element,
+      options: this.#options.cardRooms[index],
+    });
   }
 }
 

@@ -1,7 +1,7 @@
 import {
   renderSlider,
+  $getElement,
 } from '../../utilities/utilities.js';
-
 import CardSearch from '../../components/card-search';
 import '../../components/container';
 
@@ -9,20 +9,33 @@ class Landing {
   #className = 'landing';
   #$component;
 
-  #data = {};
   #sliderImages;
 
-  constructor($element, data = {}) {
-    this.#init($element, data);
+  constructor({
+    $element,
+    options = {},
+  }) {
+    this.#init($element, options);
     this.#render();
   }
 
-  #init($element, data) {
-    this.#data       = data;
+  #init($element, {
+    slider = {},
+    cardSearch = {},
+  }) {
     this.#$component = $element;
+    this.#sliderImages = slider.images;
 
-    this.#sliderImages = this.#data.slider.images;
-    new CardSearch(this.#$component.find(`.js-${this.#className}__card-search`), this.#data.cardSearch);
+    const $cardSearch = $getElement({
+      $parent: this.#$component,
+      component: this.#className,
+      element: 'card-search',
+    });
+
+    new CardSearch({
+      $parent: $cardSearch,
+      options: cardSearch,
+    });
   }
 
   #render() {

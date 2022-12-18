@@ -7,5 +7,8 @@ import data from './data.json';
 (function($) {
   const className = 'room-details';
 
-  new RoomDetails($(`.js-${className}`), data);
+  new RoomDetails({
+    $element: $(`.js-${className}`),
+    options: data,
+  });
 })(jQuery);

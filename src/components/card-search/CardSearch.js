@@ -1,3 +1,6 @@
+import {
+  $getElement,
+} from '../../utilities/utilities';
 import DropdownCounter    from '../dropdown-counter';
 import DropdownDatepicker from '../dropdown-datepicker';
 import '../button';
@@ -8,7 +11,10 @@ class CardSearch {
 
   #$component;
 
-  constructor($parent, options = {}) {
+  constructor({
+    $parent,
+    options = {}
+  }) {
     this.#init($parent, options);
   }
 
@@ -18,8 +24,27 @@ class CardSearch {
   }) {
     this.#$component = $parent.find(`.js-${this.#className}`);
 
-    new DropdownDatepicker(this.#$component.find(`.js-${this.#className}__datepicker`), dropdownDatepicker);
-    new DropdownCounter(this.#$component.find(`.js-${this.#className}__dropdown-guests`), dropdownGuests);
+    const $datepicker = $getElement({
+      $parent: this.#$component,
+      component: this.#className,
+      element: 'datepicker',
+    });
+
+    new DropdownDatepicker({
+      $parent: $datepicker,
+      options: dropdownDatepicker,
+    });
+
+    const $dropdownGuests = $getElement({
+      $parent: this.#$component,
+      component: this.#className,
+      element: 'dropdown-guests',
+    });
+
+    new DropdownCounter({
+      $parent: $dropdownGuests,
+      options: dropdownGuests,
+    });
   }
 }
 

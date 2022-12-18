@@ -7,5 +7,8 @@ import data from './data.json';
 (function($) {
   const className = 'search-room-filter';
 
-  new SearchRoomFilter($(`.js-${className}`), data);
+  new SearchRoomFilter({
+    $element: $(`.js-${className}`),
+    options: data,
+  });
 })(jQuery);

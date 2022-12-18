@@ -1,3 +1,6 @@
+import {
+  $getElement,
+} from '../../utilities/utilities';
 import NavigationItem from '../navigation-item';
 
 class Navigation {
@@ -8,14 +11,21 @@ class Navigation {
   #$navigationItems;
   #navigationItems = [];
 
-  constructor($parent, options = {}) {
+  constructor({
+    $parent,
+    options = {}
+  }) {
     this.#init($parent, options);
   }
 
   #init($parent, options) {
     this.#options          = options;
     this.#$component       = $parent.find(`.js-${this.#className}`);
-    this.#$navigationItems = this.#$component.find(`.js-${this.#className}__item`);
+    this.#$navigationItems = $getElement({
+      $parent: this.#$component,
+      component: this.#className,
+      element: 'item',
+    });
 
     this.#$navigationItems.each(this.#initNavigationItem.bind(this));
   }

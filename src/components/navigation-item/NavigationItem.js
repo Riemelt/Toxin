@@ -1,3 +1,7 @@
+import {
+  $getElement,
+} from '../../utilities/utilities';
+
 class NavigationItem {
   #className = 'navigation-item';
 
@@ -11,7 +15,11 @@ class NavigationItem {
 
   #init($parent) {
     this.#$component = $parent.find(`.js-${this.#className}`);
-    this.#$header    = this.#$component.find(`.js-${this.#className}__header-wrapper`);
+    this.#$header = $getElement({
+      $parent: this.#$component,
+      component: this.#className,
+      element: 'header-wrapper',
+    });
   }
 
   #render() {
@@ -19,7 +27,10 @@ class NavigationItem {
   }
 
   #setHandlers() {
-    this.#$header.on('click.navigationItem', this.#handleNavigationItemClick.bind(this));
+    this.#$header.on(
+      'click.navigationItem',
+      this.#handleNavigationItemClick.bind(this)
+    );
   }
 
   #handleNavigationItemClick() {

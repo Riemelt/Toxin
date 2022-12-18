@@ -1,7 +1,8 @@
 import {
   formatPrice,
   declOfNum,
-} from '../../utilities/utilities.js'
+  $getElement,
+} from '../../utilities/utilities.js';
 
 class RoomPriceItem {
   #className = 'room-price-item';
@@ -26,7 +27,10 @@ class RoomPriceItem {
     servicePrice: this.#getServicePrice.bind(this),
   };
 
-  constructor($parent, options = {}) {
+  constructor({
+    $parent,
+    options = {}
+  }) {
     this.#init($parent, options);
   }
 
@@ -64,8 +68,18 @@ class RoomPriceItem {
   #init($parent, options = {}) {
     this.#options    = options;
     this.#$component = $parent.find(`.js-${this.#className}`);
-    this.#$content   = this.#$component.find(`.js-${this.#className}__content`);
-    this.#$price     = this.#$component.find(`.js-${this.#className}__price`);
+
+    this.#$content = $getElement({
+      $parent: this.#$component,
+      component: this.#className,
+      element: 'content',
+    });
+
+    this.#$price = $getElement({
+      $parent: this.#$component,
+      component: this.#className,
+      element: 'price',
+    });
 
     const { theme = 'roomPrice' } = this.#options;
     this.#theme = theme;
@@ -86,7 +100,10 @@ class RoomPriceItem {
       daysOfStay = 0,
     } = this.#options;
 
-    const contentText = `${formatPrice(roomPrice)} х ${daysOfStay} ${declOfNum(daysOfStay, RoomPriceItem.#DICTIONARY)}`;
+    const price = formatPrice(roomPrice);
+    const daysWord = declOfNum(daysOfStay, RoomPriceItem.#DICTIONARY);
+
+    const contentText = `${price} х ${daysOfStay} ${daysWord}`;
     this.#updateContent(contentText);
 
     const priceText = formatPrice(roomPrice * daysOfStay);

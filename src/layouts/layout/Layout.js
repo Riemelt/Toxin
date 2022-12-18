@@ -1,18 +1,35 @@
-import data   from '../../components/header/data.json';
 import Header from '../../components/header';
 import '../../components/footer';
+import {
+  $getElement,
+} from '../../utilities/utilities';
 
 class Layout {
   #className = 'layout';
   #$component;
 
-  constructor($element) {
-    this.#init($element);
+  constructor({
+    $element,
+    options = {},
+  }) {
+    this.#init($element, options);
   }
 
-  #init($element) {
+  #init($element, {
+    header = {},
+  }) {
     this.#$component = $element;
-    new Header(this.#$component.find(`.js-${this.#className}__header`), data);
+
+    const $header = $getElement({
+      $parent: this.#$component,
+      component: this.#className,
+      element: 'header',
+    });
+
+    new Header({
+      $parent: $header,
+      options: header,
+    });
   }
 }
 

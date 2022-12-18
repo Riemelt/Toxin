@@ -1,4 +1,5 @@
 import {
+  $getElement,
   formatPrice,
 } from '../../utilities/utilities.js';
 
@@ -8,7 +9,10 @@ class RoomLabel {
   #$component;
   #$price;
 
-  constructor($parent, options = {}) {
+  constructor({
+    $parent,
+    options = {}
+  }) {
     this.#init($parent, options);
   }
 
@@ -16,7 +20,11 @@ class RoomLabel {
     price = 0,
   }) {
     this.#$component = $parent.find(`.js-${this.#className}`);
-    this.#$price     = this.#$component.find(`.js-${this.#className}__price-value`);
+    this.#$price = $getElement({
+      $parent: this.#$component,
+      component: this.#className,
+      element: 'price-value',
+    });
 
     this.#initPrice(price);
   }

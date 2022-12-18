@@ -2,12 +2,18 @@ import '../../components/container';
 import '../../components/footer';
 import '../../components/header-ui-kit';
 import Header from '../../components/header';
+import {
+  $getElement,
+} from '../../utilities/utilities';
 
 class HeadersAndFooters {
   #className = 'headers-and-footers';
   #$component;
 
-  constructor($element, options = {}) {
+  constructor({
+    $element,
+    options = {},
+  }) {
     this.#init($element, options);
   }
 
@@ -16,8 +22,28 @@ class HeadersAndFooters {
     headerSignedIn = {},
   }) {
     this.#$component = $element;
-    new Header(this.#$component.find(`.js-${this.#className}__header-default`), headerDefault);
-    new Header(this.#$component.find(`.js-${this.#className}__header-signed-in`), headerSignedIn);
+
+    const $headerDefault = $getElement({
+      $parent: this.#$component,
+      component: this.#className,
+      element: 'header-default',
+    });
+
+    new Header({
+      $parent: $headerDefault,
+      options: headerDefault,
+    });
+
+    const $headerSignedIn = $getElement({
+      $parent: this.#$component,
+      component: this.#className,
+      element: 'header-signed-in',
+    });
+
+    new Header({
+      $parent: $headerSignedIn,
+      options: headerSignedIn,
+    });
   }
 }
 

@@ -7,5 +7,8 @@ import data from './data.json';
 (function($) {
   const className = 'registration';
 
-  new Registration($(`.js-${className}`), data);
+  new Registration({
+    $element: $(`.js-${className}`),
+    options: data,
+  });
 })(jQuery);

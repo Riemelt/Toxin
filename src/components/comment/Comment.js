@@ -1,7 +1,7 @@
 import {
   getTimePassed,
-} from '../../utilities/utilities.js'
-
+  $getElement,
+} from '../../utilities/utilities.js';
 import LikeButton from '../like-button';
 
 class Comment {
@@ -11,14 +11,22 @@ class Comment {
   #$component;
   #$date;
 
-  constructor($parent, options = {}) {
+  constructor({
+    $parent,
+    options = {}
+  }) {
     this.#init($parent, options);
   }
 
   #init($parent, options) {
-    this.#options    = options;
+    this.#options = options;
     this.#$component = $parent.find(`.js-${this.#className}`);
-    this.#$date      = this.#$component.find(`.js-${this.#className}__date`);
+    
+    this.#$date = $getElement({
+      $parent: this.#$component,
+      component: this.#className,
+      element: 'date',
+    });
 
     new LikeButton(this.#$component);
 

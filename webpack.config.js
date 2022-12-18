@@ -22,10 +22,21 @@ const entryPoints = pages.reduce((acc, name) => {
   return acc;
 }, {});
 
+const variablesPath = './src/main-styles/variables.scss';
+const variablesScss = path.resolve(__dirname, variablesPath);
+
 let mode = 'development';
 
 if (process.env.NODE_ENV === 'production') {
   mode = 'production';
+}
+
+let cssLoader;
+
+if (mode === 'development') {
+  cssLoader = 'style-loader';
+} else {
+  cssLoader = MiniCssExtractPlugin.loader;
 }
 
 console.log(mode + ' mode');
@@ -72,7 +83,7 @@ module.exports = {
       {
         test: /\.(sa|sc|c)ss$/,
         use: [
-          (mode === 'development') ? 'style-loader' : MiniCssExtractPlugin.loader,
+          cssLoader,
           'css-loader',
           {
             loader: 'postcss-loader',
@@ -89,7 +100,7 @@ module.exports = {
           {
             loader: 'sass-resources-loader',
             options: {
-              resources: path.resolve(__dirname, './src/main-styles/variables.scss')
+              resources: variablesScss,
             }
           }
         ]

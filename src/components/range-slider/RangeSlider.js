@@ -1,6 +1,7 @@
 import noUiSlider from 'nouislider';
 
 import {
+  $getElement,
   formatPrice,
 } from '../../utilities/utilities.js';
 import Label from '../label';
@@ -16,7 +17,10 @@ class RangeSlider {
   #slider;
   #label;
 
-  constructor($parent, options) {
+  constructor({
+    $parent,
+    options = {}
+  }) {
     this.#init($parent, options);
     this.#render();
   }
@@ -29,10 +33,20 @@ class RangeSlider {
     this.#$component = $parent.find(`.js-${this.#className}`);
     this.#options    = options;
 
-    this.#$slider = this.#$component.find(`.js-${this.#className}__slider`);
+    this.#$slider = $getElement({
+      $parent: this.#$component,
+      component: this.#className,
+      element: 'slider',
+    });
+
     this.#slider  = this.#$slider.get(0);
 
-    this.#$label = this.#$component.find(`.js-${this.#className}__label`);
+    this.#$label = $getElement({
+      $parent: this.#$component,
+      component: this.#className,
+      element: 'label',
+    });
+
     this.#label  = new Label(this.#$label);
 
     this.#initRangeSlider();
@@ -43,11 +57,17 @@ class RangeSlider {
   }
 
   #setHandlers() {
-    this.#slider.noUiSlider.on('update.range-slider', this.#handleRangeSliderUpdate.bind(this));
+    this.#slider.noUiSlider.on(
+      'update.range-slider',
+      this.#handleRangeSliderUpdate.bind(this)
+    );
   }
 
   #handleRangeSliderUpdate(values) {
-    const range = RangeSlider.buildRangeString(Number(values[0]), Number(values[1]));
+    const range = RangeSlider.buildRangeString(
+      Number(values[0]),
+      Number(values[1])
+    );
     this.#label.setDescription(range);
   }
 

@@ -1,5 +1,7 @@
+import {
+  $getElement,
+} from '../../utilities/utilities';
 import RoomLabel from '../room-label';
-
 import '../rate-button';
 
 class CardRoom {
@@ -19,24 +21,58 @@ class CardRoom {
   static #NEXT     = 1;
   static #PREVIOUS = -1;
 
-  constructor($parent, options) {
+  constructor({
+    $parent,
+    options = {}
+  }) {
     this.#init($parent, options);
     this.#render();
   }
 
-  #init($parent, options) {
-    this.#$component      = $parent.find(`.js-${this.#className}`);
-    this.#$images         = this.#$component.find(`.js-${this.#className}__slider-image`);
-    this.#$nextButton     = this.#$component.find(`.js-${this.#className}__next`);
-    this.#$previousButton = this.#$component.find(`.js-${this.#className}__previous`);
-    this.#$controlButtons = this.#$component.find(`.js-${this.#className}__control-panel-button`);
+  #init($parent, {
+    roomLabel = {},
+  }) {
+    this.#$component = $parent.find(`.js-${this.#className}`);
+    this.#$images = $getElement({
+      $parent: this.#$component,
+      component: this.#className,
+      element: 'slider-image',
+    });
+
+    this.#$nextButton = $getElement({
+      $parent: this.#$component,
+      component: this.#className,
+      element: 'next',
+    });
+
+    this.#$previousButton = $getElement({
+      $parent: this.#$component,
+      component: this.#className,
+      element: 'previous',
+    });
+
+    this.#$controlButtons = $getElement({
+      $parent: this.#$component,
+      component: this.#className,
+      element: 'control-panel-button',
+    });
     
-    this.#$controlButtons.each((_, element) => this.#controlButtons.push($(element)));
+    this.#$controlButtons.each((_, element) => { 
+      this.#controlButtons.push($(element));
+    });
 
     this.#$images.each(this.#initImage.bind(this));
 
-    const { roomLabel = {} } = options;
-    new RoomLabel(this.#$component.find(`.js-${this.#className}__label`), roomLabel);
+    const $label = $getElement({
+      $parent: this.#$component,
+      component: this.#className,
+      element: 'label',
+    });
+
+    new RoomLabel({
+      $parent: $label,
+      options: roomLabel,
+    });
   }
 
   #render() {
@@ -44,9 +80,20 @@ class CardRoom {
   }
 
   #setHandlers() {
-    this.#$previousButton.on('click.cardRoom', this.#handlePreviousButtonClick.bind(this));
-    this.#$nextButton.on('click.cardRoom', this.#handleNextButtonClick.bind(this));
-    this.#$controlButtons.on('click.cardRoom', this.#handleControlButtonsClick.bind(this));
+    this.#$previousButton.on(
+      'click.cardRoom',
+      this.#handlePreviousButtonClick.bind(this)
+    );
+
+    this.#$nextButton.on(
+      'click.cardRoom',
+      this.#handleNextButtonClick.bind(this)
+    );
+    
+    this.#$controlButtons.on(
+      'click.cardRoom',
+      this.#handleControlButtonsClick.bind(this)
+    );
   }
 
   #handleControlButtonsClick(event) {
@@ -79,8 +126,9 @@ class CardRoom {
   }
 
   #updateControlButton(newActiveImageId) {
-    this.#controlButtons[this.#activeImageId].removeClass(`${this.#className}__control-panel-button_active`);
-    this.#controlButtons[newActiveImageId].addClass(`${this.#className}__control-panel-button_active`);
+    const active = `${this.#className}__control-panel-button_active`;
+    this.#controlButtons[this.#activeImageId].removeClass(active);
+    this.#controlButtons[newActiveImageId].addClass(active);
   }
 
   #initImage(index, element) {
@@ -94,12 +142,15 @@ class CardRoom {
   }
 
   #updateImage(newActiveImageId) {
-    this.#images[this.#activeImageId].removeClass(`${this.#className}__slider-image_active`);
-    this.#images[newActiveImageId].addClass(`${this.#className}__slider-image_active`);
+    const active = `${this.#className}__slider-image_active`;
+    this.#images[this.#activeImageId].removeClass(active);
+    this.#images[newActiveImageId].addClass(active);
   }
 
   #getNewActiveImageId(direction = CardRoom.#NEXT) {
-    return (this.#activeImageId + direction < 0) ? this.#images.length - 1 : (this.#activeImageId + direction) % this.#images.length;
+    return (this.#activeImageId + direction < 0) ?
+      this.#images.length - 1 :
+      (this.#activeImageId + direction) % this.#images.length;
   }
 
   #setNewActiveImageId(id) {

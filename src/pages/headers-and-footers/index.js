@@ -6,5 +6,8 @@ import data from './data.json';
 (function($) {
   const className = 'headers-and-footers';
 
-  new HeadersAndFooters($(`.js-${className}`), data);
+  new HeadersAndFooters({
+    $element: $(`.js-${className}`),
+    options: data,
+  });
 })(jQuery);

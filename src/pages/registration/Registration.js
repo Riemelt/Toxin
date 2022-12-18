@@ -1,9 +1,9 @@
 import {
   renderSlider,
+  $getElement,
 } from '../../utilities/utilities.js';
 import '../../components/container';
 import CardRegistration from '../../components/card-registration';
-import data from './data.json';
 
 class Registration {
   #className = 'registration';
@@ -11,19 +11,31 @@ class Registration {
 
   #sliderImages;
 
-  constructor($element, options = {}) {
+  constructor({
+    $element,
+    options = {},
+  }) {
     this.#init($element, options);
     this.#render();
   }
 
   #init($element, {
+    slider = {},
     cardRegistration = {},
   }) {
-    this.#$component   = $element;
-    this.#sliderImages = data.slider.images;
+    this.#$component = $element;
+    this.#sliderImages = slider.images;
 
-    const $cardRegistration = this.#$component.find(`.js-${this.#className}__card-registration`);
-    new CardRegistration($cardRegistration, cardRegistration);
+    const $cardRegistration = $getElement({
+      $parent: this.#$component,
+      component: this.#className,
+      element: 'card-registration',
+    });
+
+    new CardRegistration({
+      $parent: $cardRegistration,
+      options: cardRegistration,
+    });
   }
 
   #render() {

@@ -1,5 +1,6 @@
 import {
   declOfNum,
+  $getElement,
 } from '../../utilities/utilities';
 
 import Comment from '../comment';
@@ -18,17 +19,31 @@ class Comments {
     'отзывов',
   ];
 
-  constructor($parent, options = {}) {
+  constructor({
+    $parent,
+    options = {}
+  }) {
     this.#init($parent, options);
   }
 
   #init($parent, options) {
-    this.#options    = options;
+    this.#options = options;
     this.#$component = $parent.find(`.js-${this.#className}`);
-    this.#$comments  = this.#$component.find(`.js-${this.#className}__comment`);
+
+    this.#$comments = $getElement({
+      $parent: this.#$component,
+      component: this.#className,
+      element: 'comment',
+    });
+
     this.#$comments.each(this.#initComment.bind(this));
 
-    this.#$counter = this.#$component.find(`.js-${this.#className}__counter`);
+    this.#$counter = $getElement({
+      $parent: this.#$component,
+      component: this.#className,
+      element: 'counter',
+    });
+
     this.#initCounter();
   }
 
@@ -46,7 +61,10 @@ class Comments {
     const $element = $(element);
     const options  = this.#options.comments[index];
 
-    new Comment($element, options);
+    new Comment({
+      options,
+      $parent: $element,
+    });
   }
 }
 

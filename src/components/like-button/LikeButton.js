@@ -1,3 +1,7 @@
+import {
+  $getElement,
+} from '../../utilities/utilities';
+
 class LikeButton {
   #className = 'like-button';
 
@@ -14,7 +18,13 @@ class LikeButton {
 
   #init($parent) {
     this.#$component = $parent.find(`.js-${this.#className}`);
-    this.#$likes     = this.#$component.find(`.js-${this.#className}__likes`);
+
+    this.#$likes = $getElement({
+      $parent: this.#$component,
+      component: this.#className,
+      element: 'likes',
+    });
+
     this.#likes      = Number(this.#$likes.html());
     this.#isChecked  = this.#$component.hasClass(`${this.#className}_checked`);
   }
@@ -24,7 +34,10 @@ class LikeButton {
   }
 
   #setHandlers() {
-    this.#$component.on('click.like-button', this.#handleLikeButtonClick.bind(this));
+    this.#$component.on(
+      'click.like-button',
+      this.#handleLikeButtonClick.bind(this)
+    );
   }
 
   #handleLikeButtonClick(event) {

@@ -1,3 +1,7 @@
+import {
+  $getElement,
+} from '../../utilities/utilities';
+
 class Label {
   #className = 'label';
 
@@ -14,7 +18,11 @@ class Label {
 
   #init($parent) {
     this.#$component   = $parent.find(`.js-${this.#className}`);
-    this.#$description = this.#$component.find(`.js-${this.#className}__description`);
+    this.#$description = $getElement({
+      $parent: this.#$component,
+      component: this.#className,
+      element: 'description',
+    });
   }
 }
 

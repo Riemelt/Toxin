@@ -1,26 +1,32 @@
 import IMask from 'imask';
 
+import {
+  $getElement,
+} from '../../utilities/utilities';
 import '../label';
 
 class InputField {
   #className = 'input-field';
+  #$component;
 
-  #$inputField;
   #$input;
 
   #minDate;
   #maxDate;
 
-  constructor($parent, options = {}) {
+  constructor({
+    $parent,
+    options = {}
+  }) {
     this.#init($parent, options);
   }
 
   toggleExpand() {
-    this.#$inputField.toggleClass(`${this.#className}_opened`);
+    this.#$component.toggleClass(`${this.#className}_opened`);
   }
 
   closeExpand() {
-    this.#$inputField.removeClass(`${this.#className}_opened`);
+    this.#$component.removeClass(`${this.#className}_opened`);
   }
 
   setInputText(text) {
@@ -32,8 +38,12 @@ class InputField {
   }
 
   #init($parent, options) {
-    this.#$inputField = $parent.find(`.js-${this.#className}`);
-    this.#$input      = $parent.find(`.js-${this.#className}__input`);
+    this.#$component = $parent.find(`.js-${this.#className}`);
+    this.#$input = $getElement({
+      $parent: this.#$component,
+      component: this.#className,
+      element: 'input',
+    });
 
     const {
       isMasked = false,
@@ -43,7 +53,7 @@ class InputField {
 
     if (isMasked) {
       this.#minDate = new Date(minDate);
-      this.#maxDate = new Date(maxDate)
+      this.#maxDate = new Date(maxDate);
       this.#setMask();
     }
   }

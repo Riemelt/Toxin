@@ -1,3 +1,6 @@
+import {
+  $getElement,
+} from '../../utilities/utilities';
 import '../button';
 
 class ControlPanel {
@@ -13,7 +16,10 @@ class ControlPanel {
 
   #handleButtonClick = {};
 
-  constructor($parent, options) {
+  constructor({
+    $parent,
+    options = {}
+  }) {
     this.#init($parent, options);
     this.#render();
   }
@@ -26,12 +32,24 @@ class ControlPanel {
     this.#$resetButton.removeClass(`${this.#className}__reset_hidden`);
   }
 
-  #init($parent, options) {
-    this.#$component   = $parent.find(`.js-${this.#className}`);
-    this.#$applyButton = this.#$component.find(`.js-${this.#className}__apply`);
-    this.#$resetButton = this.#$component.find(`.js-${this.#className}__reset`);
+  #init($parent, {
+    handleApplyButtonClick,
+    handleResetButtonClick,
+  }) {
+    this.#$component = $parent.find(`.js-${this.#className}`);
 
-    const { handleApplyButtonClick, handleResetButtonClick } = options;
+    this.#$applyButton = $getElement({
+      $parent: this.#$component,
+      component: this.#className,
+      element: 'apply',
+    });
+
+    this.#$resetButton = $getElement({
+      $parent: this.#$component,
+      component: this.#className,
+      element: 'reset',
+    });
+
     this.#handleButtonClick[ControlPanel.APPLY] = handleApplyButtonClick;
     this.#handleButtonClick[ControlPanel.RESET] = handleResetButtonClick;
   }
@@ -41,8 +59,15 @@ class ControlPanel {
   }
 
   #setHandlers() {
-    this.#$applyButton.on('click.control-panel', this.#handleApplyButtonClick.bind(this));
-    this.#$resetButton.on('click.control-panel', this.#handleResetButtonClick.bind(this));
+    this.#$applyButton.on(
+      'click.control-panel',
+      this.#handleApplyButtonClick.bind(this)
+    );
+
+    this.#$resetButton.on(
+      'click.control-panel',
+      this.#handleResetButtonClick.bind(this)
+    );
   }
 
   #handleApplyButtonClick() {

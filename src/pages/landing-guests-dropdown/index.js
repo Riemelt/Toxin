@@ -7,5 +7,8 @@ import data from './data.json';
 (function($) {
   const className = 'landing';
 
-  new Landing($(`.js-${className}`), data);
+  new Landing({
+    $element: $(`.js-${className}`),
+    options: data,
+  });
 })(jQuery);

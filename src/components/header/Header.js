@@ -1,3 +1,6 @@
+import {
+  $getElement,
+} from '../../utilities/utilities';
 import Navigation from '../navigation';
 import '../button';
 import '../container';
@@ -9,7 +12,10 @@ class Header {
   #$component;
   #$menuButton;
 
-  constructor($parent, options = {}) {
+  constructor({
+    $parent,
+    options = {}
+  }) {
     this.#init($parent, options);
     this.#render();
   }
@@ -18,9 +24,16 @@ class Header {
     navigation = {},
   }) {
     this.#$component  = $parent.find(`.js-${this.#className}`);
-    this.#$menuButton = this.#$component.find(`.js-${this.#className}__menu-button`);
+    this.#$menuButton = $getElement({
+      $parent: this.#$component,
+      component: this.#className,
+      element: 'menu-button',
+    });
 
-    new Navigation(this.#$component, navigation);
+    new Navigation({
+      $parent: this.#$component,
+      options: navigation,
+    });
   }
 
   #render() {
@@ -28,7 +41,10 @@ class Header {
   }
 
   #setHandlers() {
-    this.#$menuButton.on('click.header', this.#handleMenuButtonClick.bind(this));
+    this.#$menuButton.on(
+      'click.header',
+      this.#handleMenuButtonClick.bind(this)
+    );
   }
 
   #handleMenuButtonClick() {

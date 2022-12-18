@@ -1,3 +1,6 @@
+import {
+  $getElement,
+} from '../../utilities/utilities';
 import '../label';
 
 class Expander {
@@ -13,7 +16,11 @@ class Expander {
 
   #init($parent) {
     this.#$component = $parent.find(`.js-${this.#className}`);
-    this.#$header    = this.#$component.find(`.js-${this.#className}__header`);
+    this.#$header = $getElement({
+      $parent: this.#$component,
+      component: this.#className,
+      element: 'header',
+    });
   }
 
   #render() {

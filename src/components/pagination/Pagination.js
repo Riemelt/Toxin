@@ -1,5 +1,9 @@
 import 'paginationjs';
 
+import {
+  $getElement,
+} from '../../utilities/utilities';
+
 class Pagination {
   #className = 'pagination';
 
@@ -9,7 +13,10 @@ class Pagination {
 
   #options;
 
-  constructor($parent, options = {}) {
+  constructor({
+    $parent,
+    options = {}
+  }) {
     this.#init($parent, options);
   }
 
@@ -17,8 +24,17 @@ class Pagination {
     this.#$component = $parent.find(`.js-${this.#className}`);
     this.#options    = options;
 
-    this.#$paginationContainer = this.#$component.find(`.js-${this.#className}__pagination-container`);
-    this.#$pagesInfo           = this.#$component.find(`.js-${this.#className}__pages-info`);
+    this.#$paginationContainer = $getElement({
+      $parent: this.#$component,
+      component: this.#className,
+      element: 'pagination-container',
+    });
+
+    this.#$pagesInfo = $getElement({
+      $parent: this.#$component,
+      component: this.#className,
+      element: 'pages-info',
+    });
 
     this.#initPaginationjs();
   }

@@ -1,4 +1,7 @@
-import { daysDifference } from '../../utilities/utilities';
+import {
+  daysDifference,
+  $getElement,
+} from '../../utilities/utilities';
 
 import Datepicker from '../datepicker';
 import InputField from '../input-field';
@@ -23,7 +26,10 @@ class DropdownDatepicker {
 
   static #PLACEHOLDER = 'ДД.ММ.ГГГГ';
 
-  constructor($parent, options = {}) {
+  constructor({
+    $parent,
+    options = {}
+  }) {
     this.#init($parent, options);
     this.#render();
   }
@@ -36,7 +42,12 @@ class DropdownDatepicker {
   #init($parent, options) {
     this.#options       = options;
     this.#$component    = $parent.find(`.js-${this.#className}`);
-    this.#$inputWrapper = this.#$component.find(`.js-${this.#className}__input-wrapper`);
+
+    this.#$inputWrapper = $getElement({
+      $parent: this.#$component,
+      component: this.#className,
+      element: 'input-wrapper',
+    });
 
     const {
       withTwoInputs = false,
@@ -50,11 +61,14 @@ class DropdownDatepicker {
       this.#inputMode = DropdownDatepicker.#MULTIPLE_INPUT;
     }
 
-    this.#datepicker = new Datepicker(this.#$component, {
-      handleApplyButtonClick: this.#handleApplyButtonClick.bind(this),
-      handleResetButtonClick: this.#handleResetButtonClick.bind(this),
-      handleDatepickerClick:  this.#handleDatepickerClick.bind(this),
-      ...datepicker,
+    this.#datepicker = new Datepicker({
+      $parent: this.#$component,
+      options: {
+        handleApplyButtonClick: this.#handleApplyButtonClick.bind(this),
+        handleResetButtonClick: this.#handleResetButtonClick.bind(this),
+        handleDatepickerClick:  this.#handleDatepickerClick.bind(this),
+        ...datepicker,
+      },
     });
 
     this.#initInputs();
@@ -62,16 +76,38 @@ class DropdownDatepicker {
 
   #initInputs() {
     if (this.#inputMode === DropdownDatepicker.#MULTIPLE_INPUT) {
-      const $inputStart = this.#$component.find(`.js-${this.#className}__input-start`);
-      const $inputEnd   = this.#$component.find(`.js-${this.#className}__input-end`);
+      const $inputStart = $getElement({
+        $parent: this.#$component,
+        component: this.#className,
+        element: 'input-start',
+      });
+
+      const $inputEnd = $getElement({
+        $parent: this.#$component,
+        component: this.#className,
+        element: 'input-end',
+      });
 
       this.#inputs.push(
-        new InputField($inputStart),
-        new InputField($inputEnd),
-      )
+        new InputField({
+          $parent: $inputStart,
+        }),
+        new InputField({
+          $parent: $inputEnd,
+        }),
+      );
     } else {
-      const $inputSingle = this.#$component.find(`.js-${this.#className}__input-single`);
-      this.#inputs.push(new InputField($inputSingle))
+      const $inputSingle = $getElement({
+        $parent: this.#$component,
+        component: this.#className,
+        element: 'input-single',
+      });
+
+      this.#inputs.push(
+        new InputField({
+          $parent: $inputSingle,
+        }),
+      );
     }
   }
 
@@ -81,8 +117,16 @@ class DropdownDatepicker {
 
   #setHandlers() {
     jQuery(this.#handleInputInit.bind(this));
-    $(document).on('click.dropdown-datepicker', this.#handleDocumentClick.bind(this));
-    this.#$inputWrapper.on('click.dropdown-datepicker', this.#handleInputWrapperClick.bind(this));
+
+    $(document).on(
+      'click.dropdown-datepicker',
+      this.#handleDocumentClick.bind(this)
+    );
+
+    this.#$inputWrapper.on(
+      'click.dropdown-datepicker',
+      this.#handleInputWrapperClick.bind(this)
+    );
   }
 
   #handleInputWrapperClick() {
@@ -101,7 +145,9 @@ class DropdownDatepicker {
 
   #updateDropdownDatepicker() {
     const dates  = this.#datepicker.getDates();
-    const parser = this.#dateFormat === DropdownDatepicker.#DATE_FORMAT_PRIMARY ? Datepicker.parseDate.primary : Datepicker.parseDate.secondary;
+    const parser = this.#isDateFormatPrimary(this.#dateFormat) ?
+      Datepicker.parseDate.primary :
+      Datepicker.parseDate.secondary;
 
     let start = DropdownDatepicker.#PLACEHOLDER;
     let end   = DropdownDatepicker.#PLACEHOLDER;
@@ -121,6 +167,10 @@ class DropdownDatepicker {
     this.#updateInputs({ start, end }, this.#inputMode);
   }
 
+  #isDateFormatPrimary(format) {
+    return format === DropdownDatepicker.#DATE_FORMAT_PRIMARY;
+  }
+
   #updateInputs(datesText, mode) {
     const { multipleDates = true } = this.#options.datepicker;
 
@@ -128,7 +178,7 @@ class DropdownDatepicker {
       let text = datesText.start;
 
       if (multipleDates) {
-        text = `${text} - ${datesText.end}`
+        text = `${text} - ${datesText.end}`;
       }
 
       this.#inputs[0].setInputText(text);
@@ -146,7 +196,9 @@ class DropdownDatepicker {
   }
   
   #handleResetButtonClick() {
-    this.#inputs.forEach(input => input.setInputText(DropdownDatepicker.#PLACEHOLDER));
+    this.#inputs.forEach(input => {
+      input.setInputText(DropdownDatepicker.#PLACEHOLDER);
+    });
   }
 
   #handleDatepickerClick() {
@@ -154,7 +206,9 @@ class DropdownDatepicker {
   }
 
   #isDropdown(target) {
-    return this.#$component.is(target) || this.#$component.has(target).length !== 0;
+    const isDropdown = this.#$component.is(target);
+    const isInsideDropdown = this.#$component.has(target).length !== 0;
+    return isDropdown || isInsideDropdown;
   }
 }
 

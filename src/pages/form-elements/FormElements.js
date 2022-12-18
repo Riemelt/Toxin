@@ -1,5 +1,8 @@
+import {
+  $getElement,
+} from '../../utilities/utilities';
 import Comment            from '../../components/comment';
-import DropdownCounter    from '../../components/dropdown-counter'
+import DropdownCounter    from '../../components/dropdown-counter';
 import DropdownDatepicker from '../../components/dropdown-datepicker';
 import Expander           from '../../components/expander';
 import LikeButton         from '../../components/like-button';
@@ -11,41 +14,190 @@ import '../../components/radio-buttons-field';
 import '../../components/bullet-list';
 import '../../components/button';
 import '../../components/checkbox-list';
-import '../../components/header-ui-kit'
+import '../../components/header-ui-kit';
 import '../../components/container';
 import '../../components/rate-button';
 import '../../components/room-info';
 import '../../components/toggle-switch';
 
-import data from './data.json';
-
 class FormElements {
   #className = 'form-elements';
-
   #$component;
 
-  constructor($element) {
-    this.#init($element);
+  constructor({
+    $element,
+    options = {},
+  }) {
+    this.#init($element, options);
   }
 
-  #init($element) {
+  #init($element, {
+    dropdownDefault = {},
+    inputFieldMasked = {},
+    dateDropdownDouble = {},
+    dateDropdownSingle = {},
+    rangeSlider = {},
+    pagination = {},
+    dropdownMedium = {},
+    dropdownMediumOpened = {},
+    dropdownInitialOpened = {},
+    dropdownOpened = {},
+    comment = {},
+  }) {
     this.#$component = $element;
 
-    new DropdownCounter($(`.js-${this.#className}__dropdown-default`, this.#$component), data.dropdownDefault);
-    new InputField($(`.js-${this.#className}__input-field-masked`, this.#$component), data.inputFieldMasked);
-    new DropdownDatepicker($(`.js-${this.#className}__date-dropdown-double`, this.#$component), data.dateDropdownDouble);
-    new DropdownDatepicker($(`.js-${this.#className}__date-dropdown-single`, this.#$component), data.dateDropdownSingle);
-    new LikeButton($(`.js-${this.#className}__like-button-default`, this.#$component));
-    new LikeButton($(`.js-${this.#className}__like-button-active`, this.#$component));
-    new RangeSlider($(`.js-${this.#className}__range-slider`, this.#$component), data.rangeSlider);
-    new Pagination($(`.js-${this.#className}__pagination-wrapper`, this.#$component), data.pagination);
-    new DropdownCounter($(`.js-${this.#className}__dropdown-medium`, this.#$component), data.dropdownMedium);
-    new DropdownCounter($(`.js-${this.#className}__dropdown-medium-opened`, this.#$component), data.dropdownMediumOpened);
-    new DropdownCounter($(`.js-${this.#className}__dropdown-initial-opened`, this.#$component), data.dropdownInitialOpened);
-    new DropdownCounter($(`.js-${this.#className}__dropdown-opened`, this.#$component), data.dropdownOpened);
-    new Expander($(`.js-${this.#className}__expander`, this.#$component));
-    new Expander($(`.js-${this.#className}__expander-opened`, this.#$component));
-    new Comment($(`.js-${this.#className}__comment`, this.#$component), data.comment);
+    const $dropdownDefault = $getElement({
+      $parent: this.#$component,
+      component: this.#className,
+      element: 'dropdown-default',
+    });
+
+    new DropdownCounter({
+      $parent: $dropdownDefault,
+      options: dropdownDefault,
+    });
+
+    const $inputFieldMasked = $getElement({
+      $parent: this.#$component,
+      component: this.#className,
+      element: 'input-field-masked',
+    });
+
+    new InputField({
+      $parent: $inputFieldMasked,
+      options: inputFieldMasked,
+    });
+
+    const $dateDropdownDouble = $getElement({
+      $parent: this.#$component,
+      component: this.#className,
+      element: 'date-dropdown-double',
+    });
+
+    new DropdownDatepicker({
+      $parent: $dateDropdownDouble,
+      options: dateDropdownDouble,
+    });
+
+    const $dateDropdownSingle = $getElement({
+      $parent: this.#$component,
+      component: this.#className,
+      element: 'date-dropdown-single',
+    });
+
+    new DropdownDatepicker({
+      $parent: $dateDropdownSingle,
+      options: dateDropdownSingle,
+    });
+
+    const $likeButtonDefault = $getElement({
+      $parent: this.#$component,
+      component: this.#className,
+      element: 'like-button-default',
+    });
+
+    new LikeButton($likeButtonDefault);
+
+    const $likeButtonActive = $getElement({
+      $parent: this.#$component,
+      component: this.#className,
+      element: 'like-button-active',
+    });
+
+    new LikeButton($likeButtonActive);
+
+    const $rangeSlider = $getElement({
+      $parent: this.#$component,
+      component: this.#className,
+      element: 'range-slider',
+    });
+
+    new RangeSlider({
+      $parent: $rangeSlider,
+      options: rangeSlider,
+    });
+
+    const $pagination = $getElement({
+      $parent: this.#$component,
+      component: this.#className,
+      element: 'pagination-wrapper',
+    });
+
+    new Pagination({
+      $parent: $pagination,
+      options: pagination,
+    });
+
+    const $dropdownMedium = $getElement({
+      $parent: this.#$component,
+      component: this.#className,
+      element: 'dropdown-medium',
+    });
+
+    new DropdownCounter({
+      $parent: $dropdownMedium,
+      options: dropdownMedium,
+    });
+
+    const $dropdownMediumOpened = $getElement({
+      $parent: this.#$component,
+      component: this.#className,
+      element: 'dropdown-medium-opened',
+    });
+
+    new DropdownCounter({
+      $parent: $dropdownMediumOpened,
+      options: dropdownMediumOpened,
+    });
+
+    const $dropdownInitialOpened = $getElement({
+      $parent: this.#$component,
+      component: this.#className,
+      element: 'dropdown-initial-opened',
+    });
+
+    new DropdownCounter({
+      $parent: $dropdownInitialOpened,
+      options: dropdownInitialOpened,
+    });
+
+    const $dropdownOpened = $getElement({
+      $parent: this.#$component,
+      component: this.#className,
+      element: 'dropdown-opened',
+    });
+
+    new DropdownCounter({
+      $parent: $dropdownOpened,
+      options: dropdownOpened,
+    });
+
+    const $expander = $getElement({
+      $parent: this.#$component,
+      component: this.#className,
+      element: 'expander',
+    });
+
+    new Expander($expander);
+
+    const $expanderOpened = $getElement({
+      $parent: this.#$component,
+      component: this.#className,
+      element: 'expander-opened',
+    });
+
+    new Expander($expanderOpened);
+
+    const $comment = $getElement({
+      $parent: this.#$component,
+      component: this.#className,
+      element: 'comment',
+    });
+
+    new Comment({
+      $parent: $comment,
+      options: comment,
+    });
   }
 }
 

@@ -5,11 +5,19 @@ const TIME_DICTIONARY = {
   weeks:  ['неделю', 'недели', 'недель'],
   months: ['месяц', 'месяца', 'месяцев'],
   years:  ['год', 'года', 'лет'],
-}
+};
 
 function declOfNum(number, titles) {  
-  const cases = [2, 0, 1, 1, 1, 2];  
-  return titles[(number % 100 > 4 && number % 100 < 20) ? 2 : cases[(number % 10 < 5) ? number % 10 : 5]];
+  const cases = [2, 0, 1, 1, 1, 2];
+  let index;
+  
+  if (number % 100 > 4 && number % 100 < 20) {
+    index = 2;
+  } else {
+    index = cases[(number % 10 < 5) ? number % 10 : 5];
+  }
+
+  return titles[index];
 }
 
 function getTimePassed(date) {
@@ -42,7 +50,7 @@ function getTimePassed(date) {
 
   const days = now.diff(date, 'days');
   if (days === 0) {
-    return 'Сегодня'
+    return 'Сегодня';
   } else {
     const timeType = declOfNum(days, TIME_DICTIONARY.days);
     return `${days} ${timeType} назад`;
@@ -77,10 +85,24 @@ function renderSlider({
   changeImage();
 }
 
+function $getElement({
+  $parent,
+  component,
+  element
+}) {
+  const elementClass = buildClass(component, element);
+  return $parent.find(elementClass);
+}
+
+function buildClass(component, element) {
+  return `.js-${component}__${element}`;
+}
+
 export {
   declOfNum,
   getTimePassed,
   formatPrice,
   daysDifference,
   renderSlider,
-}
+  $getElement,
+};

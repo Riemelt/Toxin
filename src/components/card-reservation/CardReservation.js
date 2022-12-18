@@ -1,7 +1,7 @@
 import {
   formatPrice,
+  $getElement,
 } from '../../utilities/utilities.js';
-
 import DropdownCounter    from '../dropdown-counter';
 import DropdownDatepicker from '../dropdown-datepicker';
 import RoomLabel          from '../room-label';
@@ -19,12 +19,15 @@ class CardReservation {
   #roomPriceItems = [];
   #$totalPrice;
 
-  constructor($parent, options = {}) {
+  constructor({
+    $parent,
+    options = {}
+  }) {
     this.#init($parent, options);
   }
 
   #init($parent, options) {
-    this.#options    = options;
+    this.#options = options;
     this.#$component = $parent.find(`.js-${this.#className}`);
 
     const {
@@ -33,20 +36,62 @@ class CardReservation {
       dropdownGuests     = {},
     } = options;
 
-    new RoomLabel(this.#$component.find(`.js-${this.#className}__label`), roomLabel);
-
-    this.#dropdownDatepicker = new DropdownDatepicker(this.#$component.find(`.js-${this.#className}__dropdown-datepicker`), {
-      handleApplyButtonClick: this.#handleApplyButtonClick.bind(this),
-      ...dropdownDatepicker,
+    const $label = $getElement({
+      $parent: this.#$component,
+      component: this.#className,
+      element: 'label',
     });
 
-    new DropdownCounter(this.#$component.find(`.js-${this.#className}__dropdown-guests`), dropdownGuests);
+    new RoomLabel({
+      $parent: $label,
+      options: roomLabel,
+    });
 
-    this.#$roomPriceItems = this.#$component.find(`.js-${this.#className}__room-price-item`);
+    const $dropdownDatepicker = $getElement({
+      $parent: this.#$component,
+      component: this.#className,
+      element: 'dropdown-datepicker',
+    });
+
+    this.#dropdownDatepicker = new DropdownDatepicker({
+      $parent: $dropdownDatepicker,
+      options: {
+        handleApplyButtonClick: this.#handleApplyButtonClick.bind(this),
+        ...dropdownDatepicker,
+      },
+    });
+
+    const $dropdownGuests = $getElement({
+      $parent: this.#$component,
+      component: this.#className,
+      element: 'dropdown-guests',
+    });
+
+    new DropdownCounter({
+      $parent: $dropdownGuests,
+      options: dropdownGuests,
+    });
+
+    this.#$roomPriceItems = $getElement({
+      $parent: this.#$component,
+      component: this.#className,
+      element: 'room-price-item',
+    });
+
     this.#$roomPriceItems.each(this.#initRoomPriceItem.bind(this));
 
-    this.#$totalPrice = this.#$component.find(`.js-${this.#className}__total-price-value`);
+    this.#$totalPrice = $getElement({
+      $parent: this.#$component,
+      component: this.#className,
+      element: 'total-price-value',
+    });
+
     this.#updateTotalPrice();
+  }
+
+  #updateTotalPrice() {
+    const totalPrice = formatPrice(this.#getTotalPrice());
+    this.#$totalPrice.html(totalPrice);
   }
 
   #getTotalPrice() {
@@ -57,11 +102,6 @@ class CardReservation {
     });
 
     return total > 0 ? total : 0;
-  }
-
-  #updateTotalPrice() {
-    const totalPrice = formatPrice(this.#getTotalPrice());
-    this.#$totalPrice.html(totalPrice);
   }
 
   #initRoomPriceItem(index, element) {
@@ -76,10 +116,13 @@ class CardReservation {
     const daysOfStay = this.#dropdownDatepicker.getDaysOfStay();
 
     this.#roomPriceItems.push(
-      new RoomPriceItem($priceItem, {
-        ...roomPriceItems[index],
-        roomPrice: price,
-        daysOfStay,
+      new RoomPriceItem({
+        $parent: $priceItem,
+        options: {
+          ...roomPriceItems[index],
+          roomPrice: price,
+          daysOfStay,
+        },
       })
     );
   }

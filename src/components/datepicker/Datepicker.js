@@ -4,7 +4,20 @@ import ControlPanel from '../control-panel';
 
 class Datepicker {
 
-  static #MONTHS = ['янв', 'фев', 'мар', 'апр', 'мая', 'июн', 'июл', 'авг', 'сен', 'окт', 'ноя', 'дек'];
+  static #MONTHS = [
+    'янв',
+    'фев',
+    'мар',
+    'апр',
+    'мая',
+    'июн',
+    'июл',
+    'авг',
+    'сен',
+    'окт',
+    'ноя',
+    'дек',
+  ];
 
   #className = 'datepicker';
 
@@ -16,14 +29,17 @@ class Datepicker {
   #dateStart;
   #dateEnd;
 
-  constructor($parent, options = {}) {
+  constructor({
+    $parent,
+    options = {}
+  }) {
     this.#init($parent, options);
   }
 
   static parseDate = {
     primary:   Datepicker.parseDatePrimary,
     secondary: Datepicker.parseDateSecondary,
-  }
+  };
 
   static parseDatePrimary(date) {
     const day   = date.getDate();
@@ -56,11 +72,11 @@ class Datepicker {
     const dates = [];
 
     if (this.#dateStart) {
-      dates.push(this.#dateStart)
+      dates.push(this.#dateStart);
     }
 
     if (this.#dateEnd) {
-      dates.push(this.#dateEnd)
+      dates.push(this.#dateEnd);
     }
 
     return dates;
@@ -73,9 +89,12 @@ class Datepicker {
 
     this.#initDates();
 
-    new ControlPanel(this.#$component, {
-      handleResetButtonClick: this.#handleResetButtonClick?.bind(this),
-      handleApplyButtonClick: this.#handleApplyButtonClick?.bind(this),
+    new ControlPanel({
+      $parent: this.#$component,
+      options: {
+        handleResetButtonClick: this.#handleResetButtonClick?.bind(this),
+        handleApplyButtonClick: this.#handleApplyButtonClick?.bind(this),
+      },
     });
 
     this.#initAirDatepicker();
@@ -103,7 +122,7 @@ class Datepicker {
     }
 
     if (endDate) {
-      const date      = new Date(endDate)
+      const date      = new Date(endDate);
       const validated = this.#validateDate(date);
       this.#dateEnd   = validated;
     }
@@ -144,7 +163,7 @@ class Datepicker {
 
   #handleDatepickerClick({ date, datepicker }) {
     if (date.length === 1) {
-      Datepicker.fixFocusDisplay(datepicker)
+      Datepicker.fixFocusDisplay(datepicker);
     }
 
     const {

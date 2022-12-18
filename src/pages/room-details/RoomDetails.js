@@ -5,21 +5,60 @@ import '../../components/container';
 import '../../components/gallery';
 import '../../components/room-info';
 import '../../components/bullet-list';
+import {
+  $getElement,
+} from '../../utilities/utilities';
 
 class RoomDetails {
   #className = 'room-details';
   #$component;
 
-  constructor($element, data = {}) {
-    this.#init($element, data);
+  constructor({
+    $element,
+    options = {},
+  }) {
+    this.#init($element, options);
   }
 
-  #init($element, data) {
+  #init($element, {
+    comments = {},
+    cardReservation = {},
+    chartReviews = {},
+  }) {
     this.#$component = $element;
 
-    new Comments(this.#$component.find(`.js-${this.#className}__comments`), data.comments);
-    new CardReservation(this.#$component.find(`.js-${this.#className}__card-reservation`), data.cardReservation);
-    new ChartPie(this.#$component.find(`.js-${this.#className}__chart-reviews`), data.chartReviews);
+    const $comments = $getElement({
+      $parent: this.#$component,
+      component: this.#className,
+      element: 'comments',
+    });
+
+    new Comments({
+      $parent: $comments,
+      options: comments,
+    });
+
+    const $cardReservation = $getElement({
+      $parent: this.#$component,
+      component: this.#className,
+      element: 'card-reservation',
+    });
+
+    new CardReservation({
+      $parent: $cardReservation,
+      options: cardReservation,
+    });
+
+    const $chartReviews = $getElement({
+      $parent: this.#$component,
+      component: this.#className,
+      element: 'chart-reviews',
+    });
+    
+    new ChartPie({
+      $parent: $chartReviews,
+      options: chartReviews,
+    });
   }
 }
 

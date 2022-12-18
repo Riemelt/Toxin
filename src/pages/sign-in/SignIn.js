@@ -3,20 +3,24 @@ import {
 } from '../../utilities/utilities.js';
 import '../../components/container';
 import '../../components/card-sign-in';
-import data from './data.json';
 
 class SignIn {
   #$component;
   #sliderImages;
 
-  constructor($element) {
-    this.#init($element);
+  constructor({
+    $element,
+    options = {},
+  }) {
+    this.#init($element, options);
     this.#render();
   }
 
-  #init($element) {
-    this.#$component   = $element;
-    this.#sliderImages = data.slider.images;
+  #init($element, {
+    slider = {},
+  }) {
+    this.#$component = $element;
+    this.#sliderImages = slider.images;
   }
 
   #render() {
