@@ -25,8 +25,8 @@ class LikeButton {
       element: 'likes',
     });
 
-    this.#likes      = Number(this.#$likes.html());
-    this.#isChecked  = this.#$component.hasClass(`${this.#className}_checked`);
+    this.#likes = Number(this.#$likes.html());
+    this.#isChecked = this.#$component.hasClass(`${this.#className}_checked`);
   }
 
   #render() {
@@ -36,7 +36,7 @@ class LikeButton {
   #setHandlers() {
     this.#$component.on(
       'click.like-button',
-      this.#handleLikeButtonClick.bind(this)
+      this.#handleLikeButtonClick.bind(this),
     );
   }
 
@@ -45,10 +45,10 @@ class LikeButton {
     this.#$component.toggleClass(`${this.#className}_checked`);
 
     if (this.#isChecked) {
-      this.#likes--;
+      this.#likes -= 1;
       this.#isChecked = false;
     } else {
-      this.#likes++;
+      this.#likes += 1;
       this.#isChecked = true;
     }
 

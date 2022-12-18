@@ -29,7 +29,7 @@ class NavigationItem {
   #setHandlers() {
     this.#$header.on(
       'click.navigationItem',
-      this.#handleNavigationItemClick.bind(this)
+      this.#handleNavigationItemClick.bind(this),
     );
   }
 

@@ -2,10 +2,10 @@ import {
   formatPrice,
   $getElement,
 } from '../../utilities/utilities.js';
-import DropdownCounter    from '../dropdown-counter';
+import DropdownCounter from '../dropdown-counter';
 import DropdownDatepicker from '../dropdown-datepicker';
-import RoomLabel          from '../room-label';
-import RoomPriceItem      from '../room-price-item';
+import RoomLabel from '../room-label';
+import RoomPriceItem from '../room-price-item';
 import '../button';
 import '../card';
 
@@ -21,7 +21,7 @@ class CardReservation {
 
   constructor({
     $parent,
-    options = {}
+    options = {},
   }) {
     this.#init($parent, options);
   }
@@ -31,9 +31,9 @@ class CardReservation {
     this.#$component = $parent.find(`.js-${this.#className}`);
 
     const {
-      roomLabel          = {},
+      roomLabel = {},
       dropdownDatepicker = {},
-      dropdownGuests     = {},
+      dropdownGuests = {},
     } = options;
 
     const $label = $getElement({
@@ -97,7 +97,7 @@ class CardReservation {
   #getTotalPrice() {
     let total = 0;
 
-    this.#roomPriceItems.forEach(element => {
+    this.#roomPriceItems.forEach((element) => {
       total += element.getPrice();
     });
 
@@ -112,25 +112,23 @@ class CardReservation {
         price = 0,
       },
     } = this.#options;
-    
+
     const daysOfStay = this.#dropdownDatepicker.getDaysOfStay();
 
-    this.#roomPriceItems.push(
-      new RoomPriceItem({
-        $parent: $priceItem,
-        options: {
-          ...roomPriceItems[index],
-          roomPrice: price,
-          daysOfStay,
-        },
-      })
-    );
+    this.#roomPriceItems.push(new RoomPriceItem({
+      $parent: $priceItem,
+      options: {
+        ...roomPriceItems[index],
+        roomPrice: price,
+        daysOfStay,
+      },
+    }));
   }
 
   #updateRoomPriceItems() {
     const daysOfStay = this.#dropdownDatepicker.getDaysOfStay();
-    
-    this.#roomPriceItems.forEach(element => {
+
+    this.#roomPriceItems.forEach((element) => {
       element.setDaysOfStay(daysOfStay);
       element.update();
     });

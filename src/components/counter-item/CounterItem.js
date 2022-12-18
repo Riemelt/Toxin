@@ -3,7 +3,6 @@ import {
 } from '../../utilities/utilities';
 
 class CounterItem {
-
   static #DECREMENT = -1;
   static #INCREMENT = 1;
 
@@ -23,7 +22,7 @@ class CounterItem {
 
   constructor({
     $parent,
-    options = {}
+    options = {},
   }) {
     this.#init($parent, options);
     this.#render();
@@ -44,10 +43,10 @@ class CounterItem {
 
   #init($parent, {
     handleCounterItemClick,
-    type  = 'guest',
+    type = 'guest',
     value = 0,
   }) {
-    this.#$component    = $parent.find(`.js-${this.#className}`);
+    this.#$component = $parent.find(`.js-${this.#className}`);
 
     this.#$decrement = $getElement({
       $parent: this.#$component,
@@ -66,7 +65,7 @@ class CounterItem {
       component: this.#className,
       element: 'value',
     });
-    
+
     this.#type = type;
     this.setValue(value);
 
@@ -80,12 +79,12 @@ class CounterItem {
   #setHandlers() {
     this.#$decrement.on(
       'click.counter-item',
-      this.#handleDecrementClick.bind(this)
+      this.#handleDecrementClick.bind(this),
     );
 
     this.#$increment.on(
       'click.counter-item',
-      this.#handleIncrementClick.bind(this)
+      this.#handleIncrementClick.bind(this),
     );
   }
 
@@ -105,17 +104,18 @@ class CounterItem {
 
   #valueValidation(value) {
     if (value <= CounterItem.#MIN) {
-      value = CounterItem.#MIN;
       this.#$decrement.prop('disabled', true);
+      return CounterItem.#MIN;
     }
-    else if (value >= CounterItem.#MAX) {
-      value = CounterItem.#MAX;
+
+    if (value >= CounterItem.#MAX) {
       this.#$increment.prop('disabled', true);
+      return CounterItem.#MAX;
     }
-    else {
-      this.#$decrement.prop('disabled', false);
-      this.#$increment.prop('disabled', false);
-    }
+
+    this.#$decrement.prop('disabled', false);
+    this.#$increment.prop('disabled', false);
+
     return value;
   }
 }

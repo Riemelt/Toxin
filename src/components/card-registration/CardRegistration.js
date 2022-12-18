@@ -13,7 +13,7 @@ class CardRegistration {
 
   constructor({
     $parent,
-    options = {}
+    options = {},
   }) {
     this.#init($parent, options);
   }

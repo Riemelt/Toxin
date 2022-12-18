@@ -4,13 +4,13 @@ mixin button(vars = {})
       theme,
       icon,
       href,
-      text    = '',
+      text = '',
       hovered = false,
-      type    = 'button',
+      type = 'button',
     } = vars
 
     const className = 'button'
-    let classNames  = className + ` js-${className}`
+    let classNames = className + ` js-${className}`
 
     const tag = href ? 'a' : 'button'
 

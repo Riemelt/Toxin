@@ -1,9 +1,9 @@
 import DropdownDatepicker from '../../components/dropdown-datepicker';
-import DropdownCounter    from '../../components/dropdown-counter';
-import RangeSlider        from '../../components/range-slider';
-import Expander           from '../../components/expander';
-import CardRoom           from '../../components/card-room';
-import Pagination         from '../../components/pagination';
+import DropdownCounter from '../../components/dropdown-counter';
+import RangeSlider from '../../components/range-slider';
+import Expander from '../../components/expander';
+import CardRoom from '../../components/card-room';
+import Pagination from '../../components/pagination';
 import '../../components/container';
 import '../../components/checkbox-list';
 import {
@@ -44,7 +44,7 @@ class SearchRoomFilter {
       component: this.#className,
       element: 'guests-dropdown',
     });
-    
+
     new DropdownCounter({
       $parent: $dropdownGuests,
       options: this.#options.guestsDropdown,
@@ -55,7 +55,7 @@ class SearchRoomFilter {
       component: this.#className,
       element: 'price-range',
     });
-    
+
     new RangeSlider({
       $parent: $rangeSlider,
       options: this.#options.priceRange,
@@ -66,7 +66,7 @@ class SearchRoomFilter {
       component: this.#className,
       element: 'comforts-dropdown',
     });
-    
+
     new DropdownCounter({
       $parent: $dropdownComforts,
       options: this.#options.comfortsDropdown,
@@ -93,7 +93,7 @@ class SearchRoomFilter {
       component: this.#className,
       element: 'pagination',
     });
-    
+
     new Pagination({
       $parent: $pagination,
       options: this.#options.pagination,

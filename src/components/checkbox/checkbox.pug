@@ -2,13 +2,13 @@ mixin checkbox(vars = {})
   -
     const {
       description,
-      isRich  = false,
-      title   = '',
+      isRich = false,
+      title = '',
       checked = false,
     } = vars
 
     const className = 'checkbox'
-    let classNames  = className + ` js-${className}`
+    let classNames = className + ` js-${className}`
 
   if isRich
     - classNames += ` ${className}_rich`

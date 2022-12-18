@@ -4,16 +4,16 @@ include ../room-label/room-label
 mixin card-room(vars = {})
   -
     const {
-      href       = '/mock-address/change-me',
-      images     = [],
-      reviews    = 0,
+      href = '/mock-address/change-me',
+      images = [],
+      reviews = 0,
       rateButton = {},
-      isHovered  = false,
-      roomLabel  = {},
+      isHovered = false,
+      roomLabel = {},
     } = vars
 
     const className = 'card-room'
-    let classNames  = `${className} js-${className}`
+    let classNames = `${className} js-${className}`
 
     const imageLimit = images.length > 4 ? 4 : images.length
 

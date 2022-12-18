@@ -10,13 +10,13 @@ mixin input-field(vars = {})
       isReadonly,
       name,
       placeholder = '',
-      required    = false,
-      size        = 'big',
-      type        = 'text',
+      required = false,
+      size = 'big',
+      type = 'text',
     } = vars
 
     const className = 'input-field'
-    let classNames  = className + ` js-${className}`
+    let classNames = className + ` js-${className}`
 
     const sizeClass = {
       small: ` ${className}_small`,
@@ -31,7 +31,7 @@ mixin input-field(vars = {})
 
   -
     const buttonClassName = `${className}__button`
-    let buttonClassNames  = buttonClassName
+    let buttonClassNames = buttonClassName
   
     const buttonIconClass = {
       expandMore: ` ${buttonClassName}_expandable`,

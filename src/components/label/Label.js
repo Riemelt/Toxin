@@ -17,7 +17,7 @@ class Label {
   }
 
   #init($parent) {
-    this.#$component   = $parent.find(`.js-${this.#className}`);
+    this.#$component = $parent.find(`.js-${this.#className}`);
     this.#$description = $getElement({
       $parent: this.#$component,
       component: this.#className,

@@ -25,7 +25,7 @@ class ChartPie {
 
   constructor({
     $parent,
-    options = {}
+    options = {},
   }) {
     this.#init($parent, options);
     this.#render();
@@ -77,7 +77,7 @@ class ChartPie {
   #setHandlers() {
     this.#$legendItems.on(
       'mouseover.chart-pie',
-      this.#handleChartLegendMouseover.bind(this)
+      this.#handleChartLegendMouseover.bind(this),
     );
   }
 
@@ -87,28 +87,28 @@ class ChartPie {
 
   #initBullet(index, element) {
     const { data = [] } = this.#options;
-    const dataIndex     = data.length - index - 1;
-    const $element      = $(element);
+    const dataIndex = data.length - index - 1;
+    const $element = $(element);
 
     const {
-      firstColor  = 'black',
+      firstColor = 'black',
       secondColor = 'black',
     } = data[dataIndex].gradient;
 
     $element.css(
       'background-image',
-      `linear-gradient(180deg, ${firstColor} 0%, ${secondColor} 100%)`
+      `linear-gradient(180deg, ${firstColor} 0%, ${secondColor} 100%)`,
     );
   }
 
   #initChartReviews() {
     const { data = [] } = this.#options;
-    const dataFiltered = data.filter(item => item?.active);
+    const dataFiltered = data.filter((item) => item?.active);
 
     if (dataFiltered.length > 0) {
       this.#updateChartReviews(
         dataFiltered[0].value,
-        dataFiltered[0].gradient.firstColor
+        dataFiltered[0].gradient.firstColor,
       );
     }
   }
@@ -121,17 +121,20 @@ class ChartPie {
 
     const context = this.#$chart.get(0).getContext('2d');
     const {
-      radius          = 0,
-      borderWidth     = 2,
-      cutout          = '90%',
+      radius = 0,
+      borderWidth = 2,
+      cutout = '90%',
       data: chartData = [],
     } = this.#options;
 
-    const values          = chartData.map(item => item.value);
-    const labels          = chartData.map(item => item.label);
-    const backgroundColor = chartData.map(item => {
-      return this.#createGradient(context, item.gradient);
-    });
+    const values = chartData.map((item) => item.value);
+    const labels = chartData.map((item) => item.label);
+    const backgroundColor = chartData.map((item) => (
+      this.#createGradient(
+        context,
+        item.gradient,
+      )
+    ));
 
     const data = {
       labels,
@@ -143,7 +146,7 @@ class ChartPie {
           cutout,
           data: values,
           hoverOffset: 4,
-        }
+        },
       ],
     };
 
@@ -157,10 +160,10 @@ class ChartPie {
           },
           tooltip: {
             enabled: false,
-          }
+          },
         },
         onHover: this.#handleChartHover.bind(this),
-      }
+      },
     };
 
     new Chart(
@@ -180,7 +183,9 @@ class ChartPie {
     this.#updateChartReviews(value, color);
   }
 
-  #handleChartHover(_, item) {
+  #handleChartHover(...args) {
+    const [, item] = args;
+
     if (Array.isArray(item) && item.length) {
       const { data } = this.#options;
       const index = item[0]?.index;
@@ -210,7 +215,7 @@ class ChartPie {
       width / 2,
       0,
       width / 2,
-      height
+      height,
     );
 
     linearGradient.addColorStop(0, gradient.firstColor);

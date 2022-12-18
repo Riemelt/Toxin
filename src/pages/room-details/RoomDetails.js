@@ -1,6 +1,6 @@
-import ChartPie        from '../../components/chart-pie';
+import ChartPie from '../../components/chart-pie';
 import CardReservation from '../../components/card-reservation';
-import Comments        from '../../components/comments';
+import Comments from '../../components/comments';
 import '../../components/container';
 import '../../components/gallery';
 import '../../components/room-info';
@@ -54,7 +54,7 @@ class RoomDetails {
       component: this.#className,
       element: 'chart-reviews',
     });
-    
+
     new ChartPie({
       $parent: $chartReviews,
       options: chartReviews,

@@ -16,20 +16,20 @@ class RoomPriceItem {
   static #DICTIONARY = ['сутки', 'суток', 'суток'];
 
   #contentUpdater = {
-    roomPrice:    this.#updateRoomPrice.bind(this),
-    discount:     this.#updateDiscount.bind(this),
+    roomPrice: this.#updateRoomPrice.bind(this),
+    discount: this.#updateDiscount.bind(this),
     servicePrice: this.#updateServicePrice.bind(this),
   };
 
   #priceGetter = {
-    roomPrice:    this.#getRoomPrice.bind(this),
-    discount:     this.#getDiscount.bind(this),
+    roomPrice: this.#getRoomPrice.bind(this),
+    discount: this.#getDiscount.bind(this),
     servicePrice: this.#getServicePrice.bind(this),
   };
 
   constructor({
     $parent,
-    options = {}
+    options = {},
   }) {
     this.#init($parent, options);
   }
@@ -51,7 +51,7 @@ class RoomPriceItem {
       roomPrice = 0,
       daysOfStay = 0,
     } = this.#options;
-    
+
     return roomPrice * daysOfStay;
   }
 
@@ -66,7 +66,7 @@ class RoomPriceItem {
   }
 
   #init($parent, options = {}) {
-    this.#options    = options;
+    this.#options = options;
     this.#$component = $parent.find(`.js-${this.#className}`);
 
     this.#$content = $getElement({
@@ -96,7 +96,7 @@ class RoomPriceItem {
 
   #updateRoomPrice() {
     const {
-      roomPrice  = 0,
+      roomPrice = 0,
       daysOfStay = 0,
     } = this.#options;
 
@@ -113,7 +113,7 @@ class RoomPriceItem {
   #updateDiscount() {
     const {
       discount = 0,
-      content  = '',
+      content = '',
     } = this.#options;
 
     const contentText = `${content} ${formatPrice(discount)}`;
@@ -125,7 +125,7 @@ class RoomPriceItem {
 
   #updateServicePrice() {
     const {
-      price   = 0,
+      price = 0,
       content = '',
     } = this.#options;
 

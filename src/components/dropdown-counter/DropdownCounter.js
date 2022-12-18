@@ -2,10 +2,9 @@ import {
   $getElement,
   declOfNum,
 } from '../../utilities/utilities.js';
-
 import ControlPanel from '../control-panel';
-import CounterItem  from '../counter-item';
-import InputField   from '../input-field';
+import CounterItem from '../counter-item';
+import InputField from '../input-field';
 
 class DropdownCounter {
   #className = 'dropdown-counter';
@@ -24,24 +23,35 @@ class DropdownCounter {
 
   static #PLACEHOLDERS = {
     guest: 'Сколько гостей',
-    room:  'Сколько комнат',
+    room: 'Сколько комнат',
   };
 
   static #DICTIONARY = {
     guest: {
-      guest:    ['гость', 'гостя', 'гостей'],
-      baby:     ['младенец', 'младенца', 'младенцев'],
+      guest: ['гость', 'гостя', 'гостей'],
+      baby: ['младенец', 'младенца', 'младенцев'],
     },
     room: {
-      room:     ['спальня', 'спальни', 'спален'],
+      room: ['спальня', 'спальни', 'спален'],
       bathroom: ['ванная комната', 'ванные комнаты', 'ванных комнат'],
-      bed:      ['кровать', 'кровати', 'кроватей'],
+      bed: ['кровать', 'кровати', 'кроватей'],
     },
   };
 
+  static #initItemList(type) {
+    switch (type) {
+      case 'guest':
+        return { guest: 0, baby: 0 };
+      case 'room':
+        return { room: 0, bed: 0, bathroom: 0 };
+      default:
+        return {};
+    }
+  }
+
   constructor({
     $parent,
-    options = {}
+    options = {},
   }) {
     this.#init($parent, options);
     this.#render();
@@ -49,7 +59,7 @@ class DropdownCounter {
 
   #init($parent, options) {
     this.#$component = $parent.find(`.js-${this.#className}`);
-    this.#options    = options;
+    this.#options = options;
 
     this.#$menu = $getElement({
       $parent: this.#$component,
@@ -72,13 +82,13 @@ class DropdownCounter {
     });
 
     const {
-      type     = 'guest',
+      type = 'guest',
       isOpened = false,
     } = this.#options;
 
     this.#dropdownType = type;
 
-    this.#itemList   = this.#initItemList(this.#dropdownType);
+    this.#itemList = DropdownCounter.#initItemList(this.#dropdownType);
     this.#inputField = new InputField({
       $parent: this.#$component,
     });
@@ -133,8 +143,9 @@ class DropdownCounter {
   }
 
   #handleDocumentClick(event) {
-    if (!this.#isDropdown(event.target))
+    if (!this.#isDropdown(event.target)) {
       this.#closeDropdown();
+    }
   }
 
   #handleApplyButtonClick() {
@@ -157,42 +168,38 @@ class DropdownCounter {
   }
 
   #updateControlPanel() {
-    if (this.#isItemListEmpty())
+    if (this.#isItemListEmpty()) {
       this.#controlPanel?.hideResetButton();
-    else
-      this.#controlPanel?.showResetButton();
+      return;
+    }
+
+    this.#controlPanel?.showResetButton();
   }
 
   #resetCounterItems() {
-    this.#counterItems.forEach(this.#resetCounterValue.bind(this));
-    this.#itemList = this.#initItemList(this.#dropdownType);
+    this.#counterItems.forEach((item) => item.setValue(0));
+    this.#itemList = DropdownCounter.#initItemList(this.#dropdownType);
     this.#updateInput();
     this.#updateControlPanel();
   }
 
-  #resetCounterValue(element) {
-    element.setValue(0);
-  }
-
   #renderCounterValue(element) {
     const value = element.getValue();
-    const type  = element.getType();
+    const type = element.getType();
     this.#itemList[type] += value;
   }
 
   #initCounterItem(index, element) {
     const $counterItem = $(element);
     const { items = [] } = this.#options;
-    
-    this.#counterItems.push(
-      new CounterItem({
-        $parent: $counterItem,
-        options: {
-          handleCounterItemClick: this.#handleCounterItemClick.bind(this),
-          ...items[index],
-        },
-      })
-    );
+
+    this.#counterItems.push(new CounterItem({
+      $parent: $counterItem,
+      options: {
+        handleCounterItemClick: this.#handleCounterItemClick.bind(this),
+        ...items[index],
+      },
+    }));
   }
 
   #isMenu(target) {
@@ -206,16 +213,16 @@ class DropdownCounter {
   }
 
   #buildString() {
-    let text            = '';
-    const type          = this.#dropdownType;
+    let text = '';
+    const type = this.#dropdownType;
     const dictionaryMap = DropdownCounter.#DICTIONARY[type];
-  
+
     for (const item in this.#itemList) {
       const itemCount = this.#itemList[item];
 
       if (itemCount > 0) {
         text += text !== '' ? ', ' : '';
-        text += itemCount + ' ' + declOfNum(itemCount, dictionaryMap[item]);
+        text += `${itemCount} ${declOfNum(itemCount, dictionaryMap[item])}`;
       }
     }
 
@@ -224,17 +231,6 @@ class DropdownCounter {
     }
 
     return text;
-  }
-
-  #initItemList(type) {
-    switch (type) {
-      case 'guest':
-        return { guest: 0, baby: 0 };
-      case 'room':
-        return { room: 0, bed: 0, bathroom: 0 };
-      default:
-        return {};
-    }
   }
 
   #isItemListEmpty() {

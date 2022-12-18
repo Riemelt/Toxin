@@ -3,11 +3,11 @@ mixin counter-item(vars = {})
     const {
       title = '',
       value = 0,
-      type  = 'guest',
+      type = 'guest',
     }  = vars
 
     const className = 'counter-item'
-    let classNames  = className + ` js-${className}`
+    let classNames = className + ` js-${className}`
 
   div(class=classNames)
     h3(class=`${className}__title`)= title

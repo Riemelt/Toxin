@@ -1,7 +1,7 @@
 import {
   $getElement,
 } from '../../utilities/utilities';
-import DropdownCounter    from '../dropdown-counter';
+import DropdownCounter from '../dropdown-counter';
 import DropdownDatepicker from '../dropdown-datepicker';
 import '../button';
 import '../card';
@@ -13,14 +13,14 @@ class CardSearch {
 
   constructor({
     $parent,
-    options = {}
+    options = {},
   }) {
     this.#init($parent, options);
   }
 
   #init($parent, {
     dropdownDatepicker = {},
-    dropdownGuests     = {},
+    dropdownGuests = {},
   }) {
     this.#$component = $parent.find(`.js-${this.#className}`);
 

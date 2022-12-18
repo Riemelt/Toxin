@@ -4,11 +4,11 @@ import Landing from '../landing/Landing.js';
 import '../landing/landing.scss';
 import data from './data.json';
 
-(function($) {
+(function ($) {
   const className = 'landing';
 
   new Landing({
     $element: $(`.js-${className}`),
     options: data,
   });
-})(jQuery);
+}(jQuery));

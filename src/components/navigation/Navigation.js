@@ -13,14 +13,14 @@ class Navigation {
 
   constructor({
     $parent,
-    options = {}
+    options = {},
   }) {
     this.#init($parent, options);
   }
 
   #init($parent, options) {
-    this.#options          = options;
-    this.#$component       = $parent.find(`.js-${this.#className}`);
+    this.#options = options;
+    this.#$component = $parent.find(`.js-${this.#className}`);
     this.#$navigationItems = $getElement({
       $parent: this.#$component,
       component: this.#className,
@@ -34,9 +34,7 @@ class Navigation {
     const $navigationItem = $(element);
 
     if (this.#options.items[index].subNavigation) {
-      this.#navigationItems.push(
-        new NavigationItem($navigationItem)
-      );
+      this.#navigationItems.push(new NavigationItem($navigationItem));
     }
   }
 }

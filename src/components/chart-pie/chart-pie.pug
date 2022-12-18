@@ -3,15 +3,15 @@ mixin chart-pie(vars = {})
     const {
       title,
       ariaLabel = '',
-      width     = 300,
-      height    = 150,
-      data      = [],
+      width = 300,
+      height = 150,
+      data = [],
     } = vars
 
     const dataReversed = data.reverse()
 
     const className = 'chart-pie'
-    let classNames  = className + ` js-${className}`
+    let classNames = className + ` js-${className}`
 
   div(class=classNames)
     if title

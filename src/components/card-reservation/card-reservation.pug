@@ -12,15 +12,15 @@ mixin card-reservation(vars = {})
         action: '/mock-address/change-me',
         method: 'get',
       },
-      roomLabel               = {},
-      dropdownDatepicker      = {},
-      dropdownGuests          = {},
-      roomPriceItems          = [],
+      roomLabel = {},
+      dropdownDatepicker = {},
+      dropdownGuests = {},
+      roomPriceItems = [],
       submitReservationButton = {},
     } = vars
 
     const className = 'card-reservation'
-    let classNames  = `${className} js-${className}`
+    let classNames = `${className} js-${className}`
 
   +card()
     form(

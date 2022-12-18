@@ -13,16 +13,20 @@ class Pagination {
 
   #options;
 
+  static #buildPagesInfoText(itemsFrom, itemsTo, totalItems) {
+    return `${itemsFrom} – ${itemsTo} из ${totalItems} вариантов аренды`;
+  }
+
   constructor({
     $parent,
-    options = {}
+    options = {},
   }) {
     this.#init($parent, options);
   }
 
   #init($parent, options) {
     this.#$component = $parent.find(`.js-${this.#className}`);
-    this.#options    = options;
+    this.#options = options;
 
     this.#$paginationContainer = $getElement({
       $parent: this.#$component,
@@ -44,13 +48,13 @@ class Pagination {
 
     this.#$paginationContainer.pagination({
       pageSize,
-      dataSource:       this.#initData.bind(this),
-      pageRange:        1,
+      dataSource: this.#initData.bind(this),
+      pageRange: 1,
       autoHidePrevious: true,
-      autoHideNext:     true,
-      prevText:         '',
-      nextText:         '',
-      callback:         this.#renderPagination.bind(this),
+      autoHideNext: true,
+      prevText: '',
+      nextText: '',
+      callback: this.#renderPagination.bind(this),
     });
   }
 
@@ -58,31 +62,32 @@ class Pagination {
     const { itemsCount = 0 } = this.#options;
     const result = [];
 
-    for (let i = 1; i <= itemsCount; i++) {
+    for (let i = 1; i <= itemsCount; i += 1) {
       result.push(i);
     }
 
     done(result);
   }
 
-  #renderPagination(_, pagination) {
+  #renderPagination(...args) {
+    const [, pagination] = args;
     this.#updatePagesInfo(pagination);
   }
 
   #updatePagesInfo({ pageNumber, pageSize, totalNumber }) {
-    const itemsFrom  = (pageNumber - 1) * pageSize + 1;
-    const itemsTo    = pageNumber * pageSize;
+    const itemsFrom = ((pageNumber - 1) * pageSize) + 1;
+    const itemsTo = pageNumber * pageSize;
     const totalItems = totalNumber >= 100 ? '100+' : totalNumber;
-    const pagesInfo  = this.#buildPagesInfoText(itemsFrom, itemsTo, totalItems);
+    const pagesInfo = Pagination.#buildPagesInfoText(
+      itemsFrom,
+      itemsTo,
+      totalItems,
+    );
     this.#setPagesInfo(pagesInfo);
   }
 
   #setPagesInfo(text) {
     this.#$pagesInfo.html(text);
-  }
-
-  #buildPagesInfoText(itemsFrom, itemsTo, totalItems) {
-    return `${itemsFrom} – ${itemsTo} из ${totalItems} вариантов аренды`;
   }
 }
 

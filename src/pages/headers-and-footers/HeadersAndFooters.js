@@ -18,7 +18,7 @@ class HeadersAndFooters {
   }
 
   #init($element, {
-    headerDefault  = {},
+    headerDefault = {},
     headerSignedIn = {},
   }) {
     this.#$component = $element;

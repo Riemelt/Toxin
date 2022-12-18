@@ -1,16 +1,16 @@
 import moment from 'moment';
 
 const TIME_DICTIONARY = {
-  days:   ['день', 'дня', 'дней'],
-  weeks:  ['неделю', 'недели', 'недель'],
+  days: ['день', 'дня', 'дней'],
+  weeks: ['неделю', 'недели', 'недель'],
   months: ['месяц', 'месяца', 'месяцев'],
-  years:  ['год', 'года', 'лет'],
+  years: ['год', 'года', 'лет'],
 };
 
-function declOfNum(number, titles) {  
+const declOfNum = function declOfNum(number, titles) {
   const cases = [2, 0, 1, 1, 1, 2];
   let index;
-  
+
   if (number % 100 > 4 && number % 100 < 20) {
     index = 2;
   } else {
@@ -18,9 +18,9 @@ function declOfNum(number, titles) {
   }
 
   return titles[index];
-}
+};
 
-function getTimePassed(date) {
+const getTimePassed = function getTimePassed(date) {
   const now = moment();
 
   const years = now.diff(date, 'years');
@@ -51,52 +51,52 @@ function getTimePassed(date) {
   const days = now.diff(date, 'days');
   if (days === 0) {
     return 'Сегодня';
-  } else {
-    const timeType = declOfNum(days, TIME_DICTIONARY.days);
-    return `${days} ${timeType} назад`;
   }
-}
 
-function formatPrice(price) {
+  const timeType = declOfNum(days, TIME_DICTIONARY.days);
+  return `${days} ${timeType} назад`;
+};
+
+const formatPrice = function formatPrice(price) {
   return `${price.toLocaleString('ru-RU')}₽`;
-}
+};
 
-function daysDifference(firstDate, secondDate) {
+const daysDifference = function daysDifference(firstDate, secondDate) {
   const time = secondDate?.getTime() - firstDate?.getTime();
   const days = Math.ceil(time / (1000 * 3600 * 24));
   return days ? days : 0;
-}
+};
 
-function renderSlider({
+const renderSlider = function renderSlider({
   $component,
   images = [],
-  delay  = 4000,
+  delay = 4000,
 }) {
   let index = 0;
 
-  function changeImage() {
+  const changeImage = function changeImage() {
     const path = require(`@images/${images[index].src}`);
     $component.css('background-image', `url(${path})`);
     index = index >= images.length - 1 ? 0 : index + 1;
 
     setTimeout(changeImage, delay);
-  }
+  };
 
   changeImage();
-}
+};
 
-function $getElement({
+const $getElement = function $getElement({
   $parent,
   component,
-  element
+  element,
 }) {
   const elementClass = buildClass(component, element);
   return $parent.find(elementClass);
-}
+};
 
-function buildClass(component, element) {
+const buildClass = function buildBemClass(component, element) {
   return `.js-${component}__${element}`;
-}
+};
 
 export {
   declOfNum,

@@ -4,7 +4,6 @@ import {
 import '../button';
 
 class ControlPanel {
-
   static APPLY = 'apply';
   static RESET = 'reset';
 
@@ -18,7 +17,7 @@ class ControlPanel {
 
   constructor({
     $parent,
-    options = {}
+    options = {},
   }) {
     this.#init($parent, options);
     this.#render();
@@ -61,12 +60,12 @@ class ControlPanel {
   #setHandlers() {
     this.#$applyButton.on(
       'click.control-panel',
-      this.#handleApplyButtonClick.bind(this)
+      this.#handleApplyButtonClick.bind(this),
     );
 
     this.#$resetButton.on(
       'click.control-panel',
-      this.#handleResetButtonClick.bind(this)
+      this.#handleResetButtonClick.bind(this),
     );
   }
 

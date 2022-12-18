@@ -3,12 +3,12 @@ include ../label/label
 mixin expander(vars = {})
   -
     const {
-      title    = 'default',
+      title = 'default',
       isOpened = false
     } = vars
 
     const className = 'expander'
-    let classNames  = className + ` js-${className}`
+    let classNames = className + ` js-${className}`
 
   if isOpened
     - classNames += ` ${className}_opened`

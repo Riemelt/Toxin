@@ -2,12 +2,10 @@ import {
   daysDifference,
   $getElement,
 } from '../../utilities/utilities';
-
 import Datepicker from '../datepicker';
 import InputField from '../input-field';
 
 class DropdownDatepicker {
-
   #className = 'dropdown-datepicker';
 
   #$component;
@@ -16,32 +14,38 @@ class DropdownDatepicker {
   #datepicker;
   #inputs = [];
 
-  #inputMode  = DropdownDatepicker.#SINGLE_INPUT;
+  #inputMode = DropdownDatepicker.#SINGLE_INPUT;
   #dateFormat = DropdownDatepicker.#DATE_FORMAT_PRIMARY;
 
   static #DATE_FORMAT_PRIMARY = 'primary';
+  static #DATE_FORMAT_SECONDARY = 'secondary';
 
-  static #SINGLE_INPUT   = 'single';
+  static #SINGLE_INPUT = 'single';
   static #MULTIPLE_INPUT = 'multiple';
 
   static #PLACEHOLDER = 'ДД.ММ.ГГГГ';
 
+  static #dateParser = {
+    [DropdownDatepicker.#DATE_FORMAT_PRIMARY]: Datepicker.parseDate.primary,
+    [DropdownDatepicker.#DATE_FORMAT_SECONDARY]: Datepicker.parseDate.secondary,
+  };
+
   constructor({
     $parent,
-    options = {}
+    options = {},
   }) {
     this.#init($parent, options);
     this.#render();
   }
 
   getDaysOfStay() {
-    const [ dateStart, dateEnd ] = this.#datepicker.getDates();
+    const [dateStart, dateEnd] = this.#datepicker.getDates();
     return daysDifference(dateStart, dateEnd);
   }
 
   #init($parent, options) {
-    this.#options       = options;
-    this.#$component    = $parent.find(`.js-${this.#className}`);
+    this.#options = options;
+    this.#$component = $parent.find(`.js-${this.#className}`);
 
     this.#$inputWrapper = $getElement({
       $parent: this.#$component,
@@ -51,8 +55,8 @@ class DropdownDatepicker {
 
     const {
       withTwoInputs = false,
-      dateFormat    = DropdownDatepicker.#DATE_FORMAT_PRIMARY,
-      datepicker    = {},
+      dateFormat = DropdownDatepicker.#DATE_FORMAT_PRIMARY,
+      datepicker = {},
     } = this.#options;
 
     this.#dateFormat = dateFormat;
@@ -66,7 +70,7 @@ class DropdownDatepicker {
       options: {
         handleApplyButtonClick: this.#handleApplyButtonClick.bind(this),
         handleResetButtonClick: this.#handleResetButtonClick.bind(this),
-        handleDatepickerClick:  this.#handleDatepickerClick.bind(this),
+        handleDatepickerClick: this.#handleDatepickerClick.bind(this),
         ...datepicker,
       },
     });
@@ -103,11 +107,9 @@ class DropdownDatepicker {
         element: 'input-single',
       });
 
-      this.#inputs.push(
-        new InputField({
-          $parent: $inputSingle,
-        }),
-      );
+      this.#inputs.push(new InputField({
+        $parent: $inputSingle,
+      }));
     }
   }
 
@@ -120,12 +122,12 @@ class DropdownDatepicker {
 
     $(document).on(
       'click.dropdown-datepicker',
-      this.#handleDocumentClick.bind(this)
+      this.#handleDocumentClick.bind(this),
     );
 
     this.#$inputWrapper.on(
       'click.dropdown-datepicker',
-      this.#handleInputWrapperClick.bind(this)
+      this.#handleInputWrapperClick.bind(this),
     );
   }
 
@@ -144,13 +146,11 @@ class DropdownDatepicker {
   }
 
   #updateDropdownDatepicker() {
-    const dates  = this.#datepicker.getDates();
-    const parser = this.#isDateFormatPrimary(this.#dateFormat) ?
-      Datepicker.parseDate.primary :
-      Datepicker.parseDate.secondary;
+    const dates = this.#datepicker.getDates();
+    const parser = DropdownDatepicker.#dateParser[this.#dateFormat];
 
     let start = DropdownDatepicker.#PLACEHOLDER;
-    let end   = DropdownDatepicker.#PLACEHOLDER;
+    let end = DropdownDatepicker.#PLACEHOLDER;
 
     switch (dates.length) {
       case 1:
@@ -158,17 +158,13 @@ class DropdownDatepicker {
         break;
       case 2:
         start = parser(dates[0]);
-        end   = parser(dates[1]);
+        end = parser(dates[1]);
         break;
       default:
         break;
     }
 
     this.#updateInputs({ start, end }, this.#inputMode);
-  }
-
-  #isDateFormatPrimary(format) {
-    return format === DropdownDatepicker.#DATE_FORMAT_PRIMARY;
   }
 
   #updateInputs(datesText, mode) {
@@ -191,12 +187,12 @@ class DropdownDatepicker {
   #handleApplyButtonClick() {
     const { handleApplyButtonClick } = this.#options;
     handleApplyButtonClick?.();
-    
+
     this.#datepicker.close();
   }
-  
+
   #handleResetButtonClick() {
-    this.#inputs.forEach(input => {
+    this.#inputs.forEach((input) => {
       input.setInputText(DropdownDatepicker.#PLACEHOLDER);
     });
   }

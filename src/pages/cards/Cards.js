@@ -2,10 +2,10 @@ import {
   $getElement,
 } from '../../utilities/utilities';
 import CardRegistration from '../../components/card-registration';
-import CardReservation  from '../../components/card-reservation';
-import CardRoom         from '../../components/card-room';
-import CardSearch       from '../../components/card-search';
-import Datepicker       from '../../components/datepicker';
+import CardReservation from '../../components/card-reservation';
+import CardRoom from '../../components/card-room';
+import CardSearch from '../../components/card-search';
+import Datepicker from '../../components/datepicker';
 import '../../components/header-ui-kit';
 import '../../components/card-sign-in';
 import '../../components/container';

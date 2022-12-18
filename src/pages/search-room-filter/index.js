@@ -4,11 +4,11 @@ import SearchRoomFilter from './SearchRoomFilter.js';
 import './search-room-filter.scss';
 import data from './data.json';
 
-(function($) {
+(function ($) {
   const className = 'search-room-filter';
 
   new SearchRoomFilter({
     $element: $(`.js-${className}`),
     options: data,
   });
-})(jQuery);
+}(jQuery));

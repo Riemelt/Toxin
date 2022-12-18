@@ -6,10 +6,10 @@ include ../socials/socials
 mixin footer(vars = {})
   -
     const {
-      isMobile  = false,
+      isMobile = false,
       navBlocks = [],
       copyright = '',
-      socials   = {},
+      socials = {},
       company = {
         logo: {},
         description: '',
@@ -26,7 +26,7 @@ mixin footer(vars = {})
     } = vars
 
     const className = 'footer'
-    let classNames  = className
+    let classNames = className
 
   if isMobile
     - classNames += ` ${className}_mobile`

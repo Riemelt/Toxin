@@ -21,7 +21,7 @@ class Comments {
 
   constructor({
     $parent,
-    options = {}
+    options = {},
   }) {
     this.#init($parent, options);
   }
@@ -49,17 +49,17 @@ class Comments {
 
   #initCounter() {
     const { comments = [] } = this.#options;
-    
+
     const number = comments.length;
-    const label  = declOfNum(number, Comments.#DICTIONARY);
-    const text   = `${number} ${label}`;
+    const label = declOfNum(number, Comments.#DICTIONARY);
+    const text = `${number} ${label}`;
 
     this.#$counter.html(text);
   }
 
   #initComment(index, element) {
     const $element = $(element);
-    const options  = this.#options.comments[index];
+    const options = this.#options.comments[index];
 
     new Comment({
       options,

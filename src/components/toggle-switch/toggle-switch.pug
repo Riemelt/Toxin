@@ -2,12 +2,12 @@ mixin toggle-switch(vars = {})
   -
     const {
       name,
-      title   = '',
+      title = '',
       checked = false,
     } = vars
 
     const className = 'toggle-switch'
-    let classNames  = className + ` js-${className}`
+    let classNames = className + ` js-${className}`
 
   div(class=classNames)
     label(class=`${className}__body`)

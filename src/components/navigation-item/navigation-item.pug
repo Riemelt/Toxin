@@ -3,12 +3,12 @@ mixin navigation-item(vars = {})
     const {
       href,
       subNavigation,
-      content  = '',
+      content = '',
       isActive = false,
     } = vars
 
     const className = 'navigation-item'
-    let classNames  = `${className} js-${className}`
+    let classNames = `${className} js-${className}`
 
     const tag = href ? 'a' : 'div'
 
@@ -21,7 +21,6 @@ mixin navigation-item(vars = {})
 
   if isActive
     - classNames += ` ${className}_active`
-
     
   #{tag}(class=classNames)&attributes(itemAttributes[tag])
     div(class=`${className}__header-wrapper js-${className}__header-wrapper`)

@@ -3,7 +3,6 @@ import AirDatepicker from 'air-datepicker';
 import ControlPanel from '../control-panel';
 
 class Datepicker {
-
   static #MONTHS = [
     'янв',
     'фев',
@@ -31,18 +30,18 @@ class Datepicker {
 
   constructor({
     $parent,
-    options = {}
+    options = {},
   }) {
     this.#init($parent, options);
   }
 
   static parseDate = {
-    primary:   Datepicker.parseDatePrimary,
+    primary: Datepicker.parseDatePrimary,
     secondary: Datepicker.parseDateSecondary,
   };
 
   static parseDatePrimary(date) {
-    const day   = date.getDate();
+    const day = date.getDate();
     const month = date.getMonth();
 
     return `${day} ${Datepicker.#MONTHS[month]}`;
@@ -53,7 +52,7 @@ class Datepicker {
   }
 
   static fixFocusDisplay(datepicker) {
-    const selector      = '.air-datepicker-cell.-day-.-selected-';
+    const selector = '.air-datepicker-cell.-day-.-selected-';
     const $selectedCell = $(selector, datepicker.$datepicker);
 
     $selectedCell.addClass('-range-from-');
@@ -83,9 +82,9 @@ class Datepicker {
   }
 
   #init($parent, options) {
-    this.#options    = options;
+    this.#options = options;
     this.#$component = $parent.find(`.js-${this.#className}`);
-    this.#$input     = this.#$component.find(`.js-${this.#className}__input`);
+    this.#$input = this.#$component.find(`.js-${this.#className}__input`);
 
     this.#initDates();
 
@@ -116,15 +115,15 @@ class Datepicker {
     const { startDate, endDate } = this.#options;
 
     if (startDate) {
-      const date      = new Date(startDate);
+      const date = new Date(startDate);
       const validated = this.#validateDate(date);
       this.#dateStart = validated;
     }
 
     if (endDate) {
-      const date      = new Date(endDate);
+      const date = new Date(endDate);
       const validated = this.#validateDate(date);
-      this.#dateEnd   = validated;
+      this.#dateEnd = validated;
     }
   }
 
@@ -137,9 +136,9 @@ class Datepicker {
 
   #initAirDatepicker() {
     const {
-      range         = true,
+      range = true,
       multipleDates = true,
-      minDate       = new Date(),
+      minDate = new Date(),
     } = this.#options;
 
     const input = this.#$input.get(0);
@@ -148,14 +147,14 @@ class Datepicker {
       range,
       minDate,
       multipleDates,
-      inline:        true,
-      visible:       false,
-      keyboardNav:   true,
+      inline: true,
+      visible: false,
+      keyboardNav: true,
       selectedDates: this.getDates(),
-      prevHtml:      '<span class="material-icons"> arrow_back </span>',
-      nextHtml:      '<span class="material-icons"> arrow_forward </span>',
+      prevHtml: '<span class="material-icons"> arrow_back </span>',
+      nextHtml: '<span class="material-icons"> arrow_forward </span>',
       navTitles: {
-        days: 'MMMM yyyy'
+        days: 'MMMM yyyy',
       },
       onSelect: this.#handleDatepickerClick.bind(this),
     });
@@ -173,7 +172,7 @@ class Datepicker {
 
     if (multipleDates) {
       this.#dateStart = date?.[0];
-      this.#dateEnd   = date?.[1];
+      this.#dateEnd = date?.[1];
     } else {
       this.#dateEnd = date;
     }

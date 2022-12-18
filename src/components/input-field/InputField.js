@@ -16,7 +16,7 @@ class InputField {
 
   constructor({
     $parent,
-    options = {}
+    options = {},
   }) {
     this.#init($parent, options);
   }
@@ -47,8 +47,8 @@ class InputField {
 
     const {
       isMasked = false,
-      minDate  = new Date('01.01.1900'),
-      maxDate  = new Date(),
+      minDate = new Date('01.01.1900'),
+      maxDate = new Date(),
     } = options;
 
     if (isMasked) {
@@ -61,8 +61,8 @@ class InputField {
   #setMask() {
     const maskOptions = {
       mask: Date,
-      min:  this.#minDate,
-      max:  this.#maxDate,
+      min: this.#minDate,
+      max: this.#maxDate,
     };
 
     IMask(this.#$input.get(0), maskOptions);

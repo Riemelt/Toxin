@@ -14,16 +14,16 @@ class CardRoom {
   #$previousButton;
   #$controlButtons;
 
-  #images         = [];
-  #activeImageId  = 0;
+  #images = [];
+  #activeImageId = 0;
   #controlButtons = [];
 
-  static #NEXT     = 1;
+  static #NEXT = 1;
   static #PREVIOUS = -1;
 
   constructor({
     $parent,
-    options = {}
+    options = {},
   }) {
     this.#init($parent, options);
     this.#render();
@@ -56,8 +56,9 @@ class CardRoom {
       component: this.#className,
       element: 'control-panel-button',
     });
-    
-    this.#$controlButtons.each((_, element) => { 
+
+    this.#$controlButtons.each((...args) => {
+      const [, element] = args;
       this.#controlButtons.push($(element));
     });
 
@@ -82,25 +83,25 @@ class CardRoom {
   #setHandlers() {
     this.#$previousButton.on(
       'click.cardRoom',
-      this.#handlePreviousButtonClick.bind(this)
+      this.#handlePreviousButtonClick.bind(this),
     );
 
     this.#$nextButton.on(
       'click.cardRoom',
-      this.#handleNextButtonClick.bind(this)
+      this.#handleNextButtonClick.bind(this),
     );
-    
+
     this.#$controlButtons.on(
       'click.cardRoom',
-      this.#handleControlButtonsClick.bind(this)
+      this.#handleControlButtonsClick.bind(this),
     );
   }
 
   #handleControlButtonsClick(event) {
     event.preventDefault();
-    
+
     const $this = $(event.target);
-    const id    = $this.data('id');
+    const id = $this.data('id');
 
     if (id < this.#images.length) {
       this.#update(id);

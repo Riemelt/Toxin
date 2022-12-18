@@ -19,7 +19,7 @@ class RangeSlider {
 
   constructor({
     $parent,
-    options = {}
+    options = {},
   }) {
     this.#init($parent, options);
     this.#render();
@@ -31,7 +31,7 @@ class RangeSlider {
 
   #init($parent, options) {
     this.#$component = $parent.find(`.js-${this.#className}`);
-    this.#options    = options;
+    this.#options = options;
 
     this.#$slider = $getElement({
       $parent: this.#$component,
@@ -39,7 +39,7 @@ class RangeSlider {
       element: 'slider',
     });
 
-    this.#slider  = this.#$slider.get(0);
+    this.#slider = this.#$slider.get(0);
 
     this.#$label = $getElement({
       $parent: this.#$component,
@@ -47,7 +47,7 @@ class RangeSlider {
       element: 'label',
     });
 
-    this.#label  = new Label(this.#$label);
+    this.#label = new Label(this.#$label);
 
     this.#initRangeSlider();
   }
@@ -59,14 +59,14 @@ class RangeSlider {
   #setHandlers() {
     this.#slider.noUiSlider.on(
       'update.range-slider',
-      this.#handleRangeSliderUpdate.bind(this)
+      this.#handleRangeSliderUpdate.bind(this),
     );
   }
 
   #handleRangeSliderUpdate(values) {
     const range = RangeSlider.buildRangeString(
       Number(values[0]),
-      Number(values[1])
+      Number(values[1]),
     );
     this.#label.setDescription(range);
   }
@@ -76,9 +76,9 @@ class RangeSlider {
       start = [5000, 10000],
       range = {
         min: 0,
-        max: 16000
+        max: 16000,
       },
-      step = 1000
+      step = 1000,
     } = this.#options;
 
     noUiSlider.create(this.#slider, {

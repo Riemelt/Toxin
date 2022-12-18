@@ -3,12 +3,12 @@ include ../comment/comment
 mixin comments(vars = {})
   -
     const {
-      title    = '',
+      title = '',
       comments = [],
     } = vars
 
     const className = 'comments'
-    let classNames  = className + ` js-${className}`
+    let classNames = className + ` js-${className}`
 
   div(class=classNames)
     div(class=`${className}__header`)

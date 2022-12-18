@@ -1,12 +1,12 @@
 mixin like-button(vars = {})
   -
     const {
-      likes   = 0,
+      likes = 0,
       checked = false,
     } = vars
 
     const className = 'like-button'
-    let classNames  = className + ` js-${className}`
+    let classNames = className + ` js-${className}`
 
   if checked
     - classNames += ` ${className}_checked`

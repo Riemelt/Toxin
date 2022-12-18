@@ -14,7 +14,7 @@ class Header {
 
   constructor({
     $parent,
-    options = {}
+    options = {},
   }) {
     this.#init($parent, options);
     this.#render();
@@ -23,7 +23,7 @@ class Header {
   #init($parent, {
     navigation = {},
   }) {
-    this.#$component  = $parent.find(`.js-${this.#className}`);
+    this.#$component = $parent.find(`.js-${this.#className}`);
     this.#$menuButton = $getElement({
       $parent: this.#$component,
       component: this.#className,
@@ -43,7 +43,7 @@ class Header {
   #setHandlers() {
     this.#$menuButton.on(
       'click.header',
-      this.#handleMenuButtonClick.bind(this)
+      this.#handleMenuButtonClick.bind(this),
     );
   }
 

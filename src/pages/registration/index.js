@@ -4,11 +4,11 @@ import Registration from './Registration.js';
 import './registration.scss';
 import data from './data.json';
 
-(function($) {
+(function ($) {
   const className = 'registration';
 
   new Registration({
     $element: $(`.js-${className}`),
     options: data,
   });
-})(jQuery);
+}(jQuery));

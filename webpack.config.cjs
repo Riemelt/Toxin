@@ -1,21 +1,21 @@
-const HtmlWebpackPlugin    = require('html-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const PugPlugin            = require('pug-plugin');
-const fs                   = require('fs');
-const webpack              = require('webpack');
-const path                 = require('path');
+const PugPlugin = require('pug-plugin');
+const fs = require('fs');
+const webpack = require('webpack');
+const path = require('path');
 
-const srcPath              = path.resolve(__dirname, './src');
-const pagesPath            = path.resolve(__dirname, './src/pages');
-const pages                = fs.readdirSync(pagesPath);
+const srcPath = path.resolve(__dirname, './src');
+const pagesPath = path.resolve(__dirname, './src/pages');
+const pages = fs.readdirSync(pagesPath);
 
-const multipleHtmlPlugins = pages.map(name => {
-  return new HtmlWebpackPlugin({
-    template: `./pages/${name}/${name}.pug`, // relative path to the HTML files
-    filename: `./${name}.html`, // output HTML files
+const multipleHtmlPlugins = pages.map((name) => (
+  new HtmlWebpackPlugin({
+    template: `./pages/${name}/${name}.pug`,
+    filename: `./${name}.html`,
     chunks: [name],
-  });
-});
+  })
+));
 
 const entryPoints = pages.reduce((acc, name) => {
   acc[name] = `./pages/${name}/index.js`;
@@ -25,21 +25,15 @@ const entryPoints = pages.reduce((acc, name) => {
 const variablesPath = './src/main-styles/variables.scss';
 const variablesScss = path.resolve(__dirname, variablesPath);
 
-let mode = 'development';
+const mode = (process.env.NODE_ENV === 'production') ?
+  'production' :
+  'development';
 
-if (process.env.NODE_ENV === 'production') {
-  mode = 'production';
-}
+const cssLoader = (mode === 'development') ?
+  'style-loader' :
+  MiniCssExtractPlugin.loader;
 
-let cssLoader;
-
-if (mode === 'development') {
-  cssLoader = 'style-loader';
-} else {
-  cssLoader = MiniCssExtractPlugin.loader;
-}
-
-console.log(mode + ' mode');
+console.log(`${mode} mode`);
 
 module.exports = {
   context: srcPath,
@@ -60,7 +54,7 @@ module.exports = {
   output: {
     filename: './[name].[contenthash].js',
     assetModuleFilename: 'assets/[name][hash][ext][query]',
-    clean: true
+    clean: true,
   },
   devtool: (mode === 'development') ? 'eval-source-map' : false,
   optimization: {
@@ -92,18 +86,18 @@ module.exports = {
                 plugins: [
                   'autoprefixer',
                   'postcss-preset-env',
-                ]
-              }
-            }
+                ],
+              },
+            },
           },
           'sass-loader',
           {
             loader: 'sass-resources-loader',
             options: {
               resources: variablesScss,
-            }
-          }
-        ]
+            },
+          },
+        ],
       },
       {
         test: /\.(svg|png|ico|xml|json|webmanifest)$/i,
@@ -134,8 +128,8 @@ module.exports = {
         loader: PugPlugin.loader,
         exclude: /(node_modules|bower_components)/,
         options: {
-            basedir: path.resolve(__dirname, './src')
-        }
+          basedir: path.resolve(__dirname, './src'),
+        },
       },
       {
         test: /\.m?js$/,
@@ -143,11 +137,11 @@ module.exports = {
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-env']
-          }
-        }
-      }
-    ]
+            presets: ['@babel/preset-env'],
+          },
+        },
+      },
+    ],
   },
   devServer: {
     hot: true,

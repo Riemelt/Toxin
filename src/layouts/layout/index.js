@@ -2,7 +2,7 @@ import header from '../../components/header/data.json';
 import Layout from './Layout.js';
 import './layout.scss';
 
-(function($){
+(function ($) {
   const className = 'layout';
   const options = {
     header,
@@ -12,4 +12,4 @@ import './layout.scss';
     options,
     $element: $(`.js-${className}`),
   });
-})(jQuery);
+}(jQuery));

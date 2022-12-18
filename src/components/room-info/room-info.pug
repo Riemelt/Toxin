@@ -4,12 +4,12 @@ mixin room-info(vars = {})
   -
     const {
       title,
-      items       = [],
+      items = [],
       withEndLine = false,
     } = vars
 
     const className = 'room-info'
-    let classNames  = className
+    let classNames = className
 
   if withEndLine
     - classNames += ` ${className}_withEndLine`

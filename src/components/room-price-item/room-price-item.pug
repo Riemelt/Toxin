@@ -1,13 +1,13 @@
 mixin room-price-item(vars = {})
   -
     const {
-      theme   = 'roomPrice',
+      theme = 'roomPrice',
       details = '',
       content = '',
     } = vars
 
     const className = 'room-price-item'
-    let classNames  = `${className} js-${className}`
+    let classNames = `${className} js-${className}`
 
   div(class=classNames)
     div(class=`${className}__content js-${className}__content`)

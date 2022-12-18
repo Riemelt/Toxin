@@ -13,7 +13,7 @@ class Comment {
 
   constructor({
     $parent,
-    options = {}
+    options = {},
   }) {
     this.#init($parent, options);
   }
@@ -21,7 +21,7 @@ class Comment {
   #init($parent, options) {
     this.#options = options;
     this.#$component = $parent.find(`.js-${this.#className}`);
-    
+
     this.#$date = $getElement({
       $parent: this.#$component,
       component: this.#className,
