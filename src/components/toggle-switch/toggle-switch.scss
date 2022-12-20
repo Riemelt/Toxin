@@ -7,6 +7,13 @@ $className: 'toggle-switch';
     display: flex;
     align-items: center;
     cursor: pointer;
+    width: fit-content;
+
+    &:hover {
+      .#{$className}__switch {
+        border-width: toRem(2);
+      } 
+    }
   }
 
   &__switch-input {
@@ -49,11 +56,5 @@ $className: 'toggle-switch';
       bottom: 0;
       transition: transform 0.4s;
     }
-  }
-
-  &:hover {
-    .#{$className}__switch {
-      border-width: toRem(2);
-    } 
   }
 }

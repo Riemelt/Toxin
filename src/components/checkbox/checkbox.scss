@@ -2,11 +2,25 @@ $className: 'checkbox';
 
 .#{$className} {
   max-width: $medium;
+  width: fit-content;
 
   &__body {
     display: flex;
     align-items: flex-start;
     cursor: pointer;
+    width: fit-content;
+
+    &:hover {
+      .#{$className} {
+        &__checkmark {
+          border-width: toRem(2);
+        }
+  
+        &__title {
+          font-weight: 700;
+        }
+      }
+    }
   }
 
   &__checkbox-input {
@@ -64,7 +78,7 @@ $className: 'checkbox';
   &__title {
     color: $dark-shade-50;
     line-height: toRem(18);
-    white-space: pre-line;
+    white-space: pre-wrap;
   }
 
   &__description {
@@ -74,18 +88,6 @@ $className: 'checkbox';
     padding-left: $checkbox-size + $checkbox-margin;
     margin-top: toRem(5);
     white-space: pre-line;
-  }
-
-  &:hover {
-    .#{$className} {
-      &__checkmark {
-        border-width: toRem(2);
-      }
-
-      &__title {
-        font-weight: 700;
-      }
-    }
   }
 
   &_rich {

@@ -22,6 +22,7 @@ $className: 'counter-item';
 
   &__decrement,
   &__increment {
+    cursor: pointer;
     width: toRem(30);
     height: toRem(30);
     border: toRem(1) solid $dark-shade-25;
@@ -32,6 +33,7 @@ $className: 'counter-item';
 
   &__decrement:disabled,
   &__increment:disabled {
+    cursor: initial;
     opacity: 0.5;
   }
 }

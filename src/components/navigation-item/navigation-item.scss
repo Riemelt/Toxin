@@ -4,6 +4,8 @@ $className: 'navigation-item';
   text-decoration: none;
   color: $dark-shade-50;
   position: relative;
+  display: block;
+  width: fit-content;
 
   &__header-wrapper {
     align-items: center;
