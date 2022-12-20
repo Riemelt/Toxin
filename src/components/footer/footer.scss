@@ -108,6 +108,10 @@ $className: 'footer';
   &__navigation-block-item-content {
     text-decoration: none;
     color: $dark-shade-50;
+
+    &:hover {
+      color: $dark-shade-25;
+    }
   }
 
   &__subscription {

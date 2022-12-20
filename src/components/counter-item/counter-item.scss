@@ -29,11 +29,19 @@ $className: 'counter-item';
     border-radius: 50%;
     color: $dark-shade-50;
     font-size: toRem(18);
+
+    &:hover {
+      border-color: $dark-shade-50;
+    }
   }
 
   &__decrement:disabled,
   &__increment:disabled {
     cursor: initial;
     opacity: 0.5;
+
+    &:hover {
+      border-color: $dark-shade-25;
+    }
   }
 }

@@ -11,6 +11,12 @@ $className: 'navigation-item';
     align-items: center;
     display: flex;
     cursor: pointer;
+
+    &:hover {
+      .#{$className}__content {
+        color: $dark-shade-25;
+      }
+    }
   }
 
   &__content {
@@ -68,6 +74,10 @@ $className: 'navigation-item';
   &__sub-navigation-item-content {
     text-decoration: none;
     color: $dark-shade-50;
+
+    &:hover {
+      color: $dark-shade-25;
+    }
   }
 
   &:hover,

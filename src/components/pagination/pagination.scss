@@ -25,6 +25,10 @@ $pluginName: 'paginationjs';
         margin: auto;
         color: $dark-shade-50;
         text-decoration: none;
+        
+        &:hover {
+          color: $dark-shade-25;
+        }
       }
     }
 
@@ -62,12 +66,14 @@ $pluginName: 'paginationjs';
 
     &-prev {
       & a::before {
+        color: white;
         content: 'arrow_back';
       }
     }
 
     &-next {
       & a::before {
+        color: white;
         content: 'arrow_forward';
       }
     }
