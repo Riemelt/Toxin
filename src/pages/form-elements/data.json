@@ -62,8 +62,7 @@
     "dateFormat": "secondary",
     "datepicker": {
       "isHidden": true,
-      "endDate": "2019-08-19",
-      "minDate": "2019-01-10"
+      "endDate": "2023-04-19"
     },
     "inputs": [
       {
@@ -93,9 +92,8 @@
     "size": "medium",
     "datepicker": {
       "isHidden": true,
-      "startDate": "2022-08-19",
-      "endDate": "2022-08-23",
-      "minDate": "2019-01-10"
+      "startDate": "2023-04-19",
+      "endDate": "2023-04-23"
     },
     "inputs": [
       {

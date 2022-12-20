@@ -24,9 +24,8 @@
       "dateFormat": "secondary",
       "datepicker": {
         "isHidden": false,
-        "minDate": "2019-01-01",
-        "startDate": "2019-08-19",
-        "endDate": "2019-08-23"
+        "startDate": "2023-04-19",
+        "endDate": "2023-04-23"
       },
       "inputs": [
         {
