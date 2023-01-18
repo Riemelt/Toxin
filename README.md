@@ -2,6 +2,11 @@
 
 Toxin is a hotel website for room reservations, which is an educational project for learning front-end development, a part of [MetaLamp's](https://www.metalamp.io/education) Education Program. It is based on [Figma's design](https://www.figma.com/file/MumYcKVk9RkKZEG6dR5E3A/MetaLamp-(former-FSD)-frontend-education-program.-The-2nd-task), which was made specifically for studying purposes.
 
+Compatible with
+
+* node v18.10.0
+* npm 8.19.2
+
 ## Goals
 
 * Learn and understand how to build relatively big and complicated projects from scratch, using Pug, Scss, Js
