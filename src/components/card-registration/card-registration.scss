@@ -1,46 +1,47 @@
 $className: 'card-registration';
 
 .#{$className} {
-  margin: toRem(29);
+  margin: 2.0714rem;
 
   &__title {
-    padding-top: toRem(10);
+    @include header1();
+    padding-top: .7143rem;
   }
 
   &__input-first-name {
-    margin-top: toRem(21);
+    margin-top: 1.5rem;
   }
   
   &__input-last-name {
-    margin-top: toRem(10);
+    margin-top: .7143rem;
   }
 
   &__input-gender {
-    margin-top: toRem(8);
+    margin-top: .5714rem;
   }
 
   &__input-birth-date {
-    margin-top: toRem(23);
+    margin-top: 1.6429rem;
   }
 
   &__input-email {
-    margin-top: toRem(21);
+    margin-top: 1.5rem;
   }
 
   &__input-password {
-    margin-top: toRem(10);
+    margin-top: .7143rem;
   }
 
   &__toggle-switch-subscription {
-    margin-top: toRem(8);
+    margin-top: .5714rem;
   }
 
   &__registration-button {
-    margin-top: toRem(22);
+    margin-top: 1.5714rem;
   }
 
   &__login {
-    margin-top: toRem(30);
+    margin-top: 2.1429rem;
     display: flex;
     align-items: center;
     justify-content: space-between;

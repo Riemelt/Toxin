@@ -3,14 +3,14 @@ $className: 'index';
 .#{$className} {
   background-color: #222222;
   min-height: 100vh;
-  padding: toRem(100) toRem(20) 0;
+  padding: 7.1429rem 1.4286rem 0;
 
   &__main {
-    max-width: toRem(500);
+    max-width: 35.7143rem;
     margin: 0 auto;
     background-color: $grey;
-    padding: toRem(25);
-    border-radius: toRem(15);
+    padding: 1.7857rem;
+    border-radius: 1.0714rem;
 
   }
 
@@ -24,33 +24,35 @@ $className: 'index';
   &__ui-kit-title,
   &__website-title {
     color: $dark-shade-100;
-    font-size: toRem(23);
-    margin-bottom: toRem(20);
+    font-size: 1.6429rem;
+    margin-bottom: 1.4286rem;
   }
 
   &__ui-kit-pages,
   &__website-pages {
     list-style-type: none;
+    padding: 0px;
   }
 
   &__ui-kit-pages {
-    margin-bottom: toRem(30);
+    margin-bottom: 2.1429rem;
   }
 
   &__ui-kit-page,
   &__website-page {
     text-decoration: none;
     color: #EB5C2B;
-    font-size: toRem(17);
+    font-size: 1.2143rem;
 
-    &:hover, &:visited {
+    &:hover,
+    &:visited {
       color: #9c3c1c;
     }
   }
 
   &__ui-kit-page-item,
   &__website-page-item {
-    margin-top: toRem(5);
-    margin-left: toRem(20);
+    margin-top: .3571rem;
+    margin-left: 1.4286rem;
   }
 }

@@ -6,18 +6,18 @@ $className: 'bullet';
   align-items: flex-start;
 
   &__bullet-wrapper {
-    min-height: toRem(21);
-    min-width: toRem(21);
+    min-height: 1.5rem;
+    min-width: 1.5rem;
     display: flex;
     align-items: center;
   }
 
   &__bullet {
-    height: toRem(10);
-    width: toRem(10);
+    height: .7143rem;
+    width: .7143rem;
     background-color: $dark-shade-25;
     border-radius: 50%;
-    margin-top: toRem(3);
+    margin-top: .2143rem;
   }
 
   &__title {

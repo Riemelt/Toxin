@@ -1,26 +1,27 @@
 $className: 'card-sign-in';
 
 .#{$className} {
-  margin: toRem(29) toRem(29) toRem(31);
+  margin: 2.0714rem 2.0714rem 2.2143rem;
 
   &__title {
-    padding-top: toRem(10);
+    @include header1();
+    padding-top: .7143rem;
   }
 
   &__input-email {
-    margin-top: toRem(20);
+    margin-top: 1.4286rem;
   }
 
   &__input-password {
-    margin-top: toRem(10);
+    margin-top: .7143rem;
   }
 
   &__sign-in-button {
-    margin-top: toRem(20);
+    margin-top: 1.4286rem;
   }
 
   &__registration {
-    margin-top: toRem(30);
+    margin-top: 2.1429rem;
     display: flex;
     align-items: center;
     justify-content: space-between;

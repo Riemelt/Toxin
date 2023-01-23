@@ -11,12 +11,14 @@ $className: 'expander';
   }
 
   &__expander-button {
+    border: none;
+    background: none;
     margin-left: auto;
-    padding-right: toRem(9);
+    padding: 0rem .7857rem 0rem 0rem;
     cursor: pointer;
 
     &::before {
-      font-size: toRem(24);
+      font-size: 1.7143rem;
       font-family: 'Material Icons', Arial, sans-serif;
       color: $dark-shade-50;
       content: 'expand_more';
@@ -30,7 +32,7 @@ $className: 'expander';
   &_opened {
     .#{$className} {
       &__header {
-        margin-bottom: toRem(11);
+        margin-bottom: .7857rem;
       }
 
       &__body {

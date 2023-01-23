@@ -6,11 +6,11 @@ $className: 'like-button';
   &__body {
     display: flex;
     align-items: center;
-    width: toRem(40);
-    height: toRem(20);
-    border: toRem(1) solid $dark-shade-25;
-    border-radius: toRem(10);
-    font-size: toRem(10);
+    width: 2.8571rem;
+    height: 1.4286rem;
+    border: .0714rem solid $dark-shade-25;
+    border-radius: .7143rem;
+    font-size: .7143rem;
     color: $dark-shade-25;
     transition: border-color 0.2s;
     cursor: pointer;
@@ -18,7 +18,7 @@ $className: 'like-button';
     &:hover,
     &:focus-within {
       border-color: $purple;
-      border-width: toRem(2);
+      border-width: .1429rem;
     }
   }
 
@@ -27,24 +27,24 @@ $className: 'like-button';
   }
 
   &__icon {
-    max-height: toRem(20);
+    max-height: 1.4286rem;
 
     &::before {
       font-family: 'Material Icons', Arial, sans-serif;
       content: 'favorite_border';
-      line-height: toRem(9);
+      line-height: .6429rem;
     }
   }
 
   &__likes,
   &__icon {
     margin: 0 auto;
-    margin-left: toRem(4);
+    margin-left: .2857rem;
   }
 
   &__likes {
-    line-height: toRem(12);
-    margin-right: toRem(10);
+    line-height: .8571rem;
+    margin-right: .7143rem;
   }
 
   &_checked {

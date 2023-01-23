@@ -6,19 +6,19 @@ $className: 'sign-in';
   background-position: bottom;
   background-size: cover;
   transition: background-image 0.8s;
-  padding-top: toRem(70);
+  padding-top: 5rem;
 
   &__main {
-    padding: 0 toRem(140) 0 toRem(140);
+    padding: 0 10rem 0 10rem;
 
     @media (max-width: $xs) {
-      padding: 0 toRem(20);
+      padding: 0 1.4286rem;
     }
   }
 
   &__card-sign-in {
     display: flex;
     justify-content: center;
-    margin: toRem(102) 0 toRem(172);
+    margin: 7.2857rem 0 12.2857rem;
   }
 }

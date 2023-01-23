@@ -8,7 +8,7 @@ $noUiSlider: 'noUi';
   max-width: $medium;
 
   &__label {
-    margin-bottom: toRem(23);
+    margin-bottom: 1.6429rem;
   }
 
   &__slider {
@@ -25,20 +25,20 @@ $noUiSlider: 'noUi';
       &-connect {
         background-image: $secondary-gradient;
         height: $range-slider-height;
-        top: toRem(-1);
+        top: -0.0714rem;
       }
 
       &-handle {
         box-shadow: none;
-        max-height: toRem(12);
-        max-width: toRem(12);
+        max-height: .8571rem;
+        max-width: .8571rem;
         background-image: $secondary-gradient;
-        top: toRem(-6);
-        right: toRem(-8);
+        top: -0.4286rem;
+        right: -0.5714rem;
         cursor: pointer;
         box-sizing: content-box;
         border-radius: 50%;
-        border: toRem(2) solid white;
+        border: .1429rem solid white;
 
         &::before,
         &::after {
@@ -49,9 +49,9 @@ $noUiSlider: 'noUi';
   }
 
   &__description {
-    font-size: toRem(12);
-    line-height: toRem(14);
+    font-size: .8571rem;
+    line-height: 1rem;
     color: $dark-shade-50;
-    margin-top: toRem(13);
+    margin-top: .9286rem;
   }
 }

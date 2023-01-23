@@ -1,53 +1,17 @@
 * {
-  margin: 0px;
-  padding: 0px;
   box-sizing: border-box;
-}
-
-html {
-  font-family: 'Montserrat', Arial, sans-serif;
-  font-size: 14px;
-  font-weight: 400;
-  line-height: toRem(24);
-  background: #FFFFFF;
-  color: $dark-shade-75;
 }
 
 html,
 body {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 24px;
+  color: $dark-shade-75;
   height: 100%;
   min-width: $big;
   max-width: $fullhd;
   margin: 0 auto;
   background-color: $grey;
-}
-
-h1, h2, h3 {
-  font-weight: 700;
-  color: $dark-shade-100;
-}
-
-h1 {
-  font-size: toRem(24);
-  line-height: toRem(29.26);
-}
-
-h2 {
-  font-size: toRem(19);
-  line-height: toRem(23.16);
-}
-
-h3 {
-  font-size: toRem(12);
-  text-transform: uppercase;
-  line-height: toRem(14.63);
-}
-
-a:visited {
-  color: $dark-shade-100;
-}
-
-button {
-  border: none;
-  background-color: initial;
 }

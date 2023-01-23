@@ -1,28 +1,32 @@
 $className: 'comments';
 
 .#{$className} {
-  max-width: toRem(710);
-
   &__header {
     display: flex;
     justify-content: space-between;
+  }
+
+  &__title {
+    @include header2();
   }
 
   &__counter {
     color: $dark-shade-50;
   }
 
-  &__header
-  + &__comments-list {
-    margin-top: toRem(20);
-  }
-
   &__comments-list {
     list-style-type: none;
+    padding: 0rem;
+    margin: 0rem;
+  }
+
+  &__header
+  + &__comments-list {
+    margin-top: 1.4286rem;
   }
 
   &__comment {
-    margin-top: toRem(23);
+    margin-top: 1.6429rem;
 
     &:first-child {
       margin-top: initial;

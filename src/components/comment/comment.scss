@@ -6,13 +6,13 @@ $className: 'comment';
   }
 
   &__avatar {
-    max-height: toRem(48);
-    max-width: toRem(48);
+    max-height: 3.4286rem;
+    max-width: 3.4286rem;
     width: 100%;
     border-radius: 50%;
-    border: toRem(2) solid white;
-    filter: drop-shadow(toRem(0) toRem(10) toRem(20) $dark-shade-10);
-    margin-right: toRem(10);
+    border: .1429rem solid white;
+    filter: drop-shadow(0rem .7143rem 1.4286rem $dark-shade-10);
+    margin-right: .7143rem;
   }
 
   &__name {
@@ -24,18 +24,18 @@ $className: 'comment';
   }
 
   &__body {
-    margin-top: toRem(8);
-    margin-left: toRem(5);
+    margin-top: .5714rem;
+    margin-left: .3571rem;
     display: flex;
   }
 
   &__like-button {
-    margin-right: toRem(13);
-    margin-top: toRem(4);
+    margin-right: .9286rem;
+    margin-top: .2857rem;
   }
 
   &__comment {
-    margin-top: toRem(2);
+    margin-top: .1429rem;
     white-space: pre-line;
   }
 }

@@ -9,7 +9,7 @@ $className: 'layout';
   &__main {
     flex: 1 0 auto;
     display: flex;
-    box-shadow: toRem(0) toRem(10) toRem(20) $dark-shade-5;
+    box-shadow: 0rem .7143rem 1.4286rem $dark-shade-5;
   }
 
   &__footer {

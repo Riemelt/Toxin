@@ -1,30 +1,30 @@
 $className: 'input-field';
 
 .#{$className} {
-	max-width: toRem(320);
+	max-width: 22.8571rem;
 	width: 100%;
   position: relative;
 
 	&__header {
-		margin-bottom: toRem(4);
+		margin-bottom: .2857rem;
 	}
 
 	&__input {
-		border: toRem(1) solid $dark-shade-25;
+		border: .0714rem solid $dark-shade-25;
 		box-sizing: border-box;
-		border-radius: toRem(4);
-		height: toRem(44);
+		border-radius: .2857rem;
+		height: 3.1429rem;
 		width: 100%;
-		padding-left: toRem(14);
-    padding-right: toRem(91);
+		padding-left: 1rem;
+    padding-right: 6.5rem;
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
     font-family: Montserrat, Arial, sans-serif;
     font-weight: 400;
     color: $dark-shade-75;
-    font-size: toRem(14);
-    line-height: toRem(18);
+    font-size: 1rem;
+    line-height: 1.2857rem;
 
 		&:hover,
     &:focus {
@@ -38,19 +38,21 @@ $className: 'input-field';
 	}
 
 	&__button {
+    border: none;
+    padding: 0rem;
 		position: absolute;
     background-color: white;
     z-index: 1;
-		right: toRem(10);
+		right: .7143rem;
     transform: translateY(40%);
 		align-self: center;
 		color: $dark-shade-50;
-		width: toRem(24);
-		height: toRem(24);
+		width: 1.7143rem;
+		height: 1.7143rem;
     cursor: pointer;
 
     &::before {
-      font-size: toRem(24);
+      font-size: 1.7143rem;
       font-family: 'Material Icons', Arial, sans-serif;
 	  }
 
@@ -86,18 +88,18 @@ $className: 'input-field';
 	}
 
   &_big {
-    max-width: toRem(320);
+    max-width: 22.8571rem;
   }
 
   &_medium {
-    max-width: toRem(266);
+    max-width: 19rem;
   }
 
   &_small {
-    max-width: toRem(150);
+    max-width: 10.7143rem;
 
     .#{$className}__input {
-      padding-right: toRem(30);
+      padding-right: 2.1429rem;
     }
   }
 }

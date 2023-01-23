@@ -2,7 +2,7 @@ $className: 'gallery';
 
 .#{$className} {
   display: flex;
-  max-height: toRem(485);
+  max-height: 34.6429rem;
 
   @media (min-width: ($xxxl + 1)) {
     max-height: initial;

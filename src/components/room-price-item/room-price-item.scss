@@ -5,25 +5,28 @@ $className: 'room-price-item';
   align-items: flex-start;
 
   &__content {
-    max-width: toRem(220);
+    max-width: 15.7143rem;
     width: 100%;
-    line-height: toRem(18);
+    line-height: 1.2857rem;
   }
 
   &__details {
     position: relative;
     right: 0;
-    line-height: toRem(0);
+    line-height: 0rem;
   }
 
   &__details-icon {
+    padding: 0rem;
+    margin: 0rem;
+    background: none;
     cursor: pointer;
-    width: toRem(20);
-    height: toRem(20);
+    width: 1.4286rem;
+    height: 1.4286rem;
     color: $dark-shade-25;
-    font-size: toRem(12);
+    font-size: .8571rem;
     font-weight: 700;
-    border: toRem(1) solid $dark-shade-25;
+    border: .0714rem solid $dark-shade-25;
     border-radius: 50%;
 
     &:hover
@@ -32,42 +35,42 @@ $className: 'room-price-item';
     + .#{$className}__details-content {
       opacity: 1;
       visibility: visible;
-      transform: translateY(toRem(15));
+      transform: translateY(1.0714rem);
     }
   }
 
   &__details-content {
     position: absolute;
-    font-size: toRem(12);
-    line-height: toRem(14);
-    border: toRem(1) solid $dark-shade-50;
-    box-shadow: toRem(0) toRem(0) toRem(10) rgba(0, 0, 0, 0.2);
-    padding: toRem(5) toRem(5) toRem(5);
-    border-radius: toRem(3);
+    font-size: .8571rem;
+    line-height: 1rem;
+    border: .0714rem solid $dark-shade-50;
+    box-shadow: 0rem 0rem .7143rem rgba(0, 0, 0, 0.2);
+    padding: .3571rem .3571rem .3571rem;
+    border-radius: .2143rem;
     transition: opacity 0.4s, visibility 0.4s, transform 0.4s;  
-    transform: translateY(toRem(20));
+    transform: translateY(1.4286rem);
     opacity: 0;
     visibility: hidden;
-    min-width: toRem(100);
+    min-width: 7.1429rem;
     background-color: white;
     z-index: 1;
 
     &::before {
       content: '';
       position: absolute;
-      width: toRem(10);
-      height: toRem(10);
+      width: .7143rem;
+      height: .7143rem;
       background-color: white;
-      border-left: toRem(1) solid $dark-shade-50;
-      border-top: toRem(1) solid $dark-shade-50;
-      transform: translateY(toRem(-6.25)) rotate(45deg);
+      border-left: .0714rem solid $dark-shade-50;
+      border-top: .0714rem solid $dark-shade-50;
+      transform: translateY(-0.4464rem) rotate(45deg);
       top: 0;
     }
   }
 
   &__price {
     margin-left: auto;
-    padding-left: toRem(15);
-    line-height: toRem(18);
+    padding-left: 1.0714rem;
+    line-height: 1.2857rem;
   }
 }

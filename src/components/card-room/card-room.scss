@@ -3,16 +3,16 @@ $className: 'card-room';
 .#{$className} {
   color: $dark-shade-50;
   background-color: white;
-  width: toRem(270);
-  max-height: toRem(257);
-  box-shadow: toRem(0) toRem(10) toRem(20) $dark-shade-5;
-  border-radius: toRem(4);
+  width: 19.2857rem;
+  max-height: 18.3571rem;
+  box-shadow: 0rem .7143rem 1.4286rem $dark-shade-5;
+  border-radius: .2857rem;
 
   &__slider {
     display: flex;
-    max-height: toRem(151);
+    max-height: 10.7857rem;
     overflow: hidden;
-    border-radius: toRem(4) toRem(4) 0 0;
+    border-radius: .2857rem .2857rem 0 0;
     position: relative;
   }
 
@@ -38,10 +38,13 @@ $className: 'card-room';
 
   &__previous,
   &__next {
+    border: none;
+    padding: 0rem;
+    margin: 0rem;
     position: relative;
     z-index: 1;
     height: 100%;
-    width: toRem(42);
+    width: 3rem;
     display: flex;
     align-items: center;
     cursor: pointer;
@@ -59,8 +62,8 @@ $className: 'card-room';
   &__next-icon {
     color: white;
     margin: 0 auto;
-    width: toRem(24);
-    height: toRem(24);
+    width: 1.7143rem;
+    height: 1.7143rem;
   }
 
   &__previous-icon {
@@ -79,16 +82,18 @@ $className: 'card-room';
   }
 
   &__control-panel {
+    padding: 0rem;
+    margin: 0rem;
     position: absolute;
     display: flex;
-    right: toRem(15);
-    bottom: toRem(10);
+    right: 1.0714rem;
+    bottom: .7143rem;
     list-style-type: none;
     z-index: 2;
   }
 
   &__control-panel-item {
-    margin-right: toRem(3.75);
+    margin-right: .2679rem;
 
     &:last-child {
       margin-right: initial;
@@ -96,11 +101,15 @@ $className: 'card-room';
   }
 
   &__control-panel-button {
+    border: none;
+    background: none;
+    padding: 0rem;
+    margin: 0rem;
     cursor: pointer;
-    width: toRem(8);
-    height: toRem(8);
+    width: .5714rem;
+    height: .5714rem;
     border-radius: 50%;
-    border: toRem(1) solid #FFFFFF;
+    border: .0714rem solid #FFFFFF;
 
     &_active {
       background: white;
@@ -110,8 +119,8 @@ $className: 'card-room';
   &__info {
     display: block;
     text-decoration: none;
-    margin: toRem(21) toRem(20) toRem(20);
-    padding-bottom: toRem(12);
+    margin: 1.5rem 1.4286rem 1.4286rem;
+    padding-bottom: .8571rem;
   }
 
   &__rating-and-reviews {
@@ -120,18 +129,18 @@ $className: 'card-room';
   }
 
   &__label {
-    border-bottom: toRem(1) solid $dark-shade-10;
-    padding-bottom: toRem(9);
+    border-bottom: .0714rem solid $dark-shade-10;
+    padding-bottom: .6429rem;
   }
 
   &__rating-and-reviews {
-    margin-top: toRem(8);
+    margin-top: .5714rem;
   }
 
   &__reviews-count,
   &__reviews-title {
     color: $dark-shade-50;
-    line-height: toRem(18);
+    line-height: 1.2857rem;
   }
 
   &__reviews-count {

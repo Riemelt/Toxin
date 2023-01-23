@@ -1,21 +1,27 @@
 $className: 'room-info';
 
 .#{$className} {
-  max-width: toRem(280);
+  max-width: 20rem;
+
+  &__title {
+    @include header2();
+  }
 
   &__title
   + &__items {
-    margin-top: toRem(21);
+    margin-top: 1.5rem;
   }
 
   &__items {
     list-style-type: none;
+    margin: 0rem;
+    padding: 0rem;
   }
 
   &__item {
-    border-bottom: toRem(1) solid $dark-shade-10;
-    margin-bottom: toRem(19.5);
-    padding-bottom: toRem(13);
+    border-bottom: .0714rem solid $dark-shade-10;
+    margin-bottom: 1.3929rem;
+    padding-bottom: .9286rem;
 
     &:last-child {
       border: none;
@@ -26,9 +32,9 @@ $className: 'room-info';
 
   &_withEndLine {
     .#{$className}__item:last-child {
-      border-bottom: toRem(1) solid $dark-shade-10;
-      margin-bottom: toRem(19.5);
-      padding-bottom: toRem(13);
+      border-bottom: .0714rem solid $dark-shade-10;
+      margin-bottom: 1.3929rem;
+      padding-bottom: .9286rem;
     }
   }
 }

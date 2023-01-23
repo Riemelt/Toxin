@@ -2,18 +2,18 @@ $className: 'room-details';
 
 .#{$className} {
   flex-grow: 1;
-  border-bottom: toRem(1) solid $dark-shade-25;
+  border-bottom: .0714rem solid $dark-shade-25;
 
   &__main {
-    padding: toRem(70) toRem(140) toRem(73);
+    padding: 5rem 10rem 5.2143rem;
     display: flex;
     flex-direction: row;
-    gap: toRem(50) toRem(20);
-    justify-content: center;
+    gap: 3.5714rem 5rem;
+    justify-content: space-between;
     flex-wrap: wrap;
 
     @media (max-width: $xs) {
-      padding: toRem(70) toRem(20) toRem(73);
+      padding: 5rem 1.4286rem 5.2143rem;
       flex-direction: column;
       align-items: center;
     }
@@ -24,18 +24,19 @@ $className: 'room-details';
   }
 
   &__details {
+    max-width: 64.2857rem;
     order: 1;
     flex: 2 2;
     display: flex;
     flex-direction: column;
-    gap: toRem(27);
+    gap: 1.9286rem;
   }
 
   &__section-1,
   &__section-3 {
     display: flex;
     justify-content: space-between;
-    gap: toRem(30);
+    gap: 2.1429rem;
 
     @media (max-width: $xs) {
       flex-wrap: wrap;
@@ -44,20 +45,25 @@ $className: 'room-details';
   }
 
   &__section-1 {
-    max-width: toRem(672);
+    margin-right: 2.7143rem;
   }
 
   &__section-3 {
-    margin-top: toRem(5);
-    max-width: toRem(691);
+    margin-top: .3571rem;
+    margin-right: 1.3571rem;
   }
 
   &__cancellation {
-    max-width: toRem(330);
+    max-width: 23.5714rem;
+  }
+
+  &__cancellation-title {
+    @include header2();
   }
 
   &__cancellation-content {
-    margin-top: toRem(18);
+    padding: 0rem;
+    margin: 1.2857rem 0rem 0rem;
     white-space: pre-line;
   }
 }

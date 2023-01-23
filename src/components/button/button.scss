@@ -1,12 +1,11 @@
 $className: 'button';
 
 .#{$className} {
+  @include header3();
+  border: none;
+  background: none;
   display: block;
   font-family: Montserrat, Arial, sans-serif;
-  font-weight: 700;
-  font-size: toRem(12);
-  line-height: toRem(14.63);
-  text-transform: uppercase;
   text-decoration: none;
   cursor: pointer;
 
@@ -24,9 +23,9 @@ $className: 'button';
 
   &__icon {
     position: absolute;
-    width: toRem(24);
-    height: toRem(24);
-    right: toRem(10);
+    width: 1.7143rem;
+    height: 1.7143rem;
+    right: .7143rem;
     color: white;
   }
 
@@ -42,27 +41,27 @@ $className: 'button';
   &_bordered-header,
   &_long,
   &_long-header {
-    border-radius: toRem(22);
+    border-radius: 1.5714rem;
 
     .#{$className}__text {
-      padding: 0 toRem(17);
+      padding: 0 1.2143rem;
     }
   }
 
   &_filled,
   &_bordered,
   &_long {
-    height: toRem(44);
+    height: 3.1429rem;
   }
 
   &_filled,
   &_bordered {
-    min-width: toRem(99);
+    min-width: 7.0714rem;
   }
 
   &_bordered,
   &_bordered-header {
-    border: solid toRem(2) transparent;
+    border: solid .1429rem transparent;
     background-image: linear-gradient(white, white), $primary-gradient;
     background-origin: border-box;
     background-clip: content-box, border-box;
@@ -97,17 +96,17 @@ $className: 'button';
   }
 
   &_long {
-    max-width: toRem(320);
+    max-width: 22.8571rem;
     width: 100%;
   }
 
   &_long-header,
   &_bordered-header {
-    height: toRem(34);
+    height: 2.4286rem;
   }
 
   &_bordered-header {
-    min-width: toRem(87);
+    min-width: 6.2143rem;
     width: 100%;
 
     @media (min-width: $xl) {
@@ -116,7 +115,7 @@ $className: 'button';
   }
 
   &_long-header {
-    min-width: toRem(196);
+    min-width: 14rem;
     width: 100%;
 
     @media (min-width: $xl) {

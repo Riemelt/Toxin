@@ -5,9 +5,9 @@ $className: 'color-example';
 	align-items: center;
 
 	&__color-block {
-		border-radius: toRem(6);
-		width: toRem(70);
-		height: toRem(70);
+		border-radius: .4286rem;
+		width: 5rem;
+		height: 5rem;
 
     &_dark-shade-100 {
       background-color: $dark-shade-100;
@@ -40,12 +40,12 @@ $className: 'color-example';
 
 	&__info {
 		color: $dark-shade-100;
-		font-size: toRem(19);
-		line-height: toRem(27.79);
+		font-size: 1.3571rem;
+		line-height: 1.985rem;
 		display: flex;
 		flex-direction: column;
-		padding-left: toRem(40);
-    margin-top: toRem(1);
+		padding-left: 2.8571rem;
+    margin-top: .0714rem;
 	}
 
 	&__title {

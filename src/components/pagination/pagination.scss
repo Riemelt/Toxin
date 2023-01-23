@@ -12,13 +12,15 @@ $pluginName: 'paginationjs';
       & ul {
         display: flex;
         list-style-type: none;
+        margin: 0rem;
+        padding: 0rem;
       }
 
       & li {
         display: flex;
-        font-size: toRem(12);
-        min-width: toRem(40);
-        min-height: toRem(40);
+        font-size: .8571rem;
+        min-width: 2.8571rem;
+        min-height: 2.8571rem;
       }
 
       & a {
@@ -58,8 +60,8 @@ $pluginName: 'paginationjs';
         &::before {
           vertical-align: middle;
           font-family: 'Material Icons', Arial, sans-serif;
-          font-size: toRem(24);
-          line-height: toRem(20.4);
+          font-size: 1.7143rem;
+          line-height: 1.4571rem;
         }
       }
     }
@@ -80,9 +82,9 @@ $pluginName: 'paginationjs';
   }
 
   &__pages-info {
-    margin: toRem(9) auto 0;
+    margin: .6429rem auto 0;
     color: $dark-shade-75;
-    font-size: toRem(14);
-    line-height: toRem(24);
+    font-size: 1rem;
+    line-height: 1.7143rem;
   }
 }

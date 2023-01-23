@@ -8,16 +8,16 @@ $className: 'registration';
   transition: background-image 0.8s;
 
   &__main {
-    padding: 0 toRem(134) 0 toRem(140);
+    padding: 0 9.5714rem 0 10rem;
 
     @media (max-width: $xs) {
-      padding: 0 toRem(20);
+      padding: 0 1.4286rem;
     }
   }
 
   &__card-registration {
     display: flex;
     justify-content: center;
-    margin: toRem(19) 0 toRem(19);
+    margin: 1.3571rem 0 1.3571rem;
   }
 }

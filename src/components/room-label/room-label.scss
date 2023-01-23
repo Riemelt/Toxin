@@ -11,27 +11,27 @@ $className: 'room-label';
   }
 
   &__number-sign {
-    line-height: toRem(23.16);
+    line-height: 1.6543rem;
   }
   
   &__number-value {
-    line-height: toRem(17.07);
-    font-size: toRem(19);
+    line-height: 1.2193rem;
+    font-size: 1.3571rem;
   }
 
   &__luxe {
-    font-size: toRem(12);
-    line-height: toRem(15);
+    font-size: .8571rem;
+    line-height: 1.0714rem;
     color: $purple;
     text-transform: uppercase;
     font-weight: 700;
     vertical-align: middle;
-    margin-left: toRem(8);
+    margin-left: .5714rem;
   }
 
   &__price-value,
   &__duration {
-    line-height: toRem(18);
+    line-height: 1.2857rem;
     color: $dark-shade-50;
   }
 
@@ -40,18 +40,18 @@ $className: 'room-label';
   }
 
   &__duration {
-    font-size: toRem(12);
+    font-size: .8571rem;
   }
 
   &_theme-reservation {
     .#{$className} {
       &__number-value {
-        font-size: toRem(24);
-        line-height: toRem(29.26);
+        font-size: 1.7143rem;
+        line-height: 2.09rem;
       }
   
       &__luxe {
-        margin-left: toRem(9);
+        margin-left: .6429rem;
       }
     }
   }

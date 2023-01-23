@@ -1,18 +1,19 @@
 $className: 'card-search';
 
 .#{$className} {
-  margin: toRem(29);
+  margin: 2.0714rem;
 
   &__title {
-    padding-top: toRem(10);
+    @include header1();
+    padding-top: .7143rem;
   }
 
   &__datepicker,
   &__dropdown-guests {
-    margin-top: toRem(22);
+    margin-top: 1.5714rem;
   }
 
   &__search-room-button {
-    margin-top: toRem(32);
+    margin-top: 2.2857rem;
   }
 }

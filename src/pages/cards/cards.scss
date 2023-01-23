@@ -3,26 +3,30 @@ $className: 'cards';
 .#{$className} {
   min-height: 100vh;
   background-color: $grey;
-  padding-bottom: toRem(100);
+  padding-bottom: 7.1429rem;
 
   &__columns {
-    padding: 0 toRem(140);
+    padding: 0 10rem;
     display: flex;
-    gap: toRem(40);
-    margin-top: toRem(65);
+    justify-content: space-between;
+    margin-top: 4.6429rem;
   }
 
   &__column-left,
   &__column-middle,
   &__column-right {
-    min-width: toRem(380);
+    max-width: 27.1429rem;
     width: 100%;
     display: flex;
     flex-direction: column;
-    gap: toRem(40);
+    gap: 2.8571rem;
+  }
+
+  &__column-right {
+    max-width: 22.8571rem;
   }
 
   &__card-reservation {
-    margin-top: toRem(2);
+    margin-top: .1429rem;
   }
 }

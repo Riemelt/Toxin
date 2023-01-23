@@ -2,30 +2,30 @@ $className: 'footer';
 
 .#{$className} {
   background-color: white;
-  box-shadow: toRem(0) toRem(10) toRem(20) $dark-shade-5;
+  box-shadow: 0rem .7143rem 1.4286rem $dark-shade-5;
 
   @media (max-width: $sm) {
-    min-height: toRem(367);
+    min-height: 26.2143rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
   }
 
   &__body {
-    min-height: toRem(372);
-    padding: toRem(100) toRem(140) 0;
+    min-height: 26.5714rem;
+    padding: 7.1429rem 10rem 0;
     display: flex;
     justify-content: space-between;
 
     @media (max-width: $xxl) {
       flex-direction: column;
       align-items: center;
-      gap: toRem(50);
+      gap: 3.5714rem;
     }
 
     @media (max-width: $sm) {
       min-height: initial;
-      padding: 0 toRem(20);
+      padding: 0 1.4286rem;
     }
   }
 
@@ -38,12 +38,12 @@ $className: 'footer';
 
   &__company,
   &__subscription {
-    max-width: toRem(260);
+    max-width: 18.5714rem;
     width: 100%;
   }
 
   &__company-description {
-    margin-top: toRem(17);
+    margin-top: 1.2143rem;
 
     @media (max-width: $xxl) {
       margin: initial;
@@ -59,7 +59,7 @@ $className: 'footer';
       display: flex;
       max-width: initial;
       align-items: center;
-      gap: toRem(20);
+      gap: 1.4286rem;
       width: initial;
       margin: 0 auto;
     }
@@ -73,9 +73,7 @@ $className: 'footer';
 
   &__navigation {
     width: 100%;
-    margin-left: toRem(40);
-    margin-right: toRem(52);
-    margin-top: toRem(5);
+    margin: .3571rem 1.7857rem 0rem 1.0714rem;
 
     @media (max-width: $sm) {
       display: none;
@@ -88,20 +86,31 @@ $className: 'footer';
   }
 
   &__navigation-blocks {
+    padding: 0rem;
+    margin: 0rem;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
+  }
+
+  &__navigation-block-title {
+    @include header3();
+  }
+
+  &__navigation-block-items {
+    padding: 0rem;
+    margin: 0rem;
   }
 
   &__navigation-block-item {
-    margin-top: toRem(14);
+    margin-top: 1rem;
 
     &:first-child {
-      margin-top: toRem(17);
+      margin-top: 1.2143rem;
     }
   }
 
   &__navigation-block {
-    max-width: toRem(149);
+    max-width: 10.6429rem;
     width: 100%;
   }
 
@@ -115,17 +124,17 @@ $className: 'footer';
   }
 
   &__subscription {
-    margin-top: toRem(5);
+    margin-top: .3571rem;
     display: block;
 
     @media (max-width: $xxl) {
       display: flex;
       max-width: initial;
       align-items: center;
-      gap: toRem(20);
+      gap: 1.4286rem;
       width: initial;
       margin: 0 auto;
-      padding-bottom: toRem(50);
+      padding-bottom: 3.5714rem;
     }
 
     @media (max-width: $sm) {
@@ -133,8 +142,12 @@ $className: 'footer';
     }
   }
 
+  &__subscription-title {
+    @include header3();
+  }
+
   &__subscription-description {
-    margin-top: toRem(17);
+    margin-top: 1.2143rem;
 
     @media (max-width: $xxl) {
       margin: initial;
@@ -142,7 +155,7 @@ $className: 'footer';
   }
 
   &__subscription-input {
-    margin-top: toRem(24);
+    margin-top: 1.7143rem;
 
     @media (max-width: $xxl) {
       margin: initial;
@@ -150,7 +163,7 @@ $className: 'footer';
   }
 
   &__bottom-wrapper {
-    border-top: toRem(1) solid $dark-shade-10;
+    border-top: .0714rem solid $dark-shade-10;
 
     @media (max-width: $sm) {
       border: initial;
@@ -158,18 +171,18 @@ $className: 'footer';
   }
 
   &__bottom {
-    min-height: toRem(70);
+    min-height: 5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 toRem(140);
+    padding: 0 10rem;
 
     @media (max-width: $sm) {
-      margin-top: toRem(17);
+      margin-top: 1.2143rem;
       min-height: initial;
-      gap: toRem(17);
+      gap: 1.2143rem;
       flex-direction: column;
-      padding: 0 toRem(20);
+      padding: 0 1.4286rem;
     }
   }
 
@@ -179,7 +192,7 @@ $className: 'footer';
 
   &_mobile {
     max-width: $xs;
-    min-height: toRem(367);
+    min-height: 26.2143rem;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
@@ -208,7 +221,7 @@ $className: 'footer';
       }
 
       &__bottom {
-        margin-top: toRem(17);
+        margin-top: 1.2143rem;
         flex-direction: column;
       }
     }

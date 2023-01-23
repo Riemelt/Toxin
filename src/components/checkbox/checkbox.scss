@@ -13,7 +13,7 @@ $className: 'checkbox';
     &:hover {
       .#{$className} {
         &__checkmark {
-          border-width: toRem(2);
+          border-width: .1429rem;
         }
   
         &__title {
@@ -29,10 +29,10 @@ $className: 'checkbox';
 
   &__checkmark {
     position: relative;
-    border-radius: toRem(4);
-    border: toRem(1) solid $dark-shade-25;
+    border-radius: .2857rem;
+    border: .0714rem solid $dark-shade-25;
     height: $checkbox-size;
-    min-width: toRem(20);
+    min-width: 1.4286rem;
     margin-right: $checkbox-margin;
 
     &::after {
@@ -43,10 +43,10 @@ $className: 'checkbox';
       top: 0;
       bottom: 10%;
       content: '';
-      height: toRem(8);
-      width: toRem(6);
+      height: .5714rem;
+      width: .4286rem;
       border-style: solid;
-      border-width: toRem(2);
+      border-width: .1429rem;
       border-image: $primary-gradient 1;
       border-left: none;
       border-top: none;
@@ -67,7 +67,7 @@ $className: 'checkbox';
 
   &__checkbox-input:focus
   ~ &__checkmark {
-    border-width: toRem(2);
+    border-width: .1429rem;
   }
 
   &__checkbox-input:focus
@@ -77,16 +77,16 @@ $className: 'checkbox';
 
   &__title {
     color: $dark-shade-50;
-    line-height: toRem(18);
+    line-height: 1.2857rem;
     white-space: pre-wrap;
   }
 
   &__description {
     color: $dark-shade-50;
-    font-size: toRem(12);
-    line-height: toRem(14);
+    font-size: .8571rem;
+    line-height: 1rem;
     padding-left: $checkbox-size + $checkbox-margin;
-    margin-top: toRem(5);
+    margin: .3571rem 0rem 0rem;
     white-space: pre-line;
   }
 

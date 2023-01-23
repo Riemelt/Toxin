@@ -4,10 +4,10 @@ $className: 'room-info-item';
   display: flex;
 
   &__icon {
-    margin-right: toRem(10);
+    margin-right: .7143rem;
     
     .material-icons {
-      font-size: toRem(48);
+      font-size: 3.4286rem;
       @include iconWithGradient($primary-gradient);
     }
   }

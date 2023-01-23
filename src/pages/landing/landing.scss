@@ -6,13 +6,13 @@ $className: 'landing';
   background-position: bottom;
   background-size: cover;
   transition: background-image 0.8s;
-  padding-top: toRem(70);
+  padding-top: 5rem;
 
   &__main {
-    padding: 0 toRem(134) 0 toRem(140);
+    padding: 0 9.5714rem 0 10rem;
 
     @media (max-width: $xs) {
-      padding: 0 toRem(20);
+      padding: 0 1.4286rem;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -20,9 +20,9 @@ $className: 'landing';
   }
 
   &__description {
-    margin-top: toRem(317);
-    margin-bottom: toRem(21);
-    max-width: toRem(260);
+    margin-top: 22.6429rem;
+    margin-bottom: 1.5rem;
+    max-width: 18.5714rem;
     margin-left: auto;
     text-align: right;
 

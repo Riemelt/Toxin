@@ -1,7 +1,7 @@
 $className: 'container';
 
 .#{$className} {
-  max-width: toRem(1440);
-  min-width: toRem(320);
+  max-width: 1920px;
+  min-width: 320px;
   margin: 0 auto;
 }

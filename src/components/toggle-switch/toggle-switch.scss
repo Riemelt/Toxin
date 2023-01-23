@@ -11,7 +11,7 @@ $className: 'toggle-switch';
 
     &:hover {
       .#{$className}__switch {
-        border-width: toRem(2);
+        border-width: .1429rem;
       } 
     }
   }
@@ -26,28 +26,28 @@ $className: 'toggle-switch';
 
     &::after {
       background-image: $primary-gradient;
-      transform: translateX(toRem(19));
+      transform: translateX(1.3571rem);
     }
   }
 
   &__switch-input:focus
   + &__switch {
-    border-width: toRem(2);
+    border-width: .1429rem;
   } 
 
   &__switch {
     position: relative;
-    height: toRem(20);
-    width: toRem(40);
-    border: toRem(1) solid $dark-shade-25;
-    border-radius: toRem(10);
-    margin-right: toRem(10);
+    height: 1.4286rem;
+    width: 2.8571rem;
+    border: .0714rem solid $dark-shade-25;
+    border-radius: .7143rem;
+    margin-right: .7143rem;
 
     &::after {
       position: absolute;
       content: '';
-      height: toRem(12);
-      width: toRem(12);
+      height: .8571rem;
+      width: .8571rem;
       background-color: $dark-shade-25;
       border-radius: 50%;
       margin: auto 0;

@@ -5,16 +5,19 @@ $className: 'colors-and-type';
   background-color: white;
 
 	&__main {
-    padding: toRem(60) toRem(157) 0 toRem(150);
+    padding: 4.2857rem 11.2143rem 0 10.7143rem;
 		display: flex;
 	}
 
-	&__color-palette {
+	&__color-palette,
+  &__text-examples {
 		list-style-type: none;
+    margin: 0rem;
+    padding: 0rem;
 	}
 
 	&__color-palette-item {
-		margin-bottom: toRem(20);
+		margin-bottom: 1.4286rem;
 
 		&:last-child {
 			margin-bottom: 0;
@@ -22,25 +25,74 @@ $className: 'colors-and-type';
 	}
 
 	&__text-examples {
-    max-width: toRem(450);
-		list-style-type: none;
+    max-width: 32.1429rem;
 		margin-left: auto;
 	}
 
 	&__text-examples-item {
 		display: flex;
-		margin-bottom: toRem(51);
 
 		&:last-child {
 			margin-bottom: 0;
 		}
+
+    &_h1-sample {
+      margin-bottom: 3.7143rem;
+      
+      .#{$className} {
+        &__text-examples-title,
+        &__text-examples-description {
+          margin-top: 0rem;
+          @include header1();
+        }
+      }
+    }
+
+    &_h2-sample {
+      margin-bottom: 3.7143rem;
+
+      .#{$className} {
+        &__text-examples-title,
+        &__text-examples-description {
+          @include header2();
+        }
+      }
+    }
+
+    &_h3-sample {
+      margin-bottom: 3.3571rem;
+
+      .#{$className} {
+        &__text-examples-title,
+        &__text-examples-description {
+          @include header3();
+        }
+      }
+    }
+
+    &_body-sample {
+      .#{$className}__text-examples-description {
+        color: $dark-shade-75;
+      }
+    }
+
+    .#{$className} {
+      &__text-examples-title {
+        color: $dark-shade-25;
+        font-weight: 400;
+      }
+
+      &__text-examples-description {
+        margin-left: 2.1429rem;
+      }
+    }
 	}
 
 	&__text-examples-title {
-		color: $dark_shade_25;
+		color: $dark-shade-25;
 		text-align: right;
 		font-weight: 400;
-		min-width: toRem(50);	
+		min-width: 3.5714rem;	
 
 		&_header {
 			text-transform: uppercase;
@@ -48,8 +100,6 @@ $className: 'colors-and-type';
 	}
 
 	&__text-examples-description {
-		margin-left: toRem(30);
 		white-space: pre-line;
 	}
-
 }

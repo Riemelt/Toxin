@@ -4,10 +4,10 @@ $className: 'rate-button';
   display: flex;
 
   &__icon {
-    max-width: toRem(24);
+    max-width: 1.7143rem;
 
     &::before {
-      font-size: toRem(24);
+      font-size: 1.7143rem;
       font-family: 'Material Icons', Arial, sans-serif;
       content: 'star_border';
       background: $primary-gradient;

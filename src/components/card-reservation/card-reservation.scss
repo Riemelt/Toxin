@@ -1,27 +1,28 @@
 $className: 'card-reservation';
 
 .#{$className} {
-  margin: toRem(29) toRem(29) toRem(30);
+  margin: 2.0714rem 2.0714rem 2.1429rem;
 
   &__label {
-    padding-top: toRem(10);
+    padding-top: .7143rem;
   }
 
   &__dropdown-datepicker {
-    margin-top: toRem(21);
+    margin-top: 1.5rem;
   }
 
   &__dropdown-guests {
-    margin-top: toRem(23);
+    margin-top: 1.6429rem;
   }
 
   &__room-price {
     list-style-type: none;
-    margin-top: toRem(20);
+    padding: 0rem;
+    margin: 1.4286rem 0rem 0rem;
   }
 
   &__room-price-item {
-    margin-top: toRem(15);
+    margin-top: 1.0714rem;
 
     &:first-child {
       margin: initial;
@@ -29,7 +30,7 @@ $className: 'card-reservation';
   }
 
   &__total-price {
-    margin-top: toRem(30);
+    margin-top: 2.1429rem;
     display: flex;
   }
 
@@ -37,17 +38,17 @@ $className: 'card-reservation';
   &__total-price-value {
     color: $dark-shade-100;
     font-weight: 700;
-    font-size: toRem(19);
-    line-height: toRem(23);
+    font-size: 1.3571rem;
+    line-height: 1.6429rem;
   }
 
   &__dots {
     width: 100%;
-    max-height: toRem(19);
-    border-bottom: toRem(1) dotted $dark-shade-25;
+    max-height: 1.3571rem;
+    border-bottom: .0714rem dotted $dark-shade-25;
   }
 
   &__submit-reservation-button {
-    margin-top: toRem(21);
+    margin-top: 1.5rem;
   }
 }

@@ -4,15 +4,17 @@ $className: 'checkbox-list';
   max-width: $medium;
 
   &__title {
-    margin-bottom: toRem(16);
+    margin-bottom: 1.1429rem;
   }
 
   &__list {
     list-style-type: none;
+    padding: 0rem;
+    margin: 0rem;
   }
 
   &__item {
-    margin-bottom: toRem(10);
+    margin-bottom: .7143rem;
 
     &:last-child {
       margin-bottom: initial;

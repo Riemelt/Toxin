@@ -8,34 +8,36 @@ $className: 'dropdown-counter';
 	&__menu {
 		position: absolute;
 		width: 100%;
-		border: toRem(1) solid $dark-shade-50;
+		border: .0714rem solid $dark-shade-50;
 		border-top-width: 0;
 		box-sizing: border-box;
-		border-radius: 0 0 toRem(4) toRem(4);
-		box-shadow: 0 toRem(10) toRem(20) 0 $dark-shade-5;
+		border-radius: 0 0 .2857rem .2857rem;
+		box-shadow: 0 .7143rem 1.4286rem 0 $dark-shade-5;
 		display: none;
 		z-index: 999;
 		background-color: white;
-    padding-left: toRem(14);
-    padding-right: toRem(6);
-    padding-bottom: toRem(8);
+    padding-left: 1rem;
+    padding-right: .4286rem;
+    padding-bottom: .5714rem;
 	}
 
   &__items {
     list-style-type: none;
+    margin: 0rem;
+    padding: 0rem;
   }
 
   &__item {
-    margin-top: toRem(7);
+    margin-top: .5rem;
     
     &:first-child {
-      margin-top: toRem(5);
+      margin-top: .3571rem;
     }
   }
 
   &__control-panel-wrapper {
-    margin-top: toRem(22);
-    padding-bottom: toRem(3);
+    margin-top: 1.5714rem;
+    padding-bottom: .2143rem;
   }
 
 	&_opened {

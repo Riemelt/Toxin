@@ -2,24 +2,28 @@ $className: 'header';
 
 .#{$className} {
   background-color: white;
-  box-shadow: toRem(0) toRem(10) toRem(20) $dark-shade-5;
+  box-shadow: 0rem .7143rem 1.4286rem $dark-shade-5;
 
   &__body {
-    min-height: toRem(70);
+    min-height: 5rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
     z-index: 2;
     position: relative;
-    padding: 0 toRem(20);
+    padding: 0 1.4286rem;
 
     @media (min-width: $xxl) {
-      padding: 0 toRem(140);
+      padding: 0 10rem;
     }
   }
 
   &__menu-button {
-    font-size: toRem(24);
+    background: none;
+    border: none;
+    padding: 0rem;
+    margin: 0rem;
+    font-size: 1.7143rem;
     font-family: 'Material Icons', Arial, sans-serif;
     color: $dark-shade-50;
     cursor: pointer;
@@ -34,8 +38,8 @@ $className: 'header';
   }
 
   &__separator {
-    width: toRem(1);
-    height: toRem(30);
+    width: .0714rem;
+    height: 2.1429rem;
     background-color: $dark-shade-10;
   }
 
@@ -49,7 +53,7 @@ $className: 'header';
 
     @media (min-width: $xxl) {
       align-items: center;
-      gap: toRem(20);
+      gap: 1.4286rem;
       display: flex;
     }
   }
@@ -60,9 +64,9 @@ $className: 'header';
     top: 100%;
     left: 0;
     width: 100%;
-    padding: toRem(20);
-    box-shadow: toRem(0) toRem(20) toRem(20) $dark-shade-5;
-    border-top: toRem(1) solid $dark-shade-10;
+    padding: 1.4286rem;
+    box-shadow: 0rem 1.4286rem 1.4286rem $dark-shade-5;
+    border-top: .0714rem solid $dark-shade-10;
 
     @media (min-width: $xxl) {
       position: initial;
@@ -80,7 +84,7 @@ $className: 'header';
         &__sign-in {
           display: flex;
           flex-direction: column;
-          gap: toRem(20);
+          gap: 1.4286rem;
         }
       }
     }

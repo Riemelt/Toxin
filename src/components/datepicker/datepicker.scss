@@ -5,20 +5,20 @@ $className: 'datepicker';
 $airDatepicker: 'air-datepicker';
 
 .#{$className} {
-  border: toRem(1) solid $dark-shade-25;
-  border-radius: toRem(4);
-  box-shadow: 0 toRem(10) toRem(20) 0 $dark-shade-5;
+  border: .0714rem solid $dark-shade-25;
+  border-radius: .2857rem;
+  box-shadow: 0 .7143rem 1.4286rem 0 $dark-shade-5;
   max-width: $medium;
   background-color: white;
   box-sizing: border-box;
-  padding: toRem(14) toRem(15) toRem(15) toRem(15);
+  padding: 1rem 1.0714rem 1.0714rem 1.0714rem;
 
   &__input {
     @include hideInput();
   }
 
   &:focus-within {
-    border-width: toRem(2);
+    border-width: .1429rem;
   }
 
   .#{$airDatepicker} {
@@ -34,15 +34,15 @@ $airDatepicker: 'air-datepicker';
 
       &--action {
         color: $purple;
-        font-size: toRem(24);
-        line-height: toRem(20);
+        font-size: 1.7143rem;
+        line-height: 1.4286rem;
       }
 
       &--title {
         color: $dark-shade-100;
         font-weight: 700;
-        font-size: toRem(19);
-        line-height: toRem(23);
+        font-size: 1.3571rem;
+        line-height: 1.6429rem;
       }
     }
 
@@ -52,17 +52,17 @@ $airDatepicker: 'air-datepicker';
 
     &--content {
       padding: initial;
-      margin-top: toRem(28);
-      margin-bottom: toRem(14);
+      margin-top: 2rem;
+      margin-bottom: 1rem;
     }
 
     &-body {
-      margin-left: toRem(2);
-      padding-left: toRem(5);
-      padding-right: toRem(5);  
+      margin-left: .1429rem;
+      padding-left: .3571rem;
+      padding-right: .3571rem;  
 
       &--day-names {
-        height: toRem(40);
+        height: 2.8571rem;
         margin: initial;
       }
 
@@ -70,12 +70,12 @@ $airDatepicker: 'air-datepicker';
         text-transform: capitalize;
         color: $purple;
         font-weight: 700;
-        font-size: toRem(12);
+        font-size: .8571rem;
       }
 
       &--cells {
         &.-days- {
-          grid-auto-rows: toRem(40);
+          grid-auto-rows: 2.8571rem;
         }
       }
     }
@@ -107,7 +107,7 @@ $airDatepicker: 'air-datepicker';
 
     &-cell.-day- {
       color: $dark-shade-50;
-      font-size: toRem(12);
+      font-size: .8571rem;
       border: none;
 
       &.-focus-,
@@ -123,8 +123,8 @@ $airDatepicker: 'air-datepicker';
           content: '';
           position: absolute;
           z-index: -1;
-          height: toRem(40);
-          width: toRem(39.88);
+          height: 2.8571rem;
+          width: 2.8486rem;
         }
       }
 
@@ -235,8 +235,8 @@ $airDatepicker: 'air-datepicker';
   }
 
   &__control-panel-wrapper {
-    margin-top: toRem(6);
-    padding: toRem(0) toRem(5) toRem(4);
+    margin-top: .4286rem;
+    padding: 0rem .3571rem .2857rem;
   }
 
   &_big {

@@ -2,48 +2,57 @@ $className: 'search-room-filter';
 
 .#{$className} {
 	flex-grow: 1;
-  border-bottom: toRem(1) solid $dark-shade-25;
+  border-bottom: .0714rem solid $dark-shade-25;
 
   &__body {
-    padding: toRem(30) toRem(140) toRem(71);
+    padding: 2.1429rem 10rem 5.0714rem;
     display: flex;
-    gap: toRem(20);
+    justify-content: space-between;
+    gap: 1.4286rem;
 
     @media (max-width: $xs) {
       flex-direction: column;
     }
 
     @media (max-width: 1400px) {
-      padding: toRem(30) toRem(20) toRem(71);
+      padding: 2.1429rem 1.4286rem 5.0714rem;
     }
   }
 
   &__rooms-filtered {
-    max-width: toRem(834);
+    max-width: 79.8571rem;
     flex: 3 3 auto;
     display: flex;
+    justify-content: center;
     flex-direction: column;
-    margin-left: auto;
     order: 1;
+
+    @media (max-width: 1721px) {
+      max-width: 59.5714rem;
+    }
 
     @media (max-width: 1400px) {
       align-items: center;
     }
   }
 
+  &__title {
+    @include header1();
+  }
+
   &__card-rooms {
-    margin-top: toRem(21.5);
+    margin-top: 1.5357rem;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: toRem(20.5) toRem(12);
+    gap: 1.4643rem .8571rem;
   }
 
   &__pagination {
-    margin-top: toRem(42);
+    margin-top: 3rem;
     display: flex;
     justify-content: center;
-    padding-right: toRem(16);
+    padding-right: 1.1429rem;
 
     @media (max-width: 1400px) {
       padding-right: initial;
@@ -51,10 +60,10 @@ $className: 'search-room-filter';
   }
 
   &__rooms-options {
-    margin-top: toRem(1);
+    margin-top: .0714rem;
     display: flex;
     flex-direction: column;
-    flex: 1 0 auto;
+    flex-shrink: 0;
     order: 0;
 
     @media (max-width: $xs) {
@@ -63,26 +72,26 @@ $className: 'search-room-filter';
   }
 
   &__guests-dropdown {
-    margin-top: toRem(22);
+    margin-top: 1.5714rem;
   }
 
   &__price-range {
-    margin-top: toRem(31);
+    margin-top: 2.2143rem;
   }
 
   &__rules {
-    margin-top: toRem(31);
+    margin-top: 2.2143rem;
   }
 
   &__availability {
-    margin-top: toRem(33);
+    margin-top: 2.3571rem;
   }
 
   &__comforts-dropdown {
-    margin-top: toRem(30);
+    margin-top: 2.1429rem;
   }
 
   &__comforts-additional-expander {
-    margin-top: toRem(24);
+    margin-top: 1.7143rem;
   }
 }

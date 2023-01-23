@@ -1,13 +1,16 @@
 $className: 'label';
 
 .#{$className} {
-	line-height: toRem(14.63);
-	font-size: toRem(12);
-	text-transform: uppercase;
 	display: flex;
+
+  &__title,
+  &__description {
+    @include header3();
+  }
 
 	&__description {
 		margin-left: auto;
 		color: $dark-shade-50;
+    font-weight: 400;
 	}
 }

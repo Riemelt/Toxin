@@ -2,11 +2,13 @@ $className: 'socials';
 
 .#{$className} {
   display: flex;
-  gap: toRem(23);
+  gap: 1.6429rem;
   list-style-type: none;
+  padding: 0rem;
+  margin: 0rem;
 
   &__icon {
-   font-size: toRem(24);
+   font-size: 1.7143rem;
    
    @include iconWithGradient($primary-gradient);
   }
