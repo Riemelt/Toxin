@@ -9,6 +9,7 @@ import LikeButton from '../../components/like-button';
 import Pagination from '../../components/pagination';
 import InputField from '../../components/input-field';
 import RangeSlider from '../../components/range-slider';
+import RateButton from '../../components/rate-button';
 import '../../components/label';
 import '../../components/radio-buttons-field';
 import '../../components/bullet-list';
@@ -16,7 +17,6 @@ import '../../components/button';
 import '../../components/checkbox-list';
 import '../../components/header-ui-kit';
 import '../../components/container';
-import '../../components/rate-button';
 import '../../components/room-info';
 import '../../components/toggle-switch';
 
@@ -105,6 +105,26 @@ class FormElements {
     });
 
     new LikeButton($likeButtonActive);
+
+    const $rateButton1 = $getElement({
+      $parent: this.#$component,
+      component: this.#className,
+      element: 'rate-button-1',
+    });
+
+    new RateButton({
+      $parent: $rateButton1,
+    });
+
+    const $rateButton2 = $getElement({
+      $parent: this.#$component,
+      component: this.#className,
+      element: 'rate-button-2',
+    });
+
+    new RateButton({
+      $parent: $rateButton2,
+    });
 
     const $rangeSlider = $getElement({
       $parent: this.#$component,

@@ -2,7 +2,7 @@ import {
   $getElement,
 } from '../../utilities/utilities';
 import RoomLabel from '../room-label';
-import '../rate-button';
+import RateButton from '../rate-button';
 
 class CardRoom {
   #className = 'card-room';
@@ -73,6 +73,16 @@ class CardRoom {
     new RoomLabel({
       $parent: $label,
       options: roomLabel,
+    });
+
+    const $rateButton = $getElement({
+      $parent: this.#$component,
+      component: this.#className,
+      element: 'rating',
+    });
+
+    new RateButton({
+      $parent: $rateButton,
     });
   }
 

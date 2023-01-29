@@ -3,14 +3,27 @@ $className: 'rate-button';
 .#{$className} {
   display: flex;
 
+  &:hover,
+  &:focus-within {
+    .#{$className}__icon::before {
+      content: 'star';
+      text-shadow: 0rem 0rem .7143rem $dark-shade-25;
+    }
+  }
+
   &__icon {
+    padding: 0rem;
+    margin: 0rem;
+    border: none;
+    background: none;
     max-width: 1.7143rem;
+    cursor: pointer;
 
     &::before {
       font-size: 1.7143rem;
       font-family: 'Material Icons', Arial, sans-serif;
       content: 'star_border';
-      background: $primary-gradient;
+      background-image: $primary-gradient;
       background-clip: text;
       color: transparent;
     }
@@ -18,6 +31,14 @@ $className: 'rate-button';
     &_checked {
       &::before {
         content: 'star';
+      }
+    }
+
+    &:hover,
+    &:focus {
+      ~ .#{$className}__icon::before {
+        content: 'star_border';
+        text-shadow: none;
       }
     }
   }

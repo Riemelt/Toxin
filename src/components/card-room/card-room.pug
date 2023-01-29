@@ -57,14 +57,11 @@ mixin card-room(vars = {})
               class=`${className}__control-panel-button js-${className}__control-panel-button`
               data-id=i
             )
-    a(
-      class=`${className}__info`
-      href=href
-    )
+    div(class=`${className}__info`)
       div(class=`${className}__label js-${className}__label`)
         +room-label(roomLabel)
       div(class=`${className}__rating-and-reviews`)
-        div(class=`${className}__rating`)
+        div(class=`${className}__rating js-${className}__rating`)
           +rate-button(rateButton)
         div(class=`${className}__reviews`)
           span(class=`${className}__reviews-count js-${className}__reviews-count`)= reviews
