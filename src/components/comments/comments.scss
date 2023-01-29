@@ -1,3 +1,6 @@
+@use '../../main-styles/mixins';
+@use '../../main-styles/variables';
+
 $className: 'comments';
 
 .#{$className} {
@@ -7,11 +10,11 @@ $className: 'comments';
   }
 
   &__title {
-    @include header2();
+    @include mixins.header2();
   }
 
   &__counter {
-    color: $dark-shade-50;
+    color: variables.$dark-shade-50;
   }
 
   &__comments-list {

@@ -1,3 +1,6 @@
+@use '../../main-styles/mixins';
+@use '../../main-styles/variables';
+
 $className: 'room-info-item';
 
 .#{$className} {
@@ -8,7 +11,7 @@ $className: 'room-info-item';
     
     .material-icons {
       font-size: 3.4286rem;
-      @include iconWithGradient($primary-gradient);
+      @include mixins.iconWithGradient(variables.$primary-gradient);
     }
   }
 

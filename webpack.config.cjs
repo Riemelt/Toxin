@@ -22,9 +22,6 @@ const entryPoints = pages.reduce((acc, name) => {
   return acc;
 }, {});
 
-const variablesPath = './src/main-styles/variables.scss';
-const variablesScss = path.resolve(__dirname, variablesPath);
-
 const mode = (process.env.NODE_ENV === 'production') ?
   'production' :
   'development';
@@ -87,12 +84,6 @@ module.exports = {
             },
           },
           'sass-loader',
-          {
-            loader: 'sass-resources-loader',
-            options: {
-              resources: variablesScss,
-            },
-          },
         ],
       },
       {

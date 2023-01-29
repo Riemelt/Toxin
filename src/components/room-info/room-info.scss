@@ -1,10 +1,13 @@
+@use '../../main-styles/mixins';
+@use '../../main-styles/variables';
+
 $className: 'room-info';
 
 .#{$className} {
   max-width: 20rem;
 
   &__title {
-    @include header2();
+    @include mixins.header2();
   }
 
   &__title
@@ -19,7 +22,7 @@ $className: 'room-info';
   }
 
   &__item {
-    border-bottom: .0714rem solid $dark-shade-10;
+    border-bottom: .0714rem solid variables.$dark-shade-10;
     margin-bottom: 1.3929rem;
     padding-bottom: .9286rem;
 
@@ -32,7 +35,7 @@ $className: 'room-info';
 
   &_withEndLine {
     .#{$className}__item:last-child {
-      border-bottom: .0714rem solid $dark-shade-10;
+      border-bottom: .0714rem solid variables.$dark-shade-10;
       margin-bottom: 1.3929rem;
       padding-bottom: .9286rem;
     }

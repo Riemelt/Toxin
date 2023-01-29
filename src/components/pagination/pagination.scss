@@ -1,3 +1,5 @@
+@use '../../main-styles/variables';
+
 $className: 'pagination';
 
 $pluginName: 'paginationjs';
@@ -25,11 +27,11 @@ $pluginName: 'paginationjs';
 
       & a {
         margin: auto;
-        color: $dark-shade-50;
+        color: variables.$dark-shade-50;
         text-decoration: none;
         
         &:hover {
-          color: $dark-shade-25;
+          color: variables.$dark-shade-25;
         }
       }
     }
@@ -39,7 +41,7 @@ $pluginName: 'paginationjs';
 
       &.active {
         border-radius: 50%;
-        background-image: $primary-gradient;
+        background-image: variables.$primary-gradient;
         
         & a {
           color: white;
@@ -52,7 +54,7 @@ $pluginName: 'paginationjs';
     &-next {
       cursor: pointer;
       border-radius: 50%;
-      background-image: $secondary-gradient;
+      background-image: variables.$secondary-gradient;
 
       & a {
         color: white;
@@ -83,7 +85,7 @@ $pluginName: 'paginationjs';
 
   &__pages-info {
     margin: .6429rem auto 0;
-    color: $dark-shade-75;
+    color: variables.$dark-shade-75;
     font-size: 1rem;
     line-height: 1.7143rem;
   }

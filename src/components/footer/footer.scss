@@ -1,10 +1,13 @@
+@use '../../main-styles/mixins';
+@use '../../main-styles/variables';
+
 $className: 'footer';
 
 .#{$className} {
   background-color: white;
-  box-shadow: 0rem .7143rem 1.4286rem $dark-shade-5;
+  box-shadow: 0rem .7143rem 1.4286rem variables.$dark-shade-5;
 
-  @media (max-width: $sm) {
+  @media (max-width: variables.$sm) {
     min-height: 26.2143rem;
     display: flex;
     flex-direction: column;
@@ -17,20 +20,20 @@ $className: 'footer';
     display: flex;
     justify-content: space-between;
 
-    @media (max-width: $xxl) {
+    @media (max-width: variables.$xxl) {
       flex-direction: column;
       align-items: center;
       gap: 3.5714rem;
     }
 
-    @media (max-width: $sm) {
+    @media (max-width: variables.$sm) {
       min-height: initial;
       padding: 0 1.4286rem;
     }
   }
 
   &__company-logo {
-    @media (max-width: $sm) {
+    @media (max-width: variables.$sm) {
       display: flex;
       justify-content: center;
     }
@@ -45,17 +48,17 @@ $className: 'footer';
   &__company-description {
     margin-top: 1.2143rem;
 
-    @media (max-width: $xxl) {
+    @media (max-width: variables.$xxl) {
       margin: initial;
     }
 
-    @media (max-width: $sm) {
+    @media (max-width: variables.$sm) {
       display: none;
     }
   }
 
   &__company {
-    @media (max-width: $xxl) {
+    @media (max-width: variables.$xxl) {
       display: flex;
       max-width: initial;
       align-items: center;
@@ -64,7 +67,7 @@ $className: 'footer';
       margin: 0 auto;
     }
 
-    @media (max-width: $sm) {
+    @media (max-width: variables.$sm) {
       margin: 0 auto;
       max-width: initial;
       width: initial;
@@ -75,7 +78,7 @@ $className: 'footer';
     width: 100%;
     margin: .3571rem 1.7857rem 0rem 1.0714rem;
 
-    @media (max-width: $sm) {
+    @media (max-width: variables.$sm) {
       display: none;
     }
   }
@@ -93,7 +96,7 @@ $className: 'footer';
   }
 
   &__navigation-block-title {
-    @include header3();
+    @include mixins.header3();
   }
 
   &__navigation-block-items {
@@ -116,10 +119,10 @@ $className: 'footer';
 
   &__navigation-block-item-content {
     text-decoration: none;
-    color: $dark-shade-50;
+    color: variables.$dark-shade-50;
 
     &:hover {
-      color: $dark-shade-25;
+      color: variables.$dark-shade-25;
     }
   }
 
@@ -127,7 +130,7 @@ $className: 'footer';
     margin-top: .3571rem;
     display: block;
 
-    @media (max-width: $xxl) {
+    @media (max-width: variables.$xxl) {
       display: flex;
       max-width: initial;
       align-items: center;
@@ -137,19 +140,19 @@ $className: 'footer';
       padding-bottom: 3.5714rem;
     }
 
-    @media (max-width: $sm) {
+    @media (max-width: variables.$sm) {
       display: none;
     }
   }
 
   &__subscription-title {
-    @include header3();
+    @include mixins.header3();
   }
 
   &__subscription-description {
     margin-top: 1.2143rem;
 
-    @media (max-width: $xxl) {
+    @media (max-width: variables.$xxl) {
       margin: initial;
     }
   }
@@ -157,15 +160,15 @@ $className: 'footer';
   &__subscription-input {
     margin-top: 1.7143rem;
 
-    @media (max-width: $xxl) {
+    @media (max-width: variables.$xxl) {
       margin: initial;
     }
   }
 
   &__bottom-wrapper {
-    border-top: .0714rem solid $dark-shade-10;
+    border-top: .0714rem solid variables.$dark-shade-10;
 
-    @media (max-width: $sm) {
+    @media (max-width: variables.$sm) {
       border: initial;
     }
   }
@@ -177,7 +180,7 @@ $className: 'footer';
     align-items: center;
     padding: 0 10rem;
 
-    @media (max-width: $sm) {
+    @media (max-width: variables.$sm) {
       margin-top: 1.2143rem;
       min-height: initial;
       gap: 1.2143rem;
@@ -191,7 +194,7 @@ $className: 'footer';
   }
 
   &_mobile {
-    max-width: $xs;
+    max-width: variables.$xs;
     min-height: 26.2143rem;
     margin: 0 auto;
     display: flex;

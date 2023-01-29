@@ -1,3 +1,5 @@
+@use '../../main-styles/variables';
+
 $className: 'registration';
 
 .#{$className} {
@@ -10,7 +12,7 @@ $className: 'registration';
   &__main {
     padding: 0 9.5714rem 0 10rem;
 
-    @media (max-width: $xs) {
+    @media (max-width: variables.$xs) {
       padding: 0 1.4286rem;
     }
   }

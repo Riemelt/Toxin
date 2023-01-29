@@ -1,3 +1,5 @@
+@use '../../main-styles/variables';
+
 $className: 'landing';
 
 .#{$className} {
@@ -11,7 +13,7 @@ $className: 'landing';
   &__main {
     padding: 0 9.5714rem 0 10rem;
 
-    @media (max-width: $xs) {
+    @media (max-width: variables.$xs) {
       padding: 0 1.4286rem;
       display: flex;
       flex-direction: column;
@@ -26,7 +28,7 @@ $className: 'landing';
     margin-left: auto;
     text-align: right;
 
-    @media (max-width: $xs) {
+    @media (max-width: variables.$xs) {
       margin-left: initial;
       text-align: center;
     }

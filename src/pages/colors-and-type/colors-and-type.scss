@@ -1,3 +1,6 @@
+@use '../../main-styles/mixins';
+@use '../../main-styles/variables';
+
 $className: 'colors-and-type';
 
 .#{$className} {
@@ -43,7 +46,7 @@ $className: 'colors-and-type';
         &__text-examples-title,
         &__text-examples-description {
           margin-top: 0rem;
-          @include header1();
+          @include mixins.header1();
         }
       }
     }
@@ -54,7 +57,7 @@ $className: 'colors-and-type';
       .#{$className} {
         &__text-examples-title,
         &__text-examples-description {
-          @include header2();
+          @include mixins.header2();
         }
       }
     }
@@ -65,20 +68,20 @@ $className: 'colors-and-type';
       .#{$className} {
         &__text-examples-title,
         &__text-examples-description {
-          @include header3();
+          @include mixins.header3();
         }
       }
     }
 
     &_body-sample {
       .#{$className}__text-examples-description {
-        color: $dark-shade-75;
+        color: variables.$dark-shade-75;
       }
     }
 
     .#{$className} {
       &__text-examples-title {
-        color: $dark-shade-25;
+        color: variables.$dark-shade-25;
         font-weight: 400;
       }
 
@@ -89,7 +92,7 @@ $className: 'colors-and-type';
 	}
 
 	&__text-examples-title {
-		color: $dark-shade-25;
+		color: variables.$dark-shade-25;
 		text-align: right;
 		font-weight: 400;
 		min-width: 3.5714rem;	

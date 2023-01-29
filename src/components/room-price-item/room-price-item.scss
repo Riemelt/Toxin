@@ -1,3 +1,5 @@
+@use '../../main-styles/variables';
+
 $className: 'room-price-item';
 
 .#{$className} {
@@ -23,10 +25,10 @@ $className: 'room-price-item';
     cursor: pointer;
     width: 1.4286rem;
     height: 1.4286rem;
-    color: $dark-shade-25;
+    color: variables.$dark-shade-25;
     font-size: .8571rem;
     font-weight: 700;
-    border: .0714rem solid $dark-shade-25;
+    border: .0714rem solid variables.$dark-shade-25;
     border-radius: 50%;
 
     &:hover
@@ -43,7 +45,7 @@ $className: 'room-price-item';
     position: absolute;
     font-size: .8571rem;
     line-height: 1rem;
-    border: .0714rem solid $dark-shade-50;
+    border: .0714rem solid variables.$dark-shade-50;
     box-shadow: 0rem 0rem .7143rem rgba(0, 0, 0, 0.2);
     padding: .3571rem .3571rem .3571rem;
     border-radius: .2143rem;
@@ -61,8 +63,8 @@ $className: 'room-price-item';
       width: .7143rem;
       height: .7143rem;
       background-color: white;
-      border-left: .0714rem solid $dark-shade-50;
-      border-top: .0714rem solid $dark-shade-50;
+      border-left: .0714rem solid variables.$dark-shade-50;
+      border-top: .0714rem solid variables.$dark-shade-50;
       transform: translateY(-0.4464rem) rotate(45deg);
       top: 0;
     }

@@ -1,3 +1,5 @@
+@use '../../main-styles/variables';
+
 $className: 'form-elements';
 
 .#{$className} {
@@ -19,7 +21,7 @@ $className: 'form-elements';
   &__column-left,
   &__column-right,
   &__column-middle {
-    min-width: $big;
+    min-width: variables.$big;
   }
 
   &__column-middle,
@@ -118,7 +120,7 @@ $className: 'form-elements';
   }
 
   &__dropdowns &__column-middle {
-    min-width: $big;
+    min-width: variables.$big;
   }
 
   &__dropdown-medium-opened {

@@ -1,3 +1,5 @@
+@use './variables';
+
 * {
   box-sizing: border-box;
 }
@@ -8,10 +10,10 @@ body {
   font-size: 14px;
   font-weight: 400;
   line-height: 24px;
-  color: $dark-shade-75;
+  color: variables.$dark-shade-75;
   height: 100%;
-  min-width: $big;
-  max-width: $fullhd;
+  min-width: variables.$big;
+  max-width: variables.$fullhd;
   margin: 0 auto;
-  background-color: $grey;
+  background-color: variables.$grey;
 }

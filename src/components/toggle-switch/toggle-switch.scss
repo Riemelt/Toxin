@@ -1,7 +1,10 @@
+@use '../../main-styles/mixins';
+@use '../../main-styles/variables';
+
 $className: 'toggle-switch';
 
 .#{$className} {
-  max-width: $medium;
+  max-width: variables.$medium;
 
   &__body {
     display: flex;
@@ -17,15 +20,15 @@ $className: 'toggle-switch';
   }
 
   &__switch-input {
-    @include hideInput;
+    @include mixins.hideInput;
   }
 
   &__switch-input:checked
   + &__switch {
-    border-color: $purple;
+    border-color: variables.$purple;
 
     &::after {
-      background-image: $primary-gradient;
+      background-image: variables.$primary-gradient;
       transform: translateX(1.3571rem);
     }
   }
@@ -39,7 +42,7 @@ $className: 'toggle-switch';
     position: relative;
     height: 1.4286rem;
     width: 2.8571rem;
-    border: .0714rem solid $dark-shade-25;
+    border: .0714rem solid variables.$dark-shade-25;
     border-radius: .7143rem;
     margin-right: .7143rem;
 
@@ -48,7 +51,7 @@ $className: 'toggle-switch';
       content: '';
       height: .8571rem;
       width: .8571rem;
-      background-color: $dark-shade-25;
+      background-color: variables.$dark-shade-25;
       border-radius: 50%;
       margin: auto 0;
       left: 9%;

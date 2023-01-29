@@ -1,3 +1,6 @@
+@use '../../main-styles/mixins';
+@use '../../main-styles/variables';
+
 $className: 'socials';
 
 .#{$className} {
@@ -10,6 +13,6 @@ $className: 'socials';
   &__icon {
    font-size: 1.7143rem;
    
-   @include iconWithGradient($primary-gradient);
+   @include mixins.iconWithGradient(variables.$primary-gradient);
   }
 }

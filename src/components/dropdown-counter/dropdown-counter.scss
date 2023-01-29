@@ -1,18 +1,20 @@
+@use '../../main-styles/variables';
+
 $className: 'dropdown-counter';
 
 .#{$className} {
 	position: relative;
-	min-width: $small;
+	min-width: variables.$small;
 	width: 100%;
 
 	&__menu {
 		position: absolute;
 		width: 100%;
-		border: .0714rem solid $dark-shade-50;
+		border: .0714rem solid variables.$dark-shade-50;
 		border-top-width: 0;
 		box-sizing: border-box;
 		border-radius: 0 0 .2857rem .2857rem;
-		box-shadow: 0 .7143rem 1.4286rem 0 $dark-shade-5;
+		box-shadow: 0 .7143rem 1.4286rem 0 variables.$dark-shade-5;
 		display: none;
 		z-index: 999;
 		background-color: white;
@@ -47,10 +49,10 @@ $className: 'dropdown-counter';
 	}
 
   &_big {
-    max-width: $big;
+    max-width: variables.$big;
   }
 
   &_medium {
-    max-width: $medium;
+    max-width: variables.$medium;
   }
 }

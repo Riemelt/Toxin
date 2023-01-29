@@ -1,3 +1,5 @@
+@use '../../main-styles/variables';
+
 $className: 'navigation';
 
 .#{$className} {
@@ -8,7 +10,7 @@ $className: 'navigation';
   flex-direction: column;
   gap: 1.5rem;
 
-  @media (min-width: $xxl) {
+  @media (min-width: variables.$xxl) {
     flex-direction: row;
     align-items: center;
   }

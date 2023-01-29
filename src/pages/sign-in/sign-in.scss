@@ -1,3 +1,5 @@
+@use '../../main-styles/variables';
+
 $className: 'sign-in';
 
 .#{$className} {
@@ -11,7 +13,7 @@ $className: 'sign-in';
   &__main {
     padding: 0 10rem 0 10rem;
 
-    @media (max-width: $xs) {
+    @media (max-width: variables.$xs) {
       padding: 0 1.4286rem;
     }
   }

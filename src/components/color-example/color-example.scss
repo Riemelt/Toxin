@@ -1,3 +1,5 @@
+@use '../../main-styles/variables';
+
 $className: 'color-example';
 
 .#{$className} {
@@ -10,36 +12,36 @@ $className: 'color-example';
 		height: 5rem;
 
     &_dark-shade-100 {
-      background-color: $dark-shade-100;
+      background-color: variables.$dark-shade-100;
     }
   
     &_dark-shade-75 {
-      background-color: $dark-shade-75;
+      background-color: variables.$dark-shade-75;
     }
   
     &_dark-shade-50 {
-      background-color: $dark-shade-50;
+      background-color: variables.$dark-shade-50;
     }
   
     &_dark-shade-25 {
-      background-color: $dark-shade-25;
+      background-color: variables.$dark-shade-25;
     }
   
     &_dark-shade-5 {
-      background-color: $dark-shade-5;
+      background-color: variables.$dark-shade-5;
     }
   
     &_purple {
-      background-color: $purple;
+      background-color: variables.$purple;
     }
   
     &_green {
-      background-color: $green;
+      background-color: variables.$green;
     }
 	}
 
 	&__info {
-		color: $dark-shade-100;
+		color: variables.$dark-shade-100;
 		font-size: 1.3571rem;
 		line-height: 1.985rem;
 		display: flex;

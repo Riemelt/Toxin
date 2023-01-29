@@ -1,15 +1,17 @@
+@use '../../main-styles/variables';
+
 $className: 'gallery';
 
 .#{$className} {
   display: flex;
   max-height: 34.6429rem;
 
-  @media (min-width: ($xxxl + 1)) {
+  @media (min-width: (variables.$xxxl + 1)) {
     max-height: initial;
   }
 
   &__images-primary-wrapper {
-    @media (min-width: $xxxl) {
+    @media (min-width: variables.$xxxl) {
       flex-grow: 2;
     }
   } 
@@ -27,11 +29,11 @@ $className: 'gallery';
     flex-direction: column;
     justify-content: center;
 
-    @media (min-width: $xs) {
+    @media (min-width: variables.$xs) {
       display: flex;
     }
 
-    @media (min-width: $xxxl) {
+    @media (min-width: variables.$xxxl) {
       flex-grow: 1;
     }
   }

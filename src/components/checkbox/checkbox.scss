@@ -1,7 +1,10 @@
+@use '../../main-styles/mixins';
+@use '../../main-styles/variables';
+
 $className: 'checkbox';
 
 .#{$className} {
-  max-width: $medium;
+  max-width: variables.$medium;
   width: fit-content;
 
   &__body {
@@ -24,16 +27,16 @@ $className: 'checkbox';
   }
 
   &__checkbox-input {
-    @include hideInput;
+    @include mixins.hideInput;
   }
 
   &__checkmark {
     position: relative;
     border-radius: .2857rem;
-    border: .0714rem solid $dark-shade-25;
-    height: $checkbox-size;
+    border: .0714rem solid variables.$dark-shade-25;
+    height: variables.$checkbox-size;
     min-width: 1.4286rem;
-    margin-right: $checkbox-margin;
+    margin-right: variables.$checkbox-margin;
 
     &::after {
       position: absolute;
@@ -47,7 +50,7 @@ $className: 'checkbox';
       width: .4286rem;
       border-style: solid;
       border-width: .1429rem;
-      border-image: $primary-gradient 1;
+      border-image: variables.$primary-gradient 1;
       border-left: none;
       border-top: none;
       transform: rotate(45deg);
@@ -58,7 +61,7 @@ $className: 'checkbox';
 
   &__checkbox-input:checked
   + &__checkmark {
-    border-color: $purple;
+    border-color: variables.$purple;
 
     &::after {
       display: initial;
@@ -76,16 +79,16 @@ $className: 'checkbox';
   }
 
   &__title {
-    color: $dark-shade-50;
+    color: variables.$dark-shade-50;
     line-height: 1.2857rem;
     white-space: pre-wrap;
   }
 
   &__description {
-    color: $dark-shade-50;
+    color: variables.$dark-shade-50;
     font-size: .8571rem;
     line-height: 1rem;
-    padding-left: $checkbox-size + $checkbox-margin;
+    padding-left: variables.$checkbox-size + variables.$checkbox-margin;
     margin: .3571rem 0rem 0rem;
     white-space: pre-line;
   }
@@ -93,7 +96,7 @@ $className: 'checkbox';
   &_rich {
     .#{$className}__title {
       font-weight: 700;
-      color: $dark-shade-75;
+      color: variables.$dark-shade-75;
     }
   }
 }

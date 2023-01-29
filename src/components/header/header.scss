@@ -1,8 +1,10 @@
+@use '../../main-styles/variables';
+
 $className: 'header';
 
 .#{$className} {
   background-color: white;
-  box-shadow: 0rem .7143rem 1.4286rem $dark-shade-5;
+  box-shadow: 0rem .7143rem 1.4286rem variables.$dark-shade-5;
 
   &__body {
     min-height: 5rem;
@@ -13,7 +15,7 @@ $className: 'header';
     position: relative;
     padding: 0 1.4286rem;
 
-    @media (min-width: $xxl) {
+    @media (min-width: variables.$xxl) {
       padding: 0 10rem;
     }
   }
@@ -25,14 +27,14 @@ $className: 'header';
     margin: 0rem;
     font-size: 1.7143rem;
     font-family: 'Material Icons', Arial, sans-serif;
-    color: $dark-shade-50;
+    color: variables.$dark-shade-50;
     cursor: pointer;
 
     &::before {
       content: 'menu';
     }
 
-    @media (min-width: $xxl) {
+    @media (min-width: variables.$xxl) {
       display: none;
     }
   }
@@ -40,18 +42,18 @@ $className: 'header';
   &__separator {
     width: .0714rem;
     height: 2.1429rem;
-    background-color: $dark-shade-10;
+    background-color: variables.$dark-shade-10;
   }
 
   &__user-name {
-    color: $dark-shade-50;
+    color: variables.$dark-shade-50;
   }
 
   &__content,
   &__sign-in {
     display: none;
 
-    @media (min-width: $xxl) {
+    @media (min-width: variables.$xxl) {
       align-items: center;
       gap: 1.4286rem;
       display: flex;
@@ -65,10 +67,10 @@ $className: 'header';
     left: 0;
     width: 100%;
     padding: 1.4286rem;
-    box-shadow: 0rem 1.4286rem 1.4286rem $dark-shade-5;
-    border-top: .0714rem solid $dark-shade-10;
+    box-shadow: 0rem 1.4286rem 1.4286rem variables.$dark-shade-5;
+    border-top: .0714rem solid variables.$dark-shade-10;
 
-    @media (min-width: $xxl) {
+    @media (min-width: variables.$xxl) {
       position: initial;
       border: initial;
       box-shadow: initial;
@@ -78,7 +80,7 @@ $className: 'header';
   }
 
   &_opened {
-    @media (max-width: $xxl) {
+    @media (max-width: variables.$xxl) {
       .#{$className} {
         &__content,
         &__sign-in {

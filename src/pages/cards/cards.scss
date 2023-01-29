@@ -1,8 +1,10 @@
+@use '../../main-styles/variables';
+
 $className: 'cards';
 
 .#{$className} {
   min-height: 100vh;
-  background-color: $grey;
+  background-color: variables.$grey;
   padding-bottom: 7.1429rem;
 
   &__columns {

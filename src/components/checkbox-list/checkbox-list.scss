@@ -1,7 +1,9 @@
+@use '../../main-styles/variables';
+
 $className: 'checkbox-list';
 
 .#{$className} {
-  max-width: $medium;
+  max-width: variables.$medium;
 
   &__title {
     margin-bottom: 1.1429rem;

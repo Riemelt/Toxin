@@ -1,7 +1,9 @@
+@use '../../main-styles/variables';
+
 $className: 'dropdown-datepicker';
 
 .#{$className} {
-  max-width: $medium;
+  max-width: variables.$medium;
   width: 100%;
   position: relative;
 
@@ -24,10 +26,10 @@ $className: 'dropdown-datepicker';
   }
 
   &_big {
-    max-width: $big;
+    max-width: variables.$big;
   }
 
   &_medium {
-    max-width: $medium;
+    max-width: variables.$medium;
   }
 }

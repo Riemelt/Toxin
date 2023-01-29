@@ -1,3 +1,5 @@
+@use '../../main-styles/variables';
+
 $className: 'rate-button';
 
 .#{$className} {
@@ -7,7 +9,7 @@ $className: 'rate-button';
   &:focus-within {
     .#{$className}__icon::before {
       content: 'star';
-      text-shadow: 0rem 0rem .7143rem $dark-shade-25;
+      text-shadow: 0rem 0rem .7143rem variables.$dark-shade-25;
     }
   }
 
@@ -23,7 +25,7 @@ $className: 'rate-button';
       font-size: 1.7143rem;
       font-family: 'Material Icons', Arial, sans-serif;
       content: 'star_border';
-      background-image: $primary-gradient;
+      background-image: variables.$primary-gradient;
       background-clip: text;
       color: transparent;
     }

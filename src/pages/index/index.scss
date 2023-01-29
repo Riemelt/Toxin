@@ -1,3 +1,5 @@
+@use '../../main-styles/variables';
+
 $className: 'index';
 
 .#{$className} {
@@ -8,7 +10,7 @@ $className: 'index';
   &__main {
     max-width: 35.7143rem;
     margin: 0 auto;
-    background-color: $grey;
+    background-color: variables.$grey;
     padding: 1.7857rem;
     border-radius: 1.0714rem;
 
@@ -23,7 +25,7 @@ $className: 'index';
 
   &__ui-kit-title,
   &__website-title {
-    color: $dark-shade-100;
+    color: variables.$dark-shade-100;
     font-size: 1.6429rem;
     margin-bottom: 1.4286rem;
   }

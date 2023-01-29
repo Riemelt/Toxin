@@ -1,3 +1,6 @@
+@use '../../main-styles/mixins';
+@use '../../main-styles/variables';
+
 $className: 'label';
 
 .#{$className} {
@@ -5,12 +8,12 @@ $className: 'label';
 
   &__title,
   &__description {
-    @include header3();
+    @include mixins.header3();
   }
 
 	&__description {
 		margin-left: auto;
-		color: $dark-shade-50;
+		color: variables.$dark-shade-50;
     font-weight: 400;
 	}
 }

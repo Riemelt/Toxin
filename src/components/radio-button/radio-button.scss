@@ -1,7 +1,10 @@
+@use '../../main-styles/mixins';
+@use '../../main-styles/variables';
+
 $className: 'radio-button';
 
 .#{$className} {
-  max-width: $medium;
+  max-width: variables.$medium;
 
   &__body {
     display: flex;
@@ -10,12 +13,12 @@ $className: 'radio-button';
   }
 
   &__radio-input {
-    @include hideInput;
+    @include mixins.hideInput;
   }
 
   &__radio-input:checked
   + &__button {
-    border-color: $purple;
+    border-color: variables.$purple;
 
     &::after {
       display: block;
@@ -24,7 +27,7 @@ $className: 'radio-button';
 
   &__radio-input:checked
   ~ &__title {
-    color: $dark-shade-75;
+    color: variables.$dark-shade-75;
   }
 
   &__radio-input:hover
@@ -42,7 +45,7 @@ $className: 'radio-button';
     width: 1.4286rem;
     height: 1.4286rem;
     border-radius: 50%;
-    border: .0714rem solid $dark-shade-25;
+    border: .0714rem solid variables.$dark-shade-25;
     box-sizing: border-box;
     margin-right: .7143rem;
 
@@ -56,13 +59,13 @@ $className: 'radio-button';
       content: '';
       height: .8571rem;
       width: .8571rem;
-      background-image: $primary-gradient;
+      background-image: variables.$primary-gradient;
       border-radius: 50%;
       display: none;
     }
   }
 
   &__title {
-    color: $dark-shade-50;
+    color: variables.$dark-shade-50;
   }
 }

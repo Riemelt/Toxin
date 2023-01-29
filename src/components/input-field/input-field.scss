@@ -1,3 +1,6 @@
+@use '../../main-styles/mixins';
+@use '../../main-styles/variables';
+
 $className: 'input-field';
 
 .#{$className} {
@@ -10,7 +13,7 @@ $className: 'input-field';
 	}
 
 	&__input {
-		border: .0714rem solid $dark-shade-25;
+		border: .0714rem solid variables.$dark-shade-25;
 		box-sizing: border-box;
 		border-radius: .2857rem;
 		height: 3.1429rem;
@@ -22,18 +25,18 @@ $className: 'input-field';
     overflow: hidden;
     font-family: Montserrat, Arial, sans-serif;
     font-weight: 400;
-    color: $dark-shade-75;
+    color: variables.$dark-shade-75;
     font-size: 1rem;
     line-height: 1.2857rem;
 
 		&:hover,
     &:focus {
-			border-color: $dark-shade-50;
+			border-color: variables.$dark-shade-50;
 			outline: none;
 		}
 
 		&::placeholder {
-			color: $dark-shade-25;
+			color: variables.$dark-shade-25;
 		 }
 	}
 
@@ -46,7 +49,7 @@ $className: 'input-field';
 		right: .7143rem;
     transform: translateY(40%);
 		align-self: center;
-		color: $dark-shade-50;
+		color: variables.$dark-shade-50;
 		width: 1.7143rem;
 		height: 1.7143rem;
     cursor: pointer;
@@ -65,17 +68,17 @@ $className: 'input-field';
     }
 
     &_primary {
-      @include iconWithGradient($primary-gradient);
+      @include mixins.iconWithGradient(variables.$primary-gradient);
     }
 
     &_secondary {
-      color: $dark-shade-75;
+      color: variables.$dark-shade-75;
     } 
   }
 
 	&_hovered {
 		.#{$className}__input {
-			border-color: $dark-shade-50;
+			border-color: variables.$dark-shade-50;
 		}
 	}
 
@@ -83,7 +86,7 @@ $className: 'input-field';
 		.#{$className}__input {
 			border-bottom-left-radius: 0;
 			border-bottom-right-radius: 0;
-			border-color: $dark-shade-50;
+			border-color: variables.$dark-shade-50;
 		}
 	}
 

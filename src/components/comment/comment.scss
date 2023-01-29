@@ -1,3 +1,5 @@
+@use '../../main-styles/variables';
+
 $className: 'comment';
 
 .#{$className} {
@@ -11,7 +13,7 @@ $className: 'comment';
     width: 100%;
     border-radius: 50%;
     border: .1429rem solid white;
-    filter: drop-shadow(0rem .7143rem 1.4286rem $dark-shade-10);
+    filter: drop-shadow(0rem .7143rem 1.4286rem variables.$dark-shade-10);
     margin-right: .7143rem;
   }
 

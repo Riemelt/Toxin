@@ -1,3 +1,6 @@
+@use '../../main-styles/mixins';
+@use '../../main-styles/variables';
+
 @import 'air-datepicker/air-datepicker.css';
 
 $className: 'datepicker';
@@ -5,16 +8,16 @@ $className: 'datepicker';
 $airDatepicker: 'air-datepicker';
 
 .#{$className} {
-  border: .0714rem solid $dark-shade-25;
+  border: .0714rem solid variables.$dark-shade-25;
   border-radius: .2857rem;
-  box-shadow: 0 .7143rem 1.4286rem 0 $dark-shade-5;
-  max-width: $medium;
+  box-shadow: 0 .7143rem 1.4286rem 0 variables.$dark-shade-5;
+  max-width: variables.$medium;
   background-color: white;
   box-sizing: border-box;
   padding: 1rem 1.0714rem 1.0714rem 1.0714rem;
 
   &__input {
-    @include hideInput();
+    @include mixins.hideInput();
   }
 
   &:focus-within {
@@ -23,7 +26,7 @@ $airDatepicker: 'air-datepicker';
 
   .#{$airDatepicker} {
     font-family: Montserrat, Arial, sans-serif;
-    color: $dark-shade-50;
+    color: variables.$dark-shade-50;
     width: 100%;
     border: initial;
 
@@ -33,13 +36,13 @@ $airDatepicker: 'air-datepicker';
       margin: 0;
 
       &--action {
-        color: $purple;
+        color: variables.$purple;
         font-size: 1.7143rem;
         line-height: 1.4286rem;
       }
 
       &--title {
-        color: $dark-shade-100;
+        color: variables.$dark-shade-100;
         font-weight: 700;
         font-size: 1.3571rem;
         line-height: 1.6429rem;
@@ -68,7 +71,7 @@ $airDatepicker: 'air-datepicker';
 
       &--day-name {
         text-transform: capitalize;
-        color: $purple;
+        color: variables.$purple;
         font-weight: 700;
         font-size: .8571rem;
       }
@@ -92,21 +95,21 @@ $airDatepicker: 'air-datepicker';
       }
 
       &.-current- {
-        background-image: $secondary-gradient;
+        background-image: variables.$secondary-gradient;
       }
 
       &.-selected- {
-        background-image: $primary-gradient;
+        background-image: variables.$primary-gradient;
       }
 
       &.-focus- {
-        background-image: $primary-gradient;
+        background-image: variables.$primary-gradient;
         border: none;
       }
     }
 
     &-cell.-day- {
-      color: $dark-shade-50;
+      color: variables.$dark-shade-50;
       font-size: .8571rem;
       border: none;
 
@@ -142,7 +145,7 @@ $airDatepicker: 'air-datepicker';
           position: absolute;
           content: '';
           height: 100%;
-          background-image: $primary-gradient;
+          background-image: variables.$primary-gradient;
           opacity: 0.25;
           z-index: -1;
         }
@@ -159,7 +162,7 @@ $airDatepicker: 'air-datepicker';
           font-weight: 700;
 
           &::after {
-            background-image: $primary-gradient;
+            background-image: variables.$primary-gradient;
           }
         }
       }
@@ -191,7 +194,7 @@ $airDatepicker: 'air-datepicker';
         border-radius: 50%;
 
         &::after {
-          background-image: $primary-gradient;
+          background-image: variables.$primary-gradient;
         }
       }
 
@@ -206,12 +209,12 @@ $airDatepicker: 'air-datepicker';
       }
 
       &.-current-::after {
-        background-image: $secondary-gradient;
+        background-image: variables.$secondary-gradient;
       }
 
       &.-selected- {
         &::after {
-          background-image: $primary-gradient;
+          background-image: variables.$primary-gradient;
         }
       }
 
@@ -222,7 +225,7 @@ $airDatepicker: 'air-datepicker';
       }
 
       &.-other-month- {
-        color: $dark-shade-25;
+        color: variables.$dark-shade-25;
 
         &.-selected-,
         &.-range-to-,
@@ -240,11 +243,11 @@ $airDatepicker: 'air-datepicker';
   }
 
   &_big {
-    max-width: $big;
+    max-width: variables.$big;
   }
 
   &_medium {
-    max-width: $medium;
+    max-width: variables.$medium;
   }
 
   &_hidden {

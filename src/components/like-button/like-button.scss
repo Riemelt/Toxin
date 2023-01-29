@@ -1,29 +1,32 @@
+@use '../../main-styles/mixins';
+@use '../../main-styles/variables';
+
 $className: 'like-button';
 
 .#{$className} {
-  max-width: $medium;
+  max-width: variables.$medium;
 
   &__body {
     display: flex;
     align-items: center;
     width: 2.8571rem;
     height: 1.4286rem;
-    border: .0714rem solid $dark-shade-25;
+    border: .0714rem solid variables.$dark-shade-25;
     border-radius: .7143rem;
     font-size: .7143rem;
-    color: $dark-shade-25;
+    color: variables.$dark-shade-25;
     transition: border-color 0.2s;
     cursor: pointer;
 
     &:hover,
     &:focus-within {
-      border-color: $purple;
+      border-color: variables.$purple;
       border-width: .1429rem;
     }
   }
 
   &__input {
-    @include hideInput;
+    @include mixins.hideInput;
   }
 
   &__icon {
@@ -50,18 +53,18 @@ $className: 'like-button';
   &_checked {
     .#{$className} {
       &__body {
-        border-color: $purple;
+        border-color: variables.$purple;
       }
 
       &__icon::before {
         content: 'favorite';
-        background: $primary-gradient;
+        background: variables.$primary-gradient;
         background-clip: text;
         color: transparent;
       }
 
       &__likes {
-        color: $purple;
+        color: variables.$purple;
       }
     }
   }

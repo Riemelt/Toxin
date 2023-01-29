@@ -1,7 +1,10 @@
+@use '../../main-styles/variables';
+@use '../../main-styles/mixins';
+
 $className: 'button';
 
 .#{$className} {
-  @include header3();
+  @include mixins.header3();
   border: none;
   background: none;
   display: block;
@@ -18,7 +21,7 @@ $className: 'button';
 
   &__text {
     margin: 0 auto;
-	  color: $purple;
+	  color: variables.$purple;
   }
 
   &__icon {
@@ -32,7 +35,7 @@ $className: 'button';
   &:hover,
   &_hovered {
     .#{$className}__text {
-      color: $dark-shade-50;
+      color: variables.$dark-shade-50;
     }
   }
 
@@ -62,16 +65,16 @@ $className: 'button';
   &_bordered,
   &_bordered-header {
     border: solid .1429rem transparent;
-    background-image: linear-gradient(white, white), $primary-gradient;
+    background-image: linear-gradient(white, white), variables.$primary-gradient;
     background-origin: border-box;
     background-clip: content-box, border-box;
       
     &:hover,
     &.#{$className}_hovered {
-      background-image: linear-gradient(white, white), $primary-gradient-50;
+      background-image: linear-gradient(white, white), variables.$primary-gradient-50;
 
       .#{$className}__text {
-        color: $purple;
+        color: variables.$purple;
       }
     }
   }
@@ -79,7 +82,7 @@ $className: 'button';
   &_filled,
   &_long,
   &_long-header {
-    background: $primary-gradient;
+    background: variables.$primary-gradient;
 
     .#{$className}__text {
       color: white;
@@ -109,7 +112,7 @@ $className: 'button';
     min-width: 6.2143rem;
     width: 100%;
 
-    @media (min-width: $xl) {
+    @media (min-width: variables.$xl) {
       width: initial;
     }
   }
@@ -118,7 +121,7 @@ $className: 'button';
     min-width: 14rem;
     width: 100%;
 
-    @media (min-width: $xl) {
+    @media (min-width: variables.$xl) {
       width: initial;
     }
   }

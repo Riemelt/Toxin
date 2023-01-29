@@ -1,3 +1,5 @@
+@use '../../main-styles/variables';
+
 @import 'nouislider/dist/nouislider.css';
 
 $className: 'range-slider';
@@ -5,16 +7,16 @@ $className: 'range-slider';
 $noUiSlider: 'noUi';
 
 .#{$className} {
-  max-width: $medium;
+  max-width: variables.$medium;
 
   &__label {
     margin-bottom: 1.6429rem;
   }
 
   &__slider {
-    max-height: $range-slider-height;
+    max-height: variables.$range-slider-height;
     background-color: white;
-    border-color: $dark-shade-25;
+    border-color: variables.$dark-shade-25;
     box-shadow: none;
 
     .#{$noUiSlider} {
@@ -23,8 +25,8 @@ $noUiSlider: 'noUi';
       }
 
       &-connect {
-        background-image: $secondary-gradient;
-        height: $range-slider-height;
+        background-image: variables.$secondary-gradient;
+        height: variables.$range-slider-height;
         top: -0.0714rem;
       }
 
@@ -32,7 +34,7 @@ $noUiSlider: 'noUi';
         box-shadow: none;
         max-height: .8571rem;
         max-width: .8571rem;
-        background-image: $secondary-gradient;
+        background-image: variables.$secondary-gradient;
         top: -0.4286rem;
         right: -0.5714rem;
         cursor: pointer;
@@ -51,7 +53,7 @@ $noUiSlider: 'noUi';
   &__description {
     font-size: .8571rem;
     line-height: 1rem;
-    color: $dark-shade-50;
+    color: variables.$dark-shade-50;
     margin-top: .9286rem;
   }
 }

@@ -1,8 +1,11 @@
+@use '../../main-styles/mixins';
+@use '../../main-styles/variables';
+
 $className: 'search-room-filter';
 
 .#{$className} {
 	flex-grow: 1;
-  border-bottom: .0714rem solid $dark-shade-25;
+  border-bottom: .0714rem solid variables.$dark-shade-25;
 
   &__body {
     padding: 2.1429rem 10rem 5.0714rem;
@@ -10,7 +13,7 @@ $className: 'search-room-filter';
     justify-content: space-between;
     gap: 1.4286rem;
 
-    @media (max-width: $xs) {
+    @media (max-width: variables.$xs) {
       flex-direction: column;
     }
 
@@ -37,7 +40,7 @@ $className: 'search-room-filter';
   }
 
   &__title {
-    @include header1();
+    @include mixins.header1();
   }
 
   &__card-rooms {
@@ -66,7 +69,7 @@ $className: 'search-room-filter';
     flex-shrink: 0;
     order: 0;
 
-    @media (max-width: $xs) {
+    @media (max-width: variables.$xs) {
       align-items: center;
     }
   }

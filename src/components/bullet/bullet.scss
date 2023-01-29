@@ -1,7 +1,9 @@
+@use '../../main-styles/variables';
+
 $className: 'bullet';
 
 .#{$className} {
-  max-width: $big;
+  max-width: variables.$big;
   display: flex;
   align-items: flex-start;
 
@@ -15,7 +17,7 @@ $className: 'bullet';
   &__bullet {
     height: .7143rem;
     width: .7143rem;
-    background-color: $dark-shade-25;
+    background-color: variables.$dark-shade-25;
     border-radius: 50%;
     margin-top: .2143rem;
   }

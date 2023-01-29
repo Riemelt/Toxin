@@ -1,3 +1,5 @@
+@use '../../main-styles/variables';
+
 $className: 'header-ui-kit';
 
 .#{$className} {
@@ -5,6 +7,6 @@ $className: 'header-ui-kit';
   padding-left: 2.1429rem;
 
   &_secondary {
-    background-color: $grey;
+    background-color: variables.$grey;
   }
 }

@@ -1,3 +1,6 @@
+@use '../../main-styles/mixins';
+@use '../../main-styles/variables';
+
 $className: 'counter-item';
 
 .#{$className} {
@@ -5,7 +8,7 @@ $className: 'counter-item';
   align-items: center;
 
   &__title {
-    @include header3();
+    @include mixins.header3();
   }
 
   &__counter {
@@ -21,7 +24,7 @@ $className: 'counter-item';
     font-size: .8571rem;
     font-weight: 700;
     line-height: 1.045rem;
-    color: $dark-shade-100;
+    color: variables.$dark-shade-100;
   }
 
   &__decrement,
@@ -31,13 +34,13 @@ $className: 'counter-item';
     cursor: pointer;
     width: 2.1429rem;
     height: 2.1429rem;
-    border: .0714rem solid $dark-shade-25;
+    border: .0714rem solid variables.$dark-shade-25;
     border-radius: 50%;
-    color: $dark-shade-50;
+    color: variables.$dark-shade-50;
     font-size: 1.2857rem;
 
     &:hover {
-      border-color: $dark-shade-50;
+      border-color: variables.$dark-shade-50;
     }
   }
 
@@ -47,7 +50,7 @@ $className: 'counter-item';
     opacity: 0.5;
 
     &:hover {
-      border-color: $dark-shade-25;
+      border-color: variables.$dark-shade-25;
     }
   }
 }

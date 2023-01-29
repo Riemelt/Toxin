@@ -1,7 +1,9 @@
+@use '../../main-styles/variables';
+
 $className: 'expander';
 
 .#{$className} {
-  max-width: $medium;
+  max-width: variables.$medium;
   width: 100%;
 
   &__header {
@@ -20,7 +22,7 @@ $className: 'expander';
     &::before {
       font-size: 1.7143rem;
       font-family: 'Material Icons', Arial, sans-serif;
-      color: $dark-shade-50;
+      color: variables.$dark-shade-50;
       content: 'expand_more';
     }
   }

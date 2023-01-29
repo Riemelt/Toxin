@@ -1,8 +1,11 @@
+@use '../../main-styles/mixins';
+@use '../../main-styles/variables';
+
 $className: 'chart-pie';
 
 .#{$className} {
   &__title {
-    @include header2();
+    @include mixins.header2();
     margin-left: .2857rem;
   }
 
@@ -78,7 +81,7 @@ $className: 'chart-pie';
   &__bullet {
     height: .7143rem;
     width: .7143rem;
-    background-color: $dark-shade-25;
+    background-color: variables.$dark-shade-25;
     border-radius: 50%;
   }
 }

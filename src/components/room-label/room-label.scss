@@ -1,3 +1,5 @@
+@use '../../main-styles/variables';
+
 $className: 'room-label';
 
 .#{$className} {
@@ -7,7 +9,7 @@ $className: 'room-label';
 
   &__number {
     font-weight: 700;
-    color: $dark-shade-100;
+    color: variables.$dark-shade-100;
   }
 
   &__number-sign {
@@ -22,7 +24,7 @@ $className: 'room-label';
   &__luxe {
     font-size: .8571rem;
     line-height: 1.0714rem;
-    color: $purple;
+    color: variables.$purple;
     text-transform: uppercase;
     font-weight: 700;
     vertical-align: middle;
@@ -32,7 +34,7 @@ $className: 'room-label';
   &__price-value,
   &__duration {
     line-height: 1.2857rem;
-    color: $dark-shade-50;
+    color: variables.$dark-shade-50;
   }
 
   &__price-value {
