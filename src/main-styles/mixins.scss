@@ -1,0 +1,41 @@
+@mixin hideInput() {
+  position: absolute;
+  z-index: -1;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+@mixin iconWithGradient($gradient-color) {
+  background: $gradient-color;
+  background-clip: text;
+  color: transparent;
+}
+
+@mixin header() {
+  color: $dark-shade-100;
+  font-weight: 700;
+  margin: 0rem;
+  padding: 0rem;
+}
+
+@mixin header1() {
+  @include header();
+  font-size: 1.7143rem;
+  line-height: 2.09rem;
+  text-transform: initial;
+}
+
+@mixin header2() {
+  @include header();
+  font-size: 1.3571rem;
+  line-height: 1.6543rem;
+  text-transform: initial;
+}
+
+@mixin header3() {
+  @include header();
+  font-size: .8571rem;
+  line-height: 1.045rem;
+  text-transform: uppercase;
+}
