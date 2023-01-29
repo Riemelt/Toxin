@@ -91,15 +91,15 @@
     "items": [
       {
         "icon": "fa-twitter",
-        "href": "/mock-address/change-me"
+        "href": "https://www.twitter.com"
       },
       {
         "icon": "fa-facebook-square",
-        "href": "/mock-address/change-me"
+        "href": "https://www.facebook.com"
       },
       {
         "icon": "fa-instagram",
-        "href": "/mock-address/change-me"
+        "href": "https://www.instagram.com"
       }
     ]
   }
