@@ -1,0 +1,125 @@
+@use '../../main-styles/variables';
+
+$className: 'image-slider';
+
+.#{$className} {
+  display: flex;
+  overflow: hidden;
+  border-radius: .2857rem .2857rem 0 0;
+  position: relative;
+
+  &__image {
+    width: 100%;
+    display: none;
+
+    &_active {
+      display: initial;
+    }
+  }
+
+  &__navigation {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s 300ms, opacity 300ms;
+  }
+
+  &__previous,
+  &__next {
+    border: none;
+    padding: 0rem;
+    margin: 0rem;
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    width: 3rem;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  &__previous {
+    background: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%);
+  }
+
+  &__next {
+    background: linear-gradient(-90deg, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%);
+  }
+
+  &__previous-icon,
+  &__next-icon {
+    color: white;
+    margin: 0 auto;
+    width: 1.7143rem;
+    height: 1.7143rem;
+  }
+
+  &__previous-icon {
+    transform: rotate(90deg);
+  }
+
+  &__next-icon {
+    transform: rotate(-90deg);
+  }
+
+  &__link {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+  }
+
+  &__control-panel {
+    padding: 0rem;
+    margin: 0rem;
+    position: absolute;
+    display: flex;
+    right: 1.0714rem;
+    bottom: .7143rem;
+    list-style-type: none;
+    z-index: 2;
+  }
+
+  &__control-panel-item {
+    margin-right: .2679rem;
+
+    &:last-child {
+      margin-right: initial;
+    }
+  }
+
+  &__control-panel-button {
+    border: none;
+    background: none;
+    padding: 0rem;
+    margin: 0rem;
+    cursor: pointer;
+    width: .5714rem;
+    height: .5714rem;
+    border-radius: 50%;
+    border: .0714rem solid #FFFFFF;
+
+    &_active {
+      background: white;
+    }
+  }
+
+  &:hover,
+  &_hovered {
+    .#{$className}__navigation {
+      visibility: visible;
+      opacity: 1;
+      transition: visibility 0s, opacity 300ms;
+    }
+  }
+
+  &_hovered {
+    .#{$className}__navigation {
+      transition: opacity 0s;
+    }
+  }
+}

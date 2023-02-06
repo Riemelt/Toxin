@@ -1,0 +1,52 @@
+mixin image-slider(vars = {})
+  -
+    const {
+      href = '/mock-address/change-me',
+      images = [],
+      isHovered = false,
+    } = vars
+
+    const className = 'image-slider'
+    let classNames = `${className} js-${className}`
+
+    const imageLimit = images.length > 4 ? 4 : images.length
+
+  if isHovered
+    - classNames += ` ${className}_hovered`
+
+  div(class=classNames)
+    if images[0]
+      img(
+        class=`${className}__image ${className}__image_active js-${className}__image`
+        src=require(`@images/${images[0].src}`)
+        alt=images[0].alt
+      )
+    - for (let i = 1; i < imageLimit; i++)
+      img(
+        class=`${className}__image js-${className}__image`
+        src=require(`@images/${images[i].src}`)
+        alt=images[i].alt
+      )
+    div(class=`${className}__navigation`)
+      button(class=`${className}__previous js-${className}__previous`)
+        span(class=`${className}__previous-icon`)
+          span(class='material-icons') expand_more
+      button(class=`${className}__next js-${className}__next`)
+        span(class=`${className}__next-icon`)
+          span(class='material-icons') expand_more
+      a(
+        class=`${className}__link`
+        href=href
+      )
+    ul(class=`${className}__control-panel`)
+      li(class=`${className}__control-panel-item`)
+        button(
+          class=`${className}__control-panel-button ${className}__control-panel-button_active js-${className}__control-panel-button`
+          data-id=0
+        )
+      - for (let i = 1; i < 4; i++)
+        li(class=`${className}__control-panel-item`)
+          button(
+            class=`${className}__control-panel-button js-${className}__control-panel-button`
+            data-id=i
+          )

@@ -1,62 +1,22 @@
+include ../image-slider/image-slider
 include ../rate-button/rate-button
 include ../room-label/room-label
 
 mixin card-room(vars = {})
   -
     const {
-      href = '/mock-address/change-me',
-      images = [],
+      imageSlider = {},
       reviews = 0,
       rateButton = {},
-      isHovered = false,
       roomLabel = {},
     } = vars
 
     const className = 'card-room'
     let classNames = `${className} js-${className}`
 
-    const imageLimit = images.length > 4 ? 4 : images.length
-
-  if isHovered
-    - classNames += ` ${className}_hovered`
-
   div(class=classNames)
-    div(class=`${className}__slider`)
-      if images[0]
-        img(
-          class=`${className}__slider-image ${className}__slider-image_active js-${className}__slider-image`
-          src=require(`@images/${images[0].src}`)
-          alt=images[0].alt
-        )
-      - for (let i = 1; i < imageLimit; i++)
-        img(
-          class=`${className}__slider-image js-${className}__slider-image`
-          src=require(`@images/${images[i].src}`)
-          alt=images[i].alt
-        )
-      div(class=`${className}__slider-navigation`)
-        button(class=`${className}__previous js-${className}__previous`)
-          span(class=`${className}__previous-icon`)
-            span(class='material-icons') expand_more
-        button(class=`${className}__next js-${className}__next`)
-          span(class=`${className}__next-icon`)
-            span(class='material-icons') expand_more
-        a(
-          class=`${className}__link`
-          href=href
-        )
-      ul(class=`${className}__control-panel`)
-        li(class=`${className}__control-panel-item`)
-          button(
-            class=`${className}__control-panel-button ${className}__control-panel-button_active js-${className}__control-panel-button`
-            data-id=0
-          )
-        - for (let i = 1; i < 4; i++)
-          li(class=`${className}__control-panel-item`)
-            button(
-              class=`${className}__control-panel-button js-${className}__control-panel-button`
-              data-id=i
-            )
+    div(class=`${className}__image-slider js-${className}__image-slider`)
+      +image-slider(imageSlider)
     div(class=`${className}__info`)
       div(class=`${className}__label js-${className}__label`)
         +room-label(roomLabel)
