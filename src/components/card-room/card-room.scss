@@ -7,6 +7,7 @@ $className: 'card-room';
   background-color: white;
   width: 19.2857rem;
   max-height: 18.3571rem;
+  height: 100%;
   box-shadow: 0rem .7143rem 1.4286rem variables.$dark-shade-5;
   border-radius: .2857rem;
 
@@ -21,7 +22,7 @@ $className: 'card-room';
   &__info {
     display: block;
     text-decoration: none;
-    margin: 1.5rem 1.4286rem 1.4286rem;
+    margin: 1.5rem 1.4286rem .2857rem;
     padding-bottom: .8571rem;
   }
 

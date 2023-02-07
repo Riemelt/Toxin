@@ -17,7 +17,7 @@ block main
   - const className = 'room-details'
   
   div(class=`${className} js-${className}`)
-    div(class=`${className}__gallery`)
+    div(class=`${className}__gallery js-${className}__gallery`)
       +gallery(data.gallery)
     +container()
       main(class=`${className}__main`)

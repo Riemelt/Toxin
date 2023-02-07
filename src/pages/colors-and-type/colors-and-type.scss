@@ -82,27 +82,20 @@ $className: 'colors-and-type';
     .#{$className} {
       &__text-examples-title {
         color: variables.$dark-shade-25;
+        text-align: right;
         font-weight: 400;
+        min-width: 3.5714rem;	
+        font-weight: 400;
+
+        &_header {
+          text-transform: uppercase;
+        }
       }
 
       &__text-examples-description {
         margin-left: 2.1429rem;
+        white-space: pre-line;
       }
     }
-	}
-
-	&__text-examples-title {
-		color: variables.$dark-shade-25;
-		text-align: right;
-		font-weight: 400;
-		min-width: 3.5714rem;	
-
-		&_header {
-			text-transform: uppercase;
-		}
-	}
-
-	&__text-examples-description {
-		white-space: pre-line;
 	}
 }

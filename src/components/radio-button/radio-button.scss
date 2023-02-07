@@ -37,7 +37,7 @@ $className: 'radio-button';
 
   &__radio-input:hover
   ~ &__title {
-    font-weight: 700;
+    color: variables.$dark-shade-25;
   }
 
   &__button {

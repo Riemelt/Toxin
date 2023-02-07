@@ -1,8 +1,8 @@
 import ChartPie from '../../components/chart-pie';
 import CardReservation from '../../components/card-reservation';
 import Comments from '../../components/comments';
+import Gallery from '../../components/gallery';
 import '../../components/container';
-import '../../components/gallery';
 import '../../components/room-info';
 import '../../components/bullet-list';
 import {
@@ -26,6 +26,16 @@ class RoomDetails {
     chartReviews = {},
   }) {
     this.#$component = $element;
+
+    const $gallery = $getElement({
+      $parent: this.#$component,
+      component: this.#className,
+      element: 'gallery',
+    });
+
+    new Gallery({
+      $parent: $gallery,
+    });
 
     const $comments = $getElement({
       $parent: this.#$component,

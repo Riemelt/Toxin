@@ -3,18 +3,33 @@
 $className: 'gallery';
 
 .#{$className} {
-  display: flex;
-  max-height: 34.6429rem;
+  &__image-slider {
+    max-height: 21.4286rem;
+    height: 21.4286rem;
+    min-height: 21.4286rem;
 
-  @media (min-width: (variables.$xxxl + 1)) {
-    max-height: initial;
+    @media (min-width: (variables.$xs)) {
+      display: none;
+    }
+  }
+
+  &__images {
+    display: none;
+    max-height: 34.6429rem;
+  
+    @media (min-width: (variables.$xs)) {
+      display: flex;
+    }
+
+    @media (min-width: (variables.$xxxl + 1)) {
+      max-height: initial;
+      display: flex;
+    }
   }
 
   &__images-primary-wrapper {
-    @media (min-width: variables.$xxxl) {
-      flex-grow: 2;
-    }
-  } 
+    flex-grow: 2;
+  }
 
   &__image-primary,
   &__image-secondary-one,
@@ -25,16 +40,9 @@ $className: 'gallery';
   }
 
   &__images-secondary-wrapper {
-    display: none;
+    display: flex;
     flex-direction: column;
     justify-content: center;
-
-    @media (min-width: variables.$xs) {
-      display: flex;
-    }
-
-    @media (min-width: variables.$xxxl) {
-      flex-grow: 1;
-    }
+    flex-grow: 1;
   }
 }

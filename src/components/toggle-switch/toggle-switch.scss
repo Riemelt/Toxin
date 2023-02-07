@@ -29,7 +29,7 @@ $className: 'toggle-switch';
 
     &::after {
       background-image: variables.$primary-gradient;
-      transform: translateX(1.3571rem);
+      right: -50%;
     }
   }
 
@@ -53,11 +53,12 @@ $className: 'toggle-switch';
       width: .8571rem;
       background-color: variables.$dark-shade-25;
       border-radius: 50%;
-      margin: auto 0;
-      left: 9%;
+      transition: right 0.4s;
+      margin: auto;
+      left: 0;
       top: 0;
       bottom: 0;
-      transition: transform 0.4s;
+      right: 50%; 
     }
   }
 }

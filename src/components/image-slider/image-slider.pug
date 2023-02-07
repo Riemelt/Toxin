@@ -4,6 +4,7 @@ mixin image-slider(vars = {})
       href = '/mock-address/change-me',
       images = [],
       isHovered = false,
+      withLink = false,
     } = vars
 
     const className = 'image-slider'
@@ -34,17 +35,18 @@ mixin image-slider(vars = {})
       button(class=`${className}__next js-${className}__next`)
         span(class=`${className}__next-icon`)
           span(class='material-icons') expand_more
-      a(
-        class=`${className}__link`
-        href=href
-      )
+      if withLink
+        a(
+          class=`${className}__link`
+          href=href
+        )
     ul(class=`${className}__control-panel`)
       li(class=`${className}__control-panel-item`)
         button(
           class=`${className}__control-panel-button ${className}__control-panel-button_active js-${className}__control-panel-button`
           data-id=0
         )
-      - for (let i = 1; i < 4; i++)
+      - for (let i = 1; i < imageLimit; i++)
         li(class=`${className}__control-panel-item`)
           button(
             class=`${className}__control-panel-button js-${className}__control-panel-button`

@@ -21,9 +21,8 @@ class ImageSlider {
 
   constructor({
     $parent,
-    options = {},
   }) {
-    this.#init($parent, options);
+    this.#init($parent);
     this.#render();
   }
 

@@ -1,28 +1,32 @@
+include ../image-slider/image-slider
+
 mixin gallery(vars = {})
   -
     const {
-      imagePrimary = {},
-      imageSecondaryOne = {},
-      imageSecondaryTwo = {},
+      imageSlider = {},
     } = vars
 
     const className = 'gallery'
+    const classNames = `${className} js-${className}`
 
-  div(class=className)
-    div(class=`${className}__images-primary-wrapper`)
-      img(
-        class=`${className}__image-primary`
-        src=require(`@images/${imagePrimary.src}`)
-        alt=imagePrimary.alt
-      )
-    div(class=`${className}__images-secondary-wrapper`)
-      img(
-        class=`${className}__image-secondary-one`
-        src=require(`@images/${imageSecondaryOne.src}`)
-        alt=imageSecondaryOne.alt
-      )
-      img(
-        class=`${className}__image-secondary-two`
-        src=require(`@images/${imageSecondaryTwo.src}`)
-        alt=imageSecondaryTwo.alt
-      )
+  div(class=classNames)
+    div(class=`${className}__image-slider js-${className}__image-slider`)
+      +image-slider(imageSlider)
+    div(class=`${className}__images`)
+      div(class=`${className}__images-primary-wrapper`)
+        img(
+          class=`${className}__image-primary`
+          src=require(`@images/${imageSlider.images[0].src}`)
+          alt=imageSlider.images[0].alt
+        )
+      div(class=`${className}__images-secondary-wrapper`)
+        img(
+          class=`${className}__image-secondary-one`
+          src=require(`@images/${imageSlider.images[1].src}`)
+          alt=imageSlider.images[1].alt
+        )
+        img(
+          class=`${className}__image-secondary-two`
+          src=require(`@images/${imageSlider.images[2].src}`)
+          alt=imageSlider.images[2].alt
+        )
