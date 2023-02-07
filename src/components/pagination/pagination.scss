@@ -9,6 +9,11 @@ $pluginName: 'paginationjs';
   display: flex;
   flex-direction: column;
 
+  &__pagination-container {
+    display: flex;
+    justify-content: center;
+  }
+
   .#{$pluginName} {
     &-pages {
       & ul {
@@ -23,6 +28,12 @@ $pluginName: 'paginationjs';
         font-size: .8571rem;
         min-width: 2.8571rem;
         min-height: 2.8571rem;
+
+        @media (max-width: 450px) {
+          margin: initial;
+          min-width: 2rem;
+          min-height: 2rem;
+        }
       }
 
       & a {
@@ -64,6 +75,10 @@ $pluginName: 'paginationjs';
           font-family: 'Material Icons', Arial, sans-serif;
           font-size: 1.7143rem;
           line-height: 1.4571rem;
+
+          @media (max-width: 450px) {
+            font-size: 1.1429rem;
+          }
         }
       }
     }
