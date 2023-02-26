@@ -21,6 +21,7 @@ mixin checkbox(vars = {})
         checked=checked
       )
       span(class=`${className}__checkmark`)
-      span(class=`${className}__title`)= title
-    if description
-      p(class=`${className}__description`)= description
+      span(class=`${className}__info`)
+        span(class=`${className}__title`)= title
+        if description
+          span(class=`${className}__description`)= description

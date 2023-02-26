@@ -78,6 +78,11 @@ $className: 'checkbox';
     font-weight: 700;
   }
 
+  &__info {
+    display: inline-flex;
+    flex-direction: column;
+  }
+
   &__title {
     color: variables.$dark-shade-50;
     line-height: 1.2857rem;
@@ -85,11 +90,10 @@ $className: 'checkbox';
   }
 
   &__description {
+    margin-top: .5rem;
     color: variables.$dark-shade-50;
     font-size: .8571rem;
     line-height: 1rem;
-    padding-left: variables.$checkbox-size + variables.$checkbox-margin;
-    margin: .3571rem 0rem 0rem;
     white-space: pre-line;
   }
 
