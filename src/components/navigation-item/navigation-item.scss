@@ -16,7 +16,7 @@ $className: 'navigation-item';
 
     &:hover {
       .#{$className}__content {
-        color: variables.$dark-shade-25;
+        color: variables.$dark-shade-100;
       }
     }
   }
@@ -84,7 +84,7 @@ $className: 'navigation-item';
     color: variables.$dark-shade-50;
 
     &:hover {
-      color: variables.$dark-shade-25;
+      color: variables.$dark-shade-100;
     }
   }
 

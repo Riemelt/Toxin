@@ -37,7 +37,7 @@ $className: 'radio-button';
 
   &__radio-input:hover
   ~ &__title {
-    color: variables.$dark-shade-25;
+    color: variables.$dark-shade-100;
   }
 
   &__button {

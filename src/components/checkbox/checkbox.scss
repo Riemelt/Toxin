@@ -20,7 +20,11 @@ $className: 'checkbox';
         }
   
         &__title {
-          font-weight: 700;
+          color: variables.$dark-shade-100;
+        }
+
+        &__description {
+          color: variables.$dark-shade-75;
         }
       }
     }

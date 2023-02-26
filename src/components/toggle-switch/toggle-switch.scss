@@ -61,4 +61,8 @@ $className: 'toggle-switch';
       right: 50%; 
     }
   }
+
+  &__title:hover {
+    color: variables.$dark-shade-100;
+  }
 }
