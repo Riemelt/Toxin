@@ -60,6 +60,11 @@ $className: 'header';
     }
   }
 
+  &__sign-in-button,
+  &__registration-button {
+    width: fit-content;
+  }
+
   &__content {
     background-color: white;
     position: absolute;
