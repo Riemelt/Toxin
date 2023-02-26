@@ -5,6 +5,7 @@ $className: 'expander';
 .#{$className} {
   max-width: variables.$medium;
   width: 100%;
+  position: relative;
 
   &__header {
     display: flex;
@@ -28,15 +29,18 @@ $className: 'expander';
   }
 
   &__body {
+    width: 112%;
+    position: absolute;
+    background-color: white;
+    padding: .7857rem 6%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
     display: none;
   }
 
   &_opened {
     .#{$className} {
-      &__header {
-        margin-bottom: .7857rem;
-      }
-
       &__body {
         display: initial;
       }
