@@ -17,7 +17,7 @@ $className: 'search-room-filter';
       flex-direction: column;
     }
 
-    @media (max-width: 1400px) {
+    @media (max-width: variables.$sm) {
       padding: 2.1429rem .7143rem 5.0714rem;
     }
   }

@@ -6,6 +6,10 @@ $className: 'card-search';
 .#{$className} {
   margin: 2.0714rem;
 
+  @media (max-width: 380px) {
+    margin: 2.0714rem .7143rem;
+  }
+
   &__title {
     @include mixins.header1();
     padding-top: .7143rem;

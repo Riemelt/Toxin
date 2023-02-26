@@ -11,10 +11,10 @@ $className: 'sign-in';
   padding-top: 5rem;
 
   &__main {
-    padding: 0 10rem 0 10rem;
+    padding: 0 10rem 0;
 
     @media (max-width: variables.$xs) {
-      padding: 0 1.4286rem;
+      padding: 0 .7143rem;
     }
   }
 

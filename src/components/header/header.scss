@@ -13,9 +13,9 @@ $className: 'header';
     justify-content: space-between;
     z-index: 3;
     position: relative;
-    padding: 0 1.4286rem;
+    padding: 0 .7143rem;
 
-    @media (min-width: variables.$xxl) {
+    @media (min-width: variables.$sm) {
       padding: 0 10rem;
     }
   }

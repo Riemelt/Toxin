@@ -5,6 +5,10 @@ $className: 'card-sign-in';
 .#{$className} {
   margin: 2.0714rem 2.0714rem 2.2143rem;
 
+  @media (max-width: 380px) {
+    margin: 2.0714rem .7143rem 2.2143rem;
+  }
+
   &__title {
     @include mixins.header1();
     padding-top: .7143rem;
@@ -25,6 +29,7 @@ $className: 'card-sign-in';
   &__registration {
     margin-top: 2.1429rem;
     display: flex;
+    gap: .7143rem;
     align-items: center;
     justify-content: space-between;
   }
