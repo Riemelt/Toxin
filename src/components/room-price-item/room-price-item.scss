@@ -37,7 +37,7 @@ $className: 'room-price-item';
     + .#{$className}__details-content {
       opacity: 1;
       visibility: visible;
-      transform: translateY(1.0714rem);
+      transform: translate(-50%, 1.0714rem);
     }
   }
 
@@ -50,10 +50,13 @@ $className: 'room-price-item';
     padding: .3571rem .3571rem .3571rem;
     border-radius: .2143rem;
     transition: opacity 0.4s, visibility 0.4s, transform 0.4s;  
-    transform: translateY(1.4286rem);
+    transform: translate(-50%, .5714rem);
     opacity: 0;
     visibility: hidden;
     min-width: 7.1429rem;
+    max-width: 7.1429rem;
+    left: 50%;
+    word-break: break-word;
     background-color: white;
     z-index: 1;
 
@@ -65,7 +68,8 @@ $className: 'room-price-item';
       background-color: white;
       border-left: .0714rem solid variables.$dark-shade-50;
       border-top: .0714rem solid variables.$dark-shade-50;
-      transform: translateY(-0.4464rem) rotate(45deg);
+      transform: translate(-50%, -0.4464rem) rotate(45deg);
+      left: 50%;
       top: 0;
     }
   }
