@@ -2,7 +2,7 @@ mixin checkbox(vars = {})
   -
     const {
       description,
-      isRich = false,
+      theme = 'default',
       title = '',
       checked = false,
     } = vars
@@ -10,8 +10,12 @@ mixin checkbox(vars = {})
     const className = 'checkbox'
     let classNames = className + ` js-${className}`
 
-  if isRich
-    - classNames += ` ${className}_rich`
+    const themeClass = {
+      default: '',
+      rich: ` ${className}_theme_rich`,
+    }
+
+    classNames += themeClass[theme]
 
   div(class=classNames)
     label(class=`${className}__body`)

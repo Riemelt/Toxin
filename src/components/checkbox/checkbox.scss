@@ -101,7 +101,7 @@ $className: 'checkbox';
     white-space: pre-line;
   }
 
-  &_rich {
+  &_theme_rich {
     .#{$className}__title {
       font-weight: 700;
       color: variables.$dark-shade-75;
