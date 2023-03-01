@@ -1,7 +1,7 @@
 {
   "company": {
     "logo": {
-      "src": "logo.svg",
+      "theme": "default",
       "href": "landing.html"
     },
     "description": "Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»"

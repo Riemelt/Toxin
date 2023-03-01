@@ -1,6 +1,6 @@
 {
   "logo": {
-    "src": "logo.svg",
+    "theme": "default",
     "href": "landing.html"
   },
   "navigation": {

@@ -1,8 +1,7 @@
 mixin logo(vars = {})
   -
     const {
-      theme,
-      src = '',
+      theme = 'default',
       href = '/mock-address/change-me',
     } = vars
 
@@ -11,10 +10,17 @@ mixin logo(vars = {})
 
     const themeClass = {
       uiKit: ` ${className}_ui-kit`,
+      default: '',
     }
 
-  if theme
-    - classNames += themeClass[theme]
+    const srcImages = {
+      uiKit: 'logo-ui-kit.svg',
+      default: 'logo.svg',
+    }
+
+    const src = srcImages[theme]
+
+    classNames += themeClass[theme]
 
   a(
     class=classNames,
@@ -23,5 +29,5 @@ mixin logo(vars = {})
     img(
       class=`${className}__icon`
       alt='toxin logo'
-      src=require(`@images/${src}`)
+      src=require(`./images/${src}`)
     )
