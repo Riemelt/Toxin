@@ -59,21 +59,25 @@ $className: 'input-field';
       font-family: 'Material Icons', Arial, sans-serif;
 	  }
 
-    &_expandable::before {
-      content: 'expand_more';
+    &_icon {
+      &_expandable::before {
+        content: 'expand_more';
+      }
+  
+      &_subscribable::before {
+        content: 'arrow_forward';
+      }
     }
 
-    &_subscribable::before {
-      content: 'arrow_forward';
+    &_theme {
+      &_secondary {
+        @include mixins.iconWithGradient(variables.$primary-gradient);
+      }
+  
+      &_tertiary {
+        color: variables.$dark-shade-75;
+      } 
     }
-
-    &_primary {
-      @include mixins.iconWithGradient(variables.$primary-gradient);
-    }
-
-    &_secondary {
-      color: variables.$dark-shade-75;
-    } 
   }
 
 	&_hovered {
@@ -90,19 +94,21 @@ $className: 'input-field';
 		}
 	}
 
-  &_big {
-    max-width: 22.8571rem;
-  }
-
-  &_medium {
-    max-width: 19rem;
-  }
-
-  &_small {
-    max-width: 10.7143rem;
-
-    .#{$className}__input {
-      padding-right: 2.1429rem;
+  &_size {
+    &_big {
+      max-width: 22.8571rem;
+    }
+  
+    &_medium {
+      max-width: 19rem;
+    }
+  
+    &_small {
+      max-width: 10.7143rem;
+  
+      .#{$className}__input {
+        padding-right: 2.1429rem;
+      }
     }
   }
 }

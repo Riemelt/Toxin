@@ -114,7 +114,7 @@
     },
     "button": {
       "icon": "arrowForward",
-      "theme": "primary"
+      "theme": "secondary"
     },
     "size": "medium",
     "placeholder": "Email"
@@ -229,7 +229,7 @@
       },
       "button": {
         "icon": "expandMore",
-        "theme": "secondary"
+        "theme": "tertiary"
       }
     },
     "items": [
@@ -262,7 +262,7 @@
       },
       "button": {
         "icon": "expandMore",
-        "theme": "secondary"
+        "theme": "tertiary"
       }
     },
     "items": [
@@ -294,7 +294,7 @@
       },
       "button": {
         "icon": "expandMore",
-        "theme": "secondary"
+        "theme": "tertiary"
       }
     },
     "items": [
@@ -326,7 +326,7 @@
       },
       "button": {
         "icon": "expandMore",
-        "theme": "secondary"
+        "theme": "tertiary"
       }
     },
     "items": [

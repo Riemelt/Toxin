@@ -115,7 +115,7 @@
       },
       "button": {
         "icon": "expandMore",
-        "theme": "secondary"
+        "theme": "tertiary"
       }
     },
     "items": [

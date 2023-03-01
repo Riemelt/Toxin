@@ -19,9 +19,9 @@ mixin input-field(vars = {})
     let classNames = className + ` js-${className}`
 
     const sizeClass = {
-      small: ` ${className}_small`,
-      medium: ` ${className}_medium`,
-      big: ` ${className}_big`,
+      small: ` ${className}_size_small`,
+      medium: ` ${className}_size_medium`,
+      big: ` ${className}_size_big`,
     }
 
     classNames += sizeClass[size]
@@ -34,26 +34,25 @@ mixin input-field(vars = {})
     let buttonClassNames = buttonClassName
   
     const buttonIconClass = {
-      expandMore: ` ${buttonClassName}_expandable`,
-      arrowForward: ` ${buttonClassName}_subscribable`,
+      expandMore: ` ${buttonClassName}_icon_expandable`,
+      arrowForward: ` ${buttonClassName}_icon_subscribable`,
     }
 
     const buttonThemeClass = {
-      primary: ` ${buttonClassName}_primary`,
-      secondary: ` ${buttonClassName}_secondary`,
+      primary: '',
+      secondary: ` ${buttonClassName}_theme_secondary`,
+      tertiary: ` ${buttonClassName}_theme_tertiary`,
     }
 
   if button
     -
       const {
-        theme,
+        theme = 'primary',
         icon = 'expandMore',
       } = button
 
       buttonClassNames += buttonIconClass[icon]
-    
-    if theme
-      - buttonClassNames += buttonThemeClass[theme]
+      buttonClassNames += buttonThemeClass[theme]
 
   div(class=classNames)
     if (label)

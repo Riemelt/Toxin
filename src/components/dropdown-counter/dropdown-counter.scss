@@ -48,11 +48,13 @@ $className: 'dropdown-counter';
 		}
 	}
 
-  &_big {
-    max-width: variables.$big;
-  }
-
-  &_medium {
-    max-width: variables.$medium;
+  &_size {
+    &_big {
+      max-width: variables.$big;
+    }
+  
+    &_medium {
+      max-width: variables.$medium;
+    }
   }
 }

@@ -1,7 +1,7 @@
 mixin room-label(vars = {})
   -
     const {
-      theme,
+      theme = "default",
       isLuxe = false,
       number = 0,
     } = vars
@@ -10,11 +10,11 @@ mixin room-label(vars = {})
     let classNames = `${className} js-${className}`
 
     const themeClass = {
-      reservation: ` ${className}_theme-reservation`
+      default: "",
+      reservation: ` ${className}_theme-reservation`,
     }
 
-  if theme
-    - classNames += themeClass[theme]
+    classNames += themeClass[theme]
 
   div(class=classNames)
     div(class=`${className}__number`)

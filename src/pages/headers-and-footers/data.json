@@ -219,7 +219,7 @@
       "input": {
         "button": {
           "icon": "arrowForward",
-          "theme": "primary"
+          "theme": "secondary"
         },
         "type": "email",
         "name": "email",

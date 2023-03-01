@@ -77,7 +77,7 @@
     "input": {
       "button": {
         "icon": "arrowForward",
-        "theme": "primary",
+        "theme": "secondary",
         "type": "submit"
       },
       "type": "email",
