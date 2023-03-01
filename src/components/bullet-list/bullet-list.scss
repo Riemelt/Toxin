@@ -25,7 +25,7 @@ $className: 'bullet-list';
     }
   }
 
-  &_with-bigger-title {
+  &_title-size_big {
     .#{$className}__title {
       @include mixins.header2();
       margin: 0 0 1.2857rem 1.5rem;

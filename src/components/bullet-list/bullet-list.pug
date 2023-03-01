@@ -5,21 +5,28 @@ mixin bullet-list(vars = {})
   -
     const {
       title,
-      withBiggerTitle = false,
+      titleSize = 'medium',
       items = [],
     } = vars
 
     const className = 'bullet-list'
     let classNames = className + ` js-${className}`
 
-    const titleTag = withBiggerTitle ? 'h2' : 'h3'
+    const titleTag = {
+      medium: 'h3',
+      big: 'h2'
+    }
 
-  if withBiggerTitle
-    - classNames += ` ${className}_with-bigger-title`
+    const titleSizeClass = {
+      medium: '',
+      big: ` ${className}_title-size_big`,
+    }
+
+    classNames += titleSizeClass[titleSize]
 
   div(class=classNames)
     if title
-      #{titleTag}(class=`${className}__title`)= title
+      #{titleTag[titleSize]}(class=`${className}__title`)= title
     ul(class=`${className}__list`)
       each item in items
         li(class=`${className}__item`)

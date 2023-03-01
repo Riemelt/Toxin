@@ -115,7 +115,7 @@
   },
   "rules": {
     "title": "Правила",
-    "withBiggerTitle": true,
+    "titleSize": "big",
     "items": [
       {
         "title": "Нельзя с питомцами"
