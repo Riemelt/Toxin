@@ -242,13 +242,15 @@ $airDatepicker: 'air-datepicker';
     padding: 0rem .3571rem .2857rem;
   }
 
-  &_big {
-    max-width: variables.$big;
-  }
-
-  &_medium {
-    max-width: variables.$medium;
-    padding: .3571rem;
+  &_size {
+    &_big {
+      max-width: variables.$big;
+    }
+  
+    &_medium {
+      max-width: variables.$medium;
+      padding: .3571rem;
+    }
   }
 
   &_hidden {
