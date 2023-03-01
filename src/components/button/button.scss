@@ -39,90 +39,92 @@ $className: 'button';
     }
   }
 
-  &_filled,
-  &_bordered,
-  &_bordered-header,
-  &_long,
-  &_long-header {
-    border-radius: 1.5714rem;
-
-    .#{$className}__text {
-      padding: 0 1.2143rem;
-    }
-  }
-
-  &_filled,
-  &_bordered,
-  &_long {
-    height: 3.1429rem;
-  }
-
-  &_filled,
-  &_bordered {
-    min-width: 7.0714rem;
-  }
-
-  &_bordered,
-  &_bordered-header {
-    border: solid .1429rem transparent;
-    background-image: linear-gradient(white, white), variables.$primary-gradient;
-    background-origin: border-box;
-    background-clip: content-box, border-box;
-      
-    &:hover,
-    &.#{$className}_hovered {
-      background-image: linear-gradient(white, white), variables.$primary-gradient-50;
-
+  &_theme {
+    &_filled,
+    &_bordered,
+    &_bordered-header,
+    &_long,
+    &_long-header {
+      border-radius: 1.5714rem;
+  
       .#{$className}__text {
-        color: variables.$purple;
+        padding: 0 1.2143rem;
       }
     }
-  }
-
-  &_filled,
-  &_long,
-  &_long-header {
-    background: variables.$primary-gradient;
-
-    .#{$className}__text {
-      color: white;
+  
+    &_filled,
+    &_bordered,
+    &_long {
+      height: 3.1429rem;
     }
-
-    &:hover,
-    &.#{$className}_hovered  {
-      opacity: 0.5;
-
+  
+    &_filled,
+    &_bordered {
+      min-width: 7.0714rem;
+    }
+  
+    &_bordered,
+    &_bordered-header {
+      border: solid .1429rem transparent;
+      background-image: linear-gradient(white, white), variables.$primary-gradient;
+      background-origin: border-box;
+      background-clip: content-box, border-box;
+        
+      &:hover,
+      &.#{$className}_hovered {
+        background-image: linear-gradient(white, white), variables.$primary-gradient-50;
+  
+        .#{$className}__text {
+          color: variables.$purple;
+        }
+      }
+    }
+    
+    &_filled,
+    &_long,
+    &_long-header {
+      background: variables.$primary-gradient;
+  
       .#{$className}__text {
         color: white;
       }
+  
+      &:hover,
+      &.#{$className}_hovered  {
+        opacity: 0.5;
+  
+        .#{$className}__text {
+          color: white;
+        }
+      }
     }
-  }
-
-  &_long {
-    max-width: 22.8571rem;
-    width: 100%;
-  }
-
-  &_long-header,
-  &_bordered-header {
-    height: 2.4286rem;
-  }
-
-  &_bordered-header {
-    min-width: 6.2143rem;
-    width: 100%;
-
-    @media (min-width: variables.$xl) {
-      width: initial;
+  
+    &_long {
+      max-width: 22.8571rem;
+      width: 100%;
     }
-  }
-
-  &_long-header {
-    min-width: 14rem;
-    width: 100%;
-
-    @media (min-width: variables.$xl) {
-      width: initial;
+  
+    &_long-header,
+    &_bordered-header {
+      height: 2.4286rem;
+    }
+  
+    &_bordered-header {
+      min-width: 6.2143rem;
+      width: 100%;
+  
+      @media (min-width: variables.$xl) {
+        width: initial;
+      }
+    }
+  
+    &_long-header {
+      min-width: 14rem;
+      width: 100%;
+  
+      @media (min-width: variables.$xl) {
+        width: initial;
+      }
     }
   }
 }

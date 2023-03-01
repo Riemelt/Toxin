@@ -1,9 +1,9 @@
 mixin button(vars = {})
   -
     const {
-      theme,
       icon,
       href,
+      theme = 'default',
       text = '',
       hovered = false,
       type = 'button',
@@ -28,15 +28,15 @@ mixin button(vars = {})
     }
 
     const themeClass = {
-      bordered: ` ${className}_bordered`,
-      filled: ` ${className}_filled`,
-      long: ` ${className}_long`,
-      borderedHeader: ` ${className}_bordered-header`,
-      longHeader: ` ${className}_long-header`,
+      default: '',
+      bordered: ` ${className}_theme_bordered`,
+      filled: ` ${className}_theme_filled`,
+      long: ` ${className}_theme_long`,
+      borderedHeader: ` ${className}_theme_bordered-header`,
+      longHeader: ` ${className}_theme_long-header`,
     }
 
-  if theme
-    - classNames += themeClass[theme]
+    classNames += themeClass[theme]
 
   if hovered
     - classNames += ` ${className}_hovered`

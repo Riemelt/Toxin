@@ -93,13 +93,13 @@
       {
         "title": "Широкий коридор",
         "description": "Ширина коридоров в номере не\u00A0менее 91 см.",
-        "isRich": true,
+        "theme": "rich",
         "checked": false
       },
       {
         "title": "Помощник для инвалидов",
         "description": "На 1 этаже вас встретит специалист и\u00A0проводит до номера.",
-        "isRich": true,
+        "theme": "rich",
         "checked": false
       }
     ]
