@@ -20,7 +20,7 @@ mixin comment(vars = {})
       img(
         class=`${className}__avatar`
         alt=avatar.alt
-        src=require(`@images/${avatar.src}`)
+        src=require(`./images/${avatar.src}`)
       )
       div(class=`${className}__author-info`)
         div(class=`${className}__name`)= author

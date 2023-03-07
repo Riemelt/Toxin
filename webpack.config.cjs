@@ -61,6 +61,7 @@ module.exports = {
   },
   resolve: {
     alias: {
+      '@src': path.resolve(__dirname, './src/'),
       '@images': path.resolve(__dirname, './src/assets/images/'),
       '@favicons': path.resolve(__dirname, './src/assets/favicons/'),
     },

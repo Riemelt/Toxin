@@ -19,13 +19,13 @@ mixin image-slider(vars = {})
     if images[0]
       img(
         class=`${className}__image ${className}__image_active js-${className}__image`
-        src=require(`@images/${images[0].src}`)
+        src=require(`@src/${images[0].src}`)
         alt=images[0].alt
       )
     - for (let i = 1; i < imageLimit; i++)
       img(
         class=`${className}__image js-${className}__image`
-        src=require(`@images/${images[i].src}`)
+        src=require(`@src/${images[i].src}`)
         alt=images[i].alt
       )
     div(class=`${className}__navigation`)
