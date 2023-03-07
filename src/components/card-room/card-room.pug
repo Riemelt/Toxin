@@ -16,7 +16,10 @@ mixin card-room(vars = {})
 
   div(class=classNames)
     div(class=`${className}__image-slider js-${className}__image-slider`)
-      +image-slider(imageSlider)
+      +image-slider({
+        ...imageSlider,
+        type: 'cardRoom',
+      })
     div(class=`${className}__info`)
       div(class=`${className}__label js-${className}__label`)
         +room-label(roomLabel)

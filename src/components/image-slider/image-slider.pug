@@ -1,6 +1,7 @@
 mixin image-slider(vars = {})
   -
     const {
+      type = 'cardRoom',
       href = '/mock-address/change-me',
       images = [],
       isHovered = false,
@@ -12,6 +13,11 @@ mixin image-slider(vars = {})
 
     const imageLimit = images.length > 4 ? 4 : images.length
 
+    const componentName = {
+      cardRoom: 'card-room',
+      gallery: 'gallery',
+    }
+
   if isHovered
     - classNames += ` ${className}_hovered`
 
@@ -19,13 +25,13 @@ mixin image-slider(vars = {})
     if images[0]
       img(
         class=`${className}__image ${className}__image_active js-${className}__image`
-        src=require(`@src/${images[0].src}`)
+        src=require(`@src/components/${componentName[type]}/images/${images[0].src}`)
         alt=images[0].alt
       )
     - for (let i = 1; i < imageLimit; i++)
       img(
         class=`${className}__image js-${className}__image`
-        src=require(`@src/${images[i].src}`)
+        src=require(`@src/components/${componentName[type]}/images/${images[i].src}`)
         alt=images[i].alt
       )
     div(class=`${className}__navigation`)

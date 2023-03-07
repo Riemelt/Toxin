@@ -3,15 +3,18 @@
     "imageSlider": {
       "images": [
         {
-          "src": "components/gallery/images/gallery-room-1.jpg",
+          "path": "components/gallery/images",
+          "src": "gallery-room-1.jpg",
           "alt": "Бежевая комната с двухместной кроватью и круглым настенным зеркалом"
         },
         {
-          "src": "components/gallery/images/gallery-room-2.jpg",
+          "path": "components/gallery/images",
+          "src": "gallery-room-2.jpg",
           "alt": "Бежевая комната с одноместной кроватью"
         },
         {
-          "src": "components/gallery/images/gallery-room-3.jpg",
+          "path": "components/gallery/images",
+          "src": "gallery-room-3.jpg",
           "alt": "Просторная бежевая комната с креслами, столом и большими окнами"
         }
       ]

@@ -185,19 +185,19 @@
         "href": "room-details.html",
         "images": [
           {
-            "src": "components/card-room/images/card-room-1.jpg",
+            "src": "card-room-1.jpg",
             "alt": "Бежевая комната с двухместной кроватью"
           },
           {
-            "src": "components/card-room/images/card-room-3.jpg",
+            "src": "card-room-3.jpg",
             "alt": "Красная комната с двухместной кроватью"
           },
           {
-            "src": "components/card-room/images/card-room-2.jpg",
+            "src": "card-room-2.jpg",
             "alt": "Комната в коричневых тонах с двухместной и одноместной кроватями"
           },
           {
-            "src": "components/card-room/images/card-room-4.jpg",
+            "src": "card-room-4.jpg",
             "alt": "Комната в синих тонах с двухместной кроватью"
           }
         ]
@@ -218,19 +218,19 @@
         "href": "room-details.html",
         "images": [
           {
-            "src": "components/card-room/images/card-room-2.jpg",
+            "src": "card-room-2.jpg",
             "alt": "Комната в коричневых тонах с двухместной и одноместной кроватями"
           },
           {
-            "src": "components/card-room/images/card-room-3.jpg",
+            "src": "card-room-3.jpg",
             "alt": "Красная комната с двухместной кроватью"
           },
           {
-            "src": "components/card-room/images/card-room-5.jpg",
+            "src": "card-room-5.jpg",
             "alt": "Коричнево-жёлтая комната с двухместной кроватью"
           },
           {
-            "src": "components/card-room/images/card-room-4.jpg",
+            "src": "card-room-4.jpg",
             "alt": "Комната в синих тонах с двухместной кроватью"
           }
         ]
@@ -251,19 +251,19 @@
         "href": "room-details.html",
         "images": [
           {
-            "src": "components/card-room/images/card-room-3.jpg",
+            "src": "card-room-3.jpg",
             "alt": "Красная комната с двухместной кроватью"
           },
           {
-            "src": "components/card-room/images/card-room-5.jpg",
+            "src": "card-room-5.jpg",
             "alt": "Коричнево-жёлтая комната с двухместной кроватью"
           },
           {
-            "src": "components/card-room/images/card-room-2.jpg",
+            "src": "card-room-2.jpg",
             "alt": "Комната в коричневых тонах с двухместной и одноместной кроватями"
           },
           {
-            "src": "components/card-room/images/card-room-4.jpg",
+            "src": "card-room-4.jpg",
             "alt": "Комната в синих тонах с двухместной кроватью"
           }
         ]
@@ -284,19 +284,19 @@
         "href": "room-details.html",
         "images": [
           {
-            "src": "components/card-room/images/card-room-4.jpg",
+            "src": "card-room-4.jpg",
             "alt": "Комната в синих тонах с двухместной кроватью"
           },
           {
-            "src": "components/card-room/images/card-room-3.jpg",
+            "src": "card-room-3.jpg",
             "alt": "Красная комната с двухместной кроватью"
           },
           {
-            "src": "components/card-room/images/card-room-2.jpg",
+            "src": "card-room-2.jpg",
             "alt": "Комната в коричневых тонах с двухместной и одноместной кроватями"
           },
           {
-            "src": "components/card-room/images/card-room-5.jpg",
+            "src": "card-room-5.jpg",
             "alt": "Коричнево-жёлтая комната с двухместной кроватью"
           }
         ]
@@ -317,19 +317,19 @@
         "href": "room-details.html",
         "images": [
           {
-            "src": "components/card-room/images/card-room-5.jpg",
+            "src": "card-room-5.jpg",
             "alt": "Коричнево-жёлтая комната с двухместной кроватью"
           },
           {
-            "src": "components/card-room/images/card-room-3.jpg",
+            "src": "card-room-3.jpg",
             "alt": "Красная комната с двухместной кроватью"
           },
           {
-            "src": "components/card-room/images/card-room-2.jpg",
+            "src": "card-room-2.jpg",
             "alt": "Комната в коричневых тонах с двухместной и одноместной кроватями"
           },
           {
-            "src": "components/card-room/images/card-room-4.jpg",
+            "src": "card-room-4.jpg",
             "alt": "Комната в синих тонах с двухместной кроватью"
           }
         ]
@@ -350,19 +350,19 @@
         "href": "room-details.html",
         "images": [
           {
-            "src": "components/card-room/images/card-room-6.jpg",
+            "src": "card-room-6.jpg",
             "alt": "Просторная светлая комната с двухместной кроватью и диваном"
           },
           {
-            "src": "components/card-room/images/card-room-3.jpg",
+            "src": "card-room-3.jpg",
             "alt": "Красная комната с двухместной кроватью"
           },
           {
-            "src": "components/card-room/images/card-room-2.jpg",
+            "src": "card-room-2.jpg",
             "alt": "Комната в коричневых тонах с двухместной и одноместной кроватями"
           },
           {
-            "src": "components/card-room/images/card-room-4.jpg",
+            "src": "card-room-4.jpg",
             "alt": "Комната в синих тонах с двухместной кроватью"
           }
         ]
@@ -383,19 +383,19 @@
         "href": "room-details.html",
         "images": [
           {
-            "src": "components/card-room/images/card-room-7.jpg",
+            "src": "card-room-7.jpg",
             "alt": "Светло-бежевая комната с настенным телевизором и стульями"
           },
           {
-            "src": "components/card-room/images/card-room-3.jpg",
+            "src": "card-room-3.jpg",
             "alt": "Красная комната с двухместной кроватью"
           },
           {
-            "src": "components/card-room/images/card-room-2.jpg",
+            "src": "card-room-2.jpg",
             "alt": "Комната в коричневых тонах с двухместной и одноместной кроватями"
           },
           {
-            "src": "components/card-room/images/card-room-4.jpg",
+            "src": "card-room-4.jpg",
             "alt": "Комната в синих тонах с двухместной кроватью"
           }
         ]
@@ -416,19 +416,19 @@
         "href": "room-details.html",
         "images": [
           {
-            "src": "components/card-room/images/card-room-8.jpg",
+            "src": "card-room-8.jpg",
             "alt": "Комната в тёмных тонах с двухместной кроватью и тёмно-коричневыми занавесками"
           },
           {
-            "src": "components/card-room/images/card-room-3.jpg",
+            "src": "card-room-3.jpg",
             "alt": "Красная комната с двухместной кроватью"
           },
           {
-            "src": "components/card-room/images/card-room-2.jpg",
+            "src": "card-room-2.jpg",
             "alt": "Комната в коричневых тонах с двухместной и одноместной кроватями"
           },
           {
-            "src": "components/card-room/images/card-room-4.jpg",
+            "src": "card-room-4.jpg",
             "alt": "Комната в синих тонах с двухместной кроватью"
           }
         ]
@@ -449,19 +449,19 @@
         "href": "room-details.html",
         "images": [
           {
-            "src": "components/card-room/images/card-room-9.jpg",
+            "src": "card-room-9.jpg",
             "alt": "Комната в жёлтых тонах с двухместной кроватью, столом и настенным телевизором"
           },
           {
-            "src": "components/card-room/images/card-room-3.jpg",
+            "src": "card-room-3.jpg",
             "alt": "Красная комната с двухместной кроватью"
           },
           {
-            "src": "components/card-room/images/card-room-2.jpg",
+            "src": "card-room-2.jpg",
             "alt": "Комната в коричневых тонах с двухместной и одноместной кроватями"
           },
           {
-            "src": "components/card-room/images/card-room-4.jpg",
+            "src": "card-room-4.jpg",
             "alt": "Комната в синих тонах с двухместной кроватью"
           }
         ]
@@ -482,19 +482,19 @@
         "href": "room-details.html",
         "images": [
           {
-            "src": "components/card-room/images/card-room-10.jpg",
+            "src": "card-room-10.jpg",
             "alt": "Небольшая комната с двумя одноместными кроватями"
           },
           {
-            "src": "components/card-room/images/card-room-3.jpg",
+            "src": "card-room-3.jpg",
             "alt": "Красная комната с двухместной кроватью"
           },
           {
-            "src": "components/card-room/images/card-room-2.jpg",
+            "src": "card-room-2.jpg",
             "alt": "Комната в коричневых тонах с двухместной и одноместной кроватями"
           },
           {
-            "src": "components/card-room/images/card-room-4.jpg",
+            "src": "card-room-4.jpg",
             "alt": "Комната в синих тонах с двухместной кроватью"
           }
         ]
@@ -515,19 +515,19 @@
         "href": "room-details.html",
         "images": [
           {
-            "src": "components/card-room/images/card-room-11.jpg",
+            "src": "card-room-11.jpg",
             "alt": "Комната в жёлтых тонах с двухместными кроватями и большими окнами"
           },
           {
-            "src": "components/card-room/images/card-room-3.jpg",
+            "src": "card-room-3.jpg",
             "alt": "Красная комната с двухместной кроватью"
           },
           {
-            "src": "components/card-room/images/card-room-2.jpg",
+            "src": "card-room-2.jpg",
             "alt": "Комната в коричневых тонах с двухместной и одноместной кроватями"
           },
           {
-            "src": "components/card-room/images/card-room-4.jpg",
+            "src": "card-room-4.jpg",
             "alt": "Комната в синих тонах с двухместной кроватью"
           }
         ]
@@ -548,19 +548,19 @@
         "href": "room-details.html",
         "images": [
           {
-            "src": "components/card-room/images/card-room-12.jpg",
+            "src": "card-room-12.jpg",
             "alt": "Комната с двухместной кроватью"
           },
           {
-            "src": "components/card-room/images/card-room-3.jpg",
+            "src": "card-room-3.jpg",
             "alt": "Красная комната с двухместной кроватью"
           },
           {
-            "src": "components/card-room/images/card-room-2.jpg",
+            "src": "card-room-2.jpg",
             "alt": "Комната в коричневых тонах с двухместной и одноместной кроватями"
           },
           {
-            "src": "components/card-room/images/card-room-4.jpg",
+            "src": "card-room-4.jpg",
             "alt": "Комната в синих тонах с двухместной кроватью"
           }
         ]

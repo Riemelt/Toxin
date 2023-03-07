@@ -11,22 +11,25 @@ mixin gallery(vars = {})
 
   div(class=classNames)
     div(class=`${className}__image-slider js-${className}__image-slider`)
-      +image-slider(imageSlider)
+      +image-slider({
+        ...imageSlider,
+        type: 'gallery',
+      })
     div(class=`${className}__images`)
       div(class=`${className}__images-primary-wrapper`)
         img(
           class=`${className}__image-primary`
-          src=require(`@src/${imageSlider.images[0].src}`)
+          src=require(`./images/${imageSlider.images[0].src}`)
           alt=imageSlider.images[0].alt
         )
       div(class=`${className}__images-secondary-wrapper`)
         img(
           class=`${className}__image-secondary-one`
-          src=require(`@src/${imageSlider.images[1].src}`)
+          src=require(`./images/${imageSlider.images[1].src}`)
           alt=imageSlider.images[1].alt
         )
         img(
           class=`${className}__image-secondary-two`
-          src=require(`@src/${imageSlider.images[2].src}`)
+          src=require(`./images/${imageSlider.images[2].src}`)
           alt=imageSlider.images[2].alt
         )
