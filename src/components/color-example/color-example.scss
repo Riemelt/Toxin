@@ -32,11 +32,11 @@ $className: 'color-example';
     }
   
     &_purple {
-      background-color: variables.$purple;
+      background-color: variables.$primary;
     }
   
     &_green {
-      background-color: variables.$green;
+      background-color: variables.$secondary;
     }
 	}
 

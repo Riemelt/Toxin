@@ -25,7 +25,7 @@ $className: 'toggle-switch';
 
   &__switch-input:checked
   + &__switch {
-    border-color: variables.$purple;
+    border-color: variables.$primary;
 
     &::after {
       background-image: variables.$primary-gradient;

@@ -5,22 +5,22 @@ $dark-shade-25: rgba(31, 32, 65, 0.25);
 $dark-shade-10: rgba(31, 32, 65, 0.10);
 $dark-shade-5: rgba(31, 32, 65, 0.05);
 
-$grey: #F4F4F6;
+$neutral: #F4F4F6;
 
-$purple: #BC9CFF;
-$purple-50: #BC9CFF50;
+$secondary: #6FCF97;
 
-$green: #6FCF97;
+$secondary-light: #66D2EA;
 
-$jordy-blue: #8BA4F9;
-$jordy-blue-50: #8BA4F950;
+$primary: #BC9CFF;
+$primary-50: #BC9CFF50;
 
-$sky-blue: #66D2EA;
+$primary-light: #8BA4F9;
+$primary-light-50: #8BA4F950;
 
-$primary-gradient: linear-gradient(180deg, $purple 0%, $jordy-blue 100%);
-$primary-gradient-50: linear-gradient(180deg, $purple-50 0%, $jordy-blue-50 100%);
+$primary-gradient: linear-gradient(180deg, $primary 0%, $primary-light 100%);
+$primary-gradient-50: linear-gradient(180deg, $primary-50 0%, $primary-light-50 100%);
 
-$secondary-gradient: linear-gradient(180deg, $green 0%, $sky-blue 100%);
+$secondary-gradient: linear-gradient(180deg, $secondary 0%, $secondary-light 100%);
 
 $small: 150px;
 $medium: 266px;
@@ -34,8 +34,3 @@ $xl: 1120px;
 $xxl: 1200px;
 $xxxl: 1440px;
 $fullhd: 1920px;
-
-$checkbox-size: 20px;
-$checkbox-margin: 10px;
-
-$range-slider-height: 6px;

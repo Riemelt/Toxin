@@ -20,7 +20,7 @@ $className: 'like-button';
 
     &:hover,
     &:focus-within {
-      border-color: variables.$purple;
+      border-color: variables.$primary;
       border-width: .1429rem;
     }
   }
@@ -53,7 +53,7 @@ $className: 'like-button';
   &_checked {
     .#{$className} {
       &__body {
-        border-color: variables.$purple;
+        border-color: variables.$primary;
       }
 
       &__icon::before {
@@ -64,7 +64,7 @@ $className: 'like-button';
       }
 
       &__likes {
-        color: variables.$purple;
+        color: variables.$primary;
       }
     }
   }

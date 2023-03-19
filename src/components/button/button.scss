@@ -21,7 +21,7 @@ $className: 'button';
 
   &__text {
     margin: 0 auto;
-	  color: variables.$purple;
+	  color: variables.$primary;
   }
 
   &__icon {
@@ -75,7 +75,7 @@ $className: 'button';
         background-image: linear-gradient(white, white), variables.$primary-gradient-50;
   
         .#{$className}__text {
-          color: variables.$purple;
+          color: variables.$primary;
         }
       }
     }

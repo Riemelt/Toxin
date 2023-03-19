@@ -36,7 +36,7 @@ $airDatepicker: 'air-datepicker';
       margin: 0;
 
       &--action {
-        color: variables.$purple;
+        color: variables.$primary;
         font-size: 1.7143rem;
         line-height: 1.4286rem;
       }
@@ -71,7 +71,7 @@ $airDatepicker: 'air-datepicker';
 
       &--day-name {
         text-transform: capitalize;
-        color: variables.$purple;
+        color: variables.$primary;
         font-weight: 700;
         font-size: .8571rem;
       }

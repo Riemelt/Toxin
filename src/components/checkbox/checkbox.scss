@@ -38,9 +38,9 @@ $className: 'checkbox';
     position: relative;
     border-radius: .2857rem;
     border: .0714rem solid variables.$dark-shade-25;
-    height: variables.$checkbox-size;
+    height: 1.4286rem;
     min-width: 1.4286rem;
-    margin-right: variables.$checkbox-margin;
+    margin-right: .7143rem;
 
     &::after {
       position: absolute;
@@ -65,7 +65,7 @@ $className: 'checkbox';
 
   &__checkbox-input:checked
   + &__checkmark {
-    border-color: variables.$purple;
+    border-color: variables.$primary;
 
     &::after {
       display: initial;

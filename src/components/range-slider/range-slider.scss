@@ -14,7 +14,7 @@ $noUiSlider: 'noUi';
   }
 
   &__slider {
-    max-height: variables.$range-slider-height;
+    max-height: .4286rem;
     background-color: white;
     border-color: variables.$dark-shade-25;
     box-shadow: none;
@@ -26,7 +26,7 @@ $noUiSlider: 'noUi';
 
       &-connect {
         background-image: variables.$secondary-gradient;
-        height: variables.$range-slider-height;
+        height: .4286rem;
         top: -0.0714rem;
       }
 
