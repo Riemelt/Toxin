@@ -23,7 +23,7 @@
     },
     "inputPassword": {
       "placeholder": "Пароль",
-      "type": "text",
+      "type": "password",
       "required": true,
       "name": "password"
     },
