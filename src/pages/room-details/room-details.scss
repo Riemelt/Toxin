@@ -13,11 +13,11 @@ $className: 'room-details';
     flex-direction: row;
     gap: 3.5714rem 5rem;
     justify-content: space-between;
-    flex-wrap: wrap;
+    flex-wrap: wrap-reverse;
 
     @media (max-width: variables.$xs) {
       padding: 5rem .7143rem 5.2143rem;
-      flex-direction: column;
+      flex-direction: column-reverse;
       align-items: center;
     }
   }
@@ -28,8 +28,8 @@ $className: 'room-details';
 
   &__details {
     max-width: 64.2857rem;
-    order: 1;
     flex: 2 2;
+    order: 1;
     display: flex;
     flex-direction: column;
     gap: 1.9286rem;
