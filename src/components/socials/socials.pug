@@ -9,5 +9,10 @@ mixin socials(vars = {})
   ul(class=className)
     each item in items
       li(class=`${className}__item`)
-        a(class=`${className}__icon` href=item.href)
+        a(
+          class=`${className}__icon`
+          href=item.href
+          target="_blank"
+          rel="noreferrer"
+        )
           i(class=`fa-brands ${item.icon}`)

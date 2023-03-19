@@ -17,22 +17,18 @@
       "withLink": true,
       "images": [
         {
-          "path": "components/card-room/images",
           "src": "card-room-1.jpg",
           "alt": "Бежевая комната с двухместной кроватью"
         },
         {
-          "path": "components/card-room/images",
           "src": "card-room-2.jpg",
           "alt": "Комната в коричневых тонах с двухместной и одноместной кроватями"
         },
         {
-          "path": "components/card-room/images",
           "src": "card-room-3.jpg",
           "alt": "Красная комната с двухместной кроватью"
         },
         {
-          "path": "components/card-room/images",
           "src": "card-room-4.jpg",
           "alt": "Комната в синих тонах с двухместной кроватью"
         }
@@ -53,22 +49,18 @@
       "withLink": true,
       "images": [
         {
-          "path": "components/card-room/images",
           "src": "card-room-2.jpg",
           "alt": "Комната в коричневых тонах с двухместной и одноместной кроватями"
         },
         {
-          "path": "components/card-room/images",
           "src": "card-room-3.jpg",
           "alt": "Красная комната с двухместной кроватью"
         },
         {
-          "path": "components/card-room/images",
           "src": "card-room-1.jpg",
           "alt": "Бежевая комната с двухместной кроватью"
         },
         {
-          "path": "components/card-room/images",
           "src": "card-room-4.jpg",
           "alt": "Комната в синих тонах с двухместной кроватью"
         }
