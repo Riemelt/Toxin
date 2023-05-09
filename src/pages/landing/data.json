@@ -85,7 +85,8 @@
     "searchRoomButton": {
       "text": "Подобрать номер",
       "icon": "arrowForward",
-      "theme": "long",
+      "theme": "filled",
+      "size": "large",
       "type": "submit"
     }
   },

@@ -30,7 +30,8 @@
     "signInButton": {
       "text": "войти",
       "icon": "arrowForward",
-      "theme": "long",
+      "theme": "filled",
+      "size": "large",
       "type": "submit"
     },
     "registration": {
@@ -38,7 +39,8 @@
       "button": {
         "text": "создать",
         "href": "registration.html",
-        "theme": "bordered"
+        "theme": "bordered",
+        "size": "medium"
       }
     }
   }

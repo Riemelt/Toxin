@@ -41,30 +41,15 @@ $className: 'button';
 
   &_theme {
     &_filled,
-    &_bordered,
-    &_bordered-header,
-    &_long,
-    &_long-header {
+    &_bordered {
       border-radius: 1.5714rem;
   
       .#{$className}__text {
-        padding: 0 1.2143rem;
+        padding: 0 1.0714rem;
       }
     }
   
-    &_filled,
-    &_bordered,
-    &_long {
-      height: 3.1429rem;
-    }
-  
-    &_filled,
     &_bordered {
-      min-width: 7.0714rem;
-    }
-  
-    &_bordered,
-    &_bordered-header {
       border: solid .1429rem transparent;
       background-image: linear-gradient(white, white), variables.$primary-gradient;
       background-origin: border-box;
@@ -80,9 +65,7 @@ $className: 'button';
       }
     }
     
-    &_filled,
-    &_long,
-    &_long-header {
+    &_filled {
       background: variables.$primary-gradient;
   
       .#{$className}__text {
@@ -98,33 +81,35 @@ $className: 'button';
         }
       }
     }
-  
-    &_long {
-      max-width: 22.8571rem;
-      width: 100%;
-    }
-  
-    &_long-header,
-    &_bordered-header {
+  }
+
+  &_size {
+    &_small,
+    &_big {
       height: 2.4286rem;
     }
-  
-    &_bordered-header {
-      min-width: 6.2143rem;
-      width: 100%;
-  
-      @media (min-width: variables.$xl) {
-        width: initial;
-      }
+
+    &_medium,
+    &_large {
+      height: 3.1429rem;
+      min-width: 7.0714rem;
     }
-  
-    &_long-header {
-      min-width: 14rem;
+
+    &_big,
+    &_large {
       width: 100%;
-  
-      @media (min-width: variables.$xl) {
-        width: initial;
-      }
+    }
+
+    &_small {
+      min-width: 6.2143rem;
+    }
+
+    &_big {
+      min-width: 14rem;
+    }
+
+    &_large {
+      max-width: 22.8571rem;
     }
   }
 }

@@ -149,7 +149,8 @@
     "searchRoomButton": {
       "text": "Подобрать номер",
       "icon": "arrowForward",
-      "theme": "long",
+      "theme": "filled",
+      "size": "large",
       "type": "submit"
     }
   },
@@ -174,7 +175,8 @@
     "signInButton": {
       "text": "войти",
       "icon": "arrowForward",
-      "theme": "long",
+      "theme": "filled",
+      "size": "large",
       "type": "submit"
     },
     "registration": {
@@ -182,7 +184,8 @@
       "button": {
         "text": "создать",
         "href": "/mock-address/change-me",
-        "theme": "bordered"
+        "theme": "bordered",
+        "size": "medium"
       }
     }
   },
@@ -254,7 +257,8 @@
     "submitRegistrationButton": {
       "text": "перейти к оплате",
       "icon": "arrowForward",
-      "theme": "long",
+      "theme": "filled",
+      "size": "large",
       "type": "submit"
     },
     "login": {
@@ -262,7 +266,8 @@
       "button": {
         "text": "войти",
         "href": "/mock-address/change-me",
-        "theme": "bordered"
+        "theme": "bordered",
+        "size": "medium"
       }
     }
   },
@@ -364,7 +369,8 @@
     "submitReservationButton": {
       "text": "забронировать",
       "icon": "arrowForward",
-      "theme": "long",
+      "theme": "filled",
+      "size": "large",
       "type": "submit"
     }
   }

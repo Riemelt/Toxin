@@ -187,20 +187,24 @@
   },
   "buttonFilled": {
     "text": "click me",
-    "theme": "filled"
+    "theme": "filled",
+    "size": "medium"
   },
   "buttonFilledActive": {
     "text": "click me",
     "theme": "filled",
+    "size": "medium",
     "hovered": true
   },
   "buttonBordered": {
     "text": "click me",
-    "theme": "bordered"
+    "theme": "bordered",
+    "size": "medium"
   },
   "buttonBorderedActive": {
     "text": "click me",
     "theme": "bordered",
+    "size": "medium",
     "hovered": true
   },
   "buttonDefault": {
@@ -213,7 +217,8 @@
   "buttonWithIcon": {
     "text": "Перейти к оплате",
     "icon": "arrowForward",
-    "theme": "long"
+    "theme": "filled",
+    "size": "large"
   },
   "pagination": {
     "pageSize": 12,

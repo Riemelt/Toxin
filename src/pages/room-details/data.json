@@ -233,7 +233,8 @@
     "submitReservationButton": {
       "text": "забронировать",
       "icon": "arrowForward",
-      "theme": "long",
+      "theme": "filled",
+      "size": "large",
       "type": "submit"
     }
   }

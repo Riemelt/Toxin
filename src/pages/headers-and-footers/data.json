@@ -63,12 +63,14 @@
     },
     "signInButton": {
       "text": "войти",
-      "theme": "borderedHeader",
+      "theme": "bordered",
+      "size": "small",
       "href": "/mock-address/change-me"
     },
     "registrationButton": {
       "text": "зарегистрироваться",
-      "theme": "longHeader",
+      "theme": "filled",
+      "size": "big",
       "href": "/mock-address/change-me"
     }
   },
@@ -131,12 +133,14 @@
     "userName": "Юлий Цезарь",
     "signInButton": {
       "text": "войти",
-      "theme": "borderedHeader",
+      "theme": "bordered",
+      "size": "small",
       "href": "/mock-address/change-me"
     },
     "registrationButton": {
       "text": "зарегистрироваться",
-      "theme": "longHeader",
+      "theme": "filled",
+      "size": "big",
       "href": "/mock-address/change-me"
     }
   },

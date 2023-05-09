@@ -77,7 +77,8 @@
     "submitRegistrationButton": {
       "text": "зарегистрироваться",
       "icon": "arrowForward",
-      "theme": "long",
+      "theme": "filled",
+      "size": "large",
       "type": "submit"
     },
     "login": {
@@ -85,7 +86,8 @@
       "button": {
         "text": "войти",
         "href": "sign-in.html",
-        "theme": "bordered"
+        "theme": "bordered",
+        "size": "medium"
       }
     }
   }

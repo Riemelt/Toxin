@@ -4,6 +4,7 @@ mixin button(vars = {})
       icon,
       href,
       theme = 'default',
+      size = 'default',
       text = '',
       hovered = false,
       type = 'button',
@@ -27,13 +28,20 @@ mixin button(vars = {})
       arrowForward: 'arrow_forward',
     }
 
+    const sizeClass = {
+      default: '',
+      small: ` ${className}_size_small`,
+      medium: ` ${className}_size_medium`,
+      big: ` ${className}_size_big`,
+      large: ` ${className}_size_large`,
+    }
+
+    classNames += sizeClass[size]
+
     const themeClass = {
       default: '',
       bordered: ` ${className}_theme_bordered`,
       filled: ` ${className}_theme_filled`,
-      long: ` ${className}_theme_long`,
-      borderedHeader: ` ${className}_theme_bordered-header`,
-      longHeader: ` ${className}_theme_long-header`,
     }
 
     classNames += themeClass[theme]

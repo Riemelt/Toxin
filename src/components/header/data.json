@@ -55,12 +55,14 @@
   },
   "signInButton": {
     "text": "войти",
-    "theme": "borderedHeader",
+    "theme": "bordered",
+    "size": "small",
     "href": "sign-in.html"
   },
   "registrationButton": {
     "text": "зарегистрироваться",
-    "theme": "longHeader",
+    "theme": "filled",
+    "size": "big",
     "href": "registration.html"
   }
 }
